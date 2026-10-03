@@ -5,6 +5,7 @@ This repo is organized around the current recommended build: Goodwill Michiana e
 ## Current build
 
 - [Goodwill PRD](goodwill/PRD.md) - active product scope, data contract, validation requirements, and demo script.
+- [Synthetic enterprise data pack](goodwill/synthetic-data/README.md) - reproducible fictional source exports, linked listing/inventory inputs, reconciliation controls, and importer test fixtures.
 
 ## Planning
 
