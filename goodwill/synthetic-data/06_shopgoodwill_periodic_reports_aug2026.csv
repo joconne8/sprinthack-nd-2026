@@ -1,0 +1,11 @@
+report_name,period,sale_date,order_id,item_id,store_id,buyer_id,category,gross_sales,buyer_premium,shipping_collected,tax_collected,refund_amount,net_sales,report_type
+ShopGoodwill Periodic August 2026,2026-08,2026-08-01,SGW-2608-1001,SGW-ITM-1001,GW-001,BUY-SGW-3001,Electronics,78.00,7.80,9.95,7.66,0.00,95.75,periodic
+ShopGoodwill Periodic August 2026,2026-08,2026-08-02,SGW-2608-1002,SGW-ITM-1002,GW-004,BUY-SGW-3002,Collectibles,46.50,4.65,8.25,4.75,0.00,59.40,periodic
+ShopGoodwill Periodic August 2026,2026-08,2026-08-04,SGW-2608-1003,SGW-ITM-1003,GW-008,BUY-SGW-3003,Apparel,32.00,3.20,6.50,3.34,0.00,41.70,periodic
+ShopGoodwill Periodic August 2026,2026-08,2026-08-06,SGW-2608-1004,SGW-ITM-1004,GW-012,BUY-SGW-3004,Home,58.75,5.88,11.40,6.08,0.00,76.03,periodic
+ShopGoodwill Periodic August 2026,2026-08,2026-08-10,SGW-2608-1005,SGW-ITM-1005,GW-017,BUY-SGW-3005,Tools,84.20,8.42,12.25,8.37,0.00,104.87,periodic
+ShopGoodwill Periodic August 2026,2026-08,2026-08-13,SGW-2608-1006,SGW-ITM-1006,GW-007,BUY-SGW-3006,Electronics,129.00,12.90,10.95,12.23,15.00,137.85,periodic
+ShopGoodwill Periodic August 2026,2026-08,2026-08-17,SGW-2608-1007,SGW-ITM-1007,GW-020,BUY-SGW-3007,Jewelry,210.00,21.00,8.95,19.19,0.00,239.95,periodic
+ShopGoodwill Periodic August 2026,2026-08,2026-08-21,SGW-2608-1008,SGW-ITM-1008,GW-022,BUY-SGW-3008,Sporting Goods,67.40,6.74,13.20,6.99,0.00,87.34,periodic
+ShopGoodwill Periodic August 2026,2026-08,2026-08-25,SGW-2608-1009,SGW-ITM-1009,,BUY-SGW-3009,Collectibles,41.80,4.18,7.90,4.31,0.00,53.88,periodic
+ShopGoodwill Periodic August 2026,2026-08,2026-08-29,SGW-2608-1010,SGW-ITM-1010,GW-024,BUY-SGW-3010,Electronics,98.60,9.86,9.50,9.47,0.00,117.96,periodic

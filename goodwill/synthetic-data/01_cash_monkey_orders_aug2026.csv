@@ -1,0 +1,11 @@
+order_id,order_date,sku,title,category,store_id,buyer_id,quantity,item_revenue,shipping_revenue,refund_amount,payment_fee,payout_amount
+CM-2608-0001,2026-08-01,BOOK-10442,Hardcover cookbook,Books,GW-004,BUY-CM-1001,1,18.50,4.25,0.00,1.12,21.63
+CM-2608-0002,2026-08-01,BOOK-22418,Vintage field guide,Books,GW-012,BUY-CM-1002,1,26.00,4.75,0.00,1.49,29.26
+CM-2608-0003,2026-08-02,BOOK-45109,Children book bundle,Books,GW-007,BUY-CM-1003,3,15.75,5.20,0.00,1.03,19.92
+CM-2608-0004,2026-08-03,BOOK-55501,College textbook,Books,GW-003,BUY-CM-1004,1,42.00,6.10,0.00,2.21,45.89
+CM-2608-0005,2026-08-05,BOOK-77220,Art history volume,Books,GW-018,BUY-CM-1005,1,31.25,5.40,0.00,1.72,34.93
+CM-2608-0006,2026-08-08,BOOK-99117,Paperback mystery lot,Books,GW-021,BUY-CM-1006,5,22.40,6.50,7.40,1.28,20.22
+CM-2608-0007,2026-08-11,BOOK-10337,Technical manual,Books,GW-010,BUY-CM-1007,1,36.80,5.95,0.00,1.98,40.77
+CM-2608-0008,2026-08-15,BOOK-88443,Religion reference set,Books,GW-002,BUY-CM-1008,2,28.60,6.25,0.00,1.61,33.24
+CM-2608-0009,2026-08-22,BOOK-33190,Classic literature bundle,Books,GW-015,BUY-CM-1009,4,19.95,5.80,0.00,1.19,24.56
+CM-2608-0010,2026-08-29,BOOK-44012,Graphic novel lot,Books,GW-006,BUY-CM-1010,3,33.10,6.75,0.00,1.86,37.99

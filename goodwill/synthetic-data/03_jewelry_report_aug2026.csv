@@ -1,0 +1,11 @@
+jewelry_batch_id,item_id,sale_date,supplier,store_id,metal_type,category,gross_sales,appraisal_fee,commission_fee,net_sales,supplier_confirmed
+JWL-2608-A,JEW-80001,2026-08-02,Co-Pivot,GW-002,Silver,Rings,86.00,8.00,6.45,77.55,true
+JWL-2608-A,JEW-80002,2026-08-03,Co-Pivot,GW-006,Gold,Necklaces,240.00,12.00,18.00,210.00,true
+JWL-2608-B,JEW-80003,2026-08-05,Co-Pivot,GW-009,Silver,Bracelets,64.50,8.00,4.84,51.66,true
+JWL-2608-B,JEW-80004,2026-08-06,Co-Pivot,GW-014,Costume,Earrings,31.25,0.00,2.34,28.91,true
+JWL-2608-C,JEW-80005,2026-08-09,Co-Pivot,GW-018,Gold,Rings,315.00,12.00,23.63,279.37,true
+JWL-2608-C,JEW-80006,2026-08-12,Co-Pivot,GW-021,Silver,Watches,118.75,8.00,8.91,101.84,true
+JWL-2608-D,JEW-80007,2026-08-17,,GW-003,Gold,Necklaces,188.40,12.00,14.13,162.27,false
+JWL-2608-D,JEW-80008,2026-08-19,Co-Pivot,GW-010,Costume,Brooches,42.00,0.00,3.15,38.85,true
+JWL-2608-E,JEW-80009,2026-08-24,Co-Pivot,GW-016,Silver,Rings,74.25,8.00,5.57,60.68,true
+JWL-2608-E,JEW-80010,2026-08-28,Co-Pivot,GW-022,Gold,Watches,405.00,12.00,30.38,362.62,true
