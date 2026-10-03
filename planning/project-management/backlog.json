@@ -1,0 +1,1296 @@
+{
+  "repository": "joconne8/sprinthack-nd-2026",
+  "hub_url": "https://github.com/joconne8/sprinthack-nd-2026/issues/7",
+  "native_project_status": "Blocked: connection returned 403 Resource not accessible by integration for Projects; no board was created",
+  "existing_pull_request_url": "https://github.com/joconne8/sprinthack-nd-2026/pull/1",
+  "cards": [
+    {
+      "id": "PM-00",
+      "number": 7,
+      "url": "https://github.com/joconne8/sprinthack-nd-2026/issues/7",
+      "title": "[PM-00] Goodwill shared delivery hub — three phases, dependencies and overnight agents",
+      "kind": "hub",
+      "phase": "Governance",
+      "priority": "P0",
+      "scope": "weekend",
+      "lane": "Human product owner / integrator",
+      "human_gate": true,
+      "initial_workflow": "Backlog",
+      "dependencies": [],
+      "dependency_urls": [],
+      "parent": null,
+      "labels": [
+        "goodwill-plan",
+        "type:epic",
+        "phase:governance",
+        "priority:P0",
+        "scope:weekend",
+        "state:backlog",
+        "gate:human"
+      ]
+    },
+    {
+      "id": "E-GOV",
+      "number": 4,
+      "url": "https://github.com/joconne8/sprinthack-nd-2026/issues/4",
+      "title": "[E-GOV] Requirements, business constraints and frozen contracts",
+      "kind": "epic",
+      "phase": "Governance",
+      "priority": "P0",
+      "scope": "weekend",
+      "lane": "Human workstream owner (unassigned)",
+      "human_gate": true,
+      "initial_workflow": "Backlog",
+      "dependencies": [],
+      "dependency_urls": [],
+      "parent": null,
+      "labels": [
+        "goodwill-plan",
+        "type:epic",
+        "phase:governance",
+        "priority:P0",
+        "scope:weekend",
+        "state:backlog",
+        "gate:human"
+      ]
+    },
+    {
+      "id": "E-ING",
+      "number": 2,
+      "url": "https://github.com/joconne8/sprinthack-nd-2026/issues/2",
+      "title": "[E-ING] Authorized report acquisition and Upright-style demonstration",
+      "kind": "epic",
+      "phase": "Phase 1 — Ingestion",
+      "priority": "P0",
+      "scope": "weekend",
+      "lane": "Human workstream owner (unassigned)",
+      "human_gate": true,
+      "initial_workflow": "Backlog",
+      "dependencies": [],
+      "dependency_urls": [],
+      "parent": null,
+      "labels": [
+        "goodwill-plan",
+        "type:epic",
+        "phase:1-ingestion",
+        "priority:P0",
+        "scope:weekend",
+        "state:backlog",
+        "gate:human"
+      ]
+    },
+    {
+      "id": "E-DAT",
+      "number": 8,
+      "url": "https://github.com/joconne8/sprinthack-nd-2026/issues/8",
+      "title": "[E-DAT] Trusted centralized data, reconciliation and deterministic metrics",
+      "kind": "epic",
+      "phase": "Phase 2 — Data",
+      "priority": "P0",
+      "scope": "weekend",
+      "lane": "Human workstream owner (unassigned)",
+      "human_gate": true,
+      "initial_workflow": "Backlog",
+      "dependencies": [],
+      "dependency_urls": [],
+      "parent": null,
+      "labels": [
+        "goodwill-plan",
+        "type:epic",
+        "phase:2-data",
+        "priority:P0",
+        "scope:weekend",
+        "state:backlog",
+        "gate:human"
+      ]
+    },
+    {
+      "id": "E-APP",
+      "number": 6,
+      "url": "https://github.com/joconne8/sprinthack-nd-2026/issues/6",
+      "title": "[E-APP] Dashboard, metric tools and bounded agentic interaction",
+      "kind": "epic",
+      "phase": "Phase 3 — Application",
+      "priority": "P0",
+      "scope": "weekend",
+      "lane": "Human workstream owner (unassigned)",
+      "human_gate": true,
+      "initial_workflow": "Backlog",
+      "dependencies": [],
+      "dependency_urls": [],
+      "parent": null,
+      "labels": [
+        "goodwill-plan",
+        "type:epic",
+        "phase:3-application",
+        "priority:P0",
+        "scope:weekend",
+        "state:backlog",
+        "gate:human"
+      ]
+    },
+    {
+      "id": "E-ENG",
+      "number": 5,
+      "url": "https://github.com/joconne8/sprinthack-nd-2026/issues/5",
+      "title": "[E-ENG] Overnight agent engineering, CI and independent verification",
+      "kind": "epic",
+      "phase": "Engineering",
+      "priority": "P0",
+      "scope": "weekend",
+      "lane": "Human workstream owner (unassigned)",
+      "human_gate": true,
+      "initial_workflow": "Backlog",
+      "dependencies": [],
+      "dependency_urls": [],
+      "parent": null,
+      "labels": [
+        "goodwill-plan",
+        "type:epic",
+        "phase:engineering",
+        "priority:P0",
+        "scope:weekend",
+        "state:backlog",
+        "gate:human"
+      ]
+    },
+    {
+      "id": "E-REL",
+      "number": 3,
+      "url": "https://github.com/joconne8/sprinthack-nd-2026/issues/3",
+      "title": "[E-REL] Demo evidence, financial controls and production continuation",
+      "kind": "epic",
+      "phase": "Rollout",
+      "priority": "P0",
+      "scope": "weekend",
+      "lane": "Human workstream owner (unassigned)",
+      "human_gate": true,
+      "initial_workflow": "Backlog",
+      "dependencies": [],
+      "dependency_urls": [],
+      "parent": null,
+      "labels": [
+        "goodwill-plan",
+        "type:epic",
+        "phase:rollout",
+        "priority:P0",
+        "scope:weekend",
+        "state:backlog",
+        "gate:human"
+      ]
+    },
+    {
+      "id": "GOV-01",
+      "number": 13,
+      "url": "https://github.com/joconne8/sprinthack-nd-2026/issues/13",
+      "title": "Build the stakeholder requirement register and current-state process map",
+      "kind": "task",
+      "phase": "Governance",
+      "priority": "P0",
+      "scope": "weekend",
+      "lane": "Product / discovery",
+      "human_gate": true,
+      "initial_workflow": "Backlog",
+      "dependencies": [],
+      "dependency_urls": [],
+      "parent": "https://github.com/joconne8/sprinthack-nd-2026/issues/4",
+      "labels": [
+        "goodwill-plan",
+        "type:task",
+        "phase:governance",
+        "priority:P0",
+        "scope:weekend",
+        "state:backlog",
+        "gate:human"
+      ]
+    },
+    {
+      "id": "GOV-02",
+      "number": 11,
+      "url": "https://github.com/joconne8/sprinthack-nd-2026/issues/11",
+      "title": "Freeze weekend scope, metric dictionary and demo truthfulness rules",
+      "kind": "task",
+      "phase": "Governance",
+      "priority": "P0",
+      "scope": "weekend",
+      "lane": "Product / metric owner",
+      "human_gate": true,
+      "initial_workflow": "Blocked",
+      "dependencies": [
+        "GOV-01"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/13"
+      ],
+      "parent": "https://github.com/joconne8/sprinthack-nd-2026/issues/4",
+      "labels": [
+        "goodwill-plan",
+        "type:task",
+        "phase:governance",
+        "priority:P0",
+        "scope:weekend",
+        "state:blocked",
+        "gate:human"
+      ]
+    },
+    {
+      "id": "GOV-03",
+      "number": 15,
+      "url": "https://github.com/joconne8/sprinthack-nd-2026/issues/15",
+      "title": "Publish frozen acquisition, import, metric and agent-tool contracts",
+      "kind": "task",
+      "phase": "Governance",
+      "priority": "P0",
+      "scope": "weekend",
+      "lane": "Contract owner",
+      "human_gate": true,
+      "initial_workflow": "Blocked",
+      "dependencies": [
+        "GOV-02"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/11"
+      ],
+      "parent": "https://github.com/joconne8/sprinthack-nd-2026/issues/4",
+      "labels": [
+        "goodwill-plan",
+        "type:task",
+        "phase:governance",
+        "priority:P0",
+        "scope:weekend",
+        "state:blocked",
+        "gate:human"
+      ]
+    },
+    {
+      "id": "GOV-04",
+      "number": 9,
+      "url": "https://github.com/joconne8/sprinthack-nd-2026/issues/9",
+      "title": "Document architecture decisions and live-access security gates",
+      "kind": "task",
+      "phase": "Governance",
+      "priority": "P0",
+      "scope": "weekend",
+      "lane": "Architecture / IT liaison",
+      "human_gate": true,
+      "initial_workflow": "Blocked",
+      "dependencies": [
+        "GOV-01",
+        "GOV-02"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/13",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/11"
+      ],
+      "parent": "https://github.com/joconne8/sprinthack-nd-2026/issues/4",
+      "labels": [
+        "goodwill-plan",
+        "type:task",
+        "phase:governance",
+        "priority:P0",
+        "scope:weekend",
+        "state:blocked",
+        "gate:human"
+      ]
+    },
+    {
+      "id": "ING-01",
+      "number": 14,
+      "url": "https://github.com/joconne8/sprinthack-nd-2026/issues/14",
+      "title": "Inspect supplied slides and build a functional Upright-style HTML replica",
+      "kind": "task",
+      "phase": "Phase 1 — Ingestion",
+      "priority": "P0",
+      "scope": "weekend",
+      "lane": "Replica / browser agent",
+      "human_gate": false,
+      "initial_workflow": "Blocked",
+      "dependencies": [
+        "GOV-03",
+        "ENG-01"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/15",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/33"
+      ],
+      "parent": "https://github.com/joconne8/sprinthack-nd-2026/issues/2",
+      "labels": [
+        "goodwill-plan",
+        "type:task",
+        "phase:1-ingestion",
+        "priority:P0",
+        "scope:weekend",
+        "state:blocked"
+      ]
+    },
+    {
+      "id": "ING-02",
+      "number": 16,
+      "url": "https://github.com/joconne8/sprinthack-nd-2026/issues/16",
+      "title": "Implement parameterized deterministic browser replay against the replica",
+      "kind": "task",
+      "phase": "Phase 1 — Ingestion",
+      "priority": "P0",
+      "scope": "weekend",
+      "lane": "Replica / browser agent",
+      "human_gate": false,
+      "initial_workflow": "Blocked",
+      "dependencies": [
+        "ING-01",
+        "GOV-03"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/14",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/15"
+      ],
+      "parent": "https://github.com/joconne8/sprinthack-nd-2026/issues/2",
+      "labels": [
+        "goodwill-plan",
+        "type:task",
+        "phase:1-ingestion",
+        "priority:P0",
+        "scope:weekend",
+        "state:blocked"
+      ]
+    },
+    {
+      "id": "ING-03",
+      "number": 17,
+      "url": "https://github.com/joconne8/sprinthack-nd-2026/issues/17",
+      "title": "Verify acquired files and connect browser artifacts to import intake",
+      "kind": "task",
+      "phase": "Phase 1 — Ingestion",
+      "priority": "P0",
+      "scope": "weekend",
+      "lane": "Acquisition / integration agent",
+      "human_gate": false,
+      "initial_workflow": "Blocked",
+      "dependencies": [
+        "ING-02",
+        "DAT-02",
+        "GOV-03"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/16",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/22",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/15"
+      ],
+      "parent": "https://github.com/joconne8/sprinthack-nd-2026/issues/2",
+      "labels": [
+        "goodwill-plan",
+        "type:task",
+        "phase:1-ingestion",
+        "priority:P0",
+        "scope:weekend",
+        "state:blocked"
+      ]
+    },
+    {
+      "id": "ING-04",
+      "number": 10,
+      "url": "https://github.com/joconne8/sprinthack-nd-2026/issues/10",
+      "title": "Add bounded retries, run state, manual fallback and scheduler design",
+      "kind": "task",
+      "phase": "Phase 1 — Ingestion",
+      "priority": "P1",
+      "scope": "weekend",
+      "lane": "Acquisition agent",
+      "human_gate": false,
+      "initial_workflow": "Blocked",
+      "dependencies": [
+        "ING-03",
+        "DAT-08"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/17",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/20"
+      ],
+      "parent": "https://github.com/joconne8/sprinthack-nd-2026/issues/2",
+      "labels": [
+        "goodwill-plan",
+        "type:task",
+        "phase:1-ingestion",
+        "priority:P1",
+        "scope:weekend",
+        "state:blocked"
+      ]
+    },
+    {
+      "id": "ING-05",
+      "number": 12,
+      "url": "https://github.com/joconne8/sprinthack-nd-2026/issues/12",
+      "title": "Map nine sources to shared acquisition classes and source-specific adapters",
+      "kind": "task",
+      "phase": "Phase 1 — Ingestion",
+      "priority": "P1",
+      "scope": "pilot",
+      "lane": "Integration / source owner liaison",
+      "human_gate": true,
+      "initial_workflow": "Blocked",
+      "dependencies": [
+        "GOV-01",
+        "GOV-03"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/13",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/15"
+      ],
+      "parent": "https://github.com/joconne8/sprinthack-nd-2026/issues/2",
+      "labels": [
+        "goodwill-plan",
+        "type:task",
+        "phase:1-ingestion",
+        "priority:P1",
+        "scope:pilot",
+        "state:blocked",
+        "gate:human"
+      ]
+    },
+    {
+      "id": "ING-06",
+      "number": 18,
+      "url": "https://github.com/joconne8/sprinthack-nd-2026/issues/18",
+      "title": "Evaluate Jev behind an optional browser decision-provider interface",
+      "kind": "task",
+      "phase": "Phase 1 — Ingestion",
+      "priority": "P2",
+      "scope": "stretch",
+      "lane": "Browser experiment agent",
+      "human_gate": true,
+      "initial_workflow": "Blocked",
+      "dependencies": [
+        "ING-02",
+        "GOV-04"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/16",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/9"
+      ],
+      "parent": "https://github.com/joconne8/sprinthack-nd-2026/issues/2",
+      "labels": [
+        "goodwill-plan",
+        "type:task",
+        "phase:1-ingestion",
+        "priority:P2",
+        "scope:stretch",
+        "state:blocked",
+        "gate:human"
+      ]
+    },
+    {
+      "id": "ING-07",
+      "number": 28,
+      "url": "https://github.com/joconne8/sprinthack-nd-2026/issues/28",
+      "title": "Design a reviewed macro-capture and skill-repair workflow",
+      "kind": "task",
+      "phase": "Phase 1 — Ingestion",
+      "priority": "P2",
+      "scope": "pilot",
+      "lane": "Browser tooling / product",
+      "human_gate": true,
+      "initial_workflow": "Blocked",
+      "dependencies": [
+        "ING-02",
+        "ING-05",
+        "GOV-04"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/16",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/12",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/9"
+      ],
+      "parent": "https://github.com/joconne8/sprinthack-nd-2026/issues/2",
+      "labels": [
+        "goodwill-plan",
+        "type:task",
+        "phase:1-ingestion",
+        "priority:P2",
+        "scope:pilot",
+        "state:blocked",
+        "gate:human"
+      ]
+    },
+    {
+      "id": "DAT-01",
+      "number": 25,
+      "url": "https://github.com/joconne8/sprinthack-nd-2026/issues/25",
+      "title": "Validate and integrate the existing expanded synthetic-data PR without duplicating it",
+      "kind": "task",
+      "phase": "Phase 2 — Data",
+      "priority": "P0",
+      "scope": "weekend",
+      "lane": "Data QA / human integrator",
+      "human_gate": true,
+      "initial_workflow": "Blocked",
+      "dependencies": [
+        "GOV-02"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/11"
+      ],
+      "parent": "https://github.com/joconne8/sprinthack-nd-2026/issues/8",
+      "labels": [
+        "goodwill-plan",
+        "type:task",
+        "phase:2-data",
+        "priority:P0",
+        "scope:weekend",
+        "state:blocked",
+        "gate:human"
+      ]
+    },
+    {
+      "id": "DAT-02",
+      "number": 22,
+      "url": "https://github.com/joconne8/sprinthack-nd-2026/issues/22",
+      "title": "Implement immutable raw archive, import-batch schema and row lineage",
+      "kind": "task",
+      "phase": "Phase 2 — Data",
+      "priority": "P0",
+      "scope": "weekend",
+      "lane": "Data pipeline agent",
+      "human_gate": false,
+      "initial_workflow": "Blocked",
+      "dependencies": [
+        "GOV-03",
+        "ENG-01"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/15",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/33"
+      ],
+      "parent": "https://github.com/joconne8/sprinthack-nd-2026/issues/8",
+      "labels": [
+        "goodwill-plan",
+        "type:task",
+        "phase:2-data",
+        "priority:P0",
+        "scope:weekend",
+        "state:blocked"
+      ]
+    },
+    {
+      "id": "DAT-03",
+      "number": 27,
+      "url": "https://github.com/joconne8/sprinthack-nd-2026/issues/27",
+      "title": "Build typed parsers and normalization for the scoped platform exports",
+      "kind": "task",
+      "phase": "Phase 2 — Data",
+      "priority": "P0",
+      "scope": "weekend",
+      "lane": "Data pipeline agent",
+      "human_gate": false,
+      "initial_workflow": "Blocked",
+      "dependencies": [
+        "DAT-01",
+        "DAT-02"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/25",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/22"
+      ],
+      "parent": "https://github.com/joconne8/sprinthack-nd-2026/issues/8",
+      "labels": [
+        "goodwill-plan",
+        "type:task",
+        "phase:2-data",
+        "priority:P0",
+        "scope:weekend",
+        "state:blocked"
+      ]
+    },
+    {
+      "id": "DAT-04",
+      "number": 19,
+      "url": "https://github.com/joconne8/sprinthack-nd-2026/issues/19",
+      "title": "Implement file and record idempotency, overlapping exports and corrections",
+      "kind": "task",
+      "phase": "Phase 2 — Data",
+      "priority": "P0",
+      "scope": "weekend",
+      "lane": "Data pipeline agent",
+      "human_gate": false,
+      "initial_workflow": "Blocked",
+      "dependencies": [
+        "DAT-03"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/27"
+      ],
+      "parent": "https://github.com/joconne8/sprinthack-nd-2026/issues/8",
+      "labels": [
+        "goodwill-plan",
+        "type:task",
+        "phase:2-data",
+        "priority:P0",
+        "scope:weekend",
+        "state:blocked"
+      ]
+    },
+    {
+      "id": "DAT-05",
+      "number": 26,
+      "url": "https://github.com/joconne8/sprinthack-nd-2026/issues/26",
+      "title": "Implement source-to-curated reconciliation and a recoverable exception queue",
+      "kind": "task",
+      "phase": "Phase 2 — Data",
+      "priority": "P0",
+      "scope": "weekend",
+      "lane": "Data controls agent",
+      "human_gate": false,
+      "initial_workflow": "Blocked",
+      "dependencies": [
+        "DAT-03",
+        "DAT-04"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/27",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/19"
+      ],
+      "parent": "https://github.com/joconne8/sprinthack-nd-2026/issues/8",
+      "labels": [
+        "goodwill-plan",
+        "type:task",
+        "phase:2-data",
+        "priority:P0",
+        "scope:weekend",
+        "state:blocked"
+      ]
+    },
+    {
+      "id": "DAT-06",
+      "number": 23,
+      "url": "https://github.com/joconne8/sprinthack-nd-2026/issues/23",
+      "title": "Build deterministic SQL metric marts and a versioned metric API",
+      "kind": "task",
+      "phase": "Phase 2 — Data",
+      "priority": "P0",
+      "scope": "weekend",
+      "lane": "Data metrics agent",
+      "human_gate": false,
+      "initial_workflow": "Blocked",
+      "dependencies": [
+        "DAT-05",
+        "GOV-03"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/26",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/15"
+      ],
+      "parent": "https://github.com/joconne8/sprinthack-nd-2026/issues/8",
+      "labels": [
+        "goodwill-plan",
+        "type:task",
+        "phase:2-data",
+        "priority:P0",
+        "scope:weekend",
+        "state:blocked"
+      ]
+    },
+    {
+      "id": "DAT-07",
+      "number": 24,
+      "url": "https://github.com/joconne8/sprinthack-nd-2026/issues/24",
+      "title": "Implement listing-event and complete inventory-snapshot metrics",
+      "kind": "task",
+      "phase": "Phase 2 — Data",
+      "priority": "P1",
+      "scope": "weekend",
+      "lane": "Data metrics agent",
+      "human_gate": false,
+      "initial_workflow": "Blocked",
+      "dependencies": [
+        "DAT-01",
+        "DAT-02",
+        "DAT-06"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/25",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/22",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/23"
+      ],
+      "parent": "https://github.com/joconne8/sprinthack-nd-2026/issues/8",
+      "labels": [
+        "goodwill-plan",
+        "type:task",
+        "phase:2-data",
+        "priority:P1",
+        "scope:weekend",
+        "state:blocked"
+      ]
+    },
+    {
+      "id": "DAT-08",
+      "number": 20,
+      "url": "https://github.com/joconne8/sprinthack-nd-2026/issues/20",
+      "title": "Implement source completeness, freshness and last-good publication controls",
+      "kind": "task",
+      "phase": "Phase 2 — Data",
+      "priority": "P0",
+      "scope": "weekend",
+      "lane": "Data controls agent",
+      "human_gate": false,
+      "initial_workflow": "Blocked",
+      "dependencies": [
+        "DAT-05",
+        "DAT-06"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/26",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/23"
+      ],
+      "parent": "https://github.com/joconne8/sprinthack-nd-2026/issues/8",
+      "labels": [
+        "goodwill-plan",
+        "type:task",
+        "phase:2-data",
+        "priority:P0",
+        "scope:weekend",
+        "state:blocked"
+      ]
+    },
+    {
+      "id": "DAT-09",
+      "number": 21,
+      "url": "https://github.com/joconne8/sprinthack-nd-2026/issues/21",
+      "title": "Design DAG dependencies, controlled backfills and refresh performance checks",
+      "kind": "task",
+      "phase": "Phase 2 — Data",
+      "priority": "P1",
+      "scope": "pilot",
+      "lane": "Data operations",
+      "human_gate": false,
+      "initial_workflow": "Blocked",
+      "dependencies": [
+        "DAT-08",
+        "GOV-04"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/20",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/9"
+      ],
+      "parent": "https://github.com/joconne8/sprinthack-nd-2026/issues/8",
+      "labels": [
+        "goodwill-plan",
+        "type:task",
+        "phase:2-data",
+        "priority:P1",
+        "scope:pilot",
+        "state:blocked"
+      ]
+    },
+    {
+      "id": "APP-01",
+      "number": 38,
+      "url": "https://github.com/joconne8/sprinthack-nd-2026/issues/38",
+      "title": "Build Amanda’s intake and reporting-status operations view",
+      "kind": "task",
+      "phase": "Phase 3 — Application",
+      "priority": "P0",
+      "scope": "weekend",
+      "lane": "Frontend agent",
+      "human_gate": false,
+      "initial_workflow": "Blocked",
+      "dependencies": [
+        "GOV-03",
+        "ENG-01"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/15",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/33"
+      ],
+      "parent": "https://github.com/joconne8/sprinthack-nd-2026/issues/6",
+      "labels": [
+        "goodwill-plan",
+        "type:task",
+        "phase:3-application",
+        "priority:P0",
+        "scope:weekend",
+        "state:blocked"
+      ]
+    },
+    {
+      "id": "APP-02",
+      "number": 32,
+      "url": "https://github.com/joconne8/sprinthack-nd-2026/issues/32",
+      "title": "Build focused daily pulse and executive metric views",
+      "kind": "task",
+      "phase": "Phase 3 — Application",
+      "priority": "P0",
+      "scope": "weekend",
+      "lane": "Frontend agent",
+      "human_gate": false,
+      "initial_workflow": "Blocked",
+      "dependencies": [
+        "GOV-03",
+        "ENG-01"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/15",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/33"
+      ],
+      "parent": "https://github.com/joconne8/sprinthack-nd-2026/issues/6",
+      "labels": [
+        "goodwill-plan",
+        "type:task",
+        "phase:3-application",
+        "priority:P0",
+        "scope:weekend",
+        "state:blocked"
+      ]
+    },
+    {
+      "id": "APP-03",
+      "number": 34,
+      "url": "https://github.com/joconne8/sprinthack-nd-2026/issues/34",
+      "title": "Implement source-row drilldown and Excel-compatible summary exports",
+      "kind": "task",
+      "phase": "Phase 3 — Application",
+      "priority": "P1",
+      "scope": "weekend",
+      "lane": "Frontend / export agent",
+      "human_gate": false,
+      "initial_workflow": "Blocked",
+      "dependencies": [
+        "DAT-06",
+        "DAT-08",
+        "APP-02"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/23",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/20",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/32"
+      ],
+      "parent": "https://github.com/joconne8/sprinthack-nd-2026/issues/6",
+      "labels": [
+        "goodwill-plan",
+        "type:task",
+        "phase:3-application",
+        "priority:P1",
+        "scope:weekend",
+        "state:blocked"
+      ]
+    },
+    {
+      "id": "APP-04",
+      "number": 35,
+      "url": "https://github.com/joconne8/sprinthack-nd-2026/issues/35",
+      "title": "Expose permission-scoped read-only metric and provenance tools",
+      "kind": "task",
+      "phase": "Phase 3 — Application",
+      "priority": "P1",
+      "scope": "stretch",
+      "lane": "Agent tools backend",
+      "human_gate": false,
+      "initial_workflow": "Blocked",
+      "dependencies": [
+        "DAT-06",
+        "DAT-08",
+        "GOV-04"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/23",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/20",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/9"
+      ],
+      "parent": "https://github.com/joconne8/sprinthack-nd-2026/issues/6",
+      "labels": [
+        "goodwill-plan",
+        "type:task",
+        "phase:3-application",
+        "priority:P1",
+        "scope:stretch",
+        "state:blocked"
+      ]
+    },
+    {
+      "id": "APP-05",
+      "number": 29,
+      "url": "https://github.com/joconne8/sprinthack-nd-2026/issues/29",
+      "title": "Build a grounded assistant with definitions, coverage and uncertainty",
+      "kind": "task",
+      "phase": "Phase 3 — Application",
+      "priority": "P2",
+      "scope": "stretch",
+      "lane": "Assistant agent",
+      "human_gate": true,
+      "initial_workflow": "Blocked",
+      "dependencies": [
+        "APP-04",
+        "GOV-04"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/35",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/9"
+      ],
+      "parent": "https://github.com/joconne8/sprinthack-nd-2026/issues/6",
+      "labels": [
+        "goodwill-plan",
+        "type:task",
+        "phase:3-application",
+        "priority:P2",
+        "scope:stretch",
+        "state:blocked",
+        "gate:human"
+      ]
+    },
+    {
+      "id": "APP-06",
+      "number": 31,
+      "url": "https://github.com/joconne8/sprinthack-nd-2026/issues/31",
+      "title": "Evaluate prompt injection, permissions and unsupported agent questions",
+      "kind": "task",
+      "phase": "Phase 3 — Application",
+      "priority": "P1",
+      "scope": "stretch",
+      "lane": "Independent AI QA",
+      "human_gate": false,
+      "initial_workflow": "Blocked",
+      "dependencies": [
+        "APP-04",
+        "APP-05",
+        "ENG-04"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/35",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/29",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/42"
+      ],
+      "parent": "https://github.com/joconne8/sprinthack-nd-2026/issues/6",
+      "labels": [
+        "goodwill-plan",
+        "type:task",
+        "phase:3-application",
+        "priority:P1",
+        "scope:stretch",
+        "state:blocked"
+      ]
+    },
+    {
+      "id": "APP-07",
+      "number": 36,
+      "url": "https://github.com/joconne8/sprinthack-nd-2026/issues/36",
+      "title": "Validate Microsoft Copilot and existing Power BI production integration",
+      "kind": "task",
+      "phase": "Phase 3 — Application",
+      "priority": "P2",
+      "scope": "pilot",
+      "lane": "Microsoft / IT liaison",
+      "human_gate": true,
+      "initial_workflow": "Blocked",
+      "dependencies": [
+        "GOV-04",
+        "APP-04"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/9",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/35"
+      ],
+      "parent": "https://github.com/joconne8/sprinthack-nd-2026/issues/6",
+      "labels": [
+        "goodwill-plan",
+        "type:task",
+        "phase:3-application",
+        "priority:P2",
+        "scope:pilot",
+        "state:blocked",
+        "gate:human"
+      ]
+    },
+    {
+      "id": "ENG-01",
+      "number": 33,
+      "url": "https://github.com/joconne8/sprinthack-nd-2026/issues/33",
+      "title": "Scaffold one application stack and establish a passing smoke-test baseline",
+      "kind": "task",
+      "phase": "Engineering",
+      "priority": "P0",
+      "scope": "weekend",
+      "lane": "Platform agent",
+      "human_gate": false,
+      "initial_workflow": "Blocked",
+      "dependencies": [
+        "GOV-02",
+        "GOV-04"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/11",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/9"
+      ],
+      "parent": "https://github.com/joconne8/sprinthack-nd-2026/issues/5",
+      "labels": [
+        "goodwill-plan",
+        "type:task",
+        "phase:engineering",
+        "priority:P0",
+        "scope:weekend",
+        "state:blocked"
+      ]
+    },
+    {
+      "id": "ENG-02",
+      "number": 37,
+      "url": "https://github.com/joconne8/sprinthack-nd-2026/issues/37",
+      "title": "Establish agent claim protocol, file lanes and shared context ownership",
+      "kind": "task",
+      "phase": "Engineering",
+      "priority": "P0",
+      "scope": "weekend",
+      "lane": "Human orchestrator",
+      "human_gate": true,
+      "initial_workflow": "Blocked",
+      "dependencies": [
+        "GOV-03"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/15"
+      ],
+      "parent": "https://github.com/joconne8/sprinthack-nd-2026/issues/5",
+      "labels": [
+        "goodwill-plan",
+        "type:task",
+        "phase:engineering",
+        "priority:P0",
+        "scope:weekend",
+        "state:blocked",
+        "gate:human"
+      ]
+    },
+    {
+      "id": "ENG-03",
+      "number": 30,
+      "url": "https://github.com/joconne8/sprinthack-nd-2026/issues/30",
+      "title": "Configure bounded overnight runners with budgets, timeouts and reporting",
+      "kind": "task",
+      "phase": "Engineering",
+      "priority": "P1",
+      "scope": "weekend",
+      "lane": "Human orchestrator / tooling",
+      "human_gate": true,
+      "initial_workflow": "Blocked",
+      "dependencies": [
+        "ENG-01",
+        "ENG-02",
+        "ING-03",
+        "DAT-06"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/33",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/37",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/17",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/23"
+      ],
+      "parent": "https://github.com/joconne8/sprinthack-nd-2026/issues/5",
+      "labels": [
+        "goodwill-plan",
+        "type:task",
+        "phase:engineering",
+        "priority:P1",
+        "scope:weekend",
+        "state:blocked",
+        "gate:human"
+      ]
+    },
+    {
+      "id": "ENG-04",
+      "number": 42,
+      "url": "https://github.com/joconne8/sprinthack-nd-2026/issues/42",
+      "title": "Build independent expected totals and end-to-end acceptance tests",
+      "kind": "task",
+      "phase": "Engineering",
+      "priority": "P0",
+      "scope": "weekend",
+      "lane": "Independent QA agent",
+      "human_gate": false,
+      "initial_workflow": "Blocked",
+      "dependencies": [
+        "GOV-03",
+        "DAT-01",
+        "ENG-01"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/15",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/25",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/33"
+      ],
+      "parent": "https://github.com/joconne8/sprinthack-nd-2026/issues/5",
+      "labels": [
+        "goodwill-plan",
+        "type:task",
+        "phase:engineering",
+        "priority:P0",
+        "scope:weekend",
+        "state:blocked"
+      ]
+    },
+    {
+      "id": "ENG-05",
+      "number": 44,
+      "url": "https://github.com/joconne8/sprinthack-nd-2026/issues/44",
+      "title": "Run morning human review, dependency-order integration and feature freeze",
+      "kind": "task",
+      "phase": "Engineering",
+      "priority": "P0",
+      "scope": "weekend",
+      "lane": "Human integrator",
+      "human_gate": true,
+      "initial_workflow": "Blocked",
+      "dependencies": [
+        "ENG-04",
+        "ING-03",
+        "DAT-08",
+        "APP-01",
+        "APP-02"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/42",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/17",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/20",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/38",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/32"
+      ],
+      "parent": "https://github.com/joconne8/sprinthack-nd-2026/issues/5",
+      "labels": [
+        "goodwill-plan",
+        "type:task",
+        "phase:engineering",
+        "priority:P0",
+        "scope:weekend",
+        "state:blocked",
+        "gate:human"
+      ]
+    },
+    {
+      "id": "REL-01",
+      "number": 43,
+      "url": "https://github.com/joconne8/sprinthack-nd-2026/issues/43",
+      "title": "Prepare source-backed pitch, recorded demo and honest submission evidence",
+      "kind": "task",
+      "phase": "Rollout",
+      "priority": "P0",
+      "scope": "weekend",
+      "lane": "Pitch / demo owner",
+      "human_gate": true,
+      "initial_workflow": "Blocked",
+      "dependencies": [
+        "ENG-05",
+        "APP-03"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/44",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/34"
+      ],
+      "parent": "https://github.com/joconne8/sprinthack-nd-2026/issues/3",
+      "labels": [
+        "goodwill-plan",
+        "type:task",
+        "phase:rollout",
+        "priority:P0",
+        "scope:weekend",
+        "state:blocked",
+        "gate:human"
+      ]
+    },
+    {
+      "id": "REL-02",
+      "number": 41,
+      "url": "https://github.com/joconne8/sprinthack-nd-2026/issues/41",
+      "title": "Plan workbook parity and gated Business Central journal/invoice validation",
+      "kind": "task",
+      "phase": "Rollout",
+      "priority": "P2",
+      "scope": "pilot",
+      "lane": "Finance / accounting liaison",
+      "human_gate": true,
+      "initial_workflow": "Blocked",
+      "dependencies": [
+        "GOV-01",
+        "DAT-05",
+        "GOV-04"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/13",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/26",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/9"
+      ],
+      "parent": "https://github.com/joconne8/sprinthack-nd-2026/issues/3",
+      "labels": [
+        "goodwill-plan",
+        "type:task",
+        "phase:rollout",
+        "priority:P2",
+        "scope:pilot",
+        "state:blocked",
+        "gate:human"
+      ]
+    },
+    {
+      "id": "REL-03",
+      "number": 40,
+      "url": "https://github.com/joconne8/sprinthack-nd-2026/issues/40",
+      "title": "Measure operational baseline and conservative ROI without invented savings",
+      "kind": "task",
+      "phase": "Rollout",
+      "priority": "P1",
+      "scope": "pilot",
+      "lane": "Product / operations analyst",
+      "human_gate": true,
+      "initial_workflow": "Blocked",
+      "dependencies": [
+        "GOV-01",
+        "ING-04"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/13",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/10"
+      ],
+      "parent": "https://github.com/joconne8/sprinthack-nd-2026/issues/3",
+      "labels": [
+        "goodwill-plan",
+        "type:task",
+        "phase:rollout",
+        "priority:P1",
+        "scope:pilot",
+        "state:blocked",
+        "gate:human"
+      ]
+    },
+    {
+      "id": "REL-04",
+      "number": 39,
+      "url": "https://github.com/joconne8/sprinthack-nd-2026/issues/39",
+      "title": "Define the approved pilot, support ownership and staged handover gates",
+      "kind": "task",
+      "phase": "Rollout",
+      "priority": "P2",
+      "scope": "pilot",
+      "lane": "Product / IT / operations",
+      "human_gate": true,
+      "initial_workflow": "Blocked",
+      "dependencies": [
+        "GOV-04",
+        "ING-05",
+        "DAT-09",
+        "APP-07",
+        "REL-03"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/9",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/12",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/21",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/36",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/40"
+      ],
+      "parent": "https://github.com/joconne8/sprinthack-nd-2026/issues/3",
+      "labels": [
+        "goodwill-plan",
+        "type:task",
+        "phase:rollout",
+        "priority:P2",
+        "scope:pilot",
+        "state:blocked",
+        "gate:human"
+      ]
+    }
+  ]
+}
