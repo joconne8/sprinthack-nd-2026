@@ -8,6 +8,8 @@ This repo is organized around the current recommended build: Goodwill Michiana e
 
 ## Planning
 
+- [Project management PRDs](ProjectManagement/README.md) - subtask PRDs for acquisition, data pipeline, dashboard, AI, QA/demo, and production roadmap.
+
 - [Recommendation](planning/recommendation.md) - original challenge recommendation and decision logic.
 - [Agentic build plan](planning/agentic-build-plan.md) - weekend execution plan for parallel coding-agent work.
 
@@ -24,3 +26,4 @@ This repo is organized around the current recommended build: Goodwill Michiana e
 - [Beacon Credential Watch PRD](archive/prds/01-beacon-credentialing.md)
 - [DIU Metadata Hiding PRD](archive/prds/03-diu-metadata-hiding.md)
 - [DIU RF Spectrum Analysis PRD](archive/prds/04-diu-rf-spectrum.md)
+
