@@ -13,6 +13,8 @@ This repo is organized around the current recommended build: Goodwill Michiana e
 
 ## Notes
 
+- [Goodwill problem discussion](notes/goodwill-problem-discussion.md) - October 3 Granola transcript, brainstorming assumptions, and metric clarification.
+
 - [Kickoff notes](notes/kickoff-notes.md) - sponsor notes from the hackathon kickoff.
 - [Horacio call questions](notes/calls/horacio-call.md) - questions for Replit/tooling office hours.
 
