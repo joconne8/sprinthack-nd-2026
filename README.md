@@ -1,8 +1,24 @@
 # SprintHack@ND 2026
 
-- [00-recommendation.md](00-recommendation.md) - SprintHack recommendation
-- [01-prd-beacon-credentialing.md](01-prd-beacon-credentialing.md) - Beacon Health Credential Watch
-- [02-prd-goodwill-ops-reports.md](02-prd-goodwill-ops-reports.md) - Goodwill Michiana Report Automator
-- [03-prd-diu-metadata-hiding.md](03-prd-diu-metadata-hiding.md) - DIU Resilient Comms, Metadata Hiding
-- [04-prd-diu-rf-spectrum.md](04-prd-diu-rf-spectrum.md) - DIU RF Spectrum Analysis with LLMs
-- [05-agentic-build-plan.md](05-agentic-build-plan.md) - Agentic Engineering Plan for SprintHack
+This repo is organized around the current recommended build: Goodwill Michiana e-commerce reporting.
+
+## Current build
+
+- [Goodwill PRD](goodwill/PRD.md) - active product scope, data contract, validation requirements, and demo script.
+
+## Planning
+
+- [Recommendation](planning/recommendation.md) - original challenge recommendation and decision logic.
+- [Agentic build plan](planning/agentic-build-plan.md) - weekend execution plan for parallel coding-agent work.
+
+## Notes
+
+- [Kickoff notes](notes/kickoff-notes.md) - sponsor notes from the hackathon kickoff.
+- [Horacio call questions](notes/calls/horacio-call.md) - questions for Replit/tooling office hours.
+
+## Archive
+
+- [Original Goodwill backup PRD](archive/superseded/02-prd-goodwill-ops-reports-backup.md) - superseded by the active Goodwill PRD.
+- [Beacon Credential Watch PRD](archive/prds/01-beacon-credentialing.md)
+- [DIU Metadata Hiding PRD](archive/prds/03-diu-metadata-hiding.md)
+- [DIU RF Spectrum Analysis PRD](archive/prds/04-diu-rf-spectrum.md)
