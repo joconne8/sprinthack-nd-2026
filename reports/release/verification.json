@@ -1,0 +1,6 @@
+{
+  "state": "VERIFICATION_PENDING",
+  "accepted": false,
+  "passed": false,
+  "note": "Run scripts/release/verify_release.py after committing this release snapshot; pending is not a passing result."
+}

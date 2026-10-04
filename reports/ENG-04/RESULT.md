@@ -1,3 +1,5 @@
+> Current release update: the dashboard placeholder has been replaced with actual browser acceptance. See ../release/verification.json and ../integration/human-review-checklist.md for current checks and pending human review. The report below preserves the earlier session.
+
 # Task result
 
 Task / issue / source requirement IDs: ENG-04 / #42 (parent E-ENG #5) / PLAN §8 independent

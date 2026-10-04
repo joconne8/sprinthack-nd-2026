@@ -1,3 +1,5 @@
+> Current release update: the dashboard placeholder has been replaced with actual browser acceptance. See ../release/verification.json and ../integration/human-review-checklist.md for current checks and pending human review. The report below preserves the earlier session.
+
 # ENG-05 result
 
 Current acquisition/dashboard handoff: `peyton/acquisition-dashboard`, base `7f94806`.

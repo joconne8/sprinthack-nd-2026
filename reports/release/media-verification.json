@@ -1,0 +1,25 @@
+{
+  "mp4_full_decode": {
+    "command": [
+      "/private/tmp/goodwill-release-tools/ffmpeg",
+      "-v",
+      "error",
+      "-i",
+      "presentation/demo.mp4",
+      "-f",
+      "null",
+      "-"
+    ],
+    "exit_code": 0
+  },
+  "slides": "../../presentation/slides-verification.json",
+  "pptx_regenerated_after_render": true,
+  "manual_visual_review": [
+    "01",
+    "03",
+    "05",
+    "06",
+    "09"
+  ],
+  "second_physical_device_verified": false
+}

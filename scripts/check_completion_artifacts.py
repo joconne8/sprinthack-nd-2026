@@ -4,7 +4,9 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-TASKS = ['GOV-01', 'GOV-02', 'GOV-03', 'GOV-04', 'ENG-01', 'ENG-02', 'ENG-05'] + [f'DAT-{n:02d}' for n in range(1, 10)]
+TASKS = (['GOV-01', 'GOV-02', 'GOV-03', 'GOV-04', 'ENG-01', 'ENG-02', 'ENG-03', 'ENG-04', 'ENG-05', 'REL-01']
+         + [f'DAT-{n:02d}' for n in range(1, 10)]
+         + [f'ING-{n:02d}' for n in range(2, 6)] + [f'APP-{n:02d}' for n in range(1, 4)])
 
 
 def main():

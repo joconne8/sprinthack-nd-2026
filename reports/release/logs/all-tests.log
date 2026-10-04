@@ -1,0 +1,231 @@
+127.0.0.1 - - [04/Oct/2026 01:04:15] "POST /api/reports HTTP/1.1" 202 -
+127.0.0.1 - - [04/Oct/2026 01:04:15] "GET /api/reports/b467bd26073a497d8e8daec03f509111 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:15] "GET /api/reports/b467bd26073a497d8e8daec03f509111 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:15] "GET /api/reports/b467bd26073a497d8e8daec03f509111 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:15] "GET /api/reports/b467bd26073a497d8e8daec03f509111 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:15] "GET /api/reports/b467bd26073a497d8e8daec03f509111 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:15] "GET /api/reports/b467bd26073a497d8e8daec03f509111 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:15] "GET /api/reports/b467bd26073a497d8e8daec03f509111 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:15] "GET /api/reports/b467bd26073a497d8e8daec03f509111 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:15] "GET /api/reports/b467bd26073a497d8e8daec03f509111/download HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:15] "GET /api/reports/b467bd26073a497d8e8daec03f509111/manifest HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:16] "POST /api/reports HTTP/1.1" 202 -
+127.0.0.1 - - [04/Oct/2026 01:04:16] "GET /api/reports/2753526fec3a40d4a55345c12d0b4ba3 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:16] "GET /api/reports/2753526fec3a40d4a55345c12d0b4ba3 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:16] "GET /api/reports/2753526fec3a40d4a55345c12d0b4ba3 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:16] "GET /api/reports/2753526fec3a40d4a55345c12d0b4ba3 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:16] "GET /api/reports/2753526fec3a40d4a55345c12d0b4ba3 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:16] "GET /api/reports/2753526fec3a40d4a55345c12d0b4ba3 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:16] "GET /api/reports/2753526fec3a40d4a55345c12d0b4ba3 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:16] "GET /api/reports/2753526fec3a40d4a55345c12d0b4ba3 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:16] "GET /api/reports/2753526fec3a40d4a55345c12d0b4ba3/download HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:16] "GET /api/reports/2753526fec3a40d4a55345c12d0b4ba3/manifest HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:16] "POST /api/reports HTTP/1.1" 202 -
+127.0.0.1 - - [04/Oct/2026 01:04:17] "GET /api/reports/187c7d854bed49a9afd1604afcd67b14 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:17] "GET /api/reports/187c7d854bed49a9afd1604afcd67b14 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:17] "GET /api/reports/187c7d854bed49a9afd1604afcd67b14 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:17] "GET /api/reports/187c7d854bed49a9afd1604afcd67b14 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:17] "GET /api/reports/187c7d854bed49a9afd1604afcd67b14 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:17] "GET /api/reports/187c7d854bed49a9afd1604afcd67b14 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:17] "GET /api/reports/187c7d854bed49a9afd1604afcd67b14 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:17] "GET /api/reports/187c7d854bed49a9afd1604afcd67b14 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:17] "GET /api/reports/187c7d854bed49a9afd1604afcd67b14/download HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:17] "GET /api/reports/187c7d854bed49a9afd1604afcd67b14/manifest HTTP/1.1" 200 -
+test_dashboard_shows_api_values (acceptance.test_demo_sequence.DemoSequenceTests) ... 127.0.0.1 - - [04/Oct/2026 01:04:21] "GET /upright HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:21] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:21] "GET /static/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:22] "GET /upright/reports HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:22] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:22] "GET /static/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:22] "GET /upright/reports/paid-orders HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:22] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:22] "GET /static/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:22] "GET /api/reports HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:22] "POST /api/reports HTTP/1.1" 202 -
+127.0.0.1 - - [04/Oct/2026 01:04:22] "GET /api/reports HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:22] "GET /api/reports/7e4bd59ccbb44f2db6d84db460597752 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:22] "GET /api/reports HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:22] "GET /api/reports/7e4bd59ccbb44f2db6d84db460597752 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:22] "GET /api/reports HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:23] "GET /api/reports/7e4bd59ccbb44f2db6d84db460597752 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:23] "GET /api/reports HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:23] "GET /api/reports/7e4bd59ccbb44f2db6d84db460597752 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:23] "GET /api/reports HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:23] "GET /api/reports/7e4bd59ccbb44f2db6d84db460597752/download HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:23] "GET /api/reports/7e4bd59ccbb44f2db6d84db460597752/manifest HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:24] "GET /upright HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:24] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:24] "GET /static/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:24] "GET /upright/reports HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:24] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:24] "GET /static/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:24] "GET /upright/reports/paid-orders HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:24] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:24] "GET /static/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:24] "GET /api/reports HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:24] "POST /api/reports HTTP/1.1" 202 -
+127.0.0.1 - - [04/Oct/2026 01:04:24] "GET /api/reports HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:24] "GET /api/reports/8fad592d9e2e48ed8a065a4a6fa6a911 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:24] "GET /api/reports HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:24] "GET /api/reports/8fad592d9e2e48ed8a065a4a6fa6a911 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:24] "GET /api/reports HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:25] "GET /api/reports/8fad592d9e2e48ed8a065a4a6fa6a911 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:25] "GET /api/reports HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:25] "GET /api/reports/8fad592d9e2e48ed8a065a4a6fa6a911 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:25] "GET /api/reports HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:25] "GET /api/reports/8fad592d9e2e48ed8a065a4a6fa6a911/download HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:25] "GET /api/reports/8fad592d9e2e48ed8a065a4a6fa6a911/manifest HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:26] "GET /upright HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:26] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:26] "GET /static/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:26] "GET /upright/reports HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:26] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:26] "GET /static/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:26] "GET /upright/reports/paid-orders HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:26] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:26] "GET /static/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:26] "GET /api/reports HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:26] "POST /api/reports HTTP/1.1" 202 -
+127.0.0.1 - - [04/Oct/2026 01:04:26] "GET /api/reports HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:26] "GET /api/reports/d51590d7f6884eeca141867d548e59d0 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:26] "GET /api/reports HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:27] "GET /api/reports/d51590d7f6884eeca141867d548e59d0 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:27] "GET /api/reports HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:27] "GET /api/reports/d51590d7f6884eeca141867d548e59d0 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:27] "GET /api/reports HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:27] "GET /api/reports/d51590d7f6884eeca141867d548e59d0 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:27] "GET /api/reports HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:27] "GET /api/reports/d51590d7f6884eeca141867d548e59d0/download HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:27] "GET /api/reports/d51590d7f6884eeca141867d548e59d0/manifest HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:28] "GET /upright HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:28] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:28] "GET /static/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:28] "GET /upright/reports HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:28] "GET /static/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:28] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:28] "GET /upright/reports/paid-orders HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:28] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:28] "GET /static/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:28] "GET /api/reports HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:28] "POST /api/reports HTTP/1.1" 401 -
+127.0.0.1 - - [04/Oct/2026 01:04:29] "GET /upright HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:29] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:29] "GET /static/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:29] "GET /upright/reports HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:29] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:29] "GET /static/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:29] "GET /upright/reports/paid-orders HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:29] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:29] "GET /static/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:29] "GET /api/reports HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:29] "POST /api/reports HTTP/1.1" 202 -
+127.0.0.1 - - [04/Oct/2026 01:04:29] "GET /api/reports HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:29] "GET /api/reports/2710e37dd0184fb5b14c071813dbc8d4 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:29] "GET /api/reports HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:30] "GET /api/reports/2710e37dd0184fb5b14c071813dbc8d4 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:30] "GET /api/reports HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:30] "GET /api/reports/2710e37dd0184fb5b14c071813dbc8d4 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:30] "GET /api/reports HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:30] "GET /api/reports/2710e37dd0184fb5b14c071813dbc8d4 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:30] "GET /api/reports HTTP/1.1" 200 -
+ok
+test_downloaded_bytes_are_exactly_what_was_imported_and_archived (acceptance.test_demo_sequence.DemoSequenceTests) ... ok
+test_export_matches_evidence (acceptance.test_demo_sequence.DemoSequenceTests) ... skipped 'Export is deferred from P0 (planning/development.md); not silently waived'
+test_first_day_import_matches_qa_raw_sum (acceptance.test_demo_sequence.DemoSequenceTests) ... ok
+test_overlapping_two_day_file_adds_only_new_day (acceptance.test_demo_sequence.DemoSequenceTests) ... ok
+test_portal_manifest_total_agrees_with_qa_and_api (acceptance.test_demo_sequence.DemoSequenceTests) ... ok
+test_replay_changes_nothing (acceptance.test_demo_sequence.DemoSequenceTests) ... ok
+test_buyer_namespaces_and_store_keys (acceptance.test_independent_ledger.IndependentLedgerTests) ... ok
+test_exact_duplicate_within_file_counts_once (acceptance.test_independent_ledger.IndependentLedgerTests) ... ok
+test_inclusive_edges_and_alternate_dates (acceptance.test_independent_ledger.IndependentLedgerTests) ... ok
+test_invalid_money_keeps_last_good (acceptance.test_independent_ledger.IndependentLedgerTests) ... ok
+test_invalid_rows_fail_without_publishing (acceptance.test_independent_ledger.IndependentLedgerTests) ... ok
+test_missing_buyer_keeps_sales_but_hides_customers (acceptance.test_independent_ledger.IndependentLedgerTests) ... ok
+test_missing_day_is_unknown_not_zero (acceptance.test_independent_ledger.IndependentLedgerTests) ... ok
+test_missing_sources_are_unavailable (acceptance.test_independent_ledger.IndependentLedgerTests) ... ok
+test_other_timezone_report_only_partially_covers_day (acceptance.test_independent_ledger.IndependentLedgerTests) ... ok
+test_refunds_replay_overlap_and_correction (acceptance.test_independent_ledger.IndependentLedgerTests) ... ok
+test_row_outside_requested_period_blocks_file (acceptance.test_independent_ledger.IndependentLedgerTests) ... ok
+test_duplicate_counting_is_caught (acceptance.test_seeded_defects.SeededDefectTests) ... ok
+test_false_complete_coverage_is_caught (acceptance.test_seeded_defects.SeededDefectTests) ... ok
+test_guessed_store_mapping_is_caught (acceptance.test_seeded_defects.SeededDefectTests) ... ok
+test_unmodified_implementation_passes_the_same_checks (acceptance.test_seeded_defects.SeededDefectTests) ... ok
+test_wrong_formula_ignoring_refunds_is_caught (acceptance.test_seeded_defects.SeededDefectTests) ... ok
+test_wrong_formula_including_shipping_tax_fees_is_caught (acceptance.test_seeded_defects.SeededDefectTests) ... ok
+test_wrong_formula_using_source_net_field_is_caught (acceptance.test_seeded_defects.SeededDefectTests) ... ok
+test_busy_period_and_failed_verification_fail_closed (test_acquisition_controller.ControllerTests) ... ok
+test_intake_filters_survive_and_tampered_archive_cannot_submit (test_acquisition_controller.ControllerTests) ... ok
+test_restart_retains_finished_history_and_marks_interrupted_run (test_acquisition_controller.ControllerTests) ... ok
+test_transient_retry_then_one_import_and_auth_no_retry (test_acquisition_controller.ControllerTests) ... ok
+test_verified_handoff_replay_and_persisted_last_success (test_acquisition_controller.ControllerTests) ... ok
+test_fixture_replay_invalid_and_incremental_day (test_adapters_and_backfill.AdapterTests) ... ok
+test_full_acquisition_record_adapter_preserves_exact_bytes (test_adapters_and_backfill.AdapterTests) ... ok
+test_late_refund_backfill_and_reprocessing_are_reproducible (test_adapters_and_backfill.AdapterTests) ... ok
+test_design_only_tools_cannot_request_sql_or_operational_actions (test_contract_boundaries.ContractBoundaryTests) ... ok
+test_generated_types_and_schemas_match_the_structural_source (test_contract_boundaries.ContractBoundaryTests) ... ok
+test_invalid_ui_metrics_cannot_validate (test_contract_boundaries.ContractBoundaryTests) ... ok
+test_queries_reject_calendar_errors_unknown_fields_and_unbounded_evidence (test_contract_boundaries.ContractBoundaryTests) ... ok
+test_write_envelopes_require_explicit_boolean_and_human_note (test_contract_boundaries.ContractBoundaryTests) ... ok
+test_mock_examples_use_actual_response_schemas_and_states (test_contract_examples.ExampleContractTests) ... ok
+test_bad_input_and_cross_origin_write_fail_safely (test_http_integration.HttpTests) ... ok
+test_failed_batch_exposes_rejected_rows (test_http_integration.HttpTests) ... ok
+test_invalid_request_cannot_create_batch_or_ignore_filters (test_http_integration.HttpTests) ... ok
+test_json_upload_metric_evidence_and_exact_raw_download (test_http_integration.HttpTests) ... ok
+test_real_portal_download_alternate_dates_and_failure (test_http_integration.HttpTests) ... 127.0.0.1 - - [04/Oct/2026 01:04:35] "POST /api/reports HTTP/1.1" 202 -
+127.0.0.1 - - [04/Oct/2026 01:04:35] "GET /api/reports/4ddbcd7014c54174afe3aa78a0749721 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:35] "GET /api/reports/4ddbcd7014c54174afe3aa78a0749721 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:35] "GET /api/reports/4ddbcd7014c54174afe3aa78a0749721 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:35] "GET /api/reports/4ddbcd7014c54174afe3aa78a0749721 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:35] "GET /api/reports/4ddbcd7014c54174afe3aa78a0749721 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:35] "GET /api/reports/4ddbcd7014c54174afe3aa78a0749721 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:35] "GET /api/reports/4ddbcd7014c54174afe3aa78a0749721 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:35] "GET /api/reports/4ddbcd7014c54174afe3aa78a0749721 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:35] "GET /api/reports/4ddbcd7014c54174afe3aa78a0749721/download HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:35] "GET /api/reports/4ddbcd7014c54174afe3aa78a0749721/manifest HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:35] "POST /api/reports HTTP/1.1" 202 -
+127.0.0.1 - - [04/Oct/2026 01:04:36] "GET /api/reports/fc7f04042628450d99834ee22ccba1af HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:36] "GET /api/reports/fc7f04042628450d99834ee22ccba1af HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:36] "GET /api/reports/fc7f04042628450d99834ee22ccba1af HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:36] "GET /api/reports/fc7f04042628450d99834ee22ccba1af HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:36] "GET /api/reports/fc7f04042628450d99834ee22ccba1af HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:36] "GET /api/reports/fc7f04042628450d99834ee22ccba1af HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:36] "GET /api/reports/fc7f04042628450d99834ee22ccba1af HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:36] "GET /api/reports/fc7f04042628450d99834ee22ccba1af HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:36] "GET /api/reports/fc7f04042628450d99834ee22ccba1af/download HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:36] "GET /api/reports/fc7f04042628450d99834ee22ccba1af/manifest HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:04:36] "POST /api/reports HTTP/1.1" 401 -
+ok
+test_resolution_is_audited_and_staging_keeps_original_input (test_http_integration.HttpTests) ... ok
+test_event_dates_and_one_snapshot_fixed_controls (test_inventory.InventoryTests) ... ok
+test_missing_snapshot_and_uncovered_period_unavailable (test_inventory.InventoryTests) ... ok
+test_partial_snapshot_rejected_even_with_rehashed_manifest (test_inventory.InventoryTests) ... ok
+test_repeat_pack_no_duplicates_and_row_lineage (test_inventory.InventoryTests) ... ok
+test_all_seeded_money_id_date_negatives (test_pipeline.PipelineTests) ... ok
+test_archive_tampering_detected (test_pipeline.PipelineTests) ... ok
+test_contracts_reject_wrong_shapes_and_false_availability (test_pipeline.PipelineTests) ... ok
+test_different_grains_cannot_double_count_one_source (test_pipeline.PipelineTests) ... ok
+test_disjoint_reconciliation_counts_and_money_for_overlap (test_pipeline.PipelineTests) ... ok
+test_duplicate_and_overlap_noop (test_pipeline.PipelineTests) ... ok
+test_duplicate_in_file_and_conflicting_in_file (test_pipeline.PipelineTests) ... ok
+test_expense_or_settlement_report_does_not_become_revenue (test_pipeline.PipelineTests) ... ok
+test_explicit_correction_preserves_historical_evidence (test_pipeline.PipelineTests) ... ok
+test_filtered_report_cannot_claim_complete_coverage (test_pipeline.PipelineTests) ... ok
+test_fixed_ledger_excludes_source_net_shipping_tax_fees (test_pipeline.PipelineTests) ... ok
+test_incremental_day_does_not_change_original_period (test_pipeline.PipelineTests) ... ok
+test_malformed_rows_block_entire_publication (test_pipeline.PipelineTests) ... ok
+test_missing_store_and_buyer_remain_visible (test_pipeline.PipelineTests) ... ok
+test_mixed_platform_customers_not_summed (test_pipeline.PipelineTests) ... ok
+test_overlap_with_new_rows (test_pipeline.PipelineTests) ... ok
+test_ragged_row_quarantined_with_original_extra_columns (test_pipeline.PipelineTests) ... ok
+test_raw_bytes_and_source_row_lineage (test_pipeline.PipelineTests) ... ok
+test_real_august_fixture_expected_totals (test_pipeline.PipelineTests) ... ok
+test_reporting_midnight_converts_source_timestamp (test_pipeline.PipelineTests) ... ok
+test_unexpected_failure_rolls_back_whole_database_transaction (test_pipeline.PipelineTests) ... ok
+test_unmapped_store_not_assigned_to_known_store (test_pipeline.PipelineTests) ... ok
+test_wrong_period_checksum_header_and_control_failure (test_pipeline.PipelineTests) ... ok
+test_zero_verified_rows_distinct_from_missing_source (test_pipeline.PipelineTests) ... ok
+
+----------------------------------------------------------------------
+Ran 73 tests in 24.142s
+
+OK (skipped=1)

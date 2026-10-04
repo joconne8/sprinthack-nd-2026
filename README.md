@@ -1,5 +1,14 @@
 # SprintHack@ND 2026
 
+> **October 4 final release:** the synthetic acquired-file → verified data → connected dashboard slice is implemented.
+> Final browser/clean-checkout results: [release evidence](reports/release/verification.json).
+> Presentation: [HTML deck](presentation/index.html), [PowerPoint](presentation/goodwill-progress.pptx),
+> [PDF](presentation/goodwill-progress.pdf), [narrated video](presentation/demo.mp4), [demo guide](DEMO.md).
+> Peyton authorized remaining QA/release completion and overnight checks until October 5, 10 a.m. Eastern.
+> Pending human review/merge and organizer upload; P1 exports, assistant and live/pilot work stay deferred.
+> Original ownership/task histories below remain for traceability; they do not describe current runtime readiness.
+
+
 This repo is organized around the current recommended build: Goodwill Michiana e-commerce reporting.
 
 ## Current build

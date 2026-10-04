@@ -1,0 +1,150 @@
+[
+  {
+    "eyebrow": "GOODWILL MICHIANA \u00b7 SPRINT HACK 2026",
+    "title": "From report chasing\nto numbers you can trust.",
+    "body": "A working synthetic prototype connects collection, verification and leadership visibility.",
+    "kind": "title",
+    "notes": "Open with the operational problem, not a feature list. This is a simulated portal and fictional data, not a live Upright integration."
+  },
+  {
+    "eyebrow": "01 \u00b7 THE PROBLEM",
+    "title": "Visibility starts\nwith getting the data.",
+    "body": "Amanda retrieves and consolidates recurring reports. Debie needs dependable numbers for decisions. Manual handoffs sit between them.",
+    "cards": [
+      {
+        "title": "Repeated retrieval",
+        "text": "The same reports, different dates. Portal exports and spreadsheet handoffs."
+      },
+      {
+        "title": "Trust before speed",
+        "text": "Overlapping sources, refunds, missing fields and stale periods need controls."
+      },
+      {
+        "title": "Decisions downstream",
+        "text": "A dashboard helps only when the data behind it can be explained."
+      }
+    ],
+    "source": "AMANDA / FOLLOWUP \u00b7 PLAN \u00a7\u00a73\u20135",
+    "notes": "Interview estimates describe the pain. We have not measured hours saved or promised production performance."
+  },
+  {
+    "eyebrow": "02 \u00b7 WHAT WE DEVELOPED",
+    "title": "One connected workflow.\nThree clear layers.",
+    "kind": "flow",
+    "body": "Acquire a report. Verify the exact file. Make the published result accessible.",
+    "cards": [
+      {
+        "title": "Acquire",
+        "text": "Versioned replay\nDates and report parameters\nReal synthetic CSV download"
+      },
+      {
+        "title": "Verify",
+        "text": "Checksum + raw archive\nParse, reconcile, deduplicate\nPreserve last-good publication"
+      },
+      {
+        "title": "Understand",
+        "text": "API-backed dashboard\nCoverage and definitions\nPinned source evidence"
+      }
+    ],
+    "source": "WICKS / JACK \u00b7 PLAN \u00a7\u00a74\u20136",
+    "notes": "The replica is reused from the team contribution. Our shared Python/SQLite pipeline and dashboard connect its exact output to evidence."
+  },
+  {
+    "eyebrow": "03 \u00b7 STATE OF PLAY",
+    "title": "Built, connected\nand exercised.",
+    "body": "The frozen P0 path is implemented. The presentation stays explicit about what is working and what remains a roadmap.",
+    "cards": [
+      {
+        "title": "Working now",
+        "text": "Report collection + manual upload\nVerification + real import\nOperations + leadership + drilldown"
+      },
+      {
+        "title": "Trust controls",
+        "text": "Replay and overlap no-ops\nExplicit approved corrections\nRejected rows and safe failure"
+      },
+      {
+        "title": "Clearly deferred",
+        "text": "Nine live connections\nProduction Copilot / Jev\nBusiness Central posting"
+      }
+    ],
+    "source": "ING-02\u201305 / DAT-02\u201308 / APP-01\u201303",
+    "notes": "The project is a synthetic P0 prototype. Human release acceptance and external submission are recorded separately from test results."
+  },
+  {
+    "eyebrow": "04 \u00b7 DATA-CONNECTED DASHBOARD",
+    "title": "A number with\nits scope and evidence.",
+    "body": "September 30 \u00b7 128 acquired rows \u00b7 $7,127.78 demo net sales.\nItem sales minus refunds; shipping, tax and fees excluded.",
+    "kind": "image",
+    "image": "recording/leadership.png",
+    "source": "Actual recording \u00b7 original report \u2192 verified import \u2192 API",
+    "notes": "Show the real API-backed dashboard. Strategic metrics with missing inputs remain unavailable. This example is fictional, not a business result."
+  },
+  {
+    "eyebrow": "05 \u00b7 FOLLOW THE NUMBER",
+    "title": "Keep the proof\nbeside the answer.",
+    "body": "Displayed metric run \u2192 supporting row \u2192 original source fields \u2192 exact CSV checksum and import batch.",
+    "kind": "image",
+    "image": "recording/source.png",
+    "source": "APP-03 \u00b7 unchanged source bytes and pinned evidence",
+    "notes": "The displayed result and evidence share the selected run and date/source scope. The UI does not recalculate revenue or substitute mock values."
+  },
+  {
+    "eyebrow": "06 \u00b7 VERIFY THE CONTROLS",
+    "title": "Test the behavior,\nnot just the happy path.",
+    "body": "Browser acceptance uses Jack mc\u2019s handwritten ledger and a separate raw-CSV reader for acquired files.",
+    "cards": [
+      {
+        "title": "$10.01 \u2192 $10.01",
+        "text": "An identical upload does not double the ledger."
+      },
+      {
+        "title": "$15.76 \u2192 $14.76",
+        "text": "A correction changes publication only after explicit approval."
+      },
+      {
+        "title": "$24.00 / $5.00",
+        "text": "All ledger rows / unknown-store rows. Missing source data stays unavailable."
+      }
+    ],
+    "source": "tests/acceptance \u00b7 fixtures/expected-results/eng04_control_ledger.json",
+    "notes": "These are independent expected amounts, not values copied from the metric API. Existing backend mutation tests and new browser assertions exercise the control rules."
+  },
+  {
+    "eyebrow": "07 \u00b7 WATCH THE WORKING FLOW",
+    "title": "Change dates. Replay.\nFail safely.",
+    "body": "The recorded demo shows the actual local application.\nSynthetic records \u00b7 simulated portal \u00b7 offline synthetic narration.",
+    "kind": "video",
+    "video": "demo.mp4",
+    "source": "Recorded browser run \u00b7 alternate dates without code edits",
+    "notes": "Play the MP4. It includes September 30, October 1\u20132, replay no-op and expired-session recovery ownership. If time is short, show collection and source evidence live."
+  },
+  {
+    "eyebrow": "08 \u00b7 NEXT FOR GOODWILL",
+    "title": "Reuse the tools.\nValidate the live workflow.",
+    "body": "The next step is a supervised, approved source pilot\u2014not nine integrations at once.",
+    "cards": [
+      {
+        "title": "Confirm the source",
+        "text": "Access, real formats, report authority and overlap rules with Goodwill."
+      },
+      {
+        "title": "Fit Microsoft",
+        "text": "Validate workbook/Power BI consumption, tenant policy and identity."
+      },
+      {
+        "title": "Measure and support",
+        "text": "Baseline handling time and reliability. Name owners, rollback and acceptance criteria."
+      }
+    ],
+    "source": "PLAN \u00a7\u00a710\u201312 \u00b7 no measured ROI or live accounting claim",
+    "notes": "The roadmap is conditional on partner approvals. Preserve the current pipeline controls while validating live exports and source meaning."
+  },
+  {
+    "eyebrow": "09 \u00b7 THE RESULT",
+    "title": "Collect the report.\nKeep the proof.\nUnderstand the number.",
+    "body": "The working prototype joins the upstream reporting task to trustworthy visibility.",
+    "kind": "closing",
+    "source": "Synthetic P0 \u00b7 deadline: October 5, 2026, 10:00 a.m. Eastern",
+    "notes": "Close with what was demonstrated. Share the repo, HTML/PDF/PowerPoint slides and MP4. Final human acceptance and the organizer upload remain explicit."
+  }
+]

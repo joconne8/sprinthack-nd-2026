@@ -1,20 +1,13 @@
-# Human review before main integration
+# Human release review
 
-Current review target is `peyton/jackoc-data-completion`, based on main `610035e`.
-Check `completion-status.md`, exact command/log/hash evidence in
-`completion-verification.json`, and the GOV-03/GOV-04 reconciliation decisions.
-Review the request schemas/generated client and the separate pinned browser
-runtime. Confirm original source bytes, unavailable inputs and filtered coverage
-warnings are preserved. Human acceptance remains unrecorded.
+- Review reports/release/verification.json and original fixtures/expected-results/eng04_control_ledger.json.
+- Check real browser card → pinned evidence → original bytes, replay and safe failure.
+- Review presentation/index.html, goodwill-demo.pptx, goodwill-demo.pdf and demo.mp4.
+- Confirm slides reflect stakeholder snapshots and synthetic/local limitations.
+- If available, open the deck/video on the actual presentation computer; second physical device is unverified.
+- Confirm organizer upload destination, size/duration limits and required filenames.
+- Accept the reviewed commit and merge the release PR manually; no acceptance record is invented.
+- Upload the approved repo/demo/slides/video and keep the local recorded backup accessible.
 
-Before final ENG-05 freeze, integrate Landon's actual UI and Jack mc's independent
-ENG-04 evidence, run the complete demo on that reviewed commit, then record the
-acceptance/commit and event/backup decisions. The user authorized implementation
-of these two lanes; this is not acceptance of a missing UI or a live pilot.
-
-Review source/scope/runtime exception, versioned contracts and exact-file tests;
-confirm ownership claims with current issue access; have Jack mc independently
-derive expected controls; wire and test Landon's actual UI; review synthetic
-labels/null/coverage/failure behavior; integrate only the reviewed branch; run
-the complete demo on the integrated commit. See `planning/release-checklist.md`.
-No auto-merge or production deployment is authorized by this report.
+Technical implementation and automated verification can be complete while human acceptance and organizer
+submission remain open. P1 exports, assistant and live/pilot work are explicitly deferred.
