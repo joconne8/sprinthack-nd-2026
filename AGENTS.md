@@ -1,10 +1,11 @@
 # Goodwill agent instructions
 
 ## Mandatory context
-Read planning/project-management/AGENT_CONTEXT.md, planning/project-management/THREE_PHASE_PLAN.md, goodwill/PRD.md, and your assigned GitHub issue including latest comments before editing. Delivery hub: https://github.com/joconne8/sprinthack-nd-2026/issues/7. Full index: planning/project-management/BACKLOG.md.
+Read planning/project-management/DRIVE_SOURCE_REGISTER.md, the primary Drive three-phase solution linked there, its repo snapshot THREE_PHASE_PLAN.md, SOURCE_TRACEABILITY.md, AGENT_CONTEXT.md, current ProjectManagement workstream PRDs and your issue/latest comments. Delivery hub: https://github.com/joconne8/sprinthack-nd-2026/issues/7.
 
-## Precedence and scope
-Current user instructions and the assigned issue/approved decisions take precedence over older planning notes. Shared-context corrections describe the latest planning snapshot. Do not silently rewrite requirements or expand four-view/two-platform scope. Human scope approval is needed before new implementation commitments.
+## Authority and scope
+Current user decisions govern. Primary evidence is the Google Drive stakeholder/mentor material; the Goodwill Three-Phase Solution and Overnight Agent Plan is the implementation synthesis. This card operationalizes those sources. Older goodwill/PRD.md and planning/agentic-build-plan.md are legacy implementation background, NOT governing requirements or automatic scope limits. Preserve corrections in the three-phase plan where earlier source notes contain unsupported technical claims. Freeze new scope/contracts through GOV-02/GOV-03.
+P0 is one acquired-file→verified/reconciled→dashboard vertical slice, with coverage/exceptions/source evidence, alternate dates and safe failure. Four richer metric views, second source, exports and assistant are optional P1 under PLAN §7. Never treat old four-view/two-platform limits as current client requirements. The source-led GOV-02 scope packet must be accepted before agents implement.
 
 ## Claim before work
 Use one issue/task per bounded agent session. Post operator/session, branch/worktree, base commit, allowed files, expected tests, deadline, spend cap and dependencies checked. Re-read comments before acting; claims are not atomic, so the human orchestrator arbitrates conflicts. Do not impersonate other agents or assume an unassigned role means ownership.
