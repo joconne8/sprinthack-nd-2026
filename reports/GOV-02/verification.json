@@ -1,0 +1,101 @@
+{
+  "task_id": "GOV-02",
+  "state": "READY_FOR_REVIEW",
+  "source_requirement_ids": [
+    "REQ-ING-01",
+    "REQ-ING-04",
+    "REQ-DAT-03",
+    "REQ-DAT-04",
+    "REQ-DAT-05",
+    "REQ-KPI-01",
+    "REQ-KPI-02",
+    "REQ-KPI-03",
+    "REQ-AI-01",
+    "REQ-FIN-01",
+    "REQ-SEC-01"
+  ],
+  "base_commit": "c10da35b2a646d25758804f66147d1b487b37b04",
+  "head_commit": null,
+  "commands": [
+    {
+      "command": "gh issue view 11 --repo joconne8/sprinthack-nd-2026 --json number,title,state,body,comments,labels,assignees",
+      "result": "pass",
+      "log": "Issue #11 read; no comments before claim."
+    },
+    {
+      "command": "Get-Content -Raw ProjectManagement/agent-assignments/tasks/GOV-02.md",
+      "result": "pass",
+      "log": "Task packet read."
+    },
+    {
+      "command": "Get-Content -Raw planning/requirements/register.md and planning/process-map.md",
+      "result": "pass",
+      "log": "GOV-01 artifacts read as dependency input."
+    },
+    {
+      "command": "git status --branch --short",
+      "result": "pass",
+      "log": "Current branch had only pre-existing untracked goodwill-reporting-assistant/."
+    },
+    {
+      "command": "git rev-parse HEAD",
+      "result": "pass",
+      "log": "Base commit c10da35b2a646d25758804f66147d1b487b37b04."
+    },
+    {
+      "command": "git switch -c jackoc/GOV-02-scope-metrics",
+      "result": "pass",
+      "log": "Created GOV-02 task branch."
+    },
+    {
+      "command": "gh issue comment 11 --body <claim>",
+      "result": "pass",
+      "log": "Claim posted to issue #11."
+    },
+    {
+      "command": "git diff --check",
+      "result": "pass",
+      "log": "No whitespace errors reported."
+    },
+    {
+      "command": "Select-String -Path planning/scope.md,planning/metric-dictionary.md,reports/GOV-02/decision-request.md -Pattern P0,P1,P2,Demo net sales,America/New_York,50-55,Business Central,Copilot,Unavailable,REQ-DAT-05,GOV-03",
+      "result": "pass",
+      "log": "Confirmed required scope, metric and negative-decision terms are present."
+    },
+    {
+      "command": "git status --short",
+      "result": "pass",
+      "log": "Reported GOV-02 files as untracked plus pre-existing untracked goodwill-reporting-assistant/."
+    }
+  ],
+  "evidence_paths": [
+    "planning/scope.md",
+    "planning/metric-dictionary.md",
+    "reports/GOV-02/decision-request.md",
+    "reports/GOV-02/RESULT.md"
+  ],
+  "acceptance_checks": [
+    {
+      "check": "Scope derives from Drive plan section 7 and GOV-01, not old four-view/two-platform hard gate.",
+      "result": "pass",
+      "evidence": "planning/scope.md P0/P1/P2 split."
+    },
+    {
+      "check": "Every implemented metric has formula, grain, source authority, inputs and availability.",
+      "result": "pass",
+      "evidence": "planning/metric-dictionary.md P0/P1 metrics."
+    },
+    {
+      "check": "Strategic KPI roadmap marks missing inputs unavailable and avoids invented target.",
+      "result": "pass",
+      "evidence": "planning/metric-dictionary.md strategic roadmap metrics."
+    }
+  ],
+  "limitations": [
+    "GOV-01 remains in review until human acceptance.",
+    "No application/runtime tests were run because this is a governance documentation task.",
+    "No production data, credentials, live vendor access, accounting posting, deployment or external business-system action was used.",
+    "GOV-03 still owns schemas/contracts; DAT-01 still owns fixture validation."
+  ],
+  "human_review_required": true
+}
