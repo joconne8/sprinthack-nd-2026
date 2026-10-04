@@ -120,6 +120,30 @@ SCHEMAS.update({
     "tool-response": {"anyOf": [SCHEMAS["metrics"], SCHEMAS["evidence"], SCHEMAS["error"]]},
 })
 
+ACQUISITION_RUN = obj({
+    'contract_version': VERSION, 'synthetic': SYNTHETIC, 'run_id': TEXT,
+    'source': {'const': 'upright_replica'}, 'report_type': {'const': 'paid_orders'},
+    'start_date': DATE, 'end_date': DATE,
+    'mode': enum('normal', 'delayed', 'session-expired', 'missing-report', 'changed-label', 'timeout'),
+    'requested_at': TEXT, 'finished_at': nullable(TEXT),
+    'status': enum('pending', 'running', 'succeeded', 'needs_human', 'failed_permanent', 'failed_retriable_exhausted'),
+    'stage': enum('pending', 'collecting', 'verifying', 'importing', 'complete', 'failed'),
+    'attempts': array(obj({'n': N, 'type': TEXT, 'ok': B})), 'cause': S, 'owner_role': S,
+    'import_state': enum('not_submitted', 'imported', 'duplicate_noop', 'failed'),
+    'publication_state': enum('not_published', 'published', 'blocked'),
+    'batch_id': nullable(TEXT), 'checksum': nullable(TEXT), 'row_count': nullable(N),
+    'coverage_state': nullable(enum('complete', 'partial', 'unavailable')),
+    'max_attempts': N, 'deadline_seconds': N,
+})
+SCHEMAS.update({
+    'acquisition-request': obj({'start_date': DATE, 'end_date': DATE,
+                               'mode': ACQUISITION_RUN['properties']['mode']}, optional=('mode',)),
+    'acquisition-run': ACQUISITION_RUN,
+    'acquisition-history': obj({'contract_version': VERSION, 'synthetic': SYNTHETIC,
+                                'runtime_available': B, 'runs': array(ACQUISITION_RUN),
+                                'last_success_at': nullable(TEXT), 'schedule': TEXT}),
+})
+
 TYPE_NAMES = {
     "manifest": "NormalizedManifest", "batch": "BatchResponse", "metrics": "MetricResponse",
     "evidence": "EvidenceResponse", "error": "ErrorResponse", "inventory": "InventoryResponse",
@@ -127,6 +151,8 @@ TYPE_NAMES = {
     "resolution-request": "ResolutionRequest", "imports": "ImportsResponse", "staging": "StagingResponse",
     "health": "HealthResponse", "resolution": "ResolutionResponse",
     "tool-request": "ToolRequest", "tool-response": "ToolResponse",
+    'acquisition-request': 'AcquisitionRequest', 'acquisition-run': 'AcquisitionRun',
+    'acquisition-history': 'AcquisitionHistory',
 }
 
 

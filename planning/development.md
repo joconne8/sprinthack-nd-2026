@@ -1,5 +1,44 @@
 # ENG-01 runtime and team quick start
 
+## Acquisition + dashboard takeover
+
+Peyton authorized taking over Hugh/Landon's remaining P0 implementation on
+`peyton/acquisition-dashboard`, based on main `7f94806`. Jack mc retains the
+independent QA lane. The Python app now serves the dashboard and starts its own
+loopback synthetic portal; it is the same API/storage foundation, not a new stack.
+
+```sh
+npm ci --prefix tools/verification --ignore-scripts --no-audit --no-fund
+node tools/verification/node_modules/playwright/cli.js install chromium
+python3 -m goodwill_app serve --port 8000
+```
+
+Open `http://127.0.0.1:8000/`. Report intake collects a synthetic Upright report
+and automatically verifies/imports it. Leadership pulse uses the published API;
+source evidence is pinned to the displayed metric run. The manual CSV+manifest
+upload works without a browser runtime. Unavailable collection is visible.
+An installed Chrome can be supplied with `--chrome-path`; Node executable and
+module directory can be supplied with `--node` and `--node-modules`. Python/API
+still run without npm. `--replica-url` optionally reuses an existing loopback
+replica. Runtime prerequisite: Node >=20 for the pinned Playwright version;
+22.14.0 was tested here. No global installation is performed by this branch.
+
+Developer checks:
+
+```sh
+python3 -m unittest tests.test_acquisition_controller -v
+python3 scripts/verify_dashboard.py --acquisition-only
+python3 scripts/verify_dashboard.py
+python3 -m unittest discover -s tests -v
+```
+
+Browser checks start temporary isolated API/controller/portal instances. Reports
+and screenshots go to `reports/takeover/`. The current independent QA placeholder
+in `tests/acceptance/test_demo_sequence.py` intentionally fails when a dashboard
+directory exists; Jack mc must replace it with his actual UI acceptance. Do not
+silence that failure or describe it as a passed acceptance test. Exports remain
+deferred P1. See `planning/operations/acquisition.md` for bounded run recovery.
+
 Runtime: Python 3.9+ with zoneinfo data. Locally verified on Python 3.9.6/macOS.
 SQLite and HTTP libraries ship with Python; no install, production secrets or
 paid service is needed for the API. CI is configured for Python 3.9/3.12; remote

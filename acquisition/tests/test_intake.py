@@ -88,11 +88,36 @@ class IntakeTests(unittest.TestCase):
         m = man(UP); del m["file_checksum"]
         self.rejects("manifest_incomplete", manifest=m)
 
-    def test_submit_is_idempotent_and_does_not_advance_import_state(self):
+    def test_submit_is_idempotent_and_records_real_import_state(self):
+        from services.data.importer import Pipeline
+        pipeline = Pipeline(self.tmp / 'pipeline')
         r = self.run_intake()
-        _, first = intake.submit(r, man(UP), self.tmp / "out"); _, second = intake.submit(r, man(UP), self.tmp / "out")
+        batch, first = intake.submit(r, pipeline); replay, second = intake.submit(r, pipeline)
         self.assertEqual((first, second), (True, False))
-        self.assertEqual(r["import_state"], "not_submitted")
+        self.assertEqual(r["import_state"], "imported")
+        self.assertEqual(batch['batch_id'], replay['batch_id'])
+        self.assertEqual(batch['file']['checksum'], r['checksum'])
+
+    def test_request_is_idempotent_and_does_not_advance_import_state(self):
+        r = self.run_intake()
+        out, first = intake.write_import_request(r, self.tmp / 'out')
+        replay, second = intake.write_import_request(r, self.tmp / 'out')
+        self.assertEqual((first, second), (True, False))
+        self.assertEqual(out, replay)
+        request = json.loads(out.read_text())
+        self.assertEqual(request['csv_text'].encode('utf-8'), UP.read_bytes())
+        self.assertEqual(request['manifest'], man(UP))
+        self.assertEqual(r['import_state'], 'not_submitted')
+
+    def test_existing_request_does_not_hide_changed_archive(self):
+        r = self.run_intake()
+        intake.write_import_request(r, self.tmp / 'out')
+        artifact = Path(r['artifact_ref'])
+        artifact.chmod(0o600)
+        artifact.write_bytes(b'tampered')
+        with self.assertRaises(intake.IntakeRejected) as error:
+            intake.write_import_request(r, self.tmp / 'out')
+        self.assertEqual(error.exception.code, 'archive_corrupt')
 
 
 if __name__ == "__main__":

@@ -1,9 +1,10 @@
-"""ING-03 draft: verify an acquired report file and register it as an immutable artifact.
+"""Verify a synthetic report, archive exact bytes, then submit to the real importer.
 
 Acquisition success means "a verified file is archived", NOT "metrics published".
 Import/publication is a separate state recorded later by the importer (DAT-02).
-submit() writes a goodwill-v1 import-request (contracts/v1/import-request.schema.json)
-with the exact archived bytes and the original manifest. GOV-03 is READY_FOR_REVIEW, not accepted.
+The original manifest is retained, so filters/controls survive the handoff.
+Acquisition verification, import and publication have separate recorded states.
+write_import_request() preserves the file-based handoff; submit() imports directly.
 """
 import csv
 import hashlib
@@ -12,6 +13,7 @@ import json
 import os
 import shutil
 import stat
+import re
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -63,6 +65,12 @@ def verify(file_path, manifest, requested_start, requested_end, expected_source,
     if (manifest["requested_start_date"], manifest["requested_end_date"]) != (requested_start, requested_end):
         raise IntakeRejected("wrong_period_in_manifest", f"{manifest['requested_start_date']}..{manifest['requested_end_date']}")
     checksum = _sha256(data)
+    if manifest.get('synthetic') is not True or manifest.get('currency') != 'USD':
+        raise IntakeRejected('manifest_not_synthetic_usd', 'Require synthetic USD manifest')
+    if type(manifest['row_count']) is not int or manifest['row_count'] < 0:
+        raise IntakeRejected('invalid_row_count', 'Expected nonnegative integer')
+    if 'byte_size' in manifest and manifest['byte_size'] != len(data):
+        raise IntakeRejected('byte_size_mismatch', 'Manifest differs from downloaded bytes')
     if checksum != manifest["file_checksum"]:
         raise IntakeRejected("checksum_mismatch", f"{checksum} != {manifest['file_checksum']}")
     try:
@@ -73,7 +81,7 @@ def verify(file_path, manifest, requested_start, requested_end, expected_source,
     expected = EXPECTED_HEADERS.get((expected_source, expected_report_type))
     if expected is None:
         raise IntakeRejected("unknown_schema", f"{expected_source}/{expected_report_type}")
-    if rows[0] != expected:
+    if not rows or rows[0] != expected:
         raise IntakeRejected("unexpected_schema", f"header {rows[0]}")
     body = rows[1:]
     if len(body) != manifest["row_count"]:
@@ -110,6 +118,8 @@ def archive(file_path, checksum, archive_root):
 def intake(file_path, manifest, run_id, requested_start, requested_end, expected_source,
            expected_report_type, archive_root, now=None):
     """Verify, archive, and write an acquisition record. State is 'acquired_verified' only."""
+    if not isinstance(run_id, str) or not re.fullmatch(r'[A-Za-z0-9_-]{1,80}', run_id):
+        raise IntakeRejected('run_id_invalid', 'Use a bounded safe run identity')
     facts = verify(file_path, manifest, requested_start, requested_end, expected_source, expected_report_type)
     dest, created = archive(file_path, facts["checksum"], archive_root)
     record = {
@@ -126,6 +136,7 @@ def intake(file_path, manifest, run_id, requested_start, requested_end, expected
         "newly_archived": created,
         "synthetic": manifest["synthetic"],
         "recorded_at": (now or datetime.now(timezone.utc)).isoformat(),
+        "manifest": manifest,
         **facts,
     }
     rec_path = Path(archive_root) / "runs" / f"{run_id}.json"
@@ -136,20 +147,47 @@ def intake(file_path, manifest, run_id, requested_start, requested_end, expected
     return record
 
 
-def submit(record, manifest, outbox):
-    """Write a goodwill-v1 import-request ({csv_text, manifest}) for the importer.
+def _verified_bytes(record):
+    """Recheck the archived artifact before either importer handoff."""
+    if record.get('acquisition_state') != 'acquired_verified' or 'manifest' not in record:
+        raise IntakeRejected('intake_incomplete', 'Use a verified run with original manifest')
+    data = Path(record['artifact_ref']).read_bytes()
+    if _sha256(data) != record['checksum'] or len(data) != record['byte_size']:
+        raise IntakeRejected('archive_corrupt', 'Verified artifact changed before submission')
+    return data
 
-    The payload is the exact archived bytes plus the ORIGINAL portal manifest, as
-    planning/contracts.md prefers. Idempotent per checksum+period. Does not change
-    import_state; the importer (services/data) owns that transition.
-    """
+
+def write_import_request(record, outbox):
+    """Archive → goodwill-v1 request file; publication remains the importer's job."""
+    from services.data.contracts import validate
+    data = _verified_bytes(record)
+    request = {'csv_text': data.decode('utf-8'), 'manifest': record['manifest']}
+    validate('import-request.schema.json', request)
     key = f"{record['checksum']}_{record['requested_start_date']}_{record['requested_end_date']}"
-    out = Path(outbox) / f"{key}.import-request.json"
-    if out.exists():
-        return out, False
-    data = Path(record["artifact_ref"]).read_bytes()
-    if _sha256(data) != record["checksum"]:
-        raise IntakeRejected("archive_corrupt", record["artifact_ref"])
-    out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(json.dumps({"csv_text": data.decode("utf-8"), "manifest": manifest}) + "\n")
-    return out, True
+    destination = Path(outbox) / f'{key}.import-request.json'
+    if destination.exists():
+        if json.loads(destination.read_text()) != request:
+            raise IntakeRejected('handoff_conflict', 'Existing request differs from the verified handoff')
+        return destination, False
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    temporary = destination.with_suffix('.tmp')
+    temporary.write_text(json.dumps(request) + '\n')
+    os.replace(temporary, destination)
+    return destination, True
+
+
+def submit(record, pipeline, allow_corrections=False):
+    """Verified run → real batch. Repeated calls on a delivered run reuse its batch."""
+    data = _verified_bytes(record)
+    if record.get('batch_id'):
+        return pipeline.batch(record['batch_id']), False
+    manifest = dict(record['manifest'], acquisition_run_id=record['run_id'])
+    batch = pipeline.import_bytes(data, manifest, allow_corrections)
+    record['batch_id'] = batch['batch_id']
+    record['import_state'] = batch['status']
+    record['publication_state'] = 'blocked' if batch['status'] == 'failed' else 'published'
+    record_path = Path(record['artifact_ref']).parents[1] / 'runs' / (record['run_id'] + '.json')
+    temporary = record_path.with_suffix('.tmp')
+    temporary.write_text(json.dumps(record, indent=2) + '\n')
+    os.replace(temporary, record_path)
+    return batch, True

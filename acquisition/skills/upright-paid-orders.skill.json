@@ -1,23 +1,95 @@
 {
   "skill_id": "upright-paid-orders-replica",
-  "skill_version": "0.1.0",
-  "status": "draft-unreviewed",
+  "skill_version": "0.2.0",
+  "status": "synthetic-runtime-verified; human review pending",
   "target": "synthetic replica only; not validated against real Upright",
-  "allowed_hosts": ["127.0.0.1", "localhost", "[::1]"],
+  "allowed_hosts": [
+    "127.0.0.1",
+    "localhost",
+    "[::1]"
+  ],
   "source_name": "upright_replica",
   "report_type": "paid_orders",
-  "parameters": ["start_date", "end_date"],
-  "steps": [
-    {"op": "goto", "path": "/upright"},
-    {"op": "click", "role": "link", "name": "Reports", "within": {"role": "navigation", "name": "Upright navigation"}},
-    {"op": "click", "role": "link", "name": "Paid orders"},
-    {"op": "fill", "label": "Start date", "value": "{start_date}"},
-    {"op": "fill", "label": "End date", "value": "{end_date}"},
-    {"op": "click", "role": "button", "name": "Generate report"},
-    {"op": "wait_state", "selector": "#messages", "ready_class": "success", "failed_class": "error"},
-    {"op": "download", "selector": "[data-testid=\"download-{job_id}\"]"}
+  "parameters": [
+    "start_date",
+    "end_date"
   ],
-  "timeouts_ms": {"step": 12000, "total": 60000},
-  "stop_on": ["login_page", "mfa", "captcha", "access_denied", "unexpected_page", "label_changed"],
+  "steps": [
+    {
+      "op": "goto",
+      "path": "/upright"
+    },
+    {
+      "op": "assert",
+      "role": "navigation",
+      "name": "Upright navigation"
+    },
+    {
+      "op": "click",
+      "role": "link",
+      "name": "\u25a5 Reports",
+      "within": {
+        "role": "navigation",
+        "name": "Upright navigation"
+      }
+    },
+    {
+      "op": "click",
+      "role": "link",
+      "name": "Paid orders"
+    },
+    {
+      "op": "assert",
+      "role": "heading",
+      "name": "Paid Order Report"
+    },
+    {
+      "op": "fill",
+      "label": "Start date",
+      "value": "{start_date}"
+    },
+    {
+      "op": "fill",
+      "label": "End date",
+      "value": "{end_date}"
+    },
+    {
+      "op": "select",
+      "label": "Timezone",
+      "value": "America/Indiana/Indianapolis"
+    },
+    {
+      "op": "select",
+      "label": "Payment status",
+      "value": "All"
+    },
+    {
+      "op": "click",
+      "role": "button",
+      "name": "Generate report"
+    },
+    {
+      "op": "wait_state",
+      "selector": "#messages",
+      "ready_class": "success",
+      "failed_class": "error"
+    },
+    {
+      "op": "download",
+      "selector": "[data-testid=\"download-{job_id}\"]"
+    }
+  ],
+  "timeouts_ms": {
+    "step": 5000,
+    "total": 40000
+  },
+  "stop_on": [
+    "login_page",
+    "mfa",
+    "captcha",
+    "access_denied",
+    "unexpected_page",
+    "label_changed"
+  ],
   "secrets": "none stored; this file must never contain credentials, cookies or API keys"
 }

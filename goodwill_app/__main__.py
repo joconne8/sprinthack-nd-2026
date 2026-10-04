@@ -42,6 +42,10 @@ def main():
     inv.add_argument("--fixture-root", default="goodwill/synthetic-data")
     serve = commands.add_parser("serve")
     serve.add_argument("--port", type=int, default=8000)
+    serve.add_argument('--node', help='Node executable for synthetic collection')
+    serve.add_argument('--node-modules', help='Directory containing pinned Playwright')
+    serve.add_argument('--chrome-path', help='Installed Chrome executable (optional)')
+    serve.add_argument('--replica-url', help='Existing loopback replica; otherwise start a local replica')
     commands.add_parser("imports")
     resolve = commands.add_parser("resolve-exception")
     resolve.add_argument("--id", required=True)
@@ -73,14 +77,36 @@ def main():
             result = {"status": "resolved", "synthetic": True}
         elif args.command == "serve":
             from apps.api.server import make_server
-            server = make_server(pipeline, args.port)
-            print(f"Synthetic local API: http://127.0.0.1:{server.server_port}/api/v1/health", flush=True)
+            from acquisition.controller import AcquisitionManager
+            import importlib.util
+            import threading
+            from http.server import ThreadingHTTPServer
+            replica = None
+            if not args.replica_url:
+                path = Path(__file__).resolve().parents[1] / 'data ingestion/server.py'
+                spec = importlib.util.spec_from_file_location('dashboard_replica', path)
+                portal = importlib.util.module_from_spec(spec)
+                spec.loader.exec_module(portal)
+                replica = ThreadingHTTPServer(('127.0.0.1', 0), portal.Handler)
+                threading.Thread(target=replica.serve_forever, daemon=True).start()
+            chrome = args.chrome_path
+            installed_chrome = Path('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome')
+            if not chrome and installed_chrome.is_file():
+                chrome = str(installed_chrome)
+            manager = AcquisitionManager(pipeline, args.replica_url or f'http://127.0.0.1:{replica.server_port}',
+                                         args.node, args.node_modules, chrome)
+            server = make_server(pipeline, args.port, acquisition=manager)
+            print(f"Synthetic Goodwill dashboard: http://127.0.0.1:{server.server_port}/", flush=True)
             try:
                 server.serve_forever()
             except KeyboardInterrupt:
                 pass
             finally:
                 server.server_close()
+                manager.close()
+                if replica:
+                    replica.shutdown()
+                    replica.server_close()
             return 0
         print(json.dumps(result, indent=2))
         return 1 if isinstance(result, dict) and result.get("status") == "failed" else 0

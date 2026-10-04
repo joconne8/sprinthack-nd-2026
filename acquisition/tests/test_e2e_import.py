@@ -20,7 +20,7 @@ class E2E(unittest.TestCase):
 
     def acquire_and_submit(self, path, src, rt, run, start="2026-09-30", end="2026-09-30"):
         rec = intake.intake(path, man(path), run, start, end, src, rt, self.tmp / "arch")
-        out, _ = intake.submit(rec, man(path), self.tmp / "out")
+        out, _ = intake.write_import_request(rec, self.tmp / "out")
         req = json.loads(out.read_text())
         validate("import-request.schema.json", req)
         return rec, req

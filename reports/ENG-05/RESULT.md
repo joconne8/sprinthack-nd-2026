@@ -1,5 +1,12 @@
 # ENG-05 result
 
+Current acquisition/dashboard handoff: `peyton/acquisition-dashboard`, base `7f94806`.
+APP-01/02/03 and ING-02/03/04/05 are delivered for review; see
+[handoff](../takeover/RESULT.md) and [verification](../takeover/verification.json).
+Final integration/freeze remains pending Jack mc independent UI acceptance and
+human review; the full suite retains his one deliberate dashboard placeholder
+failure. Earlier missing-UI descriptions below are historical.
+
 Current completion session: `peyton/jackoc-data-completion`, base `610035e` (PR #52).
 See `../integration/completion-status.md` and `completion-verification.json` for
 reconciled contracts/architecture, strict client/browser runtime verification and

@@ -1,23 +1,25 @@
 {
- "task": "ING-05",
- "commands": [
-  {
-   "cmd": "python3 reports/ING-05/check_source_register.py",
-   "exit": 0,
-   "result": {
-    "cited_requirements": [
-     "REQ-ING-01",
-     "REQ-ING-02",
-     "REQ-ING-03",
-     "REQ-ING-04",
-     "REQ-ING-05"
-    ],
-    "unregistered": [],
-    "broken_relative_links": [],
-    "source_rows": 9,
-    "head": "63a2b6c4149ccd00d61e395e86a4a7cc7ba05cc0"
-   }
-  }
- ],
- "scope": "checks cited requirement IDs exist in planning/requirements/register.md, relative links resolve, nine source rows. Does not validate source facts, external links or owner confirmation."
+  "task": "ING-05",
+  "state": "READY_FOR_REVIEW",
+  "accepted": false,
+  "branch": "peyton/acquisition-dashboard",
+  "base_commit": "7f948064146fee91ef573ea11761fec8bd0ae359",
+  "tested_state": "working tree with exact implementation hashes",
+  "evidence": "../takeover/verification.json",
+  "artifacts": [
+    "reports/ING-05/source-authority-and-overlap.md",
+    "reports/ING-05/RESULT.md",
+    "reports/ING-05/check_source_register.py"
+  ],
+  "owned_checks_passed": true,
+  "full_suite_passed": false,
+  "remaining_acceptance": [
+    "Jack mc independent dashboard acceptance replaces the deliberate placeholder test",
+    "Human integration/review/freeze",
+    "Remote CI unverified"
+  ],
+  "limits": "Developer regression evidence; synthetic replica only; not independent/human acceptance.",
+  "merge_evidence": "../takeover/conflict-resolution/verification.json",
+  "main_handoff_result": "main-handoff-result.md",
+  "main_handoff_verification": "main-handoff-verification.json"
 }

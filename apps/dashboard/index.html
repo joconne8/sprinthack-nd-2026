@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Goodwill · Reporting workspace</title>
+  <link rel="stylesheet" href="/dashboard/style.css">
+  <script type="module" src="/dashboard/src/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <aside class="sidebar">
+    <a class="brand" href="#overview"><span class="brand-mark">g</span><span>goodwill<small>Michiana · reporting</small></span></a>
+    <div class="sidebar-label">WORKSPACE</div>
+    <nav aria-label="Workspace">
+      <a href="#overview" data-view="overview"><span aria-hidden="true">▦</span> Leadership pulse</a>
+      <a href="#operations" data-view="operations"><span aria-hidden="true">⇣</span> Report intake</a>
+      <a href="#evidence" data-view="evidence"><span aria-hidden="true">≡</span> Source evidence</a>
+    </nav>
+    <div class="sidebar-note"><span class="status-dot"></span> Local synthetic demo<p>One verified report.<br>Numbers you can trace.</p></div>
+    <div class="sidebar-footer">Acquire → verify → understand<br><small>No live vendor connection</small></div>
+  </aside>
+  <div class="workspace">
+    <header class="topbar"><span>Reporting workspace <span class="crumb">/ <span id="view-name">Leadership pulse</span></span></span><span class="pill">Synthetic data</span></header>
+    <main id="main" tabindex="-1">
+      <div class="disclosure"><span aria-hidden="true">◉</span> Synthetic demo · simulated portal and fictional records. No production email, accounting posting or live source access.</div>
+      <div id="global-error" class="notice error" role="alert" hidden></div>
+      <section id="overview-view" class="view" aria-labelledby="overview-heading">
+        <div class="page-heading"><div><div class="eyebrow">LEADERSHIP</div><h1 id="overview-heading">A clearer daily pulse.</h1><p>Verified numbers, visible gaps, and a path back to the source.</p></div><a class="button primary" href="#operations">Collect a report <span aria-hidden="true">↗</span></a></div>
+        <form id="filters" class="filter-bar">
+          <div><label for="metric-start">From</label><input id="metric-start" type="date" value="2026-09-30" required></div>
+          <div><label for="metric-end">Through</label><input id="metric-end" type="date" value="2026-09-30" required></div>
+          <div><label for="metric-source">Source</label><select id="metric-source"><option value="upright_replica">Upright · synthetic</option><option value="cash_monkey_replica">Cash Monkey · synthetic upload</option></select></div>
+          <div><label for="metric-platform">Marketplace</label><select id="metric-platform"><option value="">All marketplaces</option><option value="ShopGoodwill">ShopGoodwill</option><option value="eBay">eBay</option><option value="GoodwillFinds">GoodwillFinds</option><option value="Amazon-MF">Amazon-MF</option><option value="GoodwillBooks">GoodwillBooks</option></select></div>
+          <div><label for="metric-store">Originating store</label><select id="metric-store"><option value="">All stores · includes unknown</option><option value="unknown">Unknown / unmapped</option></select></div>
+          <button class="button" type="submit">Apply filters</button>
+        </form>
+        <div class="scope-line"><span id="metric-scope">Reporting days use Eastern Time · USD</span><span id="metric-loading" role="status"></span></div>
+        <div id="freshness-warning" class="notice warning" role="status" hidden></div>
+        <div id="metrics-content" aria-busy="true">
+          <div class="metric-grid" id="primary-metrics"></div>
+          <section class="panel coverage-panel" aria-labelledby="coverage-heading"><div class="section-heading"><h2 id="coverage-heading">Coverage & confidence</h2><span id="coverage-badge" class="badge">Checking</span></div><div id="coverage-details" class="coverage-grid"></div><p id="coverage-note" class="muted"></p></section>
+          <div class="section-heading scorecard-heading"><div><h2>What we can answer today</h2><p class="muted">A missing input stays unavailable. It never becomes a guessed number.</p></div></div>
+          <div id="strategic-metrics" class="scorecard-grid"></div>
+        </div>
+      </section>
+      <section id="operations-view" class="view" hidden aria-labelledby="operations-heading">
+        <div class="page-heading"><div><div class="eyebrow">OPERATIONS</div><h1 id="operations-heading">Get the report. Keep the proof.</h1><p>Collect a synthetic report or upload the original file and its manifest.</p></div><a class="button" href="/replica" target="_blank" rel="noopener">Open simulated portal ↗</a></div>
+        <div class="operations-grid">
+          <section class="panel"><div class="section-heading"><h2>Request a report</h2><span class="badge">Simulated collection</span></div><p class="muted">Upright paid orders · all payment statuses · Eastern source dates. Requested on demand; no scheduled delivery.</p>
+            <form id="collect-form"><div class="form-row"><div><label for="request-start">Report from</label><input id="request-start" type="date" value="2026-09-30" min="2026-01-01" max="2026-12-31" required></div><div><label for="request-end">Report through</label><input id="request-end" type="date" value="2026-09-30" min="2026-01-01" max="2026-12-31" required></div></div>
+              <p class="hint">Choose up to 31 days. Collection stops after two attempts or 90 seconds.</p>
+              <details class="demo-options"><summary>Demo failure scenario</summary><label for="request-mode">Scenario</label><select id="request-mode"><option value="normal">Normal collection</option><option value="session-expired">Expired synthetic session</option><option value="missing-report">Report unavailable</option><option value="changed-label">Changed control label</option><option value="delayed">Delayed report</option><option value="timeout">Timeout</option></select></details>
+              <button id="collect-button" class="button primary" type="submit">Collect & verify report</button>
+            </form><p id="collection-status" class="notice" role="status">Checking collection availability…</p>
+          </section>
+          <section class="panel"><div class="section-heading"><h2>Upload a report</h2><span class="badge">Manual fallback</span></div><p class="muted">Use the exact downloaded synthetic CSV and its matching manifest. Files are verified before publication.</p>
+            <form id="upload-form"><label for="csv-file">Original CSV</label><input id="csv-file" type="file" accept=".csv" required><label for="manifest-file">Matching manifest</label><input id="manifest-file" type="file" accept=".json" required><label class="checkbox"><input id="allow-corrections" type="checkbox"> I reviewed and approve changes to existing records</label><button class="button" id="upload-button" type="submit">Verify & import files</button></form>
+            <p id="upload-status" class="hint" role="status">Local upload only. Production folder/email delivery needs partner approval.</p>
+          </section>
+        </div>
+        <section class="panel"><div class="section-heading"><div><h2>Collection history</h2><p class="muted" id="last-success">No successful collection yet.</p></div><button id="refresh-history" class="button small">Refresh</button></div><div id="run-history" class="table-scroll"></div></section>
+        <section class="panel"><div class="section-heading"><h2>Imports & exceptions</h2><span class="badge">Verification stays separate</span></div><div id="import-history" class="table-scroll"></div><div id="batch-detail" hidden></div></section>
+        <section class="panel"><div class="section-heading"><h2>Source coverage plan</h2><span class="badge">1 collection adapter</span></div><p class="muted">These are report sources, not nine independent revenue streams. Live access, owners and cadence remain unconfirmed.</p><div id="source-map" class="table-scroll"></div></section>
+      </section>
+      <section id="evidence-view" class="view" hidden aria-labelledby="evidence-heading">
+        <div class="page-heading"><div><div class="eyebrow">SOURCE EVIDENCE</div><h1 id="evidence-heading">Follow the number.</h1><p>Supporting rows stay pinned to the metric run you opened.</p></div><a class="button" href="#overview">Back to pulse</a></div>
+        <div id="evidence-empty" class="panel empty">Apply your filters in Leadership pulse, then open the net-sales source rows.</div>
+        <div id="evidence-content" hidden><section class="panel"><div class="section-heading"><h2>Demo net sales · source rows</h2><span id="evidence-scope-total" class="evidence-total"></span></div><p id="evidence-scope" class="muted"></p><p id="evidence-run" class="mono"></p><div class="notice">The total covers the full selection. This table shows one page; its rows are not a separate total.</div><div id="evidence-table" class="table-scroll"></div><div class="pagination"><button id="evidence-prev" class="button small">Previous</button><span id="evidence-page"></span><button id="evidence-next" class="button small">Next</button></div></section><section id="row-detail" class="panel" hidden></section></div>
+      </section>
+      <footer class="page-footer">Goodwill Michiana · Synthetic reporting prototype<span>Financial values come from verified source records.</span></footer>
+    </main>
+  </div>
+</body>
+</html>

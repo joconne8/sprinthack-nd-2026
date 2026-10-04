@@ -87,4 +87,3 @@ Stop and report instead of merging when:
 - The action would merge production-impacting, credential, deployment, accounting, or external-system changes without explicit user authorization for that exact merge.
 
 Do not describe an action as complete unless the command output confirms it.
-

@@ -1,0 +1,76 @@
+test_busy_period_and_failed_verification_fail_closed (tests.test_acquisition_controller.ControllerTests) ... ok
+test_intake_filters_survive_and_tampered_archive_cannot_submit (tests.test_acquisition_controller.ControllerTests) ... ok
+test_restart_retains_finished_history_and_marks_interrupted_run (tests.test_acquisition_controller.ControllerTests) ... ok
+test_transient_retry_then_one_import_and_auth_no_retry (tests.test_acquisition_controller.ControllerTests) ... ok
+test_verified_handoff_replay_and_persisted_last_success (tests.test_acquisition_controller.ControllerTests) ... ok
+test_all_seeded_money_id_date_negatives (tests.test_pipeline.PipelineTests) ... ok
+test_archive_tampering_detected (tests.test_pipeline.PipelineTests) ... ok
+test_contracts_reject_wrong_shapes_and_false_availability (tests.test_pipeline.PipelineTests) ... ok
+test_different_grains_cannot_double_count_one_source (tests.test_pipeline.PipelineTests) ... ok
+test_disjoint_reconciliation_counts_and_money_for_overlap (tests.test_pipeline.PipelineTests) ... ok
+test_duplicate_and_overlap_noop (tests.test_pipeline.PipelineTests) ... ok
+test_duplicate_in_file_and_conflicting_in_file (tests.test_pipeline.PipelineTests) ... ok
+test_expense_or_settlement_report_does_not_become_revenue (tests.test_pipeline.PipelineTests) ... ok
+test_explicit_correction_preserves_historical_evidence (tests.test_pipeline.PipelineTests) ... ok
+test_filtered_report_cannot_claim_complete_coverage (tests.test_pipeline.PipelineTests) ... ok
+test_fixed_ledger_excludes_source_net_shipping_tax_fees (tests.test_pipeline.PipelineTests) ... ok
+test_incremental_day_does_not_change_original_period (tests.test_pipeline.PipelineTests) ... ok
+test_malformed_rows_block_entire_publication (tests.test_pipeline.PipelineTests) ... ok
+test_missing_store_and_buyer_remain_visible (tests.test_pipeline.PipelineTests) ... ok
+test_mixed_platform_customers_not_summed (tests.test_pipeline.PipelineTests) ... ok
+test_overlap_with_new_rows (tests.test_pipeline.PipelineTests) ... ok
+test_ragged_row_quarantined_with_original_extra_columns (tests.test_pipeline.PipelineTests) ... ok
+test_raw_bytes_and_source_row_lineage (tests.test_pipeline.PipelineTests) ... ok
+test_real_august_fixture_expected_totals (tests.test_pipeline.PipelineTests) ... ok
+test_reporting_midnight_converts_source_timestamp (tests.test_pipeline.PipelineTests) ... ok
+test_unexpected_failure_rolls_back_whole_database_transaction (tests.test_pipeline.PipelineTests) ... ok
+test_unmapped_store_not_assigned_to_known_store (tests.test_pipeline.PipelineTests) ... ok
+test_wrong_period_checksum_header_and_control_failure (tests.test_pipeline.PipelineTests) ... ok
+test_zero_verified_rows_distinct_from_missing_source (tests.test_pipeline.PipelineTests) ... ok
+test_fixture_replay_invalid_and_incremental_day (tests.test_adapters_and_backfill.AdapterTests) ... ok
+test_full_acquisition_record_adapter_preserves_exact_bytes (tests.test_adapters_and_backfill.AdapterTests) ... ok
+test_late_refund_backfill_and_reprocessing_are_reproducible (tests.test_adapters_and_backfill.AdapterTests) ... ok
+test_design_only_tools_cannot_request_sql_or_operational_actions (tests.test_contract_boundaries.ContractBoundaryTests) ... ok
+test_generated_types_and_schemas_match_the_structural_source (tests.test_contract_boundaries.ContractBoundaryTests) ... ok
+test_invalid_ui_metrics_cannot_validate (tests.test_contract_boundaries.ContractBoundaryTests) ... ok
+test_queries_reject_calendar_errors_unknown_fields_and_unbounded_evidence (tests.test_contract_boundaries.ContractBoundaryTests) ... ok
+test_write_envelopes_require_explicit_boolean_and_human_note (tests.test_contract_boundaries.ContractBoundaryTests) ... ok
+test_mock_examples_use_actual_response_schemas_and_states (tests.test_contract_examples.ExampleContractTests) ... ok
+test_bad_input_and_cross_origin_write_fail_safely (tests.test_http_integration.HttpTests) ... ok
+test_failed_batch_exposes_rejected_rows (tests.test_http_integration.HttpTests) ... ok
+test_invalid_request_cannot_create_batch_or_ignore_filters (tests.test_http_integration.HttpTests) ... ok
+test_json_upload_metric_evidence_and_exact_raw_download (tests.test_http_integration.HttpTests) ... ok
+test_real_portal_download_alternate_dates_and_failure (tests.test_http_integration.HttpTests) ... 127.0.0.1 - - [04/Oct/2026 00:40:23] "POST /api/reports HTTP/1.1" 202 -
+127.0.0.1 - - [04/Oct/2026 00:40:24] "GET /api/reports/3c8ab9126fad4b84b8182b47871e8949 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 00:40:24] "GET /api/reports/3c8ab9126fad4b84b8182b47871e8949 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 00:40:24] "GET /api/reports/3c8ab9126fad4b84b8182b47871e8949 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 00:40:24] "GET /api/reports/3c8ab9126fad4b84b8182b47871e8949 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 00:40:24] "GET /api/reports/3c8ab9126fad4b84b8182b47871e8949 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 00:40:24] "GET /api/reports/3c8ab9126fad4b84b8182b47871e8949 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 00:40:24] "GET /api/reports/3c8ab9126fad4b84b8182b47871e8949 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 00:40:24] "GET /api/reports/3c8ab9126fad4b84b8182b47871e8949 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 00:40:24] "GET /api/reports/3c8ab9126fad4b84b8182b47871e8949/download HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 00:40:24] "GET /api/reports/3c8ab9126fad4b84b8182b47871e8949/manifest HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 00:40:24] "POST /api/reports HTTP/1.1" 202 -
+127.0.0.1 - - [04/Oct/2026 00:40:24] "GET /api/reports/18ee0ec7ab9a45848a6f8c9184c61739 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 00:40:25] "GET /api/reports/18ee0ec7ab9a45848a6f8c9184c61739 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 00:40:25] "GET /api/reports/18ee0ec7ab9a45848a6f8c9184c61739 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 00:40:25] "GET /api/reports/18ee0ec7ab9a45848a6f8c9184c61739 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 00:40:25] "GET /api/reports/18ee0ec7ab9a45848a6f8c9184c61739 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 00:40:25] "GET /api/reports/18ee0ec7ab9a45848a6f8c9184c61739 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 00:40:25] "GET /api/reports/18ee0ec7ab9a45848a6f8c9184c61739 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 00:40:25] "GET /api/reports/18ee0ec7ab9a45848a6f8c9184c61739 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 00:40:25] "GET /api/reports/18ee0ec7ab9a45848a6f8c9184c61739/download HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 00:40:25] "GET /api/reports/18ee0ec7ab9a45848a6f8c9184c61739/manifest HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 00:40:25] "POST /api/reports HTTP/1.1" 401 -
+ok
+test_resolution_is_audited_and_staging_keeps_original_input (tests.test_http_integration.HttpTests) ... ok
+test_event_dates_and_one_snapshot_fixed_controls (tests.test_inventory.InventoryTests) ... ok
+test_missing_snapshot_and_uncovered_period_unavailable (tests.test_inventory.InventoryTests) ... ok
+test_partial_snapshot_rejected_even_with_rehashed_manifest (tests.test_inventory.InventoryTests) ... ok
+test_repeat_pack_no_duplicates_and_row_lineage (tests.test_inventory.InventoryTests) ... ok
+
+----------------------------------------------------------------------
+Ran 48 tests in 6.681s
+
+OK

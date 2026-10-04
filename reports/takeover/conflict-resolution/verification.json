@@ -1,0 +1,158 @@
+{
+  "state": "READY_FOR_REVIEW",
+  "accepted": false,
+  "branch": "peyton/acquisition-dashboard",
+  "feature_parent": "ac59816fe09067f7621b205f3a1143d445ec75be",
+  "main_parent": "0dd1b02c6e02a73037c7108901464965e3de62cd",
+  "commands": [
+    {
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-m",
+        "compileall",
+        "-q",
+        "acquisition",
+        "apps",
+        "services",
+        "tests"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.038523,
+      "log": "syntax.log"
+    },
+    {
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "acquisition/tests",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.132313,
+      "log": "acquisition-tests.log"
+    },
+    {
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-m",
+        "unittest",
+        "tests.test_acquisition_controller",
+        "tests.test_pipeline",
+        "tests.test_adapters_and_backfill",
+        "tests.test_contract_boundaries",
+        "tests.test_contract_examples",
+        "tests.test_http_integration",
+        "tests.test_inventory",
+        "-v"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 6.76662,
+      "log": "developer-regression.log"
+    },
+    {
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 1,
+      "elapsed_seconds": 10.816663,
+      "log": "all-tests.log"
+    },
+    {
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "reports/ING-05/check_source_register.py"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.111602,
+      "log": "source-register.json"
+    },
+    {
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "scripts/check_completion_artifacts.py"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.029226,
+      "log": "existing-artifacts.json"
+    },
+    {
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "scripts/verify_dashboard.py",
+        "--node",
+        "/private/tmp/goodwill-completion-tools/node-v22.14.0-darwin-arm64/bin/node",
+        "--node-modules",
+        "/private/tmp/goodwill-completion-tools/packages/node_modules",
+        "--chrome-path",
+        "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+        "--output",
+        "reports/takeover/conflict-resolution/browser"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 10.906327,
+      "log": "dashboard-browser.log"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.01563,
+      "log": "staged-diff.log"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.009312,
+      "log": "working-diff.log"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "origin/main",
+        "--",
+        "goodwill/synthetic-data",
+        "tests/acceptance",
+        "fixtures/expected-results",
+        "reports/ENG-04"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.009219,
+      "log": "qa-and-fixtures-unchanged.log"
+    }
+  ],
+  "full_suite_passed": false,
+  "remaining": [
+    "Jack mc independent dashboard acceptance placeholder",
+    "Human review/merge/freeze",
+    "Remote CI unverified"
+  ],
+  "known_dashboard_placeholder_only": true,
+  "owned_checks_passed": true,
+  "unmerged_files": [],
+  "implementation_sha256": {
+    "acquisition/intake.py": "1fc88a1a37cc40326bd1342f9b2f9af54180bf0ea55f0fc6c23a0255b023b3b7",
+    "acquisition/tests/test_intake.py": "41eb9c821a3429197183189688c5df490a6366983986e1acc54bad0ba28ce957",
+    "acquisition/tests/test_e2e_import.py": "bf5dcdd1d4681bd239496ca8e61b6e728230523cf7c1f6a7b3375da1c1f27ab1"
+  }
+}

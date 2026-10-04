@@ -1,11 +1,19 @@
-Task / issue / source requirement IDs: ING-03 (issue #17); PLAN §4, §5; contracts/v1 (GOV-03, READY_FOR_REVIEW, not accepted)
-State: READY_FOR_REVIEW for the intake-to-importer hand-off. Human acceptance of GOV-03/DAT-02/ING-01/ING-02 still outstanding.
-Branch / base commit: hugh/ING-03-importer-handoff / 7f94806
-Changed files: acquisition/intake.py (submit() now writes a goodwill-v1 import-request with exact archived bytes and the original manifest, per planning/contracts.md; the earlier outbox stub was not a valid importer input), acquisition/tests/test_intake.py, acquisition/tests/test_e2e_import.py (new), reports/ING-03/RESULT.md
-Commands actually run: python3 -m unittest discover -s acquisition/tests → 28 OK (14 intake, 5 end-to-end, 6 run-state, 3 skill config). python3 -m unittest discover -s "data ingestion/tests" → 9 OK (tail of output only).
-End to end (acquisition/tests/test_e2e_import.py, real ING-01 CSVs through intake into services.data.importer.Pipeline in a temp dir): downloaded SHA-256 equals the imported raw file checksum (Upright 128 rows, reconciliation verified); Cash Monkey imports; resubmitting the same file gives duplicate_noop; a wrong date range is rejected at intake and nothing reaches the importer; tampered bytes that bypass intake are rejected by the importer with checksum_mismatch.
-State separation: intake leaves import_state = not_submitted; the importer owns the import and publication states.
-Independent expected results: row counts and checksums come from the ING-01 manifests; importer status values come from services/data, not my code.
-Tests NOT run: full repo test suite; cross-midnight timezone cases; real Goodwill files; browser skill to importer in one process (the skill was run separately earlier).
-Blockers: human acceptance of GOV-03, DAT-02, ING-01, ING-02. Field names still need Jack OC review.
-Synthetic only. Not accepted, not merged, not DONE.
+Task: ING-03; issue #17; requirements: PLAN §4, §5, §7
+State: READY_FOR_REVIEW; accepted: false.
+Operator: Peyton, authorized takeover of Hugh/Landon; Jack mc retains independent QA.
+Branch: peyton/acquisition-dashboard; base: 7f948064146fee91ef573ea11761fec8bd0ae359.
+Tested implementation: working-tree hashes in ../takeover/verification.json; delivered commit is the commit containing this report.
+
+Verified intake submits original bytes and full source manifest to the real importer. Acquisition run, checksum, immutable raw file and batch identity are retained; repeat delivery is idempotent.
+
+Implementation paths: acquisition/intake.py; acquisition/controller.py; services/data/adapters.py. Shared shell/API/contracts are owned by Peyton under the combined authorization. Existing merged Python/SQLite goodwill-v1 foundation and synthetic replica are reused.
+
+Actual verification: ../takeover/verification.json records exact commands, exit codes, timings, code hashes and logs. Developer backend/controller regression: 48 passed. Acquisition tests: 23 passed. Actual Chrome negative scenarios and dashboard integration: passed. Strict TypeScript, repeatable schema generation and 354-row fixture review: passed. Screenshots were inspected for desktop, operations and mobile layout.
+
+Full Python suite: 73 tests, one failure and one deferred-export skip. Failure is Jack mc's existing test_dashboard_shows_api_values placeholder, which deliberately requires independent acceptance when a dashboard exists. No QA tests/expected results/reports or source CSV fixtures were edited. Developer API/UI comparisons are not independent acceptance.
+
+Evidence: checksum-chain.json; verification.json; ../takeover/browser/; ../takeover/logs/. Primary basis is the registered repository Drive snapshots/three-phase plan, not fresh interviews or issue comments. Historical reports describe their older bases.
+
+Remaining: Jack mc independent UI acceptance; human review/integration/freeze; remote CI unverified. Source-owner review remains required for the nine-source production map. P1 export/assistant/Jev/recorder and live/pilot operations remain deferred under frozen scope. Synthetic/local only; no scheduled collection, live session, external email or accounting posting.
+
+PR #58 conflict reconciliation: main `0dd1b02` brings Hugh's importer handoff/tests and source requirement checker. Those are retained alongside the dashboard integration. See main-handoff-result.md for his original report and ../takeover/conflict-resolution/ for fresh merge verification; earlier test counts/hashes above describe the original ac59816 delivery.
