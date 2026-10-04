@@ -1,3 +1,9 @@
+# Source-led Goodwill delivery planning
+
+Current user decisions govern. Primary evidence is the Google Drive stakeholder/mentor material; the Goodwill Three-Phase Solution and Overnight Agent Plan is the implementation synthesis. This card operationalizes those sources. Older goodwill/PRD.md and planning/agentic-build-plan.md are legacy implementation background, NOT governing requirements or automatic scope limits. Preserve corrections in the three-phase plan where earlier source notes contain unsupported technical claims. Freeze new scope/contracts through GOV-02/GOV-03.
+
+Start with [Drive source register](DRIVE_SOURCE_REGISTER.md), [actual Drive plan](https://drive.google.com/file/d/1RffkmafbqbMEs7o_lNaTvIRL3hW9paai/view?usp=drivesdk), [source-to-card traceability](SOURCE_TRACEABILITY.md), [shared context](AGENT_CONTEXT.md) and [backlog index](BACKLOG.md). The current ProjectManagement workstream PRDs operationalize these sources.
+
 # GitHub Projects setup and shared backlog
 
 [Hub](https://github.com/joconne8/sprinthack-nd-2026/issues/7) · [Backlog index](BACKLOG.md) · [Agent context](AGENT_CONTEXT.md) · [Full plan](THREE_PHASE_PLAN.md)
