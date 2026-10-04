@@ -1,0 +1,14 @@
+{
+  "task": "PM-00",
+  "state": "READY_FOR_REVIEW",
+  "accepted": false,
+  "branch": "peyton/jackoc-data-foundation",
+  "base_commit": "b329c0fece37c1694b4d84c0c55e609dc931f854",
+  "evidence": "../integration/verification.json",
+  "artifacts": [
+    "reports/integration/RESULT.md",
+    "planning/file-ownership.md",
+    "planning/release-checklist.md"
+  ],
+  "limitations": "No external status, issue state, assignment or completion labels were changed. Push and human integration are separate."
+}

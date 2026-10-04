@@ -1,0 +1,96 @@
+{
+  "contract_version": "goodwill-v1",
+  "synthetic": true,
+  "filters_applied": {
+    "start_date": "2026-09-29",
+    "end_date": "2026-09-30",
+    "source": "upright_replica",
+    "platform": null,
+    "store": null,
+    "reporting_timezone": "America/New_York"
+  },
+  "metric_run_id": "40be5270069845db9baec8495684f9af",
+  "metrics": [
+    {
+      "metric_id": "M-DEMO-NET-SALES",
+      "metric_version": "demo-net-sales-v1",
+      "value": "7127.78",
+      "unit": "USD",
+      "availability": "partial",
+      "availability_reason": "Latest import failed; retaining verified last-good data",
+      "definition": "Item sales minus refunds; excludes shipping, tax and fees"
+    },
+    {
+      "metric_id": "M-PLATFORM-CUSTOMERS",
+      "metric_version": "platform-customers-v1",
+      "value": null,
+      "unit": "buyers",
+      "availability": "unavailable",
+      "availability_reason": "Select one platform; cross-platform unique customers are unavailable",
+      "definition": "Distinct non-empty buyer IDs within one platform and selected period"
+    },
+    {
+      "metric_id": "R-LABOR-PRODUCTIVITY",
+      "metric_version": "roadmap-v1",
+      "value": null,
+      "unit": "unavailable",
+      "availability": "unavailable",
+      "availability_reason": "Matched labor hours and allocation policy are unavailable",
+      "definition": "Requires approved matching inputs and definitions"
+    },
+    {
+      "metric_id": "R-MARGIN",
+      "metric_version": "roadmap-v1",
+      "value": null,
+      "unit": "unavailable",
+      "availability": "unavailable",
+      "availability_reason": "Approved costs and allocations are unavailable",
+      "definition": "Requires approved matching inputs and definitions"
+    },
+    {
+      "metric_id": "R-SELL-THROUGH",
+      "metric_version": "roadmap-v1",
+      "value": null,
+      "unit": "unavailable",
+      "availability": "unavailable",
+      "availability_reason": "Approved eligible cohort, window and relist policy are unavailable",
+      "definition": "Requires approved matching inputs and definitions"
+    },
+    {
+      "metric_id": "R-REVENUE-GROWTH",
+      "metric_version": "roadmap-v1",
+      "value": null,
+      "unit": "unavailable",
+      "availability": "unavailable",
+      "availability_reason": "Comparable prior-year inputs are unavailable",
+      "definition": "Requires approved matching inputs and definitions"
+    }
+  ],
+  "coverage": {
+    "expected_days": [
+      "2026-09-29",
+      "2026-09-30"
+    ],
+    "complete_days": [
+      "2026-09-30"
+    ],
+    "missing_or_partial_days": [
+      "2026-09-29"
+    ],
+    "state": "partial"
+  },
+  "freshness": {
+    "published_at": "2026-10-04T03:12:27.590034+00:00",
+    "latest_import_at": "2026-10-04T03:12:27.613404+00:00",
+    "is_last_good": true,
+    "publication_state": "stale_last_good",
+    "warning": "Latest import failed; retaining verified last-good data"
+  },
+  "reconciliation_state": "verified",
+  "evidence": {
+    "row_count": 128,
+    "gross_item_sales": "7353.00",
+    "refunds": "225.22",
+    "missing_store_rows": 0
+  }
+}

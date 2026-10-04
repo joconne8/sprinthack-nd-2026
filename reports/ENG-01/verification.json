@@ -1,0 +1,16 @@
+{
+  "task": "ENG-01",
+  "state": "READY_FOR_REVIEW",
+  "accepted": false,
+  "branch": "peyton/jackoc-data-foundation",
+  "base_commit": "b329c0fece37c1694b4d84c0c55e609dc931f854",
+  "evidence": "../integration/verification.json",
+  "artifacts": [
+    "goodwill_app/",
+    "apps/api/",
+    "db/migrations/",
+    ".github/workflows/trusted-data.yml",
+    "planning/development.md"
+  ],
+  "limitations": "Local Python 3.9.6 tests pass; remote Python 3.9/3.12 CI has not run. No React/Node/build/browser claim; Landon owns the UI."
+}

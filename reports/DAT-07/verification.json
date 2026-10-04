@@ -1,0 +1,13 @@
+{
+  "task": "DAT-07",
+  "state": "READY_FOR_REVIEW",
+  "accepted": false,
+  "branch": "peyton/jackoc-data-foundation",
+  "base_commit": "b329c0fece37c1694b4d84c0c55e609dc931f854",
+  "evidence": "../integration/verification.json",
+  "artifacts": [
+    "services/data/inventory/",
+    "reports/DAT-07/event-vs-snapshot-controls.md"
+  ],
+  "limitations": "Coverage is complete only for the declared fixture universe. August listings are date-filtered; missing snapshots/September inputs are unavailable."
+}

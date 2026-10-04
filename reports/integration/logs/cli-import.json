@@ -1,0 +1,47 @@
+{
+  "contract_version": "goodwill-v1",
+  "batch_id": "01bac5bd62874f689cb832d6ae6cc664",
+  "source": "upright_replica",
+  "report_type": "paid_orders",
+  "status": "imported",
+  "synthetic": true,
+  "file": {
+    "file_id": "ecea88180c9f6ce7a74a40b819cfbffcb1b4543f000ade7da76ff8855d2f166b",
+    "checksum": "ecea88180c9f6ce7a74a40b819cfbffcb1b4543f000ade7da76ff8855d2f166b",
+    "byte_size": 31624
+  },
+  "period": {
+    "start_date": "2026-09-30",
+    "end_date": "2026-09-30",
+    "source_timezone": "America/Los_Angeles"
+  },
+  "counts": {
+    "row_count": 128,
+    "accepted_rows": 128,
+    "rejected_rows": 0,
+    "duplicate_rows": 0,
+    "corrected_rows": 0
+  },
+  "reconciliation": {
+    "accepted_gross": "7353.00",
+    "accepted_refunds": "225.22",
+    "accepted_rows": 128,
+    "control_differences": [],
+    "counts_balanced": true,
+    "duplicate_gross": "0.00",
+    "duplicate_refunds": "0.00",
+    "duplicate_rows": 0,
+    "rejected_gross": "0.00",
+    "rejected_refunds": "0.00",
+    "rejected_rows": 0,
+    "source_gross": "7353.00",
+    "source_refunds": "225.22",
+    "source_rows": 128,
+    "state": "verified"
+  },
+  "error": null,
+  "exceptions": [],
+  "parser_version": "sales-parser-v1",
+  "rule_version": "trusted-data-v1",
+  "recorded_at": "2026-10-04T03:13:55.086901+00:00"
+}

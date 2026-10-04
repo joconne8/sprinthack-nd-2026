@@ -1,0 +1,14 @@
+{
+  "task": "DAT-02",
+  "state": "READY_FOR_REVIEW",
+  "accepted": false,
+  "branch": "peyton/jackoc-data-foundation",
+  "base_commit": "b329c0fece37c1694b4d84c0c55e609dc931f854",
+  "evidence": "../integration/verification.json",
+  "artifacts": [
+    "services/data/raw/",
+    "services/data/database.py",
+    "db/migrations/001_trusted_data.sql"
+  ],
+  "limitations": "Read-only filesystem files are not tamper-proof against a machine owner. Expense/settlement grains are documented and refused by sales; only needed sales facts are implemented."
+}

@@ -1,0 +1,354 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Goodwill v1 metrics",
+  "type": "object",
+  "properties": {
+    "contract_version": {
+      "type": "string",
+      "const": "goodwill-v1"
+    },
+    "synthetic": {
+      "type": "boolean",
+      "const": true
+    },
+    "filters_applied": {
+      "type": "object",
+      "properties": {
+        "start_date": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "end_date": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "source": {
+          "type": "string",
+          "minLength": 1
+        },
+        "platform": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "store": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "reporting_timezone": {
+          "const": "America/New_York"
+        }
+      },
+      "required": [
+        "start_date",
+        "end_date",
+        "source",
+        "platform",
+        "store",
+        "reporting_timezone"
+      ],
+      "additionalProperties": false
+    },
+    "metric_run_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "metrics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "metric_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "metric_version": {
+            "type": "string",
+            "minLength": 1
+          },
+          "value": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "unit": {
+            "type": "string",
+            "minLength": 1
+          },
+          "availability": {
+            "type": "string",
+            "enum": [
+              "available",
+              "partial",
+              "unavailable"
+            ]
+          },
+          "availability_reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "definition": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "metric_id",
+          "metric_version",
+          "value",
+          "unit",
+          "availability",
+          "availability_reason",
+          "definition"
+        ],
+        "additionalProperties": false,
+        "anyOf": [
+          {
+            "properties": {
+              "availability": {
+                "const": "unavailable"
+              },
+              "value": {
+                "type": "null"
+              }
+            }
+          },
+          {
+            "properties": {
+              "availability": {
+                "type": "string",
+                "enum": [
+                  "available",
+                  "partial"
+                ]
+              },
+              "metric_id": {
+                "const": "M-DEMO-NET-SALES"
+              },
+              "unit": {
+                "const": "USD"
+              },
+              "value": {
+                "type": "string",
+                "pattern": "^-?\\d+\\.\\d{2}$"
+              }
+            }
+          },
+          {
+            "properties": {
+              "availability": {
+                "type": "string",
+                "enum": [
+                  "available",
+                  "partial"
+                ]
+              },
+              "metric_id": {
+                "type": "string",
+                "enum": [
+                  "M-PLATFORM-CUSTOMERS",
+                  "M-LISTINGS-CREATED",
+                  "M-UNLISTED-BACKLOG"
+                ]
+              },
+              "value": {
+                "type": "string",
+                "pattern": "^\\d+$"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "coverage": {
+      "type": "object",
+      "properties": {
+        "expected_days": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+          }
+        },
+        "complete_days": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+          }
+        },
+        "missing_or_partial_days": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+          }
+        },
+        "state": {
+          "type": "string",
+          "enum": [
+            "complete",
+            "partial",
+            "unavailable"
+          ]
+        }
+      },
+      "required": [
+        "expected_days",
+        "complete_days",
+        "missing_or_partial_days",
+        "state"
+      ],
+      "additionalProperties": false
+    },
+    "freshness": {
+      "type": "object",
+      "properties": {
+        "published_at": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "latest_import_at": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "is_last_good": {
+          "type": "boolean"
+        },
+        "publication_state": {
+          "type": "string",
+          "enum": [
+            "published",
+            "stale_last_good",
+            "unpublished"
+          ]
+        },
+        "warning": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "published_at",
+        "latest_import_at",
+        "is_last_good",
+        "publication_state",
+        "warning"
+      ],
+      "additionalProperties": false
+    },
+    "reconciliation_state": {
+      "type": "string",
+      "enum": [
+        "verified",
+        "unpublished"
+      ]
+    },
+    "evidence": {
+      "type": "object",
+      "properties": {
+        "row_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "gross_item_sales": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^-?\\d+\\.\\d{2}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "refunds": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^-?\\d+\\.\\d{2}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "missing_store_rows": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "row_count",
+        "gross_item_sales",
+        "refunds",
+        "missing_store_rows"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "contract_version",
+    "synthetic",
+    "filters_applied",
+    "metric_run_id",
+    "metrics",
+    "coverage",
+    "freshness",
+    "reconciliation_state",
+    "evidence"
+  ],
+  "additionalProperties": false
+}

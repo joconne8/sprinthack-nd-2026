@@ -1,0 +1,7 @@
+Assignment: DAT-01 — [DAT-01] Validate the merged expanded synthetic-data fixtures without duplicating work
+Mode: fixture-review | max elapsed minutes: 60
+Do not execute live/pilot actions. Supervisor packets are coordination-only.
+This checker does not verify artifact content, run tests, or launch workers.
+
+BLOCKED:
+- GOV-02: human acceptance not recorded

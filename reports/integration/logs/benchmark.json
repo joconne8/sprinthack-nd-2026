@@ -1,0 +1,38 @@
+{
+  "synthetic": true,
+  "python": "3.9.6 (default, Aug 25 2026, 21:26:21) \n[Clang 21.0.0 (clang-2100.3.34.2)]",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "conditions": "one local process; temporary SQLite; standard library; no production data",
+  "results": [
+    {
+      "source": "upright_fixture",
+      "rows": 650,
+      "status": "imported",
+      "import_seconds": 0.034722,
+      "query_seconds": 0.004844,
+      "replay_seconds": 0.020046,
+      "replay_status": "duplicate_noop",
+      "demo_net_sales": "36157.10"
+    },
+    {
+      "source": "shopgoodwill_fixture",
+      "rows": 1800,
+      "status": "imported",
+      "import_seconds": 0.069309,
+      "query_seconds": 0.012245,
+      "replay_seconds": 0.051257,
+      "replay_status": "duplicate_noop",
+      "demo_net_sales": "111262.18"
+    },
+    {
+      "source": "ebay_fixture",
+      "rows": 900,
+      "status": "imported",
+      "import_seconds": 0.035113,
+      "query_seconds": 0.006228,
+      "replay_seconds": 0.025739,
+      "replay_status": "duplicate_noop",
+      "demo_net_sales": "55515.26"
+    }
+  ]
+}

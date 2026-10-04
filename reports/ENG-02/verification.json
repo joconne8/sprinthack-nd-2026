@@ -1,0 +1,13 @@
+{
+  "task": "ENG-02",
+  "state": "READY_FOR_REVIEW",
+  "accepted": false,
+  "branch": "peyton/jackoc-data-foundation",
+  "base_commit": "b329c0fece37c1694b4d84c0c55e609dc931f854",
+  "evidence": "../integration/verification.json",
+  "artifacts": [
+    "planning/file-ownership.md",
+    "reports/integration/CLAIM.md"
+  ],
+  "limitations": "Local reservations only; GitHub comments/claims not posted. No agents, budgets or unattended jobs are launched."
+}

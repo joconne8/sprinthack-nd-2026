@@ -1,0 +1,14 @@
+{
+  "task": "E-GOV",
+  "state": "READY_FOR_REVIEW",
+  "accepted": false,
+  "branch": "peyton/jackoc-data-foundation",
+  "base_commit": "b329c0fece37c1694b4d84c0c55e609dc931f854",
+  "evidence": "../integration/verification.json",
+  "artifacts": [
+    "planning/scope.md",
+    "planning/contracts.md",
+    "planning/security-and-access.md"
+  ],
+  "limitations": "Source snapshots and user-authorized local decisions remain distinguishable from stakeholder/provider approvals."
+}

@@ -1,0 +1,88 @@
+{
+  "synthetic": true,
+  "note": "Fixed-cent test examples; not a seeded UI dataset",
+  "rows": [
+    {
+      "source_row_number": 1,
+      "original": {
+        "buyer_id": "BUYER-A",
+        "category": "Books",
+        "channel": "eBay",
+        "currency": "USD",
+        "grain": "one row per paid order",
+        "gross_sales": "10.00",
+        "item_id": "ITEM-A",
+        "item_title": "Synthetic item",
+        "marketplace_fee": "77.00",
+        "net_sales": "9999.00",
+        "paid_at": "2026-09-30T16:00:00+00:00",
+        "paid_order_id": "A",
+        "quantity": "1",
+        "refund_amount": "1.00",
+        "reporting_date": "2026-09-30",
+        "reporting_timezone": "America/New_York",
+        "sales_tax": "88.00",
+        "shipping_collected": "99.00",
+        "source_name": "upright_replica",
+        "store_id": "GW-001",
+        "synthetic": "true"
+      },
+      "normalized": {
+        "buyer_id": "BUYER-A",
+        "currency": "USD",
+        "gross_cents": 1000,
+        "item_id": "ITEM-A",
+        "platform": "eBay",
+        "record_key": "[\"A\"]",
+        "refund_cents": 100,
+        "reporting_date": "2026-09-30",
+        "source": "upright_replica",
+        "source_date": "2026-09-30",
+        "source_timestamp": "2026-09-30T16:00:00+00:00",
+        "store_id": "GW-001",
+        "warnings": []
+      }
+    },
+    {
+      "source_row_number": 2,
+      "original": {
+        "buyer_id": "BUYER-B",
+        "category": "Books",
+        "channel": "eBay",
+        "currency": "USD",
+        "grain": "one row per paid order",
+        "gross_sales": "20.00",
+        "item_id": "ITEM-B",
+        "item_title": "Synthetic item",
+        "marketplace_fee": "77.00",
+        "net_sales": "9999.00",
+        "paid_at": "2026-09-30T16:00:00+00:00",
+        "paid_order_id": "B",
+        "quantity": "1",
+        "refund_amount": "2.00",
+        "reporting_date": "2026-09-30",
+        "reporting_timezone": "America/New_York",
+        "sales_tax": "88.00",
+        "shipping_collected": "99.00",
+        "source_name": "upright_replica",
+        "store_id": "GW-001",
+        "synthetic": "true"
+      },
+      "normalized": {
+        "buyer_id": "BUYER-B",
+        "currency": "USD",
+        "gross_cents": 2000,
+        "item_id": "ITEM-B",
+        "platform": "eBay",
+        "record_key": "[\"B\"]",
+        "refund_cents": 200,
+        "reporting_date": "2026-09-30",
+        "source": "upright_replica",
+        "source_date": "2026-09-30",
+        "source_timestamp": "2026-09-30T16:00:00+00:00",
+        "store_id": "GW-001",
+        "warnings": []
+      }
+    }
+  ]
+}

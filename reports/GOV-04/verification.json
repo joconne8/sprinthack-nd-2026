@@ -1,0 +1,13 @@
+{
+  "task": "GOV-04",
+  "state": "READY_FOR_REVIEW",
+  "accepted": false,
+  "branch": "peyton/jackoc-data-foundation",
+  "base_commit": "b329c0fece37c1694b4d84c0c55e609dc931f854",
+  "evidence": "../integration/verification.json",
+  "artifacts": [
+    "planning/decisions/architecture.md",
+    "planning/security-and-access.md"
+  ],
+  "limitations": "Python/SQLite replaces the suggested Node/Postgres prototype stack. Production workbook/Power BI alternative, identity, providers, retention and support remain client decisions."
+}

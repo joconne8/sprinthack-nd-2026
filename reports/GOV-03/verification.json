@@ -1,0 +1,14 @@
+{
+  "task": "GOV-03",
+  "state": "READY_FOR_REVIEW",
+  "accepted": false,
+  "branch": "peyton/jackoc-data-foundation",
+  "base_commit": "b329c0fece37c1694b4d84c0c55e609dc931f854",
+  "evidence": "../integration/verification.json",
+  "artifacts": [
+    "contracts/v1/",
+    "services/data/contracts.py",
+    "planning/contracts.md"
+  ],
+  "limitations": "replica-v1 adapter is explicit; filtered/intake-only scope is partial; USD only. TypeScript compilation is unrun because Node is absent."
+}
