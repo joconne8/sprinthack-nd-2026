@@ -1,5 +1,20 @@
 # PRD 03: Metrics Dashboard and Source Drilldown
 
+## Primary source basis — Drive-led
+- [Goodwill — Three-Phase Solution and Overnight Agent Plan](https://drive.google.com/file/d/1RffkmafbqbMEs7o_lNaTvIRL3hW9paai/view?usp=drivesdk)
+- [Amanda Baumer Goodwill Meeting.md](https://drive.google.com/file/d/1WM1HJVAu_YF-Q48CQDa7SFwnPKg1FPlF/view?usp=drivesdk)
+- [goodwill-track-brief-v2.md](https://drive.google.com/file/d/1o0QBoew17f7IgEEHweBoe-VLQFGDEatg/view?usp=drivesdk)
+- [michael-wicks-plan.md](https://drive.google.com/file/d/1gip7aNE1TQdZmqNJQeRlPppVZ5iVuWCT/view?usp=drivesdk)
+- [Jack explanation.md](https://drive.google.com/file/d/1jrBRKAFzJlOVUC7mIsyTH3OrCGY-7qD6/view?usp=drivesdk)
+
+Relevant plan sections: §6 Dashboard and bounded agentic interaction; §7 Weekend P0/P1/P2.
+
+The corrected brief lists leadership revenue/growth/margin/labor productivity/inventory/customer KPIs. Amanda wants retrieval before visibility and Copilot for AI. Wicks proposes an AI-native application; the plan defines operations, leadership and finance surfaces plus narrow grounded tools and unavailable-input handling.
+
+## Source precedence
+Current user decisions govern. Primary evidence is the Google Drive stakeholder/mentor material; the Goodwill Three-Phase Solution and Overnight Agent Plan is the implementation synthesis. This card operationalizes those sources. Older goodwill/PRD.md and planning/agentic-build-plan.md are legacy implementation background, NOT governing requirements or automatic scope limits. Preserve corrections in the three-phase plan where earlier source notes contain unsupported technical claims. Freeze new scope/contracts through GOV-02/GOV-03.
+
+
 ## Status
 
 Proposed P0 workstream PRD. This is the visible sponsor and judge experience after acquisition and data validation.
@@ -47,7 +62,7 @@ Build a focused dashboard that displays the agreed synthetic metrics with filter
 | ID | Requirement | Acceptance test |
 | --- | --- | --- |
 | DASH-01 | Show synthetic status persistently. | Every view and export includes synthetic demo labeling. |
-| DASH-02 | Render four agreed views. | User can navigate to revenue, customers, listings, and backlog. |
+| DASH-02 | Render accepted P0 view(s); richer four-view dashboard is P1 under PLAN §7. | P0 acquired-file metric and source evidence work; selected P1 views are tested if implemented. |
 | DASH-03 | Filters apply consistently. | Same date/store/platform filter affects all applicable views under contract rules. |
 | DASH-04 | Display metric definitions. | Each view includes formula, grain, period, unit, exclusions, and caveats. |
 | DASH-05 | Display freshness and coverage. | User can see last import time and source coverage for the selected period. |
@@ -58,27 +73,27 @@ Build a focused dashboard that displays the agreed synthetic metrics with filter
 
 ## View requirements
 
-### Daily revenue
+### Daily revenue — P0 evidence view
 
 - Group by sold-at day, platform, store, and currency.
 - Use synthetic `sale_amount - refund_amount` excluding shipping and tax.
 - Preserve unknown-store bucket.
 - Show source-row drilldown and reconciliation status.
 
-### Daily customers
+### Daily customers — P1 if scoped
 
 - Count distinct platform-local buyers by day and platform.
 - Store-filtered counts are distinct within the filtered subset.
 - Missing buyer IDs produce unavailable/partial status for affected inputs.
 - Never present a cross-platform unique customer total.
 
-### Listings per store per day
+### Listings per store per day — P1 if scoped
 
 - Count deduplicated new listing events.
 - Distinguish listings from identified, processed, or sold items.
 - Preserve unknown stores and event provenance.
 
-### Unlisted backlog
+### Unlisted backlog — P1 if scoped
 
 - Count unique items in declared unlisted states at a selected complete snapshot.
 - Present snapshot timestamp and completeness.
@@ -111,7 +126,7 @@ Build a focused dashboard that displays the agreed synthetic metrics with filter
 
 ## Evidence required for Done
 
-- Screenshots or recording of all four views
+- Screenshots/recording of accepted P0 view and any actually implemented P1 views
 - Filter test evidence
 - Revenue drilldown evidence
 - Unknown-store and rejected-row evidence
