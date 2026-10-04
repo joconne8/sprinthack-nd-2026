@@ -1,0 +1,21 @@
+{
+  "task": "ING-05",
+  "state": "READY_FOR_REVIEW",
+  "accepted": false,
+  "branch": "peyton/acquisition-dashboard",
+  "base_commit": "7f948064146fee91ef573ea11761fec8bd0ae359",
+  "tested_state": "working tree with exact implementation hashes",
+  "evidence": "../takeover/verification.json",
+  "artifacts": [
+    "reports/ING-05/source-authority-and-overlap.md",
+    "reports/ING-05/RESULT.md"
+  ],
+  "owned_checks_passed": true,
+  "full_suite_passed": false,
+  "remaining_acceptance": [
+    "Jack mc independent dashboard acceptance replaces the deliberate placeholder test",
+    "Human integration/review/freeze",
+    "Remote CI unverified"
+  ],
+  "limits": "Developer regression evidence; synthetic replica only; not independent/human acceptance."
+}

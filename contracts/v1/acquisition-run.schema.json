@@ -1,0 +1,213 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Goodwill v1 acquisition-run",
+  "type": "object",
+  "properties": {
+    "contract_version": {
+      "type": "string",
+      "const": "goodwill-v1"
+    },
+    "synthetic": {
+      "type": "boolean",
+      "const": true
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source": {
+      "const": "upright_replica"
+    },
+    "report_type": {
+      "const": "paid_orders"
+    },
+    "start_date": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "format": "date"
+    },
+    "end_date": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "format": "date"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "normal",
+        "delayed",
+        "session-expired",
+        "missing-report",
+        "changed-label",
+        "timeout"
+      ]
+    },
+    "requested_at": {
+      "type": "string",
+      "minLength": 1
+    },
+    "finished_at": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "running",
+        "succeeded",
+        "needs_human",
+        "failed_permanent",
+        "failed_retriable_exhausted"
+      ]
+    },
+    "stage": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "collecting",
+        "verifying",
+        "importing",
+        "complete",
+        "failed"
+      ]
+    },
+    "attempts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "n": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "type": {
+            "type": "string",
+            "minLength": 1
+          },
+          "ok": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "n",
+          "type",
+          "ok"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "cause": {
+      "type": "string"
+    },
+    "owner_role": {
+      "type": "string"
+    },
+    "import_state": {
+      "type": "string",
+      "enum": [
+        "not_submitted",
+        "imported",
+        "duplicate_noop",
+        "failed"
+      ]
+    },
+    "publication_state": {
+      "type": "string",
+      "enum": [
+        "not_published",
+        "published",
+        "blocked"
+      ]
+    },
+    "batch_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "checksum": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "row_count": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "minimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "coverage_state": {
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "complete",
+            "partial",
+            "unavailable"
+          ]
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "max_attempts": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "deadline_seconds": {
+      "type": "integer",
+      "minimum": 0
+    }
+  },
+  "required": [
+    "contract_version",
+    "synthetic",
+    "run_id",
+    "source",
+    "report_type",
+    "start_date",
+    "end_date",
+    "mode",
+    "requested_at",
+    "finished_at",
+    "status",
+    "stage",
+    "attempts",
+    "cause",
+    "owner_role",
+    "import_state",
+    "publication_state",
+    "batch_id",
+    "checksum",
+    "row_count",
+    "coverage_state",
+    "max_attempts",
+    "deadline_seconds"
+  ],
+  "additionalProperties": false
+}

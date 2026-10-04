@@ -1,5 +1,27 @@
 # ENG-05 human integration checklist
 
+## Current acquisition/dashboard review
+
+Base: merged main `7f94806`; branch: `peyton/acquisition-dashboard`.
+See `reports/takeover/RESULT.md` and `verification.json`. Peyton's authorized
+takeover delivers Hugh/Landon's seven remaining core packets for review.
+
+- [x] Wire exact acquired bytes/full manifest through real verification/import.
+- [x] Deliver operations, leadership and pinned source-evidence UI using the API.
+- [x] Verify alternate dates, replay no-op, bounded failure/owner/manual fallback,
+  stale last-good, unavailable inputs, API outage and responsive layout locally.
+- [x] Retain required task reports, logs, checksums and inspected screenshots.
+- [ ] Jack mc supplies independent UI/financial acceptance and replaces his
+  deliberate dashboard placeholder (currently the one full-suite failure).
+- [ ] Verify remote CI on the reviewed commit after independent QA is integrated.
+- [ ] Human accepts scope/contracts/source authority and reviewed implementation.
+- [ ] Human integrates reviewed branches, runs complete demo, records freeze
+  and REL-01 backup handoff; confirms actual event deadline.
+
+Implementation delivery is READY_FOR_REVIEW. Export/assistant/Jev/live production
+work remains deferred. The historical checklist below describes earlier bases;
+its missing-Landon-UI statements are superseded by this delivery.
+
 Current baseline: shared foundation merged into main at `610035e` (PR #52).
 Follow-up branch: `peyton/jackoc-data-completion`. Current evidence and task status:
 `reports/integration/completion-verification.json` and `completion-status.md`.

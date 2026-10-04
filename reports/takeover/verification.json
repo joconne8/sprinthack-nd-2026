@@ -1,0 +1,263 @@
+{
+  "state": "READY_FOR_REVIEW",
+  "accepted": false,
+  "base_commit": "7f948064146fee91ef573ea11761fec8bd0ae359",
+  "branch": "peyton/acquisition-dashboard",
+  "tested_state": "working tree with exact implementation hashes",
+  "commands": [
+    {
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-m",
+        "compileall",
+        "-q",
+        "apps",
+        "acquisition",
+        "services",
+        "goodwill_app",
+        "contracts",
+        "scripts",
+        "tests"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.043494,
+      "log": "logs/python-syntax.log"
+    },
+    {
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-m",
+        "unittest",
+        "tests.test_acquisition_controller",
+        "tests.test_pipeline",
+        "tests.test_adapters_and_backfill",
+        "tests.test_contract_boundaries",
+        "tests.test_contract_examples",
+        "tests.test_http_integration",
+        "tests.test_inventory",
+        "-v"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 6.680691,
+      "log": "logs/developer-regression.log"
+    },
+    {
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "acquisition/tests",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.070637,
+      "log": "logs/acquisition-tests.log"
+    },
+    {
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 1,
+      "elapsed_seconds": 10.852859,
+      "log": "logs/all-tests.log"
+    },
+    {
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "reports/DAT-01/review_fixtures.py"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.082913,
+      "log": "logs/fixture-review.json"
+    },
+    {
+      "command": [
+        "/private/tmp/goodwill-completion-tools/node-v22.14.0-darwin-arm64/bin/node",
+        "/private/tmp/goodwill-completion-tools/packages/node_modules/typescript/bin/tsc",
+        "--strict",
+        "--noEmit",
+        "--target",
+        "ES2020",
+        "--module",
+        "commonjs",
+        "--lib",
+        "ES2020,DOM",
+        "contracts/v1/client.ts"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.478347,
+      "log": "logs/client-types.log"
+    },
+    {
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "contracts/build_schemas.py"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.022481,
+      "log": "logs/schema-generation.log"
+    },
+    {
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "scripts/verify_dashboard.py",
+        "--node",
+        "/private/tmp/goodwill-completion-tools/node-v22.14.0-darwin-arm64/bin/node",
+        "--node-modules",
+        "/private/tmp/goodwill-completion-tools/packages/node_modules",
+        "--chrome-path",
+        "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+        "--acquisition-only"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 14.615887,
+      "log": "logs/browser-negatives.log"
+    },
+    {
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "scripts/verify_dashboard.py",
+        "--node",
+        "/private/tmp/goodwill-completion-tools/node-v22.14.0-darwin-arm64/bin/node",
+        "--node-modules",
+        "/private/tmp/goodwill-completion-tools/packages/node_modules",
+        "--chrome-path",
+        "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 11.901423,
+      "log": "logs/dashboard-browser.log"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.023191,
+      "log": "logs/diff-check.log"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "--",
+        "goodwill/synthetic-data",
+        "tests/acceptance",
+        "fixtures/expected-results",
+        "reports/ENG-04"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.007685,
+      "log": "logs/qa-and-fixtures-unchanged.log"
+    }
+  ],
+  "implementation_file_sha256": {
+    "acquisition/.gitignore": "32dae3052f331ee34d628ef535709b301259a45df7c7522c4d35dcf49873f00b",
+    "acquisition/controller.py": "46a806dd4372ba26bd99b5cfdd32f5a19171d9267edc2741664ff09144b9e7e5",
+    "acquisition/intake.py": "2fe701660c1796b988a991bcde901c8fcab724cc459e13af8b124a6968c30dae",
+    "acquisition/run_skill.cjs": "484f2325002416676f442be2659336d41f0d1ae1524f92972fe160e18fd80b96",
+    "acquisition/run_state.py": "bb63f857ee00339296bc317c06e2a2bcd92d573b4ef76ce92755508946aad01c",
+    "acquisition/skills/upright-paid-orders.skill.json": "52fb0666f3465f46cb3b18a0ed5a5eea6b47c68764889432fa0d9fa3f0fbf132",
+    "acquisition/tests/failure_modes.cjs": "8f8835a99216187d9164f19a198951acb626cf6d223b694c53fd8e3f138086cd",
+    "acquisition/tests/test_intake.py": "ae08549757ad6bd13bb3fc849fd2d590cf4443cbc2628239908f4ddc973e2df2",
+    "acquisition/tests/test_run_state.py": "40440bc34d7186d7b1fa8c4da5677b47127a4749356e4f9ae355f14b68478dc3",
+    "acquisition/tests/test_skill_config.py": "2ad578f5ceb7709625bfa1c95a7e5c686c31eed028da9d01645f511744e68fb3",
+    "apps/__init__.py": "470eb61c5bd3cceeab8c1862082463cfc2d0cc4417974a63ac72d17ea9c8e849",
+    "apps/api/__init__.py": "5d25232d3eb0d01c0eb42aaa1f9b8b13d9fb12d4851d4623e2153386c3b5f3a0",
+    "apps/api/server.py": "73a3a2e035a8f94ef3b749a04614fef2365282b6408bea37094067811ed63743",
+    "apps/dashboard/index.html": "8d28b22c2df23295a6131291704cd89058da6ed3733aa43cc09eb614ce01d7ed",
+    "apps/dashboard/src/app.js": "128efa43661946650496a1b4caff08a21a1c83c7ee91dbc2ad7131d9b7774231",
+    "apps/dashboard/src/common.js": "b6e9a46435ed87190fa469af53b76811fb7d3779896546e30ebc9f349b369d78",
+    "apps/dashboard/src/metrics/pulse.js": "b774c5a0c539379277c26b4e3eaf01c9fe5aa904626e4df8ce99479ad8db5d49",
+    "apps/dashboard/src/operations/intake.js": "a99b5eb5bc1b329fadf2cf385da01f3b9aa0a245a062c4433d2215c7a447b356",
+    "apps/dashboard/src/provenance/evidence.js": "8170c2ce121512244c6884774f16f24611326f2a99f0ef0eb543b81ff4bba492",
+    "apps/dashboard/style.css": "f441e5ab775d06846c507bcf3f1e4236cbcdd129ba7d5f214ece9387e8eed2db",
+    "goodwill_app/__init__.py": "521b77f7bba666f1f24d599459302cc0fe9946fc824d17be0968a0e446e48aef",
+    "goodwill_app/__main__.py": "6f15e4a13bec7561509b8a71d74d7641175f8a616ef112e61f755a3800b69e3d",
+    "services/__init__.py": "8c23ec15cbb5626829d8c0bd6d4859c45bd141a7448c8ccad70b80ce72d63e42",
+    "services/data/__init__.py": "d3ec38562e171e6093b8775d98f15a1d5a7b3b5dd324beab90ee5b7ee21d0a04",
+    "services/data/adapters.py": "ff0a16a46e1bcf1dbd66a40c18b42522ba80ce5fbc852f6a06b92cc0bc10dbcb",
+    "services/data/contracts.py": "720ad0dd38d8ea57f4b8371f5ccb81251142e66b900063dd816312c8f6a74a3b",
+    "services/data/database.py": "2eb1c9d56cdbb0590949a39fd3b6242e3e6c7a9e7503548143096e065dc9ce8d",
+    "services/data/importer.py": "13f4bfc236464561443c8cdca43635e6190b90b6126ce7b71dac29bc479ad731",
+    "services/data/inventory/__init__.py": "acfb5fade1f48e327725d1c8b3b357c7216ea642708f027486d3bd44b4e5282e",
+    "services/data/inventory/store.py": "2ca2bc968635967477d1850db395454b45f0b1f44ca2308c309f56284a374784",
+    "services/data/parsers/__init__.py": "b6ee268d747b2b41d55122bd7030ef295600501030f65cb2d3e1582b95dcbf5c",
+    "services/data/parsers/sales.py": "39d1be7b8446571bcb9d47d5e3501527f57da918889e264e4971bec6c0714dca",
+    "services/data/publication/__init__.py": "579b829fd0091fabd3a4a47bca77060c42e840d809f92ab129928c0e11c22542",
+    "services/data/publication/coverage.py": "66fce3bb4ca491b856392bbc89ca72b31b3cb98c04169f30835c1d5d13fdb14c",
+    "services/data/raw/__init__.py": "e948231455afc74a4315de1098e68f5a752908ce8322a2c61348a55619229366",
+    "services/data/raw/archive.py": "1df915fcc34dacff479053696ec59588783c68ff69a250c417667ac07ef2324e",
+    "services/data/reconciliation/__init__.py": "f1cebff1819ee1abbfe7efad4973f918cdb6cc0cb4551c7ba979327675c3aa22",
+    "services/data/reconciliation/controls.py": "b08b4c1914d78681951d43c195671711c2d41ec835d16f9cfcf93c812cc8fde8",
+    "services/metrics/__init__.py": "23bd6509949ddb0f01e4a457c3f490315cafa7e6a6265368fd900d2eb333f69d",
+    "services/metrics/query.py": "76c3e83dd0a315b714e4905def58f2cf0260f9cee74a88dad1cdc88a4cce6996",
+    "contracts/build_schemas.py": "847463bb58a144bd6d056b791356c303041af6434d588f01cfd149ae9d593f78",
+    "contracts/sources/acquisition-classes.md": "565bd619be1878f4287ec4bbfaef60464daff174641e2ba1ff748322cab358ca",
+    "contracts/v1/acquisition-history.schema.json": "ccf7fe0b7d2871bdeed57512e1e42d6c07262b307ed72e81f34202a520474b2e",
+    "contracts/v1/acquisition-request.schema.json": "d814a65cd93a2e31ee399267fcd7c1ecf6c6cd2f85bdfd7e7025d19c68d9e38d",
+    "contracts/v1/acquisition-run.schema.json": "17d66b50d7ade451ae3657027d9d2470e594a01240d303c21e8aca693a2fa368",
+    "contracts/v1/batch.schema.json": "c294a382da3ed05a6e205027ab80634932e42fa64277031a9f8952628ede8e6c",
+    "contracts/v1/client.ts": "1edc84fc4c1ebf794995dbb698685203cb793ca3d1ab09cdc8d23a38e106f6e1",
+    "contracts/v1/error.schema.json": "3513be8f2eb992dcc588faf278cc343ba4b550d5c0d7f991d9af8f02d43ced1e",
+    "contracts/v1/evidence-query.schema.json": "108f549e6f5a1782dca53acf02149d882da6e96a6eee3ff8712edbb43fb7e6c3",
+    "contracts/v1/evidence.schema.json": "6e7c3b5c18ab52d2c7cba03e16e910183f7178da4285debfc85894c67aeed2c7",
+    "contracts/v1/examples/batch-failed.json": "3f39bd8cec3d61b5967abb57b3d547e8e807e42be47116ab3284b3fadc0d60dd",
+    "contracts/v1/examples/batch-imported.json": "be6550e553799c498425c2265cc75f71d3bd21bd517a6a6a21dc4d95d863ab39",
+    "contracts/v1/examples/evidence.json": "5b84e8ee2d545e0d2832162e8974005824056db7a30b1b814e8c63a0f31925b3",
+    "contracts/v1/examples/metrics-available.json": "e7c93313fc0397fade26eb26f2e951dbf847c4bd60da63771b479f708d5c8c2f",
+    "contracts/v1/examples/metrics-last-good.json": "e724a82f899634c8435f2a529fa23c6177d44f0791fe6180f97e04125080d88e",
+    "contracts/v1/examples/metrics-partial.json": "2cb5d35c35fd14d2c7ee5d8d96b9f9d8a62da84c8b92f774ccae13a6a180339a",
+    "contracts/v1/examples/metrics-unavailable.json": "7d4fece7ad1d64788f2dae4529e36a351aa90cb2d3bf70369d9f783d897d5503",
+    "contracts/v1/health.schema.json": "2d44edb58f15b65941eaf8db8a19fb8bd186a638e992c83a6878b602e9d2c04f",
+    "contracts/v1/import-request.schema.json": "9c9e1e557f2f897014e3529a3c93331b5e0723fad5079f47f24a5940d6cca996",
+    "contracts/v1/imports.schema.json": "eb0d3fdb37cd8bad125f070984c6f419043ff4e51be11e60320f314d6f3dd498",
+    "contracts/v1/inventory.schema.json": "cadcfb9d52c3d6d98aaf88e8e947c9b8493f2463b5df6c9062e09289d7576ba4",
+    "contracts/v1/manifest.schema.json": "1ba14bf7ab06f0ad07bc8d2cb5d200bf3a9b51565cac4123d2292bbea39d470d",
+    "contracts/v1/metrics-query.schema.json": "0615e5e84ed4e078bb2181f44f2fea768adfa1d597045a5a70adaba54299562f",
+    "contracts/v1/metrics.schema.json": "a6d285fb3fca2a67c3e3e2af47ce87fada1cb169d438f41854bd6ca6b3a1ab2f",
+    "contracts/v1/resolution-request.schema.json": "0f3b0aadc76e0a47bb8e9efe9c7c86662a6acf9be85d98219ea5e319035b4da1",
+    "contracts/v1/resolution.schema.json": "18be1859cd9b5bc1cad3fcee9100930c4021fe75613b3e024de8ca1bb67e88bb",
+    "contracts/v1/staging.schema.json": "f24427b98249b0c370cdb917bd6e39efe1e08b9418fb9bb88ff99bee76a972d1",
+    "contracts/v1/tool-request.schema.json": "1297ff28a970ace09203781863454cde1f86a90043a98ad56ccddafb29327a6e",
+    "contracts/v1/tool-response.schema.json": "6dea15ba99c8f8702f6e3baf9dd0712bb7c2786ae19708f30dcdd1a9121db716",
+    "contracts/v1/types.ts": "d8aaaf1eeec52150eb71f38e77d4dbfed9bb3eacd49cba333662f9872e52d626",
+    "scripts/benchmark_data.py": "7b510407a350cb994391d2758bf8695e29062b2f4f928542f95a4d74ad2d8a81",
+    "scripts/browser_handoff.cjs": "e21c0c8ec6fa82eeb2f7d532e1765f1436907d527f90ff03c75e3de7220ee04f",
+    "scripts/build_contract_examples.py": "836d06663fce5d286082c8d546ef742bc2efd97e0ae708a8eb8b0299b6a3b6b1",
+    "scripts/check_completion_artifacts.py": "a82ffcd4ecd3b0fb46fd89d4e0b3f98f845c5dde5af4bfbc370143697aa2e1cf",
+    "scripts/verify_browser_handoff.py": "03e072b964cf5e5c5b57b32ec3c9e57409d2aac589d8d4474978d2725d9f47bf",
+    "scripts/verify_completion.py": "b8c86471ee8d1f15298d9f30b36ae7d7f924ecdc75e4579807fa1049315639b2",
+    "scripts/verify_dashboard.py": "c699c9b2827f72d5f83e003b872fbc2e5189cac291708f529558c32efce7c16f",
+    "scripts/verify_foundation.py": "712ae92b6c52ac12c699c0eb692aa837889498997a3cdd6baf0740fcc53692c6",
+    "scripts/verify_takeover.py": "83b179235d8e036e9ebbe23c723edc36d93ee070919612ab6d4970859674fb91",
+    "tests/ui/acquisition.test.cjs": "da55ee6c0eb2c62d50456d89acda55ed64e267a467d61d23c951cfe35515132b",
+    "tests/ui/dashboard.test.cjs": "7fe9d190152511bb61d1caf01da5b9b3c5c116053c884fdd646dea62026a2830"
+  },
+  "schema_regeneration_identical": true,
+  "owned_checks_passed": true,
+  "full_suite_passed": false,
+  "remaining": [
+    "Jack mc independent dashboard acceptance replaces the deliberate placeholder test",
+    "Human integration/review/freeze",
+    "Remote CI unverified"
+  ],
+  "deferred": [
+    "P1 exports",
+    "Assistant/Jev/live connections and production schedules"
+  ],
+  "authorization": "Peyton explicitly authorized takeover of Hugh/Landon; Jack mc QA lane preserved"
+}

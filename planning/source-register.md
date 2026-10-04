@@ -1,6 +1,6 @@
-# Source register — nine reporting sources (ING-05 DRAFT, not accepted)
+# Source register — nine reporting sources (ING-05 review handoff)
 
-Status: draft by Hugh for human review. GOV-01 and GOV-03 acceptance evidence was not found in the repo, so this is design-only and may need revision.
+Status: source-led design retained from Hugh and reconciled with the merged goodwill-v1 implementation under Peyton’s authorized takeover. Partner access/owners remain unconfirmed. Upright synthetic collection and manual CSV+manifest import are implemented; the other acquisition classes are designs.
 Basis: [THREE_PHASE_PLAN.md §4](project-management/THREE_PHASE_PLAN.md) table "Nine sources are not nine complete integrations", Drive source register ([DRIVE_SOURCE_REGISTER.md](project-management/DRIVE_SOURCE_REGISTER.md)): Amanda meeting, Wicks plan, Jack explanation, Amanda2.0. Requirement refs: PLAN §4, §7; AMANDA, WICKS, JACK, FOLLOWUP (per BACKLOG.md ING-05).
 
 Every channel below is an **acquisition hypothesis from the brief** unless marked *Confirmed*. "Unknown" means nobody has confirmed it with the source owner. Owner, cadence and access state are unknown for all nine; they must be confirmed with Goodwill before any adapter is promised.
@@ -19,8 +19,8 @@ Every channel below is an **acquisition hypothesis from the brief** unless marke
 
 Classes (detail in [contracts/sources/acquisition-classes.md](../contracts/sources/acquisition-classes.md)): C1 authorized API, C2 portal export, C3 scheduled email/file, C4 manual upload, C5 monthly/statement or lookup. Classes describe *how a file arrives*; they are not marketplaces and say nothing about accounting meaning (a source's accounting role is a separate column).
 
-## P0 demo adapter decision (draft)
-Upright paid orders via C2 portal export, against the synthetic replica only. Rationale: Amanda names it the main pain, it needs repeated date-only work, and the replica already exists (PR #45). Cash Monkey is the P1 second source. The other seven are mapped, **not implemented, not connected**.
+## P0 demo adapter decision
+Upright paid orders via C2 portal export, against the synthetic replica only. Rationale: Amanda names it the main pain, it needs repeated date-only work, and the replica already exists (PR #45). Cash Monkey is the P1 second source. The other seven are mapped, **not implemented, not connected**. Source dates are preserved; the new collection skill selects Eastern source dates and All statuses for the P0 reporting slice. Filtered manual reports retain partial coverage.
 
 ## Unknowns to confirm
 Per-source owner, cadence, access/authorization, real formats, whether Upright can email reports, why the Upright API was restricted, FedEx/EasyPost system of record.

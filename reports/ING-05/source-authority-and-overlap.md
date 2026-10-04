@@ -1,10 +1,19 @@
-# ING-05 source authority and overlap (draft)
+# Source authority and overlap review
 
-Authority: stakeholder statements (Amanda, Wicks, Jack) for pain and priority; THREE_PHASE_PLAN §4 for the class hypotheses. The plan itself says its channels are hypotheses to confirm with owners.
+Basis: PLAN §4/§7 and registered stakeholder repository snapshots. This is the synthetic implementation decision; Goodwill source owners have not approved a production matrix. See [nine-source register](../../planning/source-register.md) and [acquisition classes](../../contracts/sources/acquisition-classes.md).
 
-Overlap risks (never total all nine as revenue, PLAN line ~263):
-- Upright (2) and ShopGoodwill (6) may describe the same transactions: pick one system of record per metric.
-- Goodwill Books statement (7) and Amazon payments summary (9) are settlements/payouts, not sales.
-- FedEx (5) and shipping (4) are expenses. Jewelry (3) is enrichment.
-- Cash Monkey (1) vs Upright (2) may overlap on marketplace orders; no cross-platform buyer merging.
-A metric-specific system-of-record matrix belongs to DAT-05/DAT-06 and was not authored here.
+| Source | Accounting role / authority boundary | Demo implementation |
+|---|---|---|
+| Cash Monkey | Sales/payout; select separately from Upright, never sum overlapping orders | Synthetic manual CSV + manifest |
+| Upright | Selected authority for P0 demo item sales minus refunds; excludes shipping/tax/fees | Synthetic deterministic portal collection |
+| Jewelry | Item enrichment, not revenue | Mapped, unconnected |
+| OSM/PB/EasyPost | Expense; system of record unknown | Mapped, unconnected |
+| FedEx | Charges/refunds; expense netting | Mapped, unconnected |
+| ShopGoodwill | Potential transaction overlap with Upright | Mapped, unconnected |
+| Goodwill Books statement | Settlement/payout, not additional transaction revenue | Mapped, unconnected |
+| eBay listing sales | Listing/sales; potential platform coverage overlap | Mapped, unconnected |
+| Amazon payments summary | Settlement/payment summary, not transaction revenue | Mapped, unconnected |
+
+The API queries one selected source. Source-qualified transaction keys and platform-local buyer identities preserve boundaries. No buyer identity is merged across platforms. All nine live owners/access and operational cadence need confirmation; monthly statement delivery is a source hypothesis, not a running connection.
+
+The P0 skill selects All statuses and Eastern source dates. Original filters/timezones survive intake→import; filtered manual reports retain partial coverage. Browser UI tests verify the visible map and unavailable unconnected source. No live formats/authentication or owner review was tested.

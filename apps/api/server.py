@@ -1,6 +1,7 @@
 """Loopback-only synthetic API. No authentication or production deployment claim."""
 import json
 import re
+from pathlib import Path
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import parse_qs, urlparse
 
@@ -11,7 +12,7 @@ from services.metrics.query import evidence_response, metric_response
 MAX_BODY = 8 * 1024 * 1024
 
 
-def make_server(pipeline, port=8000):
+def make_server(pipeline, port=8000, acquisition=None):
     class Handler(BaseHTTPRequestHandler):
         def log_message(self, *_):
             pass
@@ -23,6 +24,7 @@ def make_server(pipeline, port=8000):
             self.send_header("Content-Length", str(len(data)))
             self.send_header("Cache-Control", "no-store")
             self.send_header("X-Content-Type-Options", "nosniff")
+            self.send_header('Content-Security-Policy', "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'")
             origin = self.headers.get("Origin")
             if origin in ("http://localhost:5173", "http://127.0.0.1:5173"):
                 self.send_header("Access-Control-Allow-Origin", origin)
@@ -49,6 +51,32 @@ def make_server(pipeline, port=8000):
                     raise DataError("duplicate_query", "Query keys must be unique")
                 q = {k: v[0] for k, v in query.items()}
                 path = parsed.path
+                if path == '/' or path.startswith('/dashboard/'):
+                    root = Path(__file__).resolve().parents[1] / 'dashboard'
+                    relative = 'index.html' if path == '/' else path.removeprefix('/dashboard/')
+                    file = (root / relative).resolve()
+                    if root.resolve() not in file.parents or file.suffix not in ('.html', '.js', '.css') or not file.is_file():
+                        raise DataError('not_found', 'Unknown dashboard asset')
+                    mime = {'.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css'}[file.suffix]
+                    return self.send(200, file.read_bytes(), mime + '; charset=utf-8')
+                if path == '/replica' and acquisition:
+                    self.send_response(302)
+                    self.send_header('Location', acquisition.portal_url + '/upright')
+                    self.end_headers()
+                    return
+                if path == '/api/v1/acquisition-runs':
+                    if q:
+                        raise DataError('query_invalid', 'Run history takes no query parameters')
+                    if acquisition:
+                        return self.send(200, acquisition.history())
+                    return self.send(200, validate('acquisition-history.schema.json', {
+                        'contract_version': CONTRACT_VERSION, 'synthetic': True, 'runtime_available': False,
+                        'runs': [], 'last_success_at': None, 'schedule': 'Collection unavailable; use manual upload'}))
+                match = re.fullmatch(r'/api/v1/acquisition-runs/([a-f0-9]{32})', path)
+                if match and acquisition:
+                    if q:
+                        raise DataError('query_invalid', 'Run detail takes no query parameters')
+                    return self.send(200, acquisition.get(match[1]))
                 if path == "/api/v1/health":
                     if q:
                         raise DataError("query_invalid", "Health takes no query parameters")
@@ -72,9 +100,15 @@ def make_server(pipeline, port=8000):
                     if q:
                         raise DataError("query_invalid", "Imports list takes no query parameters")
                     return self.send(200, validate("imports.schema.json", {"contract_version": CONTRACT_VERSION, "synthetic": True, "imports": pipeline.batches()}))
-                match = re.fullmatch(r"/api/v1/imports/([a-f0-9]{32})(/rows)?", path)
+                match = re.fullmatch(r"/api/v1/imports/([a-f0-9]{32})(/rows|/manifest)?", path)
                 if match:
                     batch = pipeline.batch(match[1])
+                    if match[2] == '/manifest':
+                        if q:
+                            raise DataError('query_invalid', 'Manifest takes no query parameters')
+                        with pipeline.db() as db:
+                            manifest = json.loads(db.execute('SELECT manifest_json FROM import_batches WHERE id=?', (match[1],)).fetchone()[0])
+                        return self.send(200, manifest)
                     if not match[2]:
                         if q:
                             raise DataError("query_invalid", "Batch detail takes no query parameters")
@@ -104,7 +138,6 @@ def make_server(pipeline, port=8000):
                         row = db.execute("SELECT artifact_ref,checksum FROM source_files WHERE id=?", (match[1],)).fetchone()
                         if not row:
                             raise DataError("not_found", "Unknown source file")
-                        from pathlib import Path
                         data = Path(row["artifact_ref"]).read_bytes()
                         if digest(data) != row["checksum"]:
                             raise DataError("archive_corrupt", "Archived bytes changed")
@@ -148,6 +181,10 @@ def make_server(pipeline, port=8000):
                 if not isinstance(body, dict):
                     raise DataError("request_invalid", "Expected JSON object")
                 path = urlparse(self.path).path
+                if path == '/api/v1/acquisition-runs':
+                    if not acquisition:
+                        raise DataError('collection_unavailable', 'Use manual CSV and manifest upload')
+                    return self.send(202, validate('acquisition-run.schema.json', acquisition.start(body)))
                 if path == "/api/v1/imports":
                     validate("import-request.schema.json", body)
                     result = pipeline.import_bytes(body["csv_text"].encode(), body["manifest"], body.get("allow_corrections", False))

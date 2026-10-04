@@ -1,5 +1,25 @@
 # Goodwill — five-person VS Code / Codex assignment guide
 
+## Current Hugh/Landon takeover
+
+Peyton explicitly authorized taking over Hugh and Landon's remaining core work
+while Jack mc finishes independent QA. Branch `peyton/acquisition-dashboard` is
+based on merged main `7f94806`. ING-02/03/04/05 and APP-01/02/03 now have
+implementation and review artifacts; see [handoff](../../reports/takeover/RESULT.md)
+and [exact verification](../../reports/takeover/verification.json).
+
+The app serves real operations, leadership and source-evidence screens and wires
+synthetic acquisition to verified import/publication. The targeted developer
+checks pass. Jack mc retains his acceptance tests, expected results and ENG-04
+reports. His deliberate dashboard placeholder is the single full-suite failure;
+independent UI acceptance and human ENG-05/REL-01 integration/freeze remain.
+
+This handoff supersedes older missing-UI/backend and separate Hugh/Landon lane
+statements below. It does not assert human acceptance or GitHub issue closure.
+Optional exports, APP-04–07 assistant work, ING-06 Jev and ING-07 live/pilot
+work remain deferred under frozen scope. Nine-source live owners/access still
+need confirmation. The older allocation table is retained as the original plan.
+
 ## Current combined-lane handoff
 
 The shared foundation is merged into main at `610035e` (PR #52), after the

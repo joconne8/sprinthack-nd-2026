@@ -1,5 +1,21 @@
 # ENG-02 file ownership and handoff
 
+## Current authorized takeover
+
+Peyton explicitly took over Hugh/Landon's remaining core implementation on
+`peyton/acquisition-dashboard`, base main `7f94806`. Ownership now also includes
+`acquisition/`, `apps/dashboard/`, the integration entrypoints/additive contracts,
+owned controller/browser regressions and ING-02/03/04/05 + APP-01/02/03 reports.
+The existing synthetic replica in `data ingestion/` is reused without edits.
+See `reports/takeover/CLAIM.md` and `RESULT.md` for scope and actual evidence.
+
+Jack mc retains `tests/acceptance/`, `fixtures/expected-results/` and
+`reports/ENG-04/`; these files and source CSV fixtures are unchanged. His
+dashboard acceptance placeholder remains a reported failure. Shared generation
+still runs through `contracts/build_schemas.py`. Human review/merge/freeze and
+independent acceptance remain separate from developer implementation delivery.
+The previous allocation and earlier completion branch below are historical.
+
 Peyton reported Jack OC's approval to combine setup and data tasks in this session.
 Peyton owns `services/data/`, `services/metrics/`, `db/migrations/` and data tests.
 Delegated setup ownership covers `contracts/v1/`, `goodwill_app/`, `apps/api/`,

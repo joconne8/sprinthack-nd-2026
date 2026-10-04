@@ -88,11 +88,15 @@ class IntakeTests(unittest.TestCase):
         m = man(UP); del m["file_checksum"]
         self.rejects("manifest_incomplete", manifest=m)
 
-    def test_submit_is_idempotent_and_does_not_advance_import_state(self):
+    def test_submit_is_idempotent_and_records_real_import_state(self):
+        from services.data.importer import Pipeline
+        pipeline = Pipeline(self.tmp / 'pipeline')
         r = self.run_intake()
-        _, first = intake.submit(r, self.tmp / "out"); _, second = intake.submit(r, self.tmp / "out")
+        batch, first = intake.submit(r, pipeline); replay, second = intake.submit(r, pipeline)
         self.assertEqual((first, second), (True, False))
-        self.assertEqual(r["import_state"], "not_submitted")
+        self.assertEqual(r["import_state"], "imported")
+        self.assertEqual(batch['batch_id'], replay['batch_id'])
+        self.assertEqual(batch['file']['checksum'], r['checksum'])
 
 
 if __name__ == "__main__":

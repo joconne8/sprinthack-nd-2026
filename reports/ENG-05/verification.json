@@ -13,8 +13,10 @@
   "prior_evidence": "../integration/verification.json",
   "completion_status": "../integration/completion-status.md",
   "remaining_acceptance": [
-    "APP-01/02/03 integrated UI",
-    "Independent ENG-04 evidence",
-    "Human complete-demo acceptance and freeze"
-  ]
+    "Jack mc independent UI acceptance replaces deliberate dashboard placeholder",
+    "Remote CI on reviewed commit",
+    "Human integration/demo acceptance/freeze and REL-01 backup"
+  ],
+  "current_takeover_evidence": "../takeover/verification.json",
+  "current_takeover_status": "../takeover/RESULT.md"
 }

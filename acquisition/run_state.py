@@ -6,11 +6,13 @@ attempt function and clock. Auth/policy failures are never retried.
 from dataclasses import dataclass, field
 
 RETRIABLE = {"timeout", "download_failed"}                       # transient: delayed generation, flaky download
-HUMAN_REQUIRED = {"expired_session": "Goodwill operator (re-authenticate)",
+HUMAN_REQUIRED = {"expired_session": "Operator (synthetic session reset)",
                   "mfa": "Goodwill operator", "captcha": "Goodwill operator",
                   "access_denied": "Goodwill IT / provider owner",
                   "label_changed": "Acquisition maintainer (reviewed revalidation)",
-                  "wrong_page": "Acquisition maintainer"}
+                  "wrong_page": "Acquisition maintainer",
+                  "report_unavailable": "Source owner (confirm report availability)",
+                  "runtime_unavailable": "Demo maintainer (configure collection runtime)"}
 PERMANENT = {"host_not_allowed", "bad_params"}
 
 
@@ -27,6 +29,8 @@ class RunState:
 def execute(run_id, attempt_fn, max_attempts=3, deadline_s=600, clock=lambda: 0.0):
     """attempt_fn(n) -> typed result dict with ok/type. Stops at max_attempts or deadline."""
     st = RunState(run_id)
+    if not 1 <= max_attempts <= 3 or deadline_s <= 0:
+        raise ValueError("Use 1..3 attempts and a positive deadline")
     start = clock()
     for n in range(1, max_attempts + 1):
         if clock() - start > deadline_s:

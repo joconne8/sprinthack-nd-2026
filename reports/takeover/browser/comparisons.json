@@ -1,0 +1,51 @@
+{
+  "passed": true,
+  "comparisons": [
+    {
+      "filters": {
+        "start_date": "2026-09-30",
+        "end_date": "2026-09-30",
+        "source": "upright_replica"
+      },
+      "api": "7127.78",
+      "ui": "$7,127.78"
+    },
+    {
+      "filters": {
+        "start_date": "2026-09-30",
+        "end_date": "2026-09-30",
+        "source": "upright_replica",
+        "platform": "eBay",
+        "store": "GW-001"
+      },
+      "api": "0.00",
+      "ui": "$0.00"
+    },
+    {
+      "filters": {
+        "start_date": "2026-09-30",
+        "end_date": "2026-09-30",
+        "source": "upright_replica",
+        "platform": "GoodwillBooks"
+      },
+      "api": "0.00",
+      "ui": "$0.00"
+    }
+  ],
+  "checks": [
+    "empty state",
+    "real collection and publication",
+    "alternate dates",
+    "repeat no-op",
+    "expired session owner/no retry",
+    "manual replay",
+    "failed import/last-good",
+    "store/platform filters",
+    "pinned evidence/pagination",
+    "source row",
+    "API outage/no mock",
+    "mobile layout",
+    "verified empty scope is zero / missing source unavailable",
+    "no browser script errors"
+  ]
+}

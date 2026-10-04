@@ -34,6 +34,9 @@ def import_intake(pipeline, record_path, allow_corrections=False):
     if any(key not in record for key in required):
         raise DataError("intake_incomplete", "Use the full runs/<run_id>.json record")
     path = Path(record["artifact_ref"])
+    if "manifest" in record:
+        from acquisition.intake import submit
+        return submit(record, pipeline, allow_corrections)[0]
     metadata = {key: record[key] for key in ("source_name", "report_type", "requested_start_date", "requested_end_date", "reporting_timezone", "row_count", "byte_size")}
     metadata.update(schema_version="goodwill-v1", file_name=path.name,
                     file_checksum=record["checksum"], currency="USD", synthetic=True,
