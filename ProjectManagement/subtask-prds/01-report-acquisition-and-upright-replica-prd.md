@@ -4,9 +4,20 @@
 
 Proposed P0 workstream PRD. This is the demo differentiator from the Drive plan.
 
-## Source basis
+## Primary source basis — Drive-led
+- [Goodwill — Three-Phase Solution and Overnight Agent Plan](https://drive.google.com/file/d/1RffkmafbqbMEs7o_lNaTvIRL3hW9paai/view?usp=drivesdk)
+- [Amanda Baumer Goodwill Meeting.md](https://drive.google.com/file/d/1WM1HJVAu_YF-Q48CQDa7SFwnPKg1FPlF/view?usp=drivesdk)
+- [michael-wicks-plan.md](https://drive.google.com/file/d/1gip7aNE1TQdZmqNJQeRlPppVZ5iVuWCT/view?usp=drivesdk)
+- [Jack explanation.md](https://drive.google.com/file/d/1jrBRKAFzJlOVUC7mIsyTH3OrCGY-7qD6/view?usp=drivesdk)
+- [Amanda2.0](https://docs.google.com/document/d/1yveSPTDJ4PUVi1MjMvCP6ovVtyVy-M7UGOeDdDngz7g/edit?usp=drivesdk)
 
-The Drive plan recommends one working Upright-style report acquisition flow against a clearly labeled HTML replica, then feeding the downloaded synthetic CSV into the same import path used by the dashboard.
+Relevant plan sections: §4 Reliable report acquisition; §7 Weekend P0/P1/P2.
+
+Amanda reports restricted Upright API access, repeated same-report/date-only work, a 30–45-minute estimate and a preference for automated delivery. Wicks recommends grouping acquisition classes and a real-DOM screenshot-based replica. The plan separates authorized replay, optional Jev and deferred recorder.
+
+## Source precedence
+Current user decisions govern. Primary evidence is the Google Drive stakeholder/mentor material; the Goodwill Three-Phase Solution and Overnight Agent Plan is the implementation synthesis. This card operationalizes those sources. Older goodwill/PRD.md and planning/agentic-build-plan.md are legacy implementation background, NOT governing requirements or automatic scope limits. Preserve corrections in the three-phase plan where earlier source notes contain unsupported technical claims. Freeze new scope/contracts through GOV-02/GOV-03.
+
 
 ## Problem
 
