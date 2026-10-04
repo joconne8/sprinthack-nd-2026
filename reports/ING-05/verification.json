@@ -1,0 +1,23 @@
+{
+ "task": "ING-05",
+ "commands": [
+  {
+   "cmd": "python3 reports/ING-05/check_source_register.py",
+   "exit": 0,
+   "result": {
+    "cited_requirements": [
+     "REQ-ING-01",
+     "REQ-ING-02",
+     "REQ-ING-03",
+     "REQ-ING-04",
+     "REQ-ING-05"
+    ],
+    "unregistered": [],
+    "broken_relative_links": [],
+    "source_rows": 9,
+    "head": "63a2b6c4149ccd00d61e395e86a4a7cc7ba05cc0"
+   }
+  }
+ ],
+ "scope": "checks cited requirement IDs exist in planning/requirements/register.md, relative links resolve, nine source rows. Does not validate source facts, external links or owner confirmation."
+}
