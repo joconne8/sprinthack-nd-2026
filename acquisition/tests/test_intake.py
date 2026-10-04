@@ -90,7 +90,7 @@ class IntakeTests(unittest.TestCase):
 
     def test_submit_is_idempotent_and_does_not_advance_import_state(self):
         r = self.run_intake()
-        _, first = intake.submit(r, self.tmp / "out"); _, second = intake.submit(r, self.tmp / "out")
+        _, first = intake.submit(r, man(UP), self.tmp / "out"); _, second = intake.submit(r, man(UP), self.tmp / "out")
         self.assertEqual((first, second), (True, False))
         self.assertEqual(r["import_state"], "not_submitted")
 
