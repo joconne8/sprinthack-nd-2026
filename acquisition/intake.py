@@ -2,9 +2,8 @@
 
 Acquisition success means "a verified file is archived", NOT "metrics published".
 Import/publication is a separate state recorded later by the importer (DAT-02).
-The frozen GOV-03 import contract does not exist yet, so submit() writes a
-hand-off record into a local outbox that a real importer can replace.
-All field names below are draft and must be reconciled with GOV-03.
+submit() writes a goodwill-v1 import-request (contracts/v1/import-request.schema.json)
+with the exact archived bytes and the original manifest. GOV-03 is READY_FOR_REVIEW, not accepted.
 """
 import csv
 import hashlib
@@ -137,18 +136,20 @@ def intake(file_path, manifest, run_id, requested_start, requested_end, expected
     return record
 
 
-def submit(record, outbox):
-    """Hand the verified artifact to the importer via a local outbox (placeholder for GOV-03).
+def submit(record, manifest, outbox):
+    """Write a goodwill-v1 import-request ({csv_text, manifest}) for the importer.
 
-    Idempotent per checksum+period: resubmission does not create a second hand-off.
-    Moves nothing about import_state; the importer owns that transition.
+    The payload is the exact archived bytes plus the ORIGINAL portal manifest, as
+    planning/contracts.md prefers. Idempotent per checksum+period. Does not change
+    import_state; the importer (services/data) owns that transition.
     """
     key = f"{record['checksum']}_{record['requested_start_date']}_{record['requested_end_date']}"
-    out = Path(outbox) / f"{key}.json"
+    out = Path(outbox) / f"{key}.import-request.json"
     if out.exists():
         return out, False
+    data = Path(record["artifact_ref"]).read_bytes()
+    if _sha256(data) != record["checksum"]:
+        raise IntakeRejected("archive_corrupt", record["artifact_ref"])
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(json.dumps({"run_id": record["run_id"], "artifact_ref": record["artifact_ref"],
-                               "checksum": record["checksum"], "source_name": record["source_name"],
-                               "report_type": record["report_type"]}, indent=2) + "\n")
+    out.write_text(json.dumps({"csv_text": data.decode("utf-8"), "manifest": manifest}) + "\n")
     return out, True
