@@ -1,13 +1,10 @@
-Task / issue / source requirement IDs: ING-05 (see ProjectManagement/agent-assignments/tasks/ING-05.md); PLAN §4, §7
-State: BLOCKED (draft produced for review)
-Branch / base commit / head commit: hugh/ING-acquisition / 15fa25a / uncommitted working tree
-Changed files and diff summary: planning/source-register.md, contracts/sources/acquisition-classes.md, reports/ING-05/source-authority-and-overlap.md
-Commands actually run, results, logs: No commands beyond reading sources; document check was manual against THREE_PHASE_PLAN §4 table (nine sources, classes, hypotheses labeled). Links not machine-validated. No verification.json created because no checker ran.
-Independent expected-result comparison: expected values taken from the ING-01 example manifests (128 Upright rows, 32 Cash Monkey rows, SHA-256 from manifest), not recomputed by the code under test where applicable.
-Measured elapsed time / usage: not measured; no model, paid service or live access used.
-Tests NOT run and unsupported behavior: Owner/cadence/access for all nine sources unconfirmed. Not an owner-reviewed matrix.
-Remaining blockers / exact missing evidence or human decision: GOV-01 and GOV-03 accepted commits; source-owner review. GOV-01/GOV-03 acceptance evidence and ENG-01 scaffold not found in repo; claims not posted to GitHub issues (no GitHub action taken); lane (acquisition/, contracts/sources/) not yet mapped by orchestrator.
-Synthetic/production distinctions: synthetic replica only; nothing here is validated against real Upright or any live Goodwill source.
-Recommended human review: Jack OC to confirm GOV-03 field names and file lane; confirm coordination with PR #45 contributor.
-
+Task / issue / source requirement IDs: ING-05 (issue #12); REQ-ING-01 to REQ-ING-05; PLAN §4, §7
+State: READY_FOR_REVIEW for the source map and class design. Not an owner-reviewed matrix.
+Branch / base commit: hugh/ING-05-reconcile / 63a2b6c
+Changed files: planning/source-register.md (requirement IDs added; drafts labels removed), contracts/sources/acquisition-classes.md (now separates the frozen goodwill-v1 import manifest from the acquisition record; adds no fields to the contract), reports/ING-05/check_source_register.py, verification.json, RESULT.md
+Commands actually run: python3 reports/ING-05/check_source_register.py → exit 0: 5 requirement IDs cited, all in the GOV-01 register; no broken relative links; 9 source rows. See verification.json.
+Dependencies: GOV-01 (#13) is state:review on GitHub. GOV-03 acceptance was reported to me by Hugh; GitHub issue #15 still showed state:blocked and I could not verify it.
+Tests NOT run / unsupported: no source facts re-verified; Drive documents not re-read in this session; external links not machine-checked; owner, cadence and access for all nine sources remain unconfirmed.
+Blockers: owner review of the source matrix; confirmation of channels with Goodwill.
+Synthetic/production: only the Upright replica path is implemented; nothing connects to real sources.
 Not accepted, not merged, not DONE.
