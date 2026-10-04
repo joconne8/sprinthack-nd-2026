@@ -16,5 +16,16 @@ def connect(path):
     db = sqlite3.connect(str(path), timeout=10, factory=Connection)
     db.row_factory = sqlite3.Row
     db.execute("PRAGMA foreign_keys=ON")
-    db.executescript((Path(__file__).resolve().parents[2] / "db/migrations/001_trusted_data.sql").read_text())
+    db.execute("CREATE TABLE IF NOT EXISTS schema_versions(version INTEGER PRIMARY KEY)")
+    applied = {row[0] for row in db.execute("SELECT version FROM schema_versions")}
+    for migration in sorted((Path(__file__).resolve().parents[2] / "db/migrations").glob("[0-9]*.sql")):
+        version = int(migration.name.split("_", 1)[0])
+        if version not in applied:
+            try:
+                db.executescript("BEGIN IMMEDIATE;\n" + migration.read_text() +
+                                 "\nINSERT OR IGNORE INTO schema_versions VALUES (%d);\nCOMMIT;" % version)
+            except Exception:
+                db.rollback()
+                db.close()
+                raise
     return db

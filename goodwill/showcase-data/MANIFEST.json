@@ -1,0 +1,13 @@
+{
+  "definition_version": "showcase-september-v1",
+  "synthetic": true,
+  "labor_and_shipping_invented": true,
+  "files": {
+    "upright_september.csv": "7e99465c6deaca9d04474ae40f922bc8143eaafefd0cc91a408bb018b256df36",
+    "upright_september.manifest.json": "47f90f8cd1e847a176517749484ddcd42954e1ee4841afe4892bc063311a2185",
+    "cash_monkey_september.csv": "45c94ae7df2acea984df0c4d86efd21f5419e3c51865ce300a06947433fbf28b",
+    "cash_monkey_september.manifest.json": "ffd70eaad0614c06168b08f638ab4cd6a92d4765cc9c541ba656d5391c6de7db",
+    "labor.csv": "4ae7eb3ab62213402dcf9402f0df4d68f7e47f880c0b0860c8a40b00a4495519",
+    "shipping.csv": "be9a18b8849415935d276cd7adf9ea8826939e47e6f2cbd80413ee1188bb0489"
+  }
+}

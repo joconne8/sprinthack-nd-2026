@@ -1,0 +1,91 @@
+{
+  "passed": true,
+  "status": "ready_for_review",
+  "synthetic": true,
+  "human_accepted": false,
+  "base_commit": "3a8c734c91a9c86494eb646ec5c9356e220f563e",
+  "verification_scope": "Implemented working tree; exact frozen commit recorded by the new overnight monitor.",
+  "regression": {
+    "tests": 103,
+    "passed": true,
+    "skipped": 1,
+    "skip_reason": "Superseded legacy P0 export case; 27 new showcase controls actively validate the workbook."
+  },
+  "acquisition": {
+    "tests": 30,
+    "passed": true
+  },
+  "independent_financial_controls": {
+    "tests": 27,
+    "passed": true
+  },
+  "browser": {
+    "passed": true,
+    "recordings": 3,
+    "runs": 9,
+    "evidence": "browser-observations.json"
+  },
+  "presentation": {
+    "passed": true,
+    "snapshot_id": "af6902a4d40023ab704cf653b9c50b2f5dbe3e1fcaf5657bed293b8fad57efbb",
+    "slide_count": 15,
+    "main_presentation_seconds": 900,
+    "narrated_video_seconds": 248.918005,
+    "editable_native_text_runs": 145,
+    "local_only": true,
+    "synthetic": true,
+    "human_accepted": false,
+    "files": {
+      "presentation/aimsigh/index.html": {
+        "bytes": 1439809,
+        "sha256": "c388e612c2a520d642853b63e4c2d377fc9816badae46564cb0ed7391d2acc43"
+      },
+      "presentation/aimsigh/aimsigh-showcase.pdf": {
+        "bytes": 1712028,
+        "sha256": "375ea28e65adc26b188b95cf677466585f95f3edce039c651233cb272b4e0bd2"
+      },
+      "presentation/aimsigh/aimsigh-showcase.pptx": {
+        "bytes": 1094458,
+        "sha256": "96bc91150a3aea551846ca6da4aaf15b1bb9d728764323069cb28644c3c0786c"
+      },
+      "presentation/aimsigh/walkthrough.mp4": {
+        "bytes": 9547033,
+        "sha256": "0bf9c00c019595342f0f054649b47cb28681a7f79241f63602cf326f12a11a59"
+      },
+      "presentation/aimsigh/exports/september2026.xlsx": {
+        "bytes": 617283,
+        "sha256": "4dd460968f36b6c014d0eb0a805bd158bf9452658b89263fbf0181d067659d49"
+      }
+    }
+  },
+  "sample_data": {
+    "sales_records": 4800,
+    "labor_rows": 1440,
+    "shipping_rows": 4800,
+    "monthly_net_sales": "254059.40",
+    "monthly_labor_hours": "1968.00",
+    "monthly_productivity": "129.10",
+    "monthly_demo_contribution": "171659.26",
+    "monthly_demo_margin_percent": "67.57",
+    "previous_week_productivity": "144.59",
+    "current_week_productivity": "104.94"
+  },
+  "august_inventory": {
+    "coverage": "complete",
+    "listings": 1443,
+    "unlisted_backlog": 765,
+    "cutoff": "2026-08-31T23:59:59-04:00",
+    "joined_to_september": false
+  },
+  "remaining_external_steps": [
+    "Human presentation rehearsal and acceptance",
+    "Push/review/merge and organizer submission",
+    "Production integrations remain separate pilot deliverables"
+  ],
+  "offline_handoff": {
+    "zip_roundtrip_verified": true,
+    "fresh_extraction_prepare_passed": true,
+    "complete_metrics_verified": true,
+    "dependencies_included": false
+  }
+}

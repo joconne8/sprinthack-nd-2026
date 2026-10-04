@@ -7,7 +7,7 @@ const RESULT = { OK: 'ok', EXPIRED_SESSION: 'expired_session', WRONG_PAGE: 'wron
 const fail = (type, detail, ctx) => ({ok: false, type, detail, run_id: ctx.runId, skill_id: ctx.skill.skill_id, skill_version: ctx.skill.skill_version});
 const validDate = value => /^2026-\d{2}-\d{2}$/.test(value) && !Number.isNaN(Date.parse(value)) && new Date(value).toISOString().slice(0, 10) === value;
 
-async function runSkill(skillPath, {baseUrl, startDate, endDate, outputDir = 'artifacts', runId = crypto.randomUUID(), browser, pageSetup, mode = 'normal', deadlineMs}) {
+async function runSkill(skillPath, {baseUrl, startDate, endDate, outputDir = 'artifacts', runId = crypto.randomUUID(), browser, pageSetup, mode = 'normal', deadlineMs, headed = false, capture = false}) {
   const skill = JSON.parse(fs.readFileSync(skillPath, 'utf8'));
   const ctx = {skill, runId};
   let url;
@@ -20,8 +20,18 @@ async function runSkill(skillPath, {baseUrl, startDate, endDate, outputDir = 'ar
   const deadline = Date.now() + total;
   const remaining = () => { const ms = deadline-Date.now(); if (ms <= 0) {const e = new Error('Overall acquisition deadline exceeded'); e.name = 'DeadlineError'; throw e;} return Math.min(skill.timeouts_ms.step, ms); };
   let page, failureType = 'wrong_page', lastCategory = '';
+  let index = 0;
+  const observe = async (step, detail) => {
+    if (!capture) return;
+    fs.mkdirSync(outputDir, {recursive: true});
+    const name = `frame-${String(index++).padStart(3, '0')}.png`;
+    await page.screenshot({path: path.join(outputDir, name)});
+    fs.appendFileSync(path.join(outputDir, 'events.jsonl'), JSON.stringify({step: index, op: step.op, detail,
+      frame: name, observed_at: new Date().toISOString()}) + '\n');
+    await page.waitForTimeout(250);
+  };
   try {
-    browser = browser || await chromium.launch({headless: true, timeout: remaining(), ...(process.env.CHROME_PATH ? {executablePath: process.env.CHROME_PATH} : {})});
+    browser = browser || await chromium.launch({headless: !headed, timeout: remaining(), ...(process.env.CHROME_PATH ? {executablePath: process.env.CHROME_PATH} : {})});
     page = await browser.newPage({acceptDownloads: true});
     await page.addInitScript(value => sessionStorage.setItem('replica-mode', value), mode === 'timeout' ? 'delayed' : mode);
     if (pageSetup) await pageSetup(page);
@@ -85,8 +95,10 @@ async function runSkill(skillPath, {baseUrl, startDate, endDate, outputDir = 'ar
         const manifest = await response.json();
         const sha256 = crypto.createHash('sha256').update(bytes).digest('hex');
         if (manifest.file_checksum !== sha256 || manifest.requested_start_date !== startDate || manifest.requested_end_date !== endDate || manifest.source_name !== skill.source_name || manifest.report_type !== skill.report_type || manifest.synthetic !== true) return fail('download_failed', 'Downloaded artifact differs from requested manifest', ctx);
+        await observe(step, 'Downloaded CSV bytes match requested dates, source, report and SHA-256 manifest');
         return {ok: true, type: 'ok', run_id: runId, skill_id: skill.skill_id, skill_version: skill.skill_version, file, manifest, sha256, byte_size: bytes.length};
       } else return fail('wrong_page', 'Unknown skill operation', ctx);
+      await observe(step, `Completed ${step.op}; ${step.label || step.name || step.path || 'report state'}`);
     }
     return fail('wrong_page', 'Skill ended without a download', ctx);
   } catch (error) {
@@ -100,7 +112,7 @@ async function runSkill(skillPath, {baseUrl, startDate, endDate, outputDir = 'ar
 
 if (require.main === module) {
   const request = process.argv[2] === '--request' ? JSON.parse(fs.readFileSync(process.argv[3], 'utf8')) : {startDate: process.argv[2], endDate: process.argv[3] || process.argv[2], baseUrl: process.env.BASE_URL || 'http://127.0.0.1:4173', outputDir: process.env.OUTPUT_DIR || 'artifacts'};
-  runSkill(path.join(__dirname, 'skills/upright-paid-orders.skill.json'), request)
+  runSkill(request.skillPath || path.join(__dirname, 'skills/upright-paid-orders.skill.json'), request)
     .then(result => {console.log(JSON.stringify(result)); process.exitCode = result.ok ? 0 : 1;});
 }
 module.exports = {runSkill, RESULT};

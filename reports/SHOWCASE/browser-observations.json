@@ -1,0 +1,1101 @@
+{
+  "completed": true,
+  "recordings": [
+    {
+      "recording_id": "6ed11a7a463b476aa3eb55c4acd78615",
+      "recipe_id": "6ed11a7a463b476aa3eb55c4acd78615",
+      "source": "upright_replica",
+      "changed_label": false,
+      "preview": {
+        "allowed_hosts": [
+          "localhost",
+          "127.0.0.1"
+        ],
+        "parameters": [
+          "start_date",
+          "end_date"
+        ],
+        "report_type": "paid_orders",
+        "skill_id": "6ed11a7a463b476aa3eb55c4acd78615",
+        "skill_version": "1.0.0",
+        "source_name": "upright_replica",
+        "status": "human action recording; awaiting recipe approval",
+        "steps": [
+          {
+            "op": "goto",
+            "path": "/upright"
+          },
+          {
+            "name": "▥ Reports",
+            "op": "click",
+            "role": "link",
+            "within": {
+              "name": "Upright navigation",
+              "role": "navigation"
+            }
+          },
+          {
+            "op": "goto",
+            "path": "/upright/reports"
+          },
+          {
+            "op": "goto",
+            "path": "/upright/reports/paid-orders"
+          },
+          {
+            "label": "Start date",
+            "op": "fill",
+            "value": "{start_date}"
+          },
+          {
+            "label": "End date",
+            "op": "fill",
+            "value": "{end_date}"
+          },
+          {
+            "label": "Timezone",
+            "op": "select",
+            "value": "America/Indiana/Indianapolis"
+          },
+          {
+            "label": "Payment status",
+            "op": "select",
+            "value": "All"
+          },
+          {
+            "name": "Generate report",
+            "op": "click",
+            "role": "button"
+          },
+          {
+            "failed_class": "error",
+            "op": "wait_state",
+            "ready_class": "success",
+            "selector": "#messages"
+          },
+          {
+            "op": "download",
+            "selector": "[data-testid=\"download-{job_id}\"]"
+          }
+        ],
+        "timeouts_ms": {
+          "step": 5000,
+          "total": 40000
+        }
+      }
+    },
+    {
+      "recording_id": "4d355afa1732421a80975f079095b078",
+      "recipe_id": "4d355afa1732421a80975f079095b078",
+      "source": "cash_monkey_replica",
+      "changed_label": false,
+      "preview": {
+        "allowed_hosts": [
+          "localhost",
+          "127.0.0.1"
+        ],
+        "parameters": [
+          "start_date",
+          "end_date"
+        ],
+        "report_type": "orders",
+        "skill_id": "4d355afa1732421a80975f079095b078",
+        "skill_version": "1.0.0",
+        "source_name": "cash_monkey_replica",
+        "status": "human action recording; awaiting recipe approval",
+        "steps": [
+          {
+            "op": "goto",
+            "path": "/cash-monkey"
+          },
+          {
+            "op": "goto",
+            "path": "/cash-monkey/reports"
+          },
+          {
+            "op": "goto",
+            "path": "/cash-monkey/reports/orders"
+          },
+          {
+            "label": "Order Date From:",
+            "op": "fill",
+            "value": "{start_date}"
+          },
+          {
+            "label": "Order Date To:",
+            "op": "fill",
+            "value": "{end_date}"
+          },
+          {
+            "name": "Submit",
+            "op": "click",
+            "role": "button"
+          },
+          {
+            "failed_class": "error",
+            "op": "wait_state",
+            "ready_class": "success",
+            "selector": "#messages"
+          },
+          {
+            "op": "download",
+            "selector": "[data-testid=\"cash-download-link\"]"
+          }
+        ],
+        "timeouts_ms": {
+          "step": 5000,
+          "total": 40000
+        }
+      }
+    },
+    {
+      "recording_id": "cfb81ed9463c46c382176c240599a7b0",
+      "recipe_id": "cfb81ed9463c46c382176c240599a7b0",
+      "source": "upright_replica",
+      "changed_label": true,
+      "preview": {
+        "allowed_hosts": [
+          "localhost",
+          "127.0.0.1"
+        ],
+        "parameters": [
+          "start_date",
+          "end_date"
+        ],
+        "report_type": "paid_orders",
+        "skill_id": "cfb81ed9463c46c382176c240599a7b0",
+        "skill_version": "1.0.0",
+        "source_name": "upright_replica",
+        "status": "human action recording; awaiting recipe approval",
+        "steps": [
+          {
+            "op": "goto",
+            "path": "/upright"
+          },
+          {
+            "op": "goto",
+            "path": "/upright/reports"
+          },
+          {
+            "op": "goto",
+            "path": "/upright/reports/paid-orders"
+          },
+          {
+            "label": "Start date",
+            "op": "fill",
+            "value": "{start_date}"
+          },
+          {
+            "label": "End date",
+            "op": "fill",
+            "value": "{end_date}"
+          },
+          {
+            "label": "Timezone",
+            "op": "select",
+            "value": "America/Indiana/Indianapolis"
+          },
+          {
+            "label": "Payment status",
+            "op": "select",
+            "value": "All"
+          },
+          {
+            "name": "Build export",
+            "op": "click",
+            "role": "button"
+          },
+          {
+            "failed_class": "error",
+            "op": "wait_state",
+            "ready_class": "success",
+            "selector": "#messages"
+          },
+          {
+            "op": "download",
+            "selector": "[data-testid=\"download-{job_id}\"]"
+          }
+        ],
+        "timeouts_ms": {
+          "step": 5000,
+          "total": 40000
+        }
+      }
+    }
+  ],
+  "runs": [
+    {
+      "attempts": [
+        {
+          "n": 1,
+          "ok": true,
+          "type": "ok"
+        }
+      ],
+      "batch_id": "a3118b1fb9cc411fba5cc707461c7411",
+      "cause": "",
+      "checksum": "543247470f52449fbf285b97fc714858ada89758a7c2fd687a2227d5be2e45e3",
+      "contract_version": "showcase-v1",
+      "end_date": "2026-09-30",
+      "finished_at": "2026-10-04T17:19:37.303760+00:00",
+      "headed": false,
+      "import_state": "imported",
+      "mode": "normal",
+      "owner_role": "",
+      "publication_state": "published",
+      "recipe_id": "6ed11a7a463b476aa3eb55c4acd78615",
+      "recipe_version": "1.0.0",
+      "requested_at": "2026-10-04T17:19:32.560796+00:00",
+      "row_count": 128,
+      "run_id": "567ee05a79d64e93b82226fd17e3bfda",
+      "snapshot_id": "e51c968ff4db3fca1fe27b240081e8c5e586864d6c9a608de034d823de2ca3f9",
+      "source": "upright_replica",
+      "stage": "complete",
+      "start_date": "2026-09-30",
+      "status": "succeeded",
+      "synthetic": true,
+      "observed_import_state": "imported",
+      "observed_events": [
+        {
+          "detail": "Completed goto; /upright",
+          "frame_url": "/api/showcase/v1/runs/567ee05a79d64e93b82226fd17e3bfda/frames/attempt-1-frame-000.png",
+          "observed_at": "2026-10-04T17:19:33.069Z",
+          "op": "goto",
+          "step": 1
+        },
+        {
+          "detail": "Completed click; ▥ Reports",
+          "frame_url": "/api/showcase/v1/runs/567ee05a79d64e93b82226fd17e3bfda/frames/attempt-1-frame-001.png",
+          "observed_at": "2026-10-04T17:19:33.442Z",
+          "op": "click",
+          "step": 2
+        },
+        {
+          "detail": "Completed goto; /upright/reports",
+          "frame_url": "/api/showcase/v1/runs/567ee05a79d64e93b82226fd17e3bfda/frames/attempt-1-frame-002.png",
+          "observed_at": "2026-10-04T17:19:33.774Z",
+          "op": "goto",
+          "step": 3
+        },
+        {
+          "detail": "Completed goto; /upright/reports/paid-orders",
+          "frame_url": "/api/showcase/v1/runs/567ee05a79d64e93b82226fd17e3bfda/frames/attempt-1-frame-003.png",
+          "observed_at": "2026-10-04T17:19:34.122Z",
+          "op": "goto",
+          "step": 4
+        },
+        {
+          "detail": "Completed fill; Start date",
+          "frame_url": "/api/showcase/v1/runs/567ee05a79d64e93b82226fd17e3bfda/frames/attempt-1-frame-004.png",
+          "observed_at": "2026-10-04T17:19:34.411Z",
+          "op": "fill",
+          "step": 5
+        },
+        {
+          "detail": "Completed fill; End date",
+          "frame_url": "/api/showcase/v1/runs/567ee05a79d64e93b82226fd17e3bfda/frames/attempt-1-frame-005.png",
+          "observed_at": "2026-10-04T17:19:34.714Z",
+          "op": "fill",
+          "step": 6
+        },
+        {
+          "detail": "Completed select; Timezone",
+          "frame_url": "/api/showcase/v1/runs/567ee05a79d64e93b82226fd17e3bfda/frames/attempt-1-frame-006.png",
+          "observed_at": "2026-10-04T17:19:35.009Z",
+          "op": "select",
+          "step": 7
+        },
+        {
+          "detail": "Completed select; Payment status",
+          "frame_url": "/api/showcase/v1/runs/567ee05a79d64e93b82226fd17e3bfda/frames/attempt-1-frame-007.png",
+          "observed_at": "2026-10-04T17:19:35.296Z",
+          "op": "select",
+          "step": 8
+        },
+        {
+          "detail": "Completed click; Generate report",
+          "frame_url": "/api/showcase/v1/runs/567ee05a79d64e93b82226fd17e3bfda/frames/attempt-1-frame-008.png",
+          "observed_at": "2026-10-04T17:19:35.634Z",
+          "op": "click",
+          "step": 9
+        },
+        {
+          "detail": "Completed wait_state; report state",
+          "frame_url": "/api/showcase/v1/runs/567ee05a79d64e93b82226fd17e3bfda/frames/attempt-1-frame-009.png",
+          "observed_at": "2026-10-04T17:19:36.612Z",
+          "op": "wait_state",
+          "step": 10
+        },
+        {
+          "detail": "Downloaded CSV bytes match requested dates, source, report and SHA-256 manifest",
+          "frame_url": "/api/showcase/v1/runs/567ee05a79d64e93b82226fd17e3bfda/frames/attempt-1-frame-010.png",
+          "observed_at": "2026-10-04T17:19:36.927Z",
+          "op": "download",
+          "step": 11
+        }
+      ]
+    },
+    {
+      "attempts": [
+        {
+          "n": 1,
+          "ok": true,
+          "type": "ok"
+        }
+      ],
+      "batch_id": "e5b533ed6a05433280a13b8fe0e710c0",
+      "cause": "",
+      "checksum": "b16cb801b88e68366ad173920b660be75d0415c4186d1a3e446399b194607101",
+      "contract_version": "showcase-v1",
+      "end_date": "2026-09-30",
+      "finished_at": "2026-10-04T17:19:43.777999+00:00",
+      "headed": false,
+      "import_state": "imported",
+      "mode": "normal",
+      "owner_role": "",
+      "publication_state": "published",
+      "recipe_id": "4d355afa1732421a80975f079095b078",
+      "recipe_version": "1.0.0",
+      "requested_at": "2026-10-04T17:19:39.994181+00:00",
+      "row_count": 32,
+      "run_id": "e5cf410cfec84f76846bbfb765ac89c8",
+      "snapshot_id": "cd31e7c9a20e9609f9d2383c231462aefd85a0558f0b8fa9599e2793afcce8e5",
+      "source": "cash_monkey_replica",
+      "stage": "complete",
+      "start_date": "2026-09-30",
+      "status": "succeeded",
+      "synthetic": true,
+      "observed_import_state": "imported",
+      "observed_events": [
+        {
+          "detail": "Completed goto; /cash-monkey",
+          "frame_url": "/api/showcase/v1/runs/e5cf410cfec84f76846bbfb765ac89c8/frames/attempt-1-frame-000.png",
+          "observed_at": "2026-10-04T17:19:40.519Z",
+          "op": "goto",
+          "step": 1
+        },
+        {
+          "detail": "Completed goto; /cash-monkey/reports",
+          "frame_url": "/api/showcase/v1/runs/e5cf410cfec84f76846bbfb765ac89c8/frames/attempt-1-frame-001.png",
+          "observed_at": "2026-10-04T17:19:40.840Z",
+          "op": "goto",
+          "step": 2
+        },
+        {
+          "detail": "Completed goto; /cash-monkey/reports/orders",
+          "frame_url": "/api/showcase/v1/runs/e5cf410cfec84f76846bbfb765ac89c8/frames/attempt-1-frame-002.png",
+          "observed_at": "2026-10-04T17:19:41.177Z",
+          "op": "goto",
+          "step": 3
+        },
+        {
+          "detail": "Completed fill; Order Date From:",
+          "frame_url": "/api/showcase/v1/runs/e5cf410cfec84f76846bbfb765ac89c8/frames/attempt-1-frame-003.png",
+          "observed_at": "2026-10-04T17:19:41.480Z",
+          "op": "fill",
+          "step": 4
+        },
+        {
+          "detail": "Completed fill; Order Date To:",
+          "frame_url": "/api/showcase/v1/runs/e5cf410cfec84f76846bbfb765ac89c8/frames/attempt-1-frame-004.png",
+          "observed_at": "2026-10-04T17:19:41.783Z",
+          "op": "fill",
+          "step": 5
+        },
+        {
+          "detail": "Completed click; Submit",
+          "frame_url": "/api/showcase/v1/runs/e5cf410cfec84f76846bbfb765ac89c8/frames/attempt-1-frame-005.png",
+          "observed_at": "2026-10-04T17:19:42.118Z",
+          "op": "click",
+          "step": 6
+        },
+        {
+          "detail": "Completed wait_state; report state",
+          "frame_url": "/api/showcase/v1/runs/e5cf410cfec84f76846bbfb765ac89c8/frames/attempt-1-frame-006.png",
+          "observed_at": "2026-10-04T17:19:43.064Z",
+          "op": "wait_state",
+          "step": 7
+        },
+        {
+          "detail": "Downloaded CSV bytes match requested dates, source, report and SHA-256 manifest",
+          "frame_url": "/api/showcase/v1/runs/e5cf410cfec84f76846bbfb765ac89c8/frames/attempt-1-frame-007.png",
+          "observed_at": "2026-10-04T17:19:43.409Z",
+          "op": "download",
+          "step": 8
+        }
+      ]
+    },
+    {
+      "attempts": [
+        {
+          "n": 1,
+          "ok": true,
+          "type": "ok"
+        }
+      ],
+      "batch_id": "310cb78ab9414dfaa869770a431ba4ae",
+      "cause": "",
+      "checksum": "b16cb801b88e68366ad173920b660be75d0415c4186d1a3e446399b194607101",
+      "contract_version": "showcase-v1",
+      "end_date": "2026-09-30",
+      "finished_at": "2026-10-04T17:19:48.519195+00:00",
+      "headed": false,
+      "import_state": "duplicate_noop",
+      "mode": "normal",
+      "owner_role": "",
+      "publication_state": "published",
+      "recipe_id": "4d355afa1732421a80975f079095b078",
+      "recipe_version": "1.0.0",
+      "requested_at": "2026-10-04T17:19:44.811291+00:00",
+      "row_count": 32,
+      "run_id": "19950a74a3e84d25954b4c7ae6a3913b",
+      "snapshot_id": "2e9c938368830a74b315e5e450fefeed108850b9bfa0945866a614d9612a7c86",
+      "source": "cash_monkey_replica",
+      "stage": "complete",
+      "start_date": "2026-09-30",
+      "status": "succeeded",
+      "synthetic": true,
+      "observed_import_state": "duplicate_noop",
+      "observed_events": [
+        {
+          "detail": "Completed goto; /cash-monkey",
+          "frame_url": "/api/showcase/v1/runs/19950a74a3e84d25954b4c7ae6a3913b/frames/attempt-1-frame-000.png",
+          "observed_at": "2026-10-04T17:19:45.294Z",
+          "op": "goto",
+          "step": 1
+        },
+        {
+          "detail": "Completed goto; /cash-monkey/reports",
+          "frame_url": "/api/showcase/v1/runs/19950a74a3e84d25954b4c7ae6a3913b/frames/attempt-1-frame-001.png",
+          "observed_at": "2026-10-04T17:19:45.598Z",
+          "op": "goto",
+          "step": 2
+        },
+        {
+          "detail": "Completed goto; /cash-monkey/reports/orders",
+          "frame_url": "/api/showcase/v1/runs/19950a74a3e84d25954b4c7ae6a3913b/frames/attempt-1-frame-002.png",
+          "observed_at": "2026-10-04T17:19:45.933Z",
+          "op": "goto",
+          "step": 3
+        },
+        {
+          "detail": "Completed fill; Order Date From:",
+          "frame_url": "/api/showcase/v1/runs/19950a74a3e84d25954b4c7ae6a3913b/frames/attempt-1-frame-003.png",
+          "observed_at": "2026-10-04T17:19:46.220Z",
+          "op": "fill",
+          "step": 4
+        },
+        {
+          "detail": "Completed fill; Order Date To:",
+          "frame_url": "/api/showcase/v1/runs/19950a74a3e84d25954b4c7ae6a3913b/frames/attempt-1-frame-004.png",
+          "observed_at": "2026-10-04T17:19:46.521Z",
+          "op": "fill",
+          "step": 5
+        },
+        {
+          "detail": "Completed click; Submit",
+          "frame_url": "/api/showcase/v1/runs/19950a74a3e84d25954b4c7ae6a3913b/frames/attempt-1-frame-005.png",
+          "observed_at": "2026-10-04T17:19:46.858Z",
+          "op": "click",
+          "step": 6
+        },
+        {
+          "detail": "Completed wait_state; report state",
+          "frame_url": "/api/showcase/v1/runs/19950a74a3e84d25954b4c7ae6a3913b/frames/attempt-1-frame-006.png",
+          "observed_at": "2026-10-04T17:19:47.806Z",
+          "op": "wait_state",
+          "step": 7
+        },
+        {
+          "detail": "Downloaded CSV bytes match requested dates, source, report and SHA-256 manifest",
+          "frame_url": "/api/showcase/v1/runs/19950a74a3e84d25954b4c7ae6a3913b/frames/attempt-1-frame-007.png",
+          "observed_at": "2026-10-04T17:19:48.146Z",
+          "op": "download",
+          "step": 8
+        }
+      ]
+    },
+    {
+      "attempts": [
+        {
+          "n": 1,
+          "ok": false,
+          "type": "label_changed"
+        }
+      ],
+      "batch_id": null,
+      "cause": "label_changed: locator.click: Timeout 5000ms exceeded.",
+      "checksum": null,
+      "contract_version": "showcase-v1",
+      "end_date": "2026-09-30",
+      "finished_at": "2026-10-04T17:19:57.863363+00:00",
+      "headed": false,
+      "import_state": "not_submitted",
+      "mode": "changed-label",
+      "owner_role": "Acquisition maintainer (reviewed revalidation)",
+      "publication_state": "not_published",
+      "recipe_id": "6ed11a7a463b476aa3eb55c4acd78615",
+      "recipe_version": "1.0.0",
+      "requested_at": "2026-10-04T17:19:49.523987+00:00",
+      "row_count": null,
+      "run_id": "08f9503e6c714fa4968cb90c44c428b5",
+      "snapshot_id": null,
+      "source": "upright_replica",
+      "stage": "failed",
+      "start_date": "2026-09-30",
+      "status": "needs_human",
+      "synthetic": true,
+      "observed_events": [
+        {
+          "detail": "Completed goto; /upright",
+          "frame_url": "/api/showcase/v1/runs/08f9503e6c714fa4968cb90c44c428b5/frames/attempt-1-frame-000.png",
+          "observed_at": "2026-10-04T17:19:50.062Z",
+          "op": "goto",
+          "step": 1
+        },
+        {
+          "detail": "Completed click; ▥ Reports",
+          "frame_url": "/api/showcase/v1/runs/08f9503e6c714fa4968cb90c44c428b5/frames/attempt-1-frame-001.png",
+          "observed_at": "2026-10-04T17:19:50.398Z",
+          "op": "click",
+          "step": 2
+        },
+        {
+          "detail": "Completed goto; /upright/reports",
+          "frame_url": "/api/showcase/v1/runs/08f9503e6c714fa4968cb90c44c428b5/frames/attempt-1-frame-002.png",
+          "observed_at": "2026-10-04T17:19:50.733Z",
+          "op": "goto",
+          "step": 3
+        },
+        {
+          "detail": "Completed goto; /upright/reports/paid-orders",
+          "frame_url": "/api/showcase/v1/runs/08f9503e6c714fa4968cb90c44c428b5/frames/attempt-1-frame-003.png",
+          "observed_at": "2026-10-04T17:19:51.080Z",
+          "op": "goto",
+          "step": 4
+        },
+        {
+          "detail": "Completed fill; Start date",
+          "frame_url": "/api/showcase/v1/runs/08f9503e6c714fa4968cb90c44c428b5/frames/attempt-1-frame-004.png",
+          "observed_at": "2026-10-04T17:19:51.371Z",
+          "op": "fill",
+          "step": 5
+        },
+        {
+          "detail": "Completed fill; End date",
+          "frame_url": "/api/showcase/v1/runs/08f9503e6c714fa4968cb90c44c428b5/frames/attempt-1-frame-005.png",
+          "observed_at": "2026-10-04T17:19:51.672Z",
+          "op": "fill",
+          "step": 6
+        },
+        {
+          "detail": "Completed select; Timezone",
+          "frame_url": "/api/showcase/v1/runs/08f9503e6c714fa4968cb90c44c428b5/frames/attempt-1-frame-006.png",
+          "observed_at": "2026-10-04T17:19:51.972Z",
+          "op": "select",
+          "step": 7
+        },
+        {
+          "detail": "Completed select; Payment status",
+          "frame_url": "/api/showcase/v1/runs/08f9503e6c714fa4968cb90c44c428b5/frames/attempt-1-frame-007.png",
+          "observed_at": "2026-10-04T17:19:52.270Z",
+          "op": "select",
+          "step": 8
+        }
+      ]
+    },
+    {
+      "attempts": [
+        {
+          "n": 1,
+          "ok": true,
+          "type": "ok"
+        }
+      ],
+      "batch_id": "d16e461e3e0c48dda6836975d8412298",
+      "cause": "",
+      "checksum": "543247470f52449fbf285b97fc714858ada89758a7c2fd687a2227d5be2e45e3",
+      "contract_version": "showcase-v1",
+      "end_date": "2026-09-30",
+      "finished_at": "2026-10-04T17:20:05.057779+00:00",
+      "headed": false,
+      "import_state": "duplicate_noop",
+      "mode": "changed-label",
+      "owner_role": "",
+      "publication_state": "published",
+      "recipe_id": "cfb81ed9463c46c382176c240599a7b0",
+      "recipe_version": "1.0.0",
+      "requested_at": "2026-10-04T17:20:00.627117+00:00",
+      "row_count": 128,
+      "run_id": "fafd61baed91412aa7dbce52697b095b",
+      "snapshot_id": "fdf9952dd3f683ded2e0c006413a46867a2e28565ffeea651e8b9fee0b22a40b",
+      "source": "upright_replica",
+      "stage": "complete",
+      "start_date": "2026-09-30",
+      "status": "succeeded",
+      "synthetic": true,
+      "observed_import_state": "duplicate_noop",
+      "observed_events": [
+        {
+          "detail": "Completed goto; /upright",
+          "frame_url": "/api/showcase/v1/runs/fafd61baed91412aa7dbce52697b095b/frames/attempt-1-frame-000.png",
+          "observed_at": "2026-10-04T17:20:01.159Z",
+          "op": "goto",
+          "step": 1
+        },
+        {
+          "detail": "Completed goto; /upright/reports",
+          "frame_url": "/api/showcase/v1/runs/fafd61baed91412aa7dbce52697b095b/frames/attempt-1-frame-001.png",
+          "observed_at": "2026-10-04T17:20:01.496Z",
+          "op": "goto",
+          "step": 2
+        },
+        {
+          "detail": "Completed goto; /upright/reports/paid-orders",
+          "frame_url": "/api/showcase/v1/runs/fafd61baed91412aa7dbce52697b095b/frames/attempt-1-frame-002.png",
+          "observed_at": "2026-10-04T17:20:01.846Z",
+          "op": "goto",
+          "step": 3
+        },
+        {
+          "detail": "Completed fill; Start date",
+          "frame_url": "/api/showcase/v1/runs/fafd61baed91412aa7dbce52697b095b/frames/attempt-1-frame-003.png",
+          "observed_at": "2026-10-04T17:20:02.151Z",
+          "op": "fill",
+          "step": 4
+        },
+        {
+          "detail": "Completed fill; End date",
+          "frame_url": "/api/showcase/v1/runs/fafd61baed91412aa7dbce52697b095b/frames/attempt-1-frame-004.png",
+          "observed_at": "2026-10-04T17:20:02.452Z",
+          "op": "fill",
+          "step": 5
+        },
+        {
+          "detail": "Completed select; Timezone",
+          "frame_url": "/api/showcase/v1/runs/fafd61baed91412aa7dbce52697b095b/frames/attempt-1-frame-005.png",
+          "observed_at": "2026-10-04T17:20:02.752Z",
+          "op": "select",
+          "step": 6
+        },
+        {
+          "detail": "Completed select; Payment status",
+          "frame_url": "/api/showcase/v1/runs/fafd61baed91412aa7dbce52697b095b/frames/attempt-1-frame-006.png",
+          "observed_at": "2026-10-04T17:20:03.054Z",
+          "op": "select",
+          "step": 7
+        },
+        {
+          "detail": "Completed click; Build export",
+          "frame_url": "/api/showcase/v1/runs/fafd61baed91412aa7dbce52697b095b/frames/attempt-1-frame-007.png",
+          "observed_at": "2026-10-04T17:20:03.389Z",
+          "op": "click",
+          "step": 8
+        },
+        {
+          "detail": "Completed wait_state; report state",
+          "frame_url": "/api/showcase/v1/runs/fafd61baed91412aa7dbce52697b095b/frames/attempt-1-frame-008.png",
+          "observed_at": "2026-10-04T17:20:04.367Z",
+          "op": "wait_state",
+          "step": 9
+        },
+        {
+          "detail": "Downloaded CSV bytes match requested dates, source, report and SHA-256 manifest",
+          "frame_url": "/api/showcase/v1/runs/fafd61baed91412aa7dbce52697b095b/frames/attempt-1-frame-009.png",
+          "observed_at": "2026-10-04T17:20:04.684Z",
+          "op": "download",
+          "step": 10
+        }
+      ]
+    },
+    {
+      "attempts": [
+        {
+          "n": 1,
+          "ok": false,
+          "type": "expired_session"
+        }
+      ],
+      "batch_id": null,
+      "cause": "expired_session: Demo session expired. Choose Normal in the test controls to resume.",
+      "checksum": null,
+      "contract_version": "showcase-v1",
+      "end_date": "2026-09-30",
+      "finished_at": "2026-10-04T17:20:08.742594+00:00",
+      "headed": false,
+      "import_state": "not_submitted",
+      "mode": "session-expired",
+      "owner_role": "Operator (synthetic session reset)",
+      "publication_state": "not_published",
+      "recipe_id": "6ed11a7a463b476aa3eb55c4acd78615",
+      "recipe_version": "1.0.0",
+      "requested_at": "2026-10-04T17:20:05.364198+00:00",
+      "row_count": null,
+      "run_id": "4a31f9a1b5db4e67bf7d46865aa9bbe0",
+      "snapshot_id": null,
+      "source": "upright_replica",
+      "stage": "failed",
+      "start_date": "2026-09-30",
+      "status": "needs_human",
+      "synthetic": true,
+      "observed_events": [
+        {
+          "detail": "Completed goto; /upright",
+          "frame_url": "/api/showcase/v1/runs/4a31f9a1b5db4e67bf7d46865aa9bbe0/frames/attempt-1-frame-000.png",
+          "observed_at": "2026-10-04T17:20:05.882Z",
+          "op": "goto",
+          "step": 1
+        },
+        {
+          "detail": "Completed click; ▥ Reports",
+          "frame_url": "/api/showcase/v1/runs/4a31f9a1b5db4e67bf7d46865aa9bbe0/frames/attempt-1-frame-001.png",
+          "observed_at": "2026-10-04T17:20:06.236Z",
+          "op": "click",
+          "step": 2
+        },
+        {
+          "detail": "Completed goto; /upright/reports",
+          "frame_url": "/api/showcase/v1/runs/4a31f9a1b5db4e67bf7d46865aa9bbe0/frames/attempt-1-frame-002.png",
+          "observed_at": "2026-10-04T17:20:06.570Z",
+          "op": "goto",
+          "step": 3
+        },
+        {
+          "detail": "Completed goto; /upright/reports/paid-orders",
+          "frame_url": "/api/showcase/v1/runs/4a31f9a1b5db4e67bf7d46865aa9bbe0/frames/attempt-1-frame-003.png",
+          "observed_at": "2026-10-04T17:20:06.920Z",
+          "op": "goto",
+          "step": 4
+        },
+        {
+          "detail": "Completed fill; Start date",
+          "frame_url": "/api/showcase/v1/runs/4a31f9a1b5db4e67bf7d46865aa9bbe0/frames/attempt-1-frame-004.png",
+          "observed_at": "2026-10-04T17:20:07.209Z",
+          "op": "fill",
+          "step": 5
+        },
+        {
+          "detail": "Completed fill; End date",
+          "frame_url": "/api/showcase/v1/runs/4a31f9a1b5db4e67bf7d46865aa9bbe0/frames/attempt-1-frame-005.png",
+          "observed_at": "2026-10-04T17:20:07.508Z",
+          "op": "fill",
+          "step": 6
+        },
+        {
+          "detail": "Completed select; Timezone",
+          "frame_url": "/api/showcase/v1/runs/4a31f9a1b5db4e67bf7d46865aa9bbe0/frames/attempt-1-frame-006.png",
+          "observed_at": "2026-10-04T17:20:07.790Z",
+          "op": "select",
+          "step": 7
+        },
+        {
+          "detail": "Completed select; Payment status",
+          "frame_url": "/api/showcase/v1/runs/4a31f9a1b5db4e67bf7d46865aa9bbe0/frames/attempt-1-frame-007.png",
+          "observed_at": "2026-10-04T17:20:08.073Z",
+          "op": "select",
+          "step": 8
+        },
+        {
+          "detail": "Completed click; Generate report",
+          "frame_url": "/api/showcase/v1/runs/4a31f9a1b5db4e67bf7d46865aa9bbe0/frames/attempt-1-frame-008.png",
+          "observed_at": "2026-10-04T17:20:08.397Z",
+          "op": "click",
+          "step": 9
+        }
+      ]
+    },
+    {
+      "attempts": [
+        {
+          "n": 1,
+          "ok": false,
+          "type": "report_unavailable"
+        }
+      ],
+      "batch_id": null,
+      "cause": "report_unavailable: The report is unavailable. Retry or use a manual export.",
+      "checksum": null,
+      "contract_version": "showcase-v1",
+      "end_date": "2026-09-30",
+      "finished_at": "2026-10-04T17:20:12.181641+00:00",
+      "headed": false,
+      "import_state": "not_submitted",
+      "mode": "missing-report",
+      "owner_role": "Source owner (confirm report availability)",
+      "publication_state": "not_published",
+      "recipe_id": "4d355afa1732421a80975f079095b078",
+      "recipe_version": "1.0.0",
+      "requested_at": "2026-10-04T17:20:09.109737+00:00",
+      "row_count": null,
+      "run_id": "0b3b01bb2860438090219b6dde14054c",
+      "snapshot_id": null,
+      "source": "cash_monkey_replica",
+      "stage": "failed",
+      "start_date": "2026-09-30",
+      "status": "needs_human",
+      "synthetic": true,
+      "observed_events": [
+        {
+          "detail": "Completed goto; /cash-monkey",
+          "frame_url": "/api/showcase/v1/runs/0b3b01bb2860438090219b6dde14054c/frames/attempt-1-frame-000.png",
+          "observed_at": "2026-10-04T17:20:09.662Z",
+          "op": "goto",
+          "step": 1
+        },
+        {
+          "detail": "Completed goto; /cash-monkey/reports",
+          "frame_url": "/api/showcase/v1/runs/0b3b01bb2860438090219b6dde14054c/frames/attempt-1-frame-001.png",
+          "observed_at": "2026-10-04T17:20:09.979Z",
+          "op": "goto",
+          "step": 2
+        },
+        {
+          "detail": "Completed goto; /cash-monkey/reports/orders",
+          "frame_url": "/api/showcase/v1/runs/0b3b01bb2860438090219b6dde14054c/frames/attempt-1-frame-002.png",
+          "observed_at": "2026-10-04T17:20:10.301Z",
+          "op": "goto",
+          "step": 3
+        },
+        {
+          "detail": "Completed fill; Order Date From:",
+          "frame_url": "/api/showcase/v1/runs/0b3b01bb2860438090219b6dde14054c/frames/attempt-1-frame-003.png",
+          "observed_at": "2026-10-04T17:20:10.581Z",
+          "op": "fill",
+          "step": 4
+        },
+        {
+          "detail": "Completed fill; Order Date To:",
+          "frame_url": "/api/showcase/v1/runs/0b3b01bb2860438090219b6dde14054c/frames/attempt-1-frame-004.png",
+          "observed_at": "2026-10-04T17:20:10.865Z",
+          "op": "fill",
+          "step": 5
+        },
+        {
+          "detail": "Completed click; Submit",
+          "frame_url": "/api/showcase/v1/runs/0b3b01bb2860438090219b6dde14054c/frames/attempt-1-frame-005.png",
+          "observed_at": "2026-10-04T17:20:11.187Z",
+          "op": "click",
+          "step": 6
+        }
+      ]
+    },
+    {
+      "attempts": [
+        {
+          "n": 1,
+          "ok": true,
+          "type": "ok"
+        }
+      ],
+      "batch_id": "9b8bdd4826754ba9ad8b80f7f6570fec",
+      "cause": "",
+      "checksum": "543247470f52449fbf285b97fc714858ada89758a7c2fd687a2227d5be2e45e3",
+      "contract_version": "showcase-v1",
+      "end_date": "2026-09-30",
+      "finished_at": "2026-10-04T17:20:17.560097+00:00",
+      "headed": false,
+      "import_state": "duplicate_noop",
+      "mode": "normal",
+      "owner_role": "",
+      "publication_state": "published",
+      "recipe_id": "6ed11a7a463b476aa3eb55c4acd78615",
+      "recipe_version": "1.0.0",
+      "requested_at": "2026-10-04T17:20:12.860685+00:00",
+      "row_count": 128,
+      "run_id": "9a644f69dbdc40c89f8d216ee49f46e0",
+      "snapshot_id": "779e2596cb420bacef845434b12b6c667899b08c03dcbab1aa56266ed1128445",
+      "source": "upright_replica",
+      "stage": "complete",
+      "start_date": "2026-09-30",
+      "status": "succeeded",
+      "synthetic": true,
+      "observed_import_state": "duplicate_noop",
+      "observed_events": [
+        {
+          "detail": "Completed goto; /upright",
+          "frame_url": "/api/showcase/v1/runs/9a644f69dbdc40c89f8d216ee49f46e0/frames/attempt-1-frame-000.png",
+          "observed_at": "2026-10-04T17:20:13.398Z",
+          "op": "goto",
+          "step": 1
+        },
+        {
+          "detail": "Completed click; ▥ Reports",
+          "frame_url": "/api/showcase/v1/runs/9a644f69dbdc40c89f8d216ee49f46e0/frames/attempt-1-frame-001.png",
+          "observed_at": "2026-10-04T17:20:13.754Z",
+          "op": "click",
+          "step": 2
+        },
+        {
+          "detail": "Completed goto; /upright/reports",
+          "frame_url": "/api/showcase/v1/runs/9a644f69dbdc40c89f8d216ee49f46e0/frames/attempt-1-frame-002.png",
+          "observed_at": "2026-10-04T17:20:14.085Z",
+          "op": "goto",
+          "step": 3
+        },
+        {
+          "detail": "Completed goto; /upright/reports/paid-orders",
+          "frame_url": "/api/showcase/v1/runs/9a644f69dbdc40c89f8d216ee49f46e0/frames/attempt-1-frame-003.png",
+          "observed_at": "2026-10-04T17:20:14.403Z",
+          "op": "goto",
+          "step": 4
+        },
+        {
+          "detail": "Completed fill; Start date",
+          "frame_url": "/api/showcase/v1/runs/9a644f69dbdc40c89f8d216ee49f46e0/frames/attempt-1-frame-004.png",
+          "observed_at": "2026-10-04T17:20:14.690Z",
+          "op": "fill",
+          "step": 5
+        },
+        {
+          "detail": "Completed fill; End date",
+          "frame_url": "/api/showcase/v1/runs/9a644f69dbdc40c89f8d216ee49f46e0/frames/attempt-1-frame-005.png",
+          "observed_at": "2026-10-04T17:20:14.992Z",
+          "op": "fill",
+          "step": 6
+        },
+        {
+          "detail": "Completed select; Timezone",
+          "frame_url": "/api/showcase/v1/runs/9a644f69dbdc40c89f8d216ee49f46e0/frames/attempt-1-frame-006.png",
+          "observed_at": "2026-10-04T17:20:15.289Z",
+          "op": "select",
+          "step": 7
+        },
+        {
+          "detail": "Completed select; Payment status",
+          "frame_url": "/api/showcase/v1/runs/9a644f69dbdc40c89f8d216ee49f46e0/frames/attempt-1-frame-007.png",
+          "observed_at": "2026-10-04T17:20:15.572Z",
+          "op": "select",
+          "step": 8
+        },
+        {
+          "detail": "Completed click; Generate report",
+          "frame_url": "/api/showcase/v1/runs/9a644f69dbdc40c89f8d216ee49f46e0/frames/attempt-1-frame-008.png",
+          "observed_at": "2026-10-04T17:20:15.895Z",
+          "op": "click",
+          "step": 9
+        },
+        {
+          "detail": "Completed wait_state; report state",
+          "frame_url": "/api/showcase/v1/runs/9a644f69dbdc40c89f8d216ee49f46e0/frames/attempt-1-frame-009.png",
+          "observed_at": "2026-10-04T17:20:16.871Z",
+          "op": "wait_state",
+          "step": 10
+        },
+        {
+          "detail": "Downloaded CSV bytes match requested dates, source, report and SHA-256 manifest",
+          "frame_url": "/api/showcase/v1/runs/9a644f69dbdc40c89f8d216ee49f46e0/frames/attempt-1-frame-010.png",
+          "observed_at": "2026-10-04T17:20:17.191Z",
+          "op": "download",
+          "step": 11
+        }
+      ]
+    },
+    {
+      "attempts": [
+        {
+          "n": 1,
+          "ok": true,
+          "type": "ok"
+        }
+      ],
+      "batch_id": "6b8bd13a02a44b8e9264261fdc95bf0c",
+      "cause": "",
+      "checksum": "b16cb801b88e68366ad173920b660be75d0415c4186d1a3e446399b194607101",
+      "contract_version": "showcase-v1",
+      "end_date": "2026-09-30",
+      "finished_at": "2026-10-04T17:20:22.257675+00:00",
+      "headed": false,
+      "import_state": "duplicate_noop",
+      "mode": "normal",
+      "owner_role": "",
+      "publication_state": "published",
+      "recipe_id": "4d355afa1732421a80975f079095b078",
+      "recipe_version": "1.0.0",
+      "requested_at": "2026-10-04T17:20:18.498969+00:00",
+      "row_count": 32,
+      "run_id": "1ae25ed8cb914e1c968917e4e53c4154",
+      "snapshot_id": "53a52a55661971cd3db4d3a80e69415db2467b0ead94d7b1227584bc9f4adc1b",
+      "source": "cash_monkey_replica",
+      "stage": "complete",
+      "start_date": "2026-09-30",
+      "status": "succeeded",
+      "synthetic": true,
+      "observed_import_state": "duplicate_noop",
+      "observed_events": [
+        {
+          "detail": "Completed goto; /cash-monkey",
+          "frame_url": "/api/showcase/v1/runs/1ae25ed8cb914e1c968917e4e53c4154/frames/attempt-1-frame-000.png",
+          "observed_at": "2026-10-04T17:20:19.006Z",
+          "op": "goto",
+          "step": 1
+        },
+        {
+          "detail": "Completed goto; /cash-monkey/reports",
+          "frame_url": "/api/showcase/v1/runs/1ae25ed8cb914e1c968917e4e53c4154/frames/attempt-1-frame-001.png",
+          "observed_at": "2026-10-04T17:20:19.325Z",
+          "op": "goto",
+          "step": 2
+        },
+        {
+          "detail": "Completed goto; /cash-monkey/reports/orders",
+          "frame_url": "/api/showcase/v1/runs/1ae25ed8cb914e1c968917e4e53c4154/frames/attempt-1-frame-002.png",
+          "observed_at": "2026-10-04T17:20:19.661Z",
+          "op": "goto",
+          "step": 3
+        },
+        {
+          "detail": "Completed fill; Order Date From:",
+          "frame_url": "/api/showcase/v1/runs/1ae25ed8cb914e1c968917e4e53c4154/frames/attempt-1-frame-003.png",
+          "observed_at": "2026-10-04T17:20:19.965Z",
+          "op": "fill",
+          "step": 4
+        },
+        {
+          "detail": "Completed fill; Order Date To:",
+          "frame_url": "/api/showcase/v1/runs/1ae25ed8cb914e1c968917e4e53c4154/frames/attempt-1-frame-004.png",
+          "observed_at": "2026-10-04T17:20:20.268Z",
+          "op": "fill",
+          "step": 5
+        },
+        {
+          "detail": "Completed click; Submit",
+          "frame_url": "/api/showcase/v1/runs/1ae25ed8cb914e1c968917e4e53c4154/frames/attempt-1-frame-005.png",
+          "observed_at": "2026-10-04T17:20:20.607Z",
+          "op": "click",
+          "step": 6
+        },
+        {
+          "detail": "Completed wait_state; report state",
+          "frame_url": "/api/showcase/v1/runs/1ae25ed8cb914e1c968917e4e53c4154/frames/attempt-1-frame-006.png",
+          "observed_at": "2026-10-04T17:20:21.550Z",
+          "op": "wait_state",
+          "step": 7
+        },
+        {
+          "detail": "Downloaded CSV bytes match requested dates, source, report and SHA-256 manifest",
+          "frame_url": "/api/showcase/v1/runs/1ae25ed8cb914e1c968917e4e53c4154/frames/attempt-1-frame-007.png",
+          "observed_at": "2026-10-04T17:20:21.894Z",
+          "op": "download",
+          "step": 8
+        }
+      ]
+    }
+  ],
+  "checks": [
+    "real record/review/approve for both portals",
+    "date-bound parameterized replay",
+    "actual CSV SHA-256 and importer",
+    "real PNG browser frames",
+    "same-file replay no-op",
+    "label drift/expired session/missing report fail closed",
+    "scoped metrics match independent week/month ledger",
+    "supported question and source evidence",
+    "platform labor unavailable",
+    "real downloadable workbook",
+    "pinned snapshot remains readable",
+    "desktop/mobile layouts",
+    "failed request clears stale cards"
+  ],
+  "console_errors": [],
+  "repaired_recipe": "cfb81ed9463c46c382176c240599a7b0"
+}

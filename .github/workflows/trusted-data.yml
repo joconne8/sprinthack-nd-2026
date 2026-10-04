@@ -24,12 +24,15 @@ jobs:
           cache-dependency-path: tools/verification/package-lock.json
       - name: Install browser acceptance prerequisites
         run: |
+          python3 -m pip install -r requirements-showcase.txt
           npm ci --prefix tools/verification --ignore-scripts --no-audit --no-fund
           node tools/verification/node_modules/playwright/cli.js install --with-deps chromium
       - name: Verify schema regeneration
         run: |
           python3 contracts/build_schemas.py
           git diff --exit-code -- contracts/v1
+          python3 contracts/build_showcase_schemas.py
+          git diff --exit-code -- contracts/showcase-v1
       - name: Python syntax and task artifact checks
         run: |
           python3 -m compileall -q apps services goodwill_app contracts scripts tests
@@ -58,11 +61,14 @@ jobs:
           cache: npm
           cache-dependency-path: tools/verification/package-lock.json
       - name: Install pinned verification tools
-        run: npm ci --prefix tools/verification --ignore-scripts --no-audit --no-fund
+        run: |
+          npm ci --prefix tools/verification --ignore-scripts --no-audit --no-fund
+          python3 -m pip install -r requirements-showcase.txt
       - name: Strict client build and boundary tests
         run: |
           node tools/verification/node_modules/typescript/bin/tsc --strict --target ES2020 --module commonjs --lib ES2020,DOM --outDir .runtime/client-test contracts/v1/client.ts
           node tests/client.test.cjs .runtime/client-test
+          node tools/verification/node_modules/typescript/bin/tsc --strict --noEmit contracts/showcase-v1/types.ts
       - name: Install separate browser runtime
         run: node tools/verification/node_modules/playwright/cli.js install --with-deps chromium
       - name: Exact browser-file intake and API regression
@@ -73,3 +79,5 @@ jobs:
         run: |
           python3 scripts/verify_dashboard.py --acquisition-only
           python3 scripts/verify_dashboard.py
+      - name: Source-backed Aimsigh recorder, workbook, and conversation
+        run: python3 scripts/verify_showcase.py --output .runtime/showcase-acceptance

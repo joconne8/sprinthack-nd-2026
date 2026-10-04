@@ -1,0 +1,32 @@
+test_auxiliary_checksum_tampering_stops_metrics (tests.test_showcase.IndependentControlTests) ... ok
+test_evidence_retains_original_lines_and_totals (tests.test_showcase.IndependentControlTests) ... ok
+test_expenses_and_settlements_are_not_sales_adapters (tests.test_showcase.IndependentControlTests) ... ok
+test_explicit_zero_hours_has_no_productivity_denominator (tests.test_showcase.IndependentControlTests) ... ok
+test_handwritten_ledger_and_independent_grains (tests.test_showcase.IndependentControlTests) ... ok
+test_historical_coverage_cannot_borrow_future_window (tests.test_showcase.IndependentControlTests) ... ok
+test_incomplete_sales_period_cannot_divide_by_full_period_labor (tests.test_showcase.IndependentControlTests) ... ok
+test_malformed_fee_cannot_break_independently_verified_sales (tests.test_showcase.IndependentControlTests) ... ok
+test_missing_labor_is_unknown_not_zero (tests.test_showcase.IndependentControlTests) ... ok
+test_missing_period_is_not_covered_by_published_day (tests.test_showcase.IndependentControlTests) ... ok
+test_missing_shipping_is_unknown_not_zero (tests.test_showcase.IndependentControlTests) ... ok
+test_platform_filter_cannot_invent_labor_allocation (tests.test_showcase.IndependentControlTests) ... ok
+test_published_inputs_are_immutable_after_replacement (tests.test_showcase.IndependentControlTests) ... ok
+test_published_sales_are_immutable_after_later_import (tests.test_showcase.IndependentControlTests) ... ok
+test_same_file_replay_does_not_double_sales (tests.test_showcase.IndependentControlTests) ... ok
+test_unknown_filters_and_unapproved_inputs_are_rejected (tests.test_showcase.IndependentControlTests) ... ok
+test_unrelated_store_does_not_inherit_labor (tests.test_showcase.IndependentControlTests) ... ok
+test_valid_source_fee_is_canonical_at_the_typed_boundary (tests.test_showcase.IndependentControlTests) ... ok
+test_approval_requires_actual_review (tests.test_showcase.RecorderBoundaryTests) ... ok
+test_observed_navigation_survives_click_capture_race (tests.test_showcase.RecorderBoundaryTests) ... ok
+test_recording_has_bounded_steps_and_no_arbitrary_fields (tests.test_showcase.RecorderBoundaryTests) ... ok
+test_source_content_cannot_become_remote_navigation_or_code (tests.test_showcase.RecorderBoundaryTests) ... ok
+test_complete_month_and_customer_scope (tests.test_showcase.SeptemberSampleTests) ... ok
+test_confirmed_two_period_sample_numbers (tests.test_showcase.SeptemberSampleTests) ... ok
+test_last_day_source_grains_and_net (tests.test_showcase.SeptemberSampleTests) ... ok
+test_questions_are_read_only_pinned_and_do_not_invent_causes (tests.test_showcase.SeptemberSampleTests) ... ok
+test_workbook_is_real_zip_has_thirty_daily_tabs_and_cached_values (tests.test_showcase.SeptemberSampleTests) ... ok
+
+----------------------------------------------------------------------
+Ran 27 tests in 3.360s
+
+OK

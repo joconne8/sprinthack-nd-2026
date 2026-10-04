@@ -1,0 +1,1646 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$defs": {
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "start_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "end_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "source": {
+          "enum": [
+            "all",
+            "upright_replica",
+            "cash_monkey_replica"
+          ]
+        },
+        "store": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "platform": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "start_date",
+        "end_date",
+        "source",
+        "store",
+        "platform"
+      ]
+    },
+    "scope_request": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "start_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "end_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "source": {
+          "enum": [
+            "all",
+            "upright_replica",
+            "cash_monkey_replica"
+          ]
+        },
+        "store": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "platform": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": []
+    },
+    "event": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "op": {
+          "enum": [
+            "navigate",
+            "click",
+            "fill",
+            "select",
+            "ready",
+            "download"
+          ]
+        },
+        "path": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "observation": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "op",
+        "path",
+        "observation"
+      ]
+    },
+    "step": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "op": {
+          "enum": [
+            "goto",
+            "assert",
+            "click",
+            "fill",
+            "select",
+            "wait_state",
+            "download"
+          ]
+        },
+        "path": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "within": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "role": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "role",
+            "name"
+          ]
+        },
+        "selector": {
+          "type": "string"
+        },
+        "ready_class": {
+          "type": "string"
+        },
+        "failed_class": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "op"
+      ]
+    },
+    "skill": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "skill_id": {
+          "type": "string"
+        },
+        "skill_version": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "source_name": {
+          "type": "string",
+          "enum": [
+            "upright_replica",
+            "cash_monkey_replica"
+          ]
+        },
+        "report_type": {
+          "enum": [
+            "paid_orders",
+            "orders"
+          ]
+        },
+        "target": {
+          "type": "string"
+        },
+        "allowed_hosts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "parameters": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "steps": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/step"
+          }
+        },
+        "timeouts_ms": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "step": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "total": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": [
+            "step",
+            "total"
+          ]
+        },
+        "stop_on": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "secrets": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "skill_id",
+        "skill_version",
+        "status",
+        "source_name",
+        "report_type",
+        "allowed_hosts",
+        "parameters",
+        "steps",
+        "timeouts_ms"
+      ]
+    },
+    "coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "state": {
+          "enum": [
+            "complete",
+            "partial",
+            "unavailable"
+          ]
+        },
+        "expected_days": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "date"
+          }
+        },
+        "covered_days": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "date"
+          }
+        },
+        "missing_days": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "date"
+          }
+        }
+      },
+      "required": [
+        "state",
+        "expected_days",
+        "covered_days",
+        "missing_days"
+      ]
+    },
+    "snapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "contract_version": {
+          "const": "showcase-v1"
+        },
+        "synthetic": {
+          "const": true
+        },
+        "snapshot_id": {
+          "type": "string"
+        },
+        "published_at": {
+          "type": "string"
+        },
+        "definition_version": {
+          "type": "string"
+        },
+        "month": {
+          "const": "2026-09"
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "source": {
+                "type": "string",
+                "enum": [
+                  "upright_replica",
+                  "cash_monkey_replica"
+                ]
+              },
+              "metric_run_id": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "coverage": {
+                "$ref": "#/$defs/coverage"
+              },
+              "latest_import_state": {
+                "type": "string"
+              },
+              "latest_batch_id": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "source",
+              "metric_run_id",
+              "coverage",
+              "latest_import_state",
+              "latest_batch_id"
+            ]
+          }
+        },
+        "auxiliary": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "input_id": {
+                "type": "string"
+              },
+              "kind": {
+                "enum": [
+                  "labor",
+                  "shipping"
+                ]
+              },
+              "checksum": {
+                "type": "string"
+              },
+              "definition_version": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "input_id",
+              "kind",
+              "checksum",
+              "definition_version"
+            ]
+          }
+        }
+      },
+      "required": [
+        "contract_version",
+        "synthetic",
+        "snapshot_id",
+        "published_at",
+        "definition_version",
+        "month",
+        "sources",
+        "auxiliary"
+      ]
+    },
+    "metric": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "metric_id": {
+          "enum": [
+            "net_sales",
+            "labor_hours",
+            "revenue_per_labor_hour",
+            "contribution_margin",
+            "contribution",
+            "fees",
+            "shipping_expense",
+            "labor_cost"
+          ]
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^-?\\d+\\.\\d{2}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unit": {
+          "enum": [
+            "USD",
+            "hours",
+            "USD/hour",
+            "percent"
+          ]
+        },
+        "availability": {
+          "enum": [
+            "available",
+            "partial",
+            "unavailable"
+          ]
+        },
+        "availability_reason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "definition": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "metric_id",
+        "value",
+        "unit",
+        "availability",
+        "availability_reason",
+        "definition"
+      ]
+    },
+    "metrics": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "contract_version": {
+          "const": "showcase-v1"
+        },
+        "synthetic": {
+          "const": true
+        },
+        "snapshot_id": {
+          "type": "string"
+        },
+        "scope": {
+          "$ref": "#/$defs/scope"
+        },
+        "coverage": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "state": {
+              "enum": [
+                "complete",
+                "partial"
+              ]
+            },
+            "missing_days": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "date"
+              }
+            }
+          },
+          "required": [
+            "state",
+            "missing_days"
+          ]
+        },
+        "freshness": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "published_at": {
+              "type": "string"
+            },
+            "is_last_good": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "published_at",
+            "is_last_good"
+          ]
+        },
+        "metrics": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/metric"
+          }
+        },
+        "daily": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "date": {
+                "type": "string",
+                "format": "date"
+              },
+              "net_sales": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "pattern": "^-?\\d+\\.\\d{2}$"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "date",
+              "net_sales"
+            ]
+          }
+        },
+        "by_source": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "source": {
+                "type": "string",
+                "enum": [
+                  "upright_replica",
+                  "cash_monkey_replica"
+                ]
+              },
+              "net_sales": {
+                "type": "string",
+                "pattern": "^-?\\d+\\.\\d{2}$"
+              },
+              "records": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "orders": {
+                "type": "integer",
+                "minimum": 0
+              }
+            },
+            "required": [
+              "source",
+              "net_sales",
+              "records",
+              "orders"
+            ]
+          }
+        },
+        "by_platform": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "platform": {
+                "type": "string"
+              },
+              "net_sales": {
+                "type": "string",
+                "pattern": "^-?\\d+\\.\\d{2}$"
+              }
+            },
+            "required": [
+              "platform",
+              "net_sales"
+            ]
+          }
+        },
+        "by_store": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "store": {
+                "type": "string"
+              },
+              "net_sales": {
+                "type": "string",
+                "pattern": "^-?\\d+\\.\\d{2}$"
+              }
+            },
+            "required": [
+              "store",
+              "net_sales"
+            ]
+          }
+        },
+        "customer_counts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "source": {
+                "type": "string",
+                "enum": [
+                  "upright_replica",
+                  "cash_monkey_replica"
+                ]
+              },
+              "platform": {
+                "type": "string"
+              },
+              "value": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "availability": {
+                "enum": [
+                  "available",
+                  "partial",
+                  "unavailable"
+                ]
+              }
+            },
+            "required": [
+              "source",
+              "platform",
+              "value",
+              "availability"
+            ]
+          }
+        },
+        "evidence_url": {
+          "type": "string"
+        },
+        "auxiliary_url": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "contract_version",
+        "synthetic",
+        "snapshot_id",
+        "scope",
+        "coverage",
+        "freshness",
+        "metrics",
+        "daily",
+        "by_source",
+        "by_platform",
+        "by_store",
+        "customer_counts",
+        "evidence_url",
+        "auxiliary_url"
+      ]
+    },
+    "comparison": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "contract_version": {
+          "const": "showcase-v1"
+        },
+        "synthetic": {
+          "const": true
+        },
+        "snapshot_id": {
+          "type": "string"
+        },
+        "previous": {
+          "$ref": "#/$defs/metrics"
+        },
+        "current": {
+          "$ref": "#/$defs/metrics"
+        },
+        "explanation": {
+          "type": "string"
+        },
+        "verified_cause": {
+          "const": false
+        }
+      },
+      "required": [
+        "contract_version",
+        "synthetic",
+        "snapshot_id",
+        "previous",
+        "current",
+        "explanation",
+        "verified_cause"
+      ]
+    },
+    "fact": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "source": {
+          "type": "string",
+          "enum": [
+            "upright_replica",
+            "cash_monkey_replica"
+          ]
+        },
+        "record_key": {
+          "type": "string"
+        },
+        "reporting_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "platform": {
+          "type": "string"
+        },
+        "store_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "buyer_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "gross_item_sales": {
+          "type": "string",
+          "pattern": "^-?\\d+\\.\\d{2}$"
+        },
+        "refunds": {
+          "type": "string",
+          "pattern": "^-?\\d+\\.\\d{2}$"
+        },
+        "net_sales": {
+          "type": "string",
+          "pattern": "^-?\\d+\\.\\d{2}$"
+        },
+        "fee": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^-?\\d+\\.\\d{2}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "file_id": {
+          "type": "string"
+        },
+        "batch_id": {
+          "type": "string"
+        },
+        "source_row_number": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "metric_run_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "source",
+        "record_key",
+        "reporting_date",
+        "platform",
+        "store_id",
+        "buyer_id",
+        "gross_item_sales",
+        "refunds",
+        "net_sales",
+        "fee",
+        "file_id",
+        "batch_id",
+        "source_row_number",
+        "metric_run_id"
+      ]
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "contract_version": {
+          "const": "showcase-v1"
+        },
+        "synthetic": {
+          "const": true
+        },
+        "snapshot_id": {
+          "type": "string"
+        },
+        "scope": {
+          "$ref": "#/$defs/scope"
+        },
+        "total_rows": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "rows": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/fact"
+          }
+        },
+        "scope_total": {
+          "type": "string",
+          "pattern": "^-?\\d+\\.\\d{2}$"
+        }
+      },
+      "required": [
+        "contract_version",
+        "synthetic",
+        "snapshot_id",
+        "scope",
+        "total_rows",
+        "rows",
+        "scope_total"
+      ]
+    },
+    "inputs": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "contract_version": {
+          "const": "showcase-v1"
+        },
+        "synthetic": {
+          "const": true
+        },
+        "snapshot_id": {
+          "type": "string"
+        },
+        "labor": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "source": {
+                "type": "string",
+                "enum": [
+                  "upright_replica",
+                  "cash_monkey_replica"
+                ]
+              },
+              "date": {
+                "type": "string",
+                "format": "date"
+              },
+              "store_id": {
+                "type": "string"
+              },
+              "minutes": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "labor_cost": {
+                "type": "string",
+                "pattern": "^-?\\d+\\.\\d{2}$"
+              },
+              "input_id": {
+                "type": "string"
+              },
+              "source_row_number": {
+                "type": "integer",
+                "minimum": 0
+              }
+            },
+            "required": [
+              "source",
+              "date",
+              "store_id",
+              "minutes",
+              "labor_cost",
+              "input_id",
+              "source_row_number"
+            ]
+          }
+        },
+        "shipping": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "source": {
+                "type": "string",
+                "enum": [
+                  "upright_replica",
+                  "cash_monkey_replica"
+                ]
+              },
+              "record_key": {
+                "type": "string"
+              },
+              "amount": {
+                "type": "string",
+                "pattern": "^-?\\d+\\.\\d{2}$"
+              },
+              "input_id": {
+                "type": "string"
+              },
+              "source_row_number": {
+                "type": "integer",
+                "minimum": 0
+              }
+            },
+            "required": [
+              "source",
+              "record_key",
+              "amount",
+              "input_id",
+              "source_row_number"
+            ]
+          }
+        },
+        "definitions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "contract_version",
+        "synthetic",
+        "snapshot_id",
+        "labor",
+        "shipping",
+        "definitions"
+      ]
+    },
+    "question": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "contract_version": {
+          "const": "showcase-v1"
+        },
+        "synthetic": {
+          "const": true
+        },
+        "snapshot_id": {
+          "type": "string"
+        },
+        "intent": {
+          "enum": [
+            "sales",
+            "evidence",
+            "productivity",
+            "missing",
+            "unsupported"
+          ]
+        },
+        "answer": {
+          "type": "string"
+        },
+        "tools": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "metrics",
+              "comparison",
+              "evidence"
+            ]
+          }
+        },
+        "citations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "label",
+              "url"
+            ]
+          }
+        },
+        "comparison": {
+          "$ref": "#/$defs/comparison"
+        },
+        "metrics": {
+          "$ref": "#/$defs/metrics"
+        }
+      },
+      "required": [
+        "contract_version",
+        "synthetic",
+        "snapshot_id",
+        "intent",
+        "answer",
+        "tools",
+        "citations"
+      ]
+    },
+    "question_request": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "snapshot_id": {
+          "type": "string"
+        },
+        "scope": {
+          "$ref": "#/$defs/scope_request"
+        },
+        "question": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "snapshot_id",
+        "scope",
+        "question"
+      ]
+    },
+    "recording_request": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "source": {
+          "type": "string",
+          "enum": [
+            "upright_replica",
+            "cash_monkey_replica"
+          ]
+        }
+      },
+      "required": [
+        "source"
+      ]
+    },
+    "event_request": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "event": {
+          "$ref": "#/$defs/event"
+        }
+      },
+      "required": [
+        "event"
+      ]
+    },
+    "empty_request": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {},
+      "required": []
+    },
+    "recording": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "contract_version": {
+          "const": "showcase-v1"
+        },
+        "synthetic": {
+          "const": true
+        },
+        "recording_id": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string",
+          "enum": [
+            "upright_replica",
+            "cash_monkey_replica"
+          ]
+        },
+        "status": {
+          "enum": [
+            "recording",
+            "review",
+            "approved"
+          ]
+        },
+        "events": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/event"
+          }
+        },
+        "recipe": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/skill"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "contract_version",
+        "synthetic",
+        "recording_id",
+        "source",
+        "status",
+        "events",
+        "recipe"
+      ]
+    },
+    "recipe": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "contract_version": {
+          "const": "showcase-v1"
+        },
+        "synthetic": {
+          "const": true
+        },
+        "recipe_id": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string",
+          "enum": [
+            "upright_replica",
+            "cash_monkey_replica"
+          ]
+        },
+        "recipe_version": {
+          "type": "string"
+        },
+        "approved": {
+          "const": true
+        },
+        "recipe": {
+          "$ref": "#/$defs/skill"
+        }
+      },
+      "required": [
+        "contract_version",
+        "synthetic",
+        "recipe_id",
+        "source",
+        "recipe_version",
+        "approved",
+        "recipe"
+      ]
+    },
+    "recipes": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "contract_version": {
+          "const": "showcase-v1"
+        },
+        "synthetic": {
+          "const": true
+        },
+        "recipes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/recipe"
+          }
+        }
+      },
+      "required": [
+        "contract_version",
+        "synthetic",
+        "recipes"
+      ]
+    },
+    "run_request": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "recipe_id": {
+          "type": "string"
+        },
+        "start_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "end_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "mode": {
+          "enum": [
+            "normal",
+            "session-expired",
+            "missing-report",
+            "changed-label",
+            "delayed",
+            "timeout"
+          ]
+        },
+        "headed": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "recipe_id",
+        "start_date",
+        "end_date"
+      ]
+    },
+    "run": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "contract_version": {
+          "const": "showcase-v1"
+        },
+        "synthetic": {
+          "const": true
+        },
+        "run_id": {
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "pending",
+            "running",
+            "succeeded",
+            "needs_human"
+          ]
+        },
+        "stage": {
+          "enum": [
+            "pending",
+            "collecting",
+            "verifying",
+            "importing",
+            "complete",
+            "failed"
+          ]
+        },
+        "source": {
+          "type": "string",
+          "enum": [
+            "upright_replica",
+            "cash_monkey_replica"
+          ]
+        },
+        "start_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "end_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "recipe_id": {
+          "type": "string"
+        },
+        "recipe_version": {
+          "type": "string"
+        },
+        "attempts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "n": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "ok": {
+                "type": "boolean"
+              },
+              "type": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "n",
+              "ok",
+              "type"
+            ]
+          }
+        },
+        "cause": {
+          "type": "string"
+        },
+        "owner_role": {
+          "type": "string"
+        },
+        "batch_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "checksum": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "row_count": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "snapshot_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "mode": {
+          "type": "string"
+        },
+        "headed": {
+          "type": "boolean"
+        },
+        "import_state": {
+          "type": "string"
+        },
+        "publication_state": {
+          "type": "string"
+        },
+        "requested_at": {
+          "type": "string"
+        },
+        "finished_at": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "contract_version",
+        "synthetic",
+        "run_id",
+        "status",
+        "stage",
+        "source",
+        "start_date",
+        "end_date",
+        "recipe_id",
+        "recipe_version",
+        "attempts",
+        "cause",
+        "owner_role",
+        "batch_id",
+        "checksum",
+        "row_count",
+        "snapshot_id",
+        "mode",
+        "headed",
+        "import_state",
+        "publication_state",
+        "requested_at",
+        "finished_at"
+      ]
+    },
+    "runs": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "contract_version": {
+          "const": "showcase-v1"
+        },
+        "synthetic": {
+          "const": true
+        },
+        "runs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/run"
+          }
+        },
+        "runtime_available": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "contract_version",
+        "synthetic",
+        "runs",
+        "runtime_available"
+      ]
+    },
+    "events": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "contract_version": {
+          "const": "showcase-v1"
+        },
+        "synthetic": {
+          "const": true
+        },
+        "events": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "step": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "op": {
+                "type": "string"
+              },
+              "detail": {
+                "type": "string"
+              },
+              "observed_at": {
+                "type": "string"
+              },
+              "frame_url": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "step",
+              "op",
+              "detail",
+              "observed_at",
+              "frame_url"
+            ]
+          }
+        }
+      },
+      "required": [
+        "contract_version",
+        "synthetic",
+        "events"
+      ]
+    },
+    "sources": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "contract_version": {
+          "const": "showcase-v1"
+        },
+        "synthetic": {
+          "const": true
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "kind": {
+                "type": "string"
+              },
+              "status": {
+                "enum": [
+                  "connected",
+                  "fixture-only",
+                  "awaiting-access"
+                ]
+              },
+              "description": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name",
+              "kind",
+              "status",
+              "description"
+            ]
+          }
+        }
+      },
+      "required": [
+        "contract_version",
+        "synthetic",
+        "sources"
+      ]
+    },
+    "dictionary": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "contract_version": {
+          "const": "showcase-v1"
+        },
+        "synthetic": {
+          "const": true
+        },
+        "snapshot": {
+          "$ref": "#/$defs/snapshot"
+        },
+        "metrics": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/metric"
+          }
+        },
+        "grains": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "sales": {
+              "type": "string"
+            },
+            "labor": {
+              "type": "string"
+            },
+            "shipping": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "sales",
+            "labor",
+            "shipping"
+          ]
+        },
+        "reporting_dates": {
+          "type": "string"
+        },
+        "production_path": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "contract_version",
+        "synthetic",
+        "snapshot",
+        "metrics",
+        "grains",
+        "reporting_dates",
+        "production_path"
+      ]
+    }
+  }
+}

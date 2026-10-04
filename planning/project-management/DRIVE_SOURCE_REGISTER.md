@@ -1,5 +1,19 @@
 # Drive source register and authority
 
+## October 4 Aimsigh showcase scope acceptance
+
+Peyton approved the complete implementation plan in the current session and
+explicitly requested actual sample data that produces the dashboard metrics.
+This supersedes the earlier P0-only presentation freeze for the local showcase.
+Reviewed newer sources: [DEMO PLAN](https://docs.google.com/document/d/1jhTiJcOi1yoRKHGe-WMquckIWISXWdzmWe6NV3tbdFk/edit),
+[Aimsigh founder deck](https://docs.google.com/presentation/d/1z-6jdYtqZ3t0SwIbbGc7pAyQ7cWptPXiYY-Tj7PNGLM/edit),
+and [JEV PLAN](https://docs.google.com/document/d/1vM1SmSH0abNvfMieZK03AIXhqr9tQ7ztHWlJV27AE8E/edit).
+Source-to-feature decisions and GOV-03 contracts: reports/SHOWCASE/CLAIM.md and
+reports/SHOWCASE/CONTRACT.md. Deadline October 5, 10am Eastern; main presentation
+15 minutes. Real local recorder/replay, two synthetic feeds, matched invented
+labor/shipping inputs, Excel delivery, source-backed charts, and model-free local
+conversation are authorized. Production Jev/Teams/Copilot/BI access is not assumed.
+
 Current user decisions govern. Primary evidence is the Google Drive stakeholder/mentor material; the Goodwill Three-Phase Solution and Overnight Agent Plan is the implementation synthesis. This card operationalizes those sources. Older goodwill/PRD.md and planning/agentic-build-plan.md are legacy implementation background, NOT governing requirements or automatic scope limits. Preserve corrections in the three-phase plan where earlier source notes contain unsupported technical claims. Freeze new scope/contracts through GOV-02/GOV-03.
 
 ## Reviewed source versions
