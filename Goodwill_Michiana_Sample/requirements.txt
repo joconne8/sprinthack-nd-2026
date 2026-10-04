@@ -1,0 +1,16 @@
+fastapi
+httpx
+langchain-core
+langchain-litellm
+langgraph
+playwright
+pydantic-settings
+python-dotenv
+sqlalchemy
+uvicorn[standard]
+
+# Dev
+pytest
+pytest-asyncio
+ruff
+
