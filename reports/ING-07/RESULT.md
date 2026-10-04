@@ -1,0 +1,1 @@
+Task: ING-07 (P2 pilot, design only). State: BLOCKED on ING-02 acceptance, ING-05, GOV-04, but design draft delivered in recorder-and-repair-design.md. Nothing implemented or executed. Branch hugh/ING-acquisition, base 15fa25a, uncommitted.
