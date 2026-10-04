@@ -1,5 +1,18 @@
 # PRD 05: QA, Demo, Release, and Evidence
 
+## Primary source basis — Drive-led
+- [Goodwill — Three-Phase Solution and Overnight Agent Plan](https://drive.google.com/file/d/1RffkmafbqbMEs7o_lNaTvIRL3hW9paai/view?usp=drivesdk)
+- [michael-wicks-plan.md](https://drive.google.com/file/d/1gip7aNE1TQdZmqNJQeRlPppVZ5iVuWCT/view?usp=drivesdk)
+- [goodwill-track-brief-v2.md](https://drive.google.com/file/d/1o0QBoew17f7IgEEHweBoe-VLQFGDEatg/view?usp=drivesdk)
+
+Relevant plan sections: §8 AI engineering practices for overnight work; §9 Synthetic data and realistic coverage.
+
+The three-phase plan §8 is the main engineering source: passing vertical slice before handoff, 3–4 isolated lanes, frozen contracts, independent expected totals, actual runner, two repair attempts, budgets/deadlines, per-task evidence and human morning integration. Mentor advice is not unattended production authority.
+
+## Source precedence
+Current user decisions govern. Primary evidence is the Google Drive stakeholder/mentor material; the Goodwill Three-Phase Solution and Overnight Agent Plan is the implementation synthesis. This card operationalizes those sources. Older goodwill/PRD.md and planning/agentic-build-plan.md are legacy implementation background, NOT governing requirements or automatic scope limits. Preserve corrections in the three-phase plan where earlier source notes contain unsupported technical claims. Freeze new scope/contracts through GOV-02/GOV-03.
+
+
 ## Status
 
 Proposed P0 workstream PRD. This workstream protects the presentation from unverified claims and last-minute breakage.
@@ -22,9 +35,9 @@ Create and run the end-to-end demo regression, maintain the evidence trail, prep
 ## In scope
 
 - Clean-start demo regression
-- Acquisition path if selected
+- P0 acquisition path with actual downloaded artifact
 - Manual upload fallback
-- Four dashboard views
+- Accepted P0 dashboard view; richer/four-view dashboard only if P1 implemented
 - Duplicate import test
 - Malformed row/rejected row test
 - Missing/partial data test
@@ -87,7 +100,7 @@ submission receipt or checklist
 
 ## Dependencies
 
-- PRD 01 if acquisition is in the demo
+- PRD 01 P0 acquisition path (manual upload is fallback, not equivalent proof)
 - PRD 02 pipeline outputs
 - PRD 03 dashboard
 - PRD 04 only if AI explanation is included
