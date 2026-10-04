@@ -1,5 +1,20 @@
 # PRD 06: Finance and Production Roadmap
 
+## Primary source basis — Drive-led
+- [Goodwill — Three-Phase Solution and Overnight Agent Plan](https://drive.google.com/file/d/1RffkmafbqbMEs7o_lNaTvIRL3hW9paai/view?usp=drivesdk)
+- [Amanda Baumer Goodwill Meeting.md](https://drive.google.com/file/d/1WM1HJVAu_YF-Q48CQDa7SFwnPKg1FPlF/view?usp=drivesdk)
+- [Amanda2.0](https://docs.google.com/document/d/1yveSPTDJ4PUVi1MjMvCP6ovVtyVy-M7UGOeDdDngz7g/edit?usp=drivesdk)
+- [goodwill-track-brief-v2.md](https://drive.google.com/file/d/1o0QBoew17f7IgEEHweBoe-VLQFGDEatg/view?usp=drivesdk)
+- [michael-wicks-plan.md](https://drive.google.com/file/d/1gip7aNE1TQdZmqNJQeRlPppVZ5iVuWCT/view?usp=drivesdk)
+
+Relevant plan sections: §10 Finance and Business Central; §11 Production continuation; §12 Success metrics and ROI; §14 Demo narrative.
+
+The corrected brief frames mission efficiency and Business Central compatibility. Amanda describes manual handoffs and estimated effort, not measured ROI; staffing changes make support ownership essential. Plan §§10–12/14 gate accounting, Microsoft reuse, pilot ownership, conservative measurement and honest demo claims.
+
+## Source precedence
+Current user decisions govern. Primary evidence is the Google Drive stakeholder/mentor material; the Goodwill Three-Phase Solution and Overnight Agent Plan is the implementation synthesis. This card operationalizes those sources. Older goodwill/PRD.md and planning/agentic-build-plan.md are legacy implementation background, NOT governing requirements or automatic scope limits. Preserve corrections in the three-phase plan where earlier source notes contain unsupported technical claims. Freeze new scope/contracts through GOV-02/GOV-03.
+
+
 ## Status
 
 Proposed roadmap PRD. This is not a weekend implementation commitment.
