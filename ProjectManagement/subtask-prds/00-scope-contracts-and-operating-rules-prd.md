@@ -4,11 +4,20 @@
 
 Proposed P0 project-management PRD. This should be completed before parallel implementation begins.
 
-## Source basis
+## Primary source basis — Drive-led
+- [Goodwill — Three-Phase Solution and Overnight Agent Plan](https://drive.google.com/file/d/1RffkmafbqbMEs7o_lNaTvIRL3hW9paai/view?usp=drivesdk)
+- [Amanda Baumer Goodwill Meeting.md](https://drive.google.com/file/d/1WM1HJVAu_YF-Q48CQDa7SFwnPKg1FPlF/view?usp=drivesdk)
+- [Amanda2.0](https://docs.google.com/document/d/1yveSPTDJ4PUVi1MjMvCP6ovVtyVy-M7UGOeDdDngz7g/edit?usp=drivesdk)
+- [michael-wicks-plan.md](https://drive.google.com/file/d/1gip7aNE1TQdZmqNJQeRlPppVZ5iVuWCT/view?usp=drivesdk)
+- [goodwill-track-brief-v2.md](https://drive.google.com/file/d/1o0QBoew17f7IgEEHweBoe-VLQFGDEatg/view?usp=drivesdk)
 
-- Drive source: `GOODWILL_THREE_PHASE_SOLUTION_AND_OVERNIGHT_AGENT_PLAN.md`
-- Repo source: `goodwill/PRD.md`
-- Repo source: `Tasks/TASK-BOARD.md`
+Relevant plan sections: §1 Evidence, chronology and corrections; §2 ESTEEM requirements; §15 Immediate decisions.
+
+Amanda prioritizes retrieval and requires Copilot; the follow-up corrects staffing. Wicks connects retrieval to executive visibility in three layers. The corrected brief provides business/mission/KPI constraints. The plan turns these into requirements, frozen interfaces and human decisions.
+
+## Source precedence
+Current user decisions govern. Primary evidence is the Google Drive stakeholder/mentor material; the Goodwill Three-Phase Solution and Overnight Agent Plan is the implementation synthesis. This card operationalizes those sources. Older goodwill/PRD.md and planning/agentic-build-plan.md are legacy implementation background, NOT governing requirements or automatic scope limits. Preserve corrections in the three-phase plan where earlier source notes contain unsupported technical claims. Freeze new scope/contracts through GOV-02/GOV-03.
+
 
 ## Problem
 
