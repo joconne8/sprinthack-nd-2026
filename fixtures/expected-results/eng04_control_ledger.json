@@ -1,0 +1,177 @@
+{
+  "owner": "Jack mc (ENG-04 independent QA)",
+  "synthetic": true,
+  "metric_definition": "Demo net sales = item sales minus refunds; excludes shipping, tax and fees (AGENTS.md financial rules). Missing inputs are unavailable (null), never zero.",
+  "independence": "Every expected amount below was written by hand from the row values in this file, with the arithmetic shown in 'derivation'. No value was produced by running services/ code. Rows carry decoy shipping 500.00, tax 400.00, fee 300.00 and source net_sales 9999.00, so any implementation that adds those fields cannot match these totals.",
+  "reporting_timezone": "America/New_York (EDT, UTC-4, on all dates used here)",
+  "row_defaults": {"channel": "eBay", "store": "GW-001", "paid_at_utc_time": "16:00:00+00:00", "quantity": "1"},
+  "scenarios": {
+    "core_ledger": {
+      "date": "2026-09-30",
+      "files": {
+        "initial": [
+          {"key": "A", "gross": "12.34", "refund": "2.34"},
+          {"key": "B", "gross": "50.00", "refund": "50.00"},
+          {"key": "C", "gross": "0.01", "refund": "0.00"}
+        ],
+        "overlap": [
+          {"key": "A", "gross": "12.34", "refund": "2.34"},
+          {"key": "D", "gross": "7.00", "refund": "1.25"}
+        ],
+        "correction": [
+          {"key": "A", "gross": "12.34", "refund": "3.34"}
+        ]
+      },
+      "expected": {
+        "after_initial": {"net": "10.01", "gross": "62.35", "refunds": "52.34", "rows": 3},
+        "after_replay": {"status": "duplicate_noop", "net": "10.01"},
+        "after_overlap": {"net": "15.76", "accepted_rows": 1, "duplicate_rows": 1, "rows": 4},
+        "after_unapproved_correction": {"status": "failed", "error": "correction_requires_approval", "net": "15.76"},
+        "after_approved_correction": {"net": "14.76", "gross": "69.35", "refunds": "54.59", "corrected_rows": 1}
+      },
+      "derivation": [
+        "A 12.34-2.34=10.00; B 50.00-50.00=0.00 (full refund); C 0.01-0.00=0.01; total 10.01",
+        "gross 12.34+50.00+0.01=62.35; refunds 2.34+50.00+0.00=52.34; 62.35-52.34=10.01",
+        "replaying identical bytes adds nothing: 10.01",
+        "overlap re-sends A unchanged (duplicate) and adds D 7.00-1.25=5.75: 10.01+5.75=15.76",
+        "correction of A refund 2.34->3.34 without approval must be rejected: stays 15.76",
+        "with approval A becomes 12.34-3.34=9.00: 9.00+0.00+0.01+5.75=14.76",
+        "gross 62.35+7.00=69.35; refunds 52.34-2.34+3.34+1.25=54.59; 69.35-54.59=14.76"
+      ]
+    },
+    "date_boundaries": {
+      "files": {
+        "sep30": {"start": "2026-09-30", "end": "2026-09-30", "rows": [
+          {"key": "H", "paid_at": "2026-09-30T04:00:00+00:00", "reporting_date": "2026-09-30", "gross": "6.00", "refund": "1.00"},
+          {"key": "G", "paid_at": "2026-10-01T03:59:59+00:00", "reporting_date": "2026-09-30", "gross": "4.00", "refund": "0.00"}
+        ]},
+        "oct01": {"start": "2026-10-01", "end": "2026-10-01", "rows": [
+          {"key": "I", "paid_at": "2026-10-01T16:00:00+00:00", "reporting_date": "2026-10-01", "gross": "2.50", "refund": "0.00"}
+        ]},
+        "outside_period": {"start": "2026-09-30", "end": "2026-09-30", "rows": [
+          {"key": "X", "paid_at": "2026-09-30T03:59:59+00:00", "reporting_date": "2026-09-30", "gross": "1.00", "refund": "0.00"}
+        ]}
+      },
+      "expected": {
+        "sep30": "9.00",
+        "oct01": "2.50",
+        "sep30_to_oct01": "11.50",
+        "sep29_before_any_sep29_file": null,
+        "outside_period_status": "failed",
+        "outside_period_reason": "row_outside_period"
+      },
+      "derivation": [
+        "H 04:00Z = 00:00 EDT on 09-30 (first second of the day): 6.00-1.00=5.00",
+        "G 03:59:59Z on 10-01 = 23:59:59 EDT on 09-30 (last second of the day): 4.00",
+        "09-30 total 5.00+4.00=9.00; 10-01 I 2.50; inclusive range 09-30..10-01 = 9.00+2.50=11.50",
+        "X 03:59:59Z on 09-30 = 23:59:59 EDT on 09-29, outside a 09-30 request: file must fail, not publish"
+      ]
+    },
+    "coverage_gap": {
+      "files": {
+        "sep29": {"start": "2026-09-29", "end": "2026-09-29", "rows": [
+          {"key": "J", "paid_at": "2026-09-29T16:00:00+00:00", "reporting_date": "2026-09-29", "gross": "1.00", "refund": "0.00"}
+        ]},
+        "oct01": {"start": "2026-10-01", "end": "2026-10-01", "rows": [
+          {"key": "K", "paid_at": "2026-10-01T16:00:00+00:00", "reporting_date": "2026-10-01", "gross": "2.00", "refund": "0.00"}
+        ]},
+        "utc_sep30": {"start": "2026-09-30", "end": "2026-09-30", "timezone": "UTC", "rows": [
+          {"key": "L", "paid_at": "2026-09-30T12:00:00+00:00", "reporting_date": "2026-09-30", "gross": "3.00", "refund": "0.00"}
+        ]}
+      },
+      "expected": {
+        "range_sep29_oct01_missing_days": ["2026-09-30"],
+        "range_sep29_oct01_not_available": true,
+        "sep30_value": null,
+        "sep30_availability": "unavailable",
+        "utc_file_sep30_availability": "partial",
+        "utc_file_sep30_missing_days": ["2026-09-30"]
+      },
+      "derivation": [
+        "No file covers 09-30, so a 09-29..10-01 range cannot be complete; 09-30 alone is unknown (null), never 0.00",
+        "A UTC 09-30 report covers 09-30 00:00Z..10-01 00:00Z = 09-29 20:00..09-30 20:00 EDT, leaving 20:00-24:00 EDT on 09-30 uncovered: partial"
+      ]
+    },
+    "missing_source": {
+      "expected": {
+        "never_imported_value": null,
+        "never_imported_availability": "unavailable",
+        "other_source_value_after_upright_import": null
+      },
+      "derivation": ["An absent source is unavailable, not 0.00; importing upright_replica must not make cash_monkey_replica available"]
+    },
+    "buyer_store_keys": {
+      "date": "2026-09-30",
+      "files": {
+        "keys": [
+          {"key": "P1", "channel": "eBay", "buyer": "SHARED-1", "store": "GW-001", "gross": "10.00", "refund": "0.00"},
+          {"key": "P2", "channel": "eBay", "buyer": "SHARED-1", "store": "GW-002", "gross": "5.00", "refund": "0.00"},
+          {"key": "P3", "channel": "Shopgoodwill", "buyer": "SHARED-1", "store": "GW-001", "gross": "4.00", "refund": "0.00"},
+          {"key": "P4", "channel": "eBay", "buyer": "EB-2", "store": "", "gross": "3.00", "refund": "0.00"},
+          {"key": "P5", "channel": "Shopgoodwill", "buyer": "SG-9", "store": "GW-999", "gross": "2.00", "refund": "0.00"}
+        ],
+        "missing_buyer_oct01": [
+          {"key": "Q", "paid_at": "2026-10-01T16:00:00+00:00", "reporting_date": "2026-10-01", "channel": "eBay", "buyer": "", "gross": "1.00", "refund": "0.00"}
+        ]
+      },
+      "expected": {
+        "all_platforms_net": "24.00",
+        "all_platforms_customers": null,
+        "ebay_net": "18.00",
+        "ebay_customers": "2",
+        "shopgoodwill_net": "6.00",
+        "shopgoodwill_customers": "2",
+        "store_gw001_net": "14.00",
+        "store_unknown_net": "5.00",
+        "exception_codes": ["missing_store", "unmapped_store"],
+        "missing_buyer_oct01_net": "1.00",
+        "missing_buyer_oct01_customers": null
+      },
+      "derivation": [
+        "all rows 10+5+4+3+2=24.00; cross-platform unique customers are unavailable (no identity merge)",
+        "eBay: P1 10 + P2 5 + P4 3 = 18.00; buyers {SHARED-1, EB-2} = 2",
+        "ShopGoodwill: P3 4 + P5 2 = 6.00; buyers {SHARED-1, SG-9} = 2 (SHARED-1 is counted separately per platform, never merged)",
+        "store GW-001: P1 10 + P3 4 = 14.00; unknown store (missing P4 + unmapped GW-999 P5) = 3+2 = 5.00",
+        "10-01 Q has no buyer ID: sales 1.00 still count, the customer metric is unavailable"
+      ]
+    },
+    "invalid_rows": {
+      "date": "2026-09-30",
+      "files": {
+        "refund_exceeds_gross": [{"key": "R1", "gross": "5.00", "refund": "5.01"}],
+        "negative_gross": [{"key": "R2", "gross": "-1.00", "refund": "0.00"}],
+        "three_decimals": [{"key": "R3", "gross": "1.005", "refund": "0.00"}],
+        "conflicting_same_file": [
+          {"key": "R4", "gross": "1.00", "refund": "0.00"},
+          {"key": "R4", "gross": "2.00", "refund": "0.00"}
+        ],
+        "exact_duplicate_same_file": [
+          {"key": "R5", "gross": "4.00", "refund": "1.00"},
+          {"key": "R5", "gross": "4.00", "refund": "1.00"}
+        ]
+      },
+      "expected": {
+        "refund_exceeds_gross": "invalid_amount_range",
+        "negative_gross": "invalid_amount_range",
+        "three_decimals": "invalid_money",
+        "conflicting_same_file": "conflicting_rows",
+        "exact_duplicate_same_file_net": "3.00",
+        "exact_duplicate_same_file_duplicate_rows": 1
+      },
+      "derivation": [
+        "refund 5.01 > item sales 5.00 is impossible; negative item sales rejected; sub-cent money rejected",
+        "the same key with different values in one file is a conflict, not a correction",
+        "an identical row repeated in one file counts once: 4.00-1.00=3.00"
+      ]
+    },
+    "demo_spot_checks": {
+      "source": "data ingestion/server.py replica ledger formula, evaluated by hand",
+      "rows": {
+        "UP-20260929-0001": {"net": "23.14", "derivation": "day offset 271; 271*137=37127; 37127 mod 8500=3127; gross 1500+3127=4627c=46.27; n=0 so refund 4627//2=2313c=23.13; 46.27-23.13=23.14"},
+        "UP-20260930-0001": {"net": "23.82", "derivation": "day offset 272; 272*137=37264; 37264 mod 8500=3264; gross 4764c=47.64; refund 2382c=23.82; 47.64-23.82=23.82"},
+        "UP-20260930-0002": {"net": "49.75", "derivation": "(37264+211) mod 8500=3475; gross 4975c=49.75; n=1 not a multiple of 17 so refund 0"}
+      },
+      "rows_per_day": 128
+    }
+  }
+}

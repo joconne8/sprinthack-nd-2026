@@ -1,0 +1,198 @@
+[
+  {
+    "download": {
+      "byte_size": 32774,
+      "file_name": "upright_paid_orders_2026-09-29_2026-09-29_synthetic.csv",
+      "manifest_checksum": "e79cb1e7ed4e01af279d268fb599b115e32ff6b729de6af0614274ba2426a6cb",
+      "portal_demo_net_sales": "7127.90",
+      "row_count": 128,
+      "sha256": "e79cb1e7ed4e01af279d268fb599b115e32ff6b729de6af0614274ba2426a6cb"
+    },
+    "evidence": {
+      "file_ids": [
+        "e79cb1e7ed4e01af279d268fb599b115e32ff6b729de6af0614274ba2426a6cb"
+      ],
+      "scope_total": "7127.90",
+      "spot": {
+        "[\"UP-20260929-0001\"]": "23.14"
+      },
+      "total_rows": 128
+    },
+    "import": {
+      "counts": {
+        "accepted_rows": 128,
+        "corrected_rows": 0,
+        "duplicate_rows": 0,
+        "rejected_rows": 0,
+        "row_count": 128
+      },
+      "file_id": "e79cb1e7ed4e01af279d268fb599b115e32ff6b729de6af0614274ba2426a6cb",
+      "http_status": 201,
+      "reconciliation_state": "verified",
+      "status": "imported"
+    },
+    "metrics_by_day": {
+      "2026-09-29": {
+        "availability": "available",
+        "coverage": "complete",
+        "rows": 128,
+        "run_id": "cd01038d4c924cbba793263c107a7c34",
+        "value": "7127.90"
+      },
+      "2026-09-30": {
+        "availability": "unavailable",
+        "coverage": "partial",
+        "rows": 0,
+        "run_id": "cd01038d4c924cbba793263c107a7c34",
+        "value": null
+      }
+    },
+    "qa_raw_net_by_day": {
+      "2026-09-29": "7127.90"
+    },
+    "range_metric": {
+      "availability": "available",
+      "reconciliation_state": "verified",
+      "run_id": "cd01038d4c924cbba793263c107a7c34",
+      "value": "7127.90"
+    },
+    "raw_download_matches": true,
+    "request": {
+      "end_date": "2026-09-29",
+      "start_date": "2026-09-29"
+    },
+    "step": "sep29"
+  },
+  {
+    "download": {
+      "byte_size": 32774,
+      "file_name": "upright_paid_orders_2026-09-29_2026-09-29_synthetic.csv",
+      "manifest_checksum": "e79cb1e7ed4e01af279d268fb599b115e32ff6b729de6af0614274ba2426a6cb",
+      "portal_demo_net_sales": "7127.90",
+      "row_count": 128,
+      "sha256": "e79cb1e7ed4e01af279d268fb599b115e32ff6b729de6af0614274ba2426a6cb"
+    },
+    "evidence": {
+      "file_ids": [
+        "e79cb1e7ed4e01af279d268fb599b115e32ff6b729de6af0614274ba2426a6cb"
+      ],
+      "scope_total": "7127.90",
+      "spot": {
+        "[\"UP-20260929-0001\"]": "23.14"
+      },
+      "total_rows": 128
+    },
+    "import": {
+      "counts": {
+        "accepted_rows": 0,
+        "corrected_rows": 0,
+        "duplicate_rows": 128,
+        "rejected_rows": 0,
+        "row_count": 128
+      },
+      "file_id": "e79cb1e7ed4e01af279d268fb599b115e32ff6b729de6af0614274ba2426a6cb",
+      "http_status": 201,
+      "reconciliation_state": "verified",
+      "status": "duplicate_noop"
+    },
+    "metrics_by_day": {
+      "2026-09-29": {
+        "availability": "available",
+        "coverage": "complete",
+        "rows": 128,
+        "run_id": "cd01038d4c924cbba793263c107a7c34",
+        "value": "7127.90"
+      },
+      "2026-09-30": {
+        "availability": "unavailable",
+        "coverage": "partial",
+        "rows": 0,
+        "run_id": "cd01038d4c924cbba793263c107a7c34",
+        "value": null
+      }
+    },
+    "qa_raw_net_by_day": {
+      "2026-09-29": "7127.90"
+    },
+    "range_metric": {
+      "availability": "available",
+      "reconciliation_state": "verified",
+      "run_id": "cd01038d4c924cbba793263c107a7c34",
+      "value": "7127.90"
+    },
+    "raw_download_matches": true,
+    "request": {
+      "end_date": "2026-09-29",
+      "start_date": "2026-09-29"
+    },
+    "step": "sep29_replay"
+  },
+  {
+    "download": {
+      "byte_size": 65312,
+      "file_name": "upright_paid_orders_2026-09-29_2026-09-30_synthetic.csv",
+      "manifest_checksum": "f51b7287d87948e8b8d6b19f56e7240ffdb00608c611d317e19e798684263869",
+      "portal_demo_net_sales": "14255.68",
+      "row_count": 256,
+      "sha256": "f51b7287d87948e8b8d6b19f56e7240ffdb00608c611d317e19e798684263869"
+    },
+    "evidence": {
+      "file_ids": [
+        "e79cb1e7ed4e01af279d268fb599b115e32ff6b729de6af0614274ba2426a6cb",
+        "f51b7287d87948e8b8d6b19f56e7240ffdb00608c611d317e19e798684263869"
+      ],
+      "scope_total": "14255.68",
+      "spot": {
+        "[\"UP-20260929-0001\"]": "23.14",
+        "[\"UP-20260930-0001\"]": "23.82",
+        "[\"UP-20260930-0002\"]": "49.75"
+      },
+      "total_rows": 256
+    },
+    "import": {
+      "counts": {
+        "accepted_rows": 128,
+        "corrected_rows": 0,
+        "duplicate_rows": 128,
+        "rejected_rows": 0,
+        "row_count": 256
+      },
+      "file_id": "f51b7287d87948e8b8d6b19f56e7240ffdb00608c611d317e19e798684263869",
+      "http_status": 201,
+      "reconciliation_state": "verified",
+      "status": "imported"
+    },
+    "metrics_by_day": {
+      "2026-09-29": {
+        "availability": "available",
+        "coverage": "complete",
+        "rows": 128,
+        "run_id": "510e9438904b4d819e6dae372d6fc653",
+        "value": "7127.90"
+      },
+      "2026-09-30": {
+        "availability": "available",
+        "coverage": "complete",
+        "rows": 128,
+        "run_id": "510e9438904b4d819e6dae372d6fc653",
+        "value": "7127.78"
+      }
+    },
+    "qa_raw_net_by_day": {
+      "2026-09-29": "7127.90",
+      "2026-09-30": "7127.78"
+    },
+    "range_metric": {
+      "availability": "available",
+      "reconciliation_state": "verified",
+      "run_id": "510e9438904b4d819e6dae372d6fc653",
+      "value": "14255.68"
+    },
+    "raw_download_matches": true,
+    "request": {
+      "end_date": "2026-09-30",
+      "start_date": "2026-09-29"
+    },
+    "step": "sep29_sep30_overlap"
+  }
+]
