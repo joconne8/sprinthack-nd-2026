@@ -1,0 +1,3 @@
+interface:
+  display_name: "Merge After Push"
+  short_description: "Push a branch and merge its PR only after checks pass"
