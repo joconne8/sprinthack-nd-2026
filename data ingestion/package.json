@@ -1,0 +1,13 @@
+{
+  "name": "goodwill-reporting-replicas",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Optional browser replay and tests for local synthetic report portals",
+  "scripts": {
+    "test:browser": "node tests/browser.test.cjs",
+    "replay": "node replay.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1"
+  }
+}
