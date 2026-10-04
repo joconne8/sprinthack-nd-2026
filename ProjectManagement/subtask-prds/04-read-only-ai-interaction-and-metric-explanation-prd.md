@@ -1,5 +1,20 @@
 # PRD 04: Read-Only AI Interaction and Metric Explanation
 
+## Primary source basis — Drive-led
+- [Goodwill — Three-Phase Solution and Overnight Agent Plan](https://drive.google.com/file/d/1RffkmafbqbMEs7o_lNaTvIRL3hW9paai/view?usp=drivesdk)
+- [Amanda Baumer Goodwill Meeting.md](https://drive.google.com/file/d/1WM1HJVAu_YF-Q48CQDa7SFwnPKg1FPlF/view?usp=drivesdk)
+- [goodwill-track-brief-v2.md](https://drive.google.com/file/d/1o0QBoew17f7IgEEHweBoe-VLQFGDEatg/view?usp=drivesdk)
+- [michael-wicks-plan.md](https://drive.google.com/file/d/1gip7aNE1TQdZmqNJQeRlPppVZ5iVuWCT/view?usp=drivesdk)
+- [Jack explanation.md](https://drive.google.com/file/d/1jrBRKAFzJlOVUC7mIsyTH3OrCGY-7qD6/view?usp=drivesdk)
+
+Relevant plan sections: §6 Dashboard and bounded agentic interaction; §7 Weekend P0/P1/P2.
+
+The corrected brief lists leadership revenue/growth/margin/labor productivity/inventory/customer KPIs. Amanda wants retrieval before visibility and Copilot for AI. Wicks proposes an AI-native application; the plan defines operations, leadership and finance surfaces plus narrow grounded tools and unavailable-input handling.
+
+## Source precedence
+Current user decisions govern. Primary evidence is the Google Drive stakeholder/mentor material; the Goodwill Three-Phase Solution and Overnight Agent Plan is the implementation synthesis. This card operationalizes those sources. Older goodwill/PRD.md and planning/agentic-build-plan.md are legacy implementation background, NOT governing requirements or automatic scope limits. Preserve corrections in the three-phase plan where earlier source notes contain unsupported technical claims. Freeze new scope/contracts through GOV-02/GOV-03.
+
+
 ## Status
 
 Proposed P1/P2 workstream PRD. Start only after the deterministic acquisition, pipeline, and dashboard path passes.
