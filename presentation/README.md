@@ -16,3 +16,6 @@ NODE_PATH=tools/verification/node_modules node scripts/release/render_slides.cjs
 python3 scripts/release/build_slides.py --pptx with python-pptx==1.0.2 installed.
 Actual verification: slides-verification.json and recording/video-metadata.json.
 No final human approval or organizer upload is represented by this package.
+
+Package the offline handoff ZIP: `python3 scripts/release/package_release.py`.
+The verified ZIP is written to `.runtime/goodwill-submission.zip`; file hashes are in MANIFEST.json.

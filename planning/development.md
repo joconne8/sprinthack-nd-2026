@@ -41,8 +41,8 @@ Final release evidence lives in reports/release/; older takeover reports are his
 
 Runtime: Python 3.9+ with zoneinfo data. Locally verified on Python 3.9.6/macOS.
 SQLite and HTTP libraries ship with Python; no install, production secrets or
-paid service is needed for the API. CI is configured for Python 3.9/3.12; remote
-CI results remain unverified. The original foundation run had no Node; the
+paid service is needed for the API. Final release GitHub CI passed Python 3.9/3.12 and client/browser jobs; see
+reports/release/ci-implementation.json. The original foundation run had no Node; the
 completion checks below verify a separate client/browser toolchain. This is the
 deliberate prototype exception documented in
 `planning/decisions/architecture.md`.

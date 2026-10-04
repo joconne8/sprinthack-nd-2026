@@ -1,0 +1,87 @@
+PASS: wrong page, deadline timeout, unavailable report, control drift, session/MFA/CAPTCHA/permission stops, dates, host restriction and versioned logs.
+{"run_id":"missing-case","skill":"upright-paid-orders-replica@0.2.0","msg":"step goto"}
+127.0.0.1 - - [04/Oct/2026 01:18:34] "GET /upright HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:18:34] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:18:34] "GET /static/app.js HTTP/1.1" 200 -
+{"run_id":"missing-case","skill":"upright-paid-orders-replica@0.2.0","msg":"step assert"}
+{"run_id":"missing-case","skill":"upright-paid-orders-replica@0.2.0","msg":"step click"}
+127.0.0.1 - - [04/Oct/2026 01:18:34] "GET /upright/reports HTTP/1.1" 200 -
+{"run_id":"missing-case","skill":"upright-paid-orders-replica@0.2.0","msg":"step click"}
+127.0.0.1 - - [04/Oct/2026 01:18:34] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:18:34] "GET /static/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:18:34] "GET /upright/reports/paid-orders HTTP/1.1" 200 -
+{"run_id":"missing-case","skill":"upright-paid-orders-replica@0.2.0","msg":"step assert"}
+127.0.0.1 - - [04/Oct/2026 01:18:34] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:18:34] "GET /static/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:18:35] "GET /api/reports HTTP/1.1" 200 -
+{"run_id":"missing-case","skill":"upright-paid-orders-replica@0.2.0","msg":"step fill"}
+{"run_id":"missing-case","skill":"upright-paid-orders-replica@0.2.0","msg":"step fill"}
+{"run_id":"missing-case","skill":"upright-paid-orders-replica@0.2.0","msg":"step select"}
+{"run_id":"missing-case","skill":"upright-paid-orders-replica@0.2.0","msg":"step select"}
+{"run_id":"missing-case","skill":"upright-paid-orders-replica@0.2.0","msg":"step click"}
+{"run_id":"missing-case","skill":"upright-paid-orders-replica@0.2.0","msg":"step wait_state"}
+127.0.0.1 - - [04/Oct/2026 01:18:35] "POST /api/reports HTTP/1.1" 202 -
+127.0.0.1 - - [04/Oct/2026 01:18:35] "GET /api/reports HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:18:35] "GET /api/reports/0860f10ba44a4803a511be9fcb61c6e3 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:18:35] "GET /api/reports HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:18:35] "GET /api/reports/0860f10ba44a4803a511be9fcb61c6e3 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:18:35] "GET /api/reports HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:18:35] "GET /api/reports/0860f10ba44a4803a511be9fcb61c6e3 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:18:35] "GET /api/reports HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:18:36] "GET /api/reports/0860f10ba44a4803a511be9fcb61c6e3 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:18:36] "GET /api/reports HTTP/1.1" 200 -
+{"run_id":"e54ffe14-2595-43a2-b958-08e0acb323fe","skill":"upright-paid-orders-replica@0.2.0","msg":"step goto"}
+127.0.0.1 - - [04/Oct/2026 01:18:36] "GET /upright HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:18:36] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:18:36] "GET /static/app.js HTTP/1.1" 200 -
+{"run_id":"e54ffe14-2595-43a2-b958-08e0acb323fe","skill":"upright-paid-orders-replica@0.2.0","msg":"step assert"}
+{"run_id":"e54ffe14-2595-43a2-b958-08e0acb323fe","skill":"upright-paid-orders-replica@0.2.0","msg":"step click"}
+127.0.0.1 - - [04/Oct/2026 01:18:36] "GET /upright/reports HTTP/1.1" 200 -
+{"run_id":"e54ffe14-2595-43a2-b958-08e0acb323fe","skill":"upright-paid-orders-replica@0.2.0","msg":"step click"}
+127.0.0.1 - - [04/Oct/2026 01:18:36] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:18:36] "GET /static/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:18:36] "GET /upright/reports/paid-orders HTTP/1.1" 200 -
+{"run_id":"e54ffe14-2595-43a2-b958-08e0acb323fe","skill":"upright-paid-orders-replica@0.2.0","msg":"step assert"}
+127.0.0.1 - - [04/Oct/2026 01:18:36] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:18:36] "GET /static/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:18:36] "GET /api/reports HTTP/1.1" 200 -
+{"run_id":"e54ffe14-2595-43a2-b958-08e0acb323fe","skill":"upright-paid-orders-replica@0.2.0","msg":"step fill"}
+{"run_id":"e54ffe14-2595-43a2-b958-08e0acb323fe","skill":"upright-paid-orders-replica@0.2.0","msg":"step fill"}
+{"run_id":"e54ffe14-2595-43a2-b958-08e0acb323fe","skill":"upright-paid-orders-replica@0.2.0","msg":"step select"}
+{"run_id":"e54ffe14-2595-43a2-b958-08e0acb323fe","skill":"upright-paid-orders-replica@0.2.0","msg":"step select"}
+{"run_id":"e54ffe14-2595-43a2-b958-08e0acb323fe","skill":"upright-paid-orders-replica@0.2.0","msg":"step click"}
+{"run_id":"ef9b83e7-b35f-46e9-8469-8956644455f6","skill":"upright-paid-orders-replica@0.2.0","msg":"step goto"}
+127.0.0.1 - - [04/Oct/2026 01:18:41] "GET /upright HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:18:41] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:18:41] "GET /static/app.js HTTP/1.1" 200 -
+{"run_id":"ef9b83e7-b35f-46e9-8469-8956644455f6","skill":"upright-paid-orders-replica@0.2.0","msg":"step assert"}
+{"run_id":"ef9b83e7-b35f-46e9-8469-8956644455f6","skill":"upright-paid-orders-replica@0.2.0","msg":"step click"}
+127.0.0.1 - - [04/Oct/2026 01:18:41] "GET /upright/reports HTTP/1.1" 200 -
+{"run_id":"ef9b83e7-b35f-46e9-8469-8956644455f6","skill":"upright-paid-orders-replica@0.2.0","msg":"step click"}
+127.0.0.1 - - [04/Oct/2026 01:18:41] "GET /static/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:18:41] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:18:41] "GET /upright/reports/paid-orders HTTP/1.1" 200 -
+{"run_id":"ef9b83e7-b35f-46e9-8469-8956644455f6","skill":"upright-paid-orders-replica@0.2.0","msg":"step assert"}
+127.0.0.1 - - [04/Oct/2026 01:18:41] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:18:41] "GET /static/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:18:41] "GET /api/reports HTTP/1.1" 200 -
+{"run_id":"ef9b83e7-b35f-46e9-8469-8956644455f6","skill":"upright-paid-orders-replica@0.2.0","msg":"step fill"}
+{"run_id":"ef9b83e7-b35f-46e9-8469-8956644455f6","skill":"upright-paid-orders-replica@0.2.0","msg":"step fill"}
+{"run_id":"ef9b83e7-b35f-46e9-8469-8956644455f6","skill":"upright-paid-orders-replica@0.2.0","msg":"step select"}
+{"run_id":"ef9b83e7-b35f-46e9-8469-8956644455f6","skill":"upright-paid-orders-replica@0.2.0","msg":"step select"}
+{"run_id":"ef9b83e7-b35f-46e9-8469-8956644455f6","skill":"upright-paid-orders-replica@0.2.0","msg":"step click"}
+{"run_id":"ef9b83e7-b35f-46e9-8469-8956644455f6","skill":"upright-paid-orders-replica@0.2.0","msg":"step wait_state"}
+127.0.0.1 - - [04/Oct/2026 01:18:41] "POST /api/reports HTTP/1.1" 202 -
+127.0.0.1 - - [04/Oct/2026 01:18:41] "GET /api/reports HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:18:41] "GET /api/reports/37c346367e94419d8551c805d805b735 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:18:41] "GET /api/reports HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:18:42] "GET /api/reports/37c346367e94419d8551c805d805b735 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:18:42] "GET /api/reports HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:18:42] "GET /api/reports/37c346367e94419d8551c805d805b735 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 01:18:42] "GET /api/reports HTTP/1.1" 200 -
+{"run_id":"586b3fbe-85a0-49d9-95f0-828834213adf","skill":"upright-paid-orders-replica@0.2.0","msg":"step goto"}
+{"run_id":"586b3fbe-85a0-49d9-95f0-828834213adf","skill":"upright-paid-orders-replica@0.2.0","msg":"step assert"}
+{"run_id":"7c06d02e-8af5-4224-8377-ace54c75ef4f","skill":"upright-paid-orders-replica@0.2.0","msg":"step goto"}
+{"run_id":"eb74d11c-6523-447c-aa3d-8298e1341a08","skill":"upright-paid-orders-replica@0.2.0","msg":"step goto"}
+{"run_id":"d0874bbc-c69c-482d-aa11-82b5f72ce154","skill":"upright-paid-orders-replica@0.2.0","msg":"step goto"}
+{"run_id":"9356b093-d1b9-4a2a-a376-5bcdef7bb4d2","skill":"upright-paid-orders-replica@0.2.0","msg":"step goto"}

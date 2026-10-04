@@ -58,7 +58,7 @@
       "displayed_value": "7127.90",
       "checksum": "e79cb1e7ed4e01af279d268fb599b115e32ff6b729de6af0614274ba2426a6cb",
       "raw_file": "acquired-2026-09-29.csv",
-      "batch_id": "cc9957e7fb5f4127a270cb17c3913632",
+      "batch_id": "b4c5f6812c6545ae97dea7fc5b4dae6f",
       "qa_raw_expected": "7127.90"
     },
     {
@@ -67,7 +67,7 @@
       "displayed_value": "14256.16",
       "checksum": "da6867ad24fb82241f432a04dc489368a175aae63845831486eb01e403671bb5",
       "raw_file": "acquired-2026-09-27.csv",
-      "batch_id": "92b9eee9424247cabae4f063a7a62778",
+      "batch_id": "2e678a0ece924d61a921225ca5afbaca",
       "qa_raw_expected": "14256.16"
     }
   ],

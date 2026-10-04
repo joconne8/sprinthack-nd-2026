@@ -62,3 +62,5 @@ or completed P1 metric export is represented. Source-backed notes live in planni
 
 Before upload, a team member reviews the story and confirms the organizer's upload destination,
 time limit and required filenames. The formats and deadline are user-confirmed; upload details are not.
+
+Offline handoff ZIP: `.runtime/goodwill-submission.zip` (rebuild with `python3 scripts/release/package_release.py`).
