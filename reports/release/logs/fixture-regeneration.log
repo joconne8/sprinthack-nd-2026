@@ -1,0 +1,15 @@
+test_catalog_listing_and_complete_snapshots (test_data.FixtureTests) ... ok
+test_cent_exact_financial_formulas (test_data.FixtureTests) ... ok
+test_daily_metrics_and_repeat_buyers (test_data.FixtureTests) ... ok
+test_exception_ledger_is_exhaustive (test_data.FixtureTests) ... ok
+test_headers_counts_checksums (test_data.FixtureTests) ... ok
+test_isbn_checksums (test_data.FixtureTests) ... ok
+test_primary_keys_and_store_coverage (test_data.FixtureTests) ... ok
+test_replay_invalid_and_incremental_fixtures (test_data.FixtureTests) ... ok
+test_reproducibility (test_data.FixtureTests) ... ok
+test_shipping_foreign_keys_dates_and_uniqueness (test_data.FixtureTests) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.314s
+
+OK

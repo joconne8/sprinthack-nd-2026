@@ -1,0 +1,106 @@
+{
+  "files": {
+    "DEMO.md": {
+      "bytes": 3720,
+      "sha256": "e513f88e3676ee11807cdcde6e20e7a5b3889aa49e5750787f7754d48f722be8"
+    },
+    "planning/pitch/narration.txt": {
+      "bytes": 1988,
+      "sha256": "b58054655f685259541bb0e47a17398d66d8bc2bddd4ed002044933386bea362"
+    },
+    "planning/pitch/slides.json": {
+      "bytes": 7196,
+      "sha256": "79f00e0de7a1fbb9aff3f3b68aa57001632268d5c69c95333e1bbc1920de5988"
+    },
+    "presentation/README.md": {
+      "bytes": 1530,
+      "sha256": "96cd9000752ab0921d7c12a3fbf863c3c91465799af200179a17d27e65d14e6b"
+    },
+    "presentation/demo.mp4": {
+      "bytes": 5157842,
+      "sha256": "ab28c453f4aa49a21364b12d0dc41d976a041efdfdff97191ccdb107c1b99026"
+    },
+    "presentation/goodwill-progress.pdf": {
+      "bytes": 1015961,
+      "sha256": "536d485661773ec31f2c0f95ea6a8ef5d61676554dc621456b0eefde095bbf56"
+    },
+    "presentation/goodwill-progress.pptx": {
+      "bytes": 1424817,
+      "sha256": "1a0dcc77afe0d39a19c484ff14bbc600ea37d1e53e39aee00d79a25446cef9fb"
+    },
+    "presentation/index.html": {
+      "bytes": 876125,
+      "sha256": "a46fa3cb120d622ee8c041c044f67dcdd461bd7f0f5a8a562860c1c4f8252924"
+    },
+    "presentation/recording/leadership.png": {
+      "bytes": 188175,
+      "sha256": "2df5523046db853d56c7c6b18eddf7ff79e924f1c5054d12470ec75f35855e79"
+    },
+    "presentation/recording/operations.png": {
+      "bytes": 237336,
+      "sha256": "daa8a461da2ba01935d9c9f6e06a7592ff20d79e24867ca873bd99c00acbbc84"
+    },
+    "presentation/recording/safe-failure.png": {
+      "bytes": 289052,
+      "sha256": "766171a0af9236f0ba5247552aced50f0725af7ab095cd233111eed2f9fd6b76"
+    },
+    "presentation/recording/source.png": {
+      "bytes": 457644,
+      "sha256": "eb41fc11aad22543677253f2e616db075b069846eb38d124886c6bcf47a46bfe"
+    },
+    "presentation/recording/timeline.json": {
+      "bytes": 3867,
+      "sha256": "5d9a9992ee03185bdc14f33e919c49d73347a4c1d297507d6c77d2fc9bc7bd98"
+    },
+    "presentation/recording/video-metadata.json": {
+      "bytes": 3532,
+      "sha256": "f6398f6d1ace606c15f42b35f85e0bfd6fbdf9ee4fe885ed48e3b80cd94a3534"
+    },
+    "presentation/slides/01.png": {
+      "bytes": 224651,
+      "sha256": "9840525545a44b734fb6fff56d1733610c12e29b7125fbda4f0623bce9497df6"
+    },
+    "presentation/slides/02.png": {
+      "bytes": 103559,
+      "sha256": "abc97538858bbc89e18613aaaecf884c21fc128a3251b1b68f1274b881f6461c"
+    },
+    "presentation/slides/03.png": {
+      "bytes": 99068,
+      "sha256": "9c81fb0afd423fd64f2d7034dc032e035c9181bfaf4e7d719b87e4d669ea1f0a"
+    },
+    "presentation/slides/04.png": {
+      "bytes": 103080,
+      "sha256": "a8c2addc5e4e45135fdbba1a0824d6ef48ba56c116d53f25354a114b07fd06ad"
+    },
+    "presentation/slides/05.png": {
+      "bytes": 168357,
+      "sha256": "fb9fb7f87b208cbfa55083a3370c956743028fe8c087bf6a9b9e1d986dfd817b"
+    },
+    "presentation/slides/06.png": {
+      "bytes": 161720,
+      "sha256": "dc97b2e3f9b1aae76d10ff12ebabae05c1787a98675c135874dc230bd5c34950"
+    },
+    "presentation/slides/07.png": {
+      "bytes": 98559,
+      "sha256": "7107eef38c70affc6550bbcd99aa2a135638c295deae0b899e833ff93ca8c43a"
+    },
+    "presentation/slides/08.png": {
+      "bytes": 138133,
+      "sha256": "735729b4f66c12c4faa1fac12ef5f7a26a73c3c09f4c7c9754c8f6312ba477a1"
+    },
+    "presentation/slides/09.png": {
+      "bytes": 99756,
+      "sha256": "b1cb9793543cc1985f109c66365afd8a1a66572eafd0fa1cff27b99048c93fa9"
+    },
+    "presentation/slides/10.png": {
+      "bytes": 234753,
+      "sha256": "bf7ef1d91b9403bc0280c468aaaa0d613f30b269244c4d5047b41828afe5da75"
+    },
+    "presentation/slides-verification.json": {
+      "bytes": 198,
+      "sha256": "9a8646519ac82d733d431b73eb1c200b74443b39e5b6bddfaaec3c641b22cff6"
+    }
+  },
+  "synthetic": true,
+  "human_accepted": false
+}

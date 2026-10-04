@@ -1,22 +1,12 @@
 {
   "task": "ENG-05",
-  "state": "BLOCKED",
+  "state": "READY_FOR_REVIEW",
   "accepted": false,
-  "branch": "peyton/jackoc-data-completion",
-  "base_commit": "610035efd3ffb1157f1b2ce5f3bc500417a1dfe5",
-  "evidence": "../integration/completion-verification.json",
+  "evidence": "../release/verification.json",
   "artifacts": [
-    "planning/release-checklist.md",
-    "reports/integration/verification.json"
+    "reports/integration/human-review-checklist.md",
+    "reports/integration/integrated-commit-and-regression.md",
+    "planning/release-checklist.md"
   ],
-  "limitations": "Exact-file API critical path passes locally. Landon UI, independent ENG-04 and human integration/freeze remain pending; no merge/deployment performed.",
-  "prior_evidence": "../integration/verification.json",
-  "completion_status": "../integration/completion-status.md",
-  "remaining_acceptance": [
-    "Jack mc independent UI acceptance replaces deliberate dashboard placeholder",
-    "Remote CI on reviewed commit",
-    "Human integration/demo acceptance/freeze and REL-01 backup"
-  ],
-  "current_takeover_evidence": "../takeover/verification.json",
-  "current_takeover_status": "../takeover/RESULT.md"
+  "limits": "Read referenced actual execution evidence. Human review remains pending; synthetic local P0 only."
 }

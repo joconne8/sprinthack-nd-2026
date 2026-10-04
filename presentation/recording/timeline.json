@@ -1,0 +1,70 @@
+{
+  "passed": true,
+  "recording": "Actual browser interactions; fictional source data; offline synthetic voiceover",
+  "phases": [
+    {
+      "title": "The problem",
+      "caption": "Trusted reporting starts before the dashboard.",
+      "narration": "Goodwill needs useful numbers for decisions. But first, someone has to retrieve and consolidate reports. We built a synthetic prototype that connects that upstream work to a dashboard. This recording uses fictional records and a simulated portal.",
+      "duration": 15.258685,
+      "start": 0.117,
+      "end": 16.375
+    },
+    {
+      "title": "Acquire",
+      "caption": "Choose dates. Collect the report. Verify and import the exact file.",
+      "narration": "The operator requests a paid orders report for September thirtieth. A versioned browser skill selects the dates and downloads the report. The file is checked, archived and sent through the real importer. Collection, import and publication remain separate states.",
+      "duration": 15.914649,
+      "start": 16.375,
+      "end": 33.289
+    },
+    {
+      "title": "Understand",
+      "caption": "The dashboard reads published data through the API.",
+      "narration": "The leadership view now shows seven thousand, one hundred twenty seven dollars and seventy eight cents in demo net sales. That means item sales minus refunds. It excludes shipping, taxes and fees. Coverage, definitions and freshness sit beside the value.",
+      "duration": 16.656009,
+      "start": 33.289,
+      "end": 50.947
+    },
+    {
+      "title": "Keep the proof",
+      "caption": "Metric run → supporting rows → original CSV and import batch.",
+      "narration": "We can follow the number back to its supporting rows, original source fields, file checksum and import batch. The view is pinned to the metric run we opened. It is evidence for the displayed number, rather than a separate mock dashboard.",
+      "duration": 13.450658,
+      "start": 50.947,
+      "end": 65.399
+    },
+    {
+      "title": "Change the dates",
+      "caption": "The same workflow collects October 1–2 without code changes.",
+      "narration": "Now we request October first through second. The same workflow imports two hundred fifty six rows. The dashboard changes to fourteen thousand, two hundred fifty five dollars and twenty cents. No code or fixture is edited to produce the alternate date result.",
+      "duration": 15.685351,
+      "start": 65.399,
+      "end": 82.086
+    },
+    {
+      "title": "Replay safely",
+      "caption": "Repeating a report keeps published totals unchanged.",
+      "narration": "Collecting the same report again is a duplicate no-op. It remains visible in history, but it does not double the published totals. Corrections use a separate, explicit approval control.",
+      "duration": 11.194649,
+      "start": 82.086,
+      "end": 94.281
+    },
+    {
+      "title": "Fail safely",
+      "caption": "An expired synthetic session stops and names the next owner.",
+      "narration": "An expired synthetic session stops after one attempt. The dashboard shows the cause and the operator who needs to act. Nothing is imported from this failed collection. Manual CSV and manifest upload remains available as a fallback.",
+      "duration": 14.858685,
+      "start": 94.281,
+      "end": 110.14
+    },
+    {
+      "title": "State of play",
+      "caption": "Working synthetic prototype. Live connections and advanced inputs are next.",
+      "narration": "The acquisition, verification and dashboard flow works. Missing margin and labor inputs stay unavailable. Real Goodwill access, source mappings, Microsoft integration and production ownership are next steps. This is demonstrated prototype progress, not a live integration or a measured savings claim.",
+      "duration": 19.743991,
+      "start": 110.14,
+      "end": 130.885
+    }
+  ]
+}

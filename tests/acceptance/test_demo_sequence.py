@@ -1,8 +1,8 @@
 """End-to-end demo sequence: actual replica download -> HTTP import -> reconcile -> API -> evidence.
 
 Expected totals come from QA's own reading of the downloaded bytes and from
-hand-evaluated spot rows, not from the importer. Dashboard and export are
-reported as skipped until those deliverables exist in main.
+hand-evaluated spot rows, not from the importer. Browser acceptance is required;
+export remains explicitly deferred from P0.
 """
 import tempfile
 import unittest
@@ -63,9 +63,11 @@ class DemoSequenceTests(unittest.TestCase):
         step = self.steps["sep29_sep30_overlap"]
         self.assertEqual(step["download"]["portal_demo_net_sales"], step["range_metric"]["value"])
 
-    @unittest.skipUnless((ROOT / "apps/dashboard").exists(), "BLOCKED: no dashboard UI in main (APP-01..03 not merged)")
     def test_dashboard_shows_api_values(self):
-        self.fail("Dashboard acceptance must be written against the merged UI")
+        from tests.acceptance.dashboard_browser import run_dashboard_acceptance
+        observed = run_dashboard_acceptance()
+        self.assertTrue(observed['passed'])
+        self.assertGreaterEqual(len(observed['acquired']), 2)
 
     @unittest.skip("Export is deferred from P0 (planning/development.md); not silently waived")
     def test_export_matches_evidence(self):

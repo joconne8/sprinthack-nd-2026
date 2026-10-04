@@ -1,0 +1,15 @@
+Goodwill needs useful numbers for decisions. But first, someone has to retrieve and consolidate reports. We built a synthetic prototype that connects that upstream work to a dashboard. This recording uses fictional records and a simulated portal.
+
+The operator requests a paid orders report for September thirtieth. A versioned browser skill selects the dates and downloads the report. The file is checked, archived and sent through the real importer. Collection, import and publication remain separate states.
+
+The leadership view now shows seven thousand, one hundred twenty seven dollars and seventy eight cents in demo net sales. That means item sales minus refunds. It excludes shipping, taxes and fees. Coverage, definitions and freshness sit beside the value.
+
+We can follow the number back to its supporting rows, original source fields, file checksum and import batch. The view is pinned to the metric run we opened. It is evidence for the displayed number, rather than a separate mock dashboard.
+
+Now we request October first through second. The same workflow imports two hundred fifty six rows. The dashboard changes to fourteen thousand, two hundred fifty five dollars and twenty cents. No code or fixture is edited to produce the alternate date result.
+
+Collecting the same report again is a duplicate no-op. It remains visible in history, but it does not double the published totals. Corrections use a separate, explicit approval control.
+
+An expired synthetic session stops after one attempt. The dashboard shows the cause and the operator who needs to act. Nothing is imported from this failed collection. Manual CSV and manifest upload remains available as a fallback.
+
+The acquisition, verification and dashboard flow works. Missing margin and labor inputs stay unavailable. Real Goodwill access, source mappings, Microsoft integration and production ownership are next steps. This is demonstrated prototype progress, not a live integration or a measured savings claim.

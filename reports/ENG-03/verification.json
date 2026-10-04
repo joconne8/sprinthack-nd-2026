@@ -1,0 +1,11 @@
+{
+  "task": "ENG-03",
+  "state": "READY_FOR_REVIEW",
+  "accepted": false,
+  "evidence": "../release/verification.json",
+  "artifacts": [
+    "planning/overnight-runbook.md",
+    "reports/ENG-03/trial-plan-and-cancellation-check.md"
+  ],
+  "limits": "Read referenced actual execution evidence. Human review remains pending; synthetic local P0 only."
+}

@@ -1,0 +1,15 @@
+{
+  "task": "REL-01",
+  "state": "READY_FOR_REVIEW",
+  "accepted": false,
+  "evidence": "../release/verification.json",
+  "artifacts": [
+    "DEMO.md",
+    "presentation/index.html",
+    "presentation/goodwill-progress.pptx",
+    "presentation/goodwill-progress.pdf",
+    "presentation/demo.mp4",
+    "reports/REL-01/submission-and-claims-checklist.md"
+  ],
+  "limits": "Read referenced actual execution evidence. Human review remains pending; synthetic local P0 only."
+}
