@@ -1,0 +1,146 @@
+{
+  "task_id": "GOV-01",
+  "state": "READY_FOR_REVIEW",
+  "source_requirement_ids": [
+    "REQ-ING-01",
+    "REQ-ING-02",
+    "REQ-ING-03",
+    "REQ-ING-04",
+    "REQ-ING-05",
+    "REQ-DAT-01",
+    "REQ-DAT-02",
+    "REQ-DAT-03",
+    "REQ-DAT-04",
+    "REQ-DAT-05",
+    "REQ-KPI-01",
+    "REQ-KPI-02",
+    "REQ-KPI-03",
+    "REQ-OPS-01",
+    "REQ-OPS-02",
+    "REQ-OPS-03",
+    "REQ-AI-01",
+    "REQ-AI-02",
+    "REQ-FIN-01",
+    "REQ-FIN-02",
+    "REQ-SEC-01"
+  ],
+  "base_commit": "15fa25ad31f1720320dbb4b9fe073796436e2dce",
+  "head_commit": null,
+  "commands": [
+    {
+      "command": "git fetch origin",
+      "result": "pass",
+      "log": "No output; command exited 0."
+    },
+    {
+      "command": "git switch main",
+      "result": "pass",
+      "log": "Switched to branch main; local main was behind origin/main by 23 commits."
+    },
+    {
+      "command": "git pull --ff-only",
+      "result": "pass",
+      "log": "Fast-forwarded main from fa30a97 to 15fa25a."
+    },
+    {
+      "command": "git switch -c jackoc/GOV-01-requirements-map",
+      "result": "pass",
+      "log": "Created dedicated task branch."
+    },
+    {
+      "command": "gh issue view 7 --comments; gh issue view 13/4 --json ...",
+      "result": "pass",
+      "log": "Hub comments showed prior PM-00 documentation import; GOV-01 and E-GOV had no comments before claim."
+    },
+    {
+      "command": "gh issue comment 13 --body <claim>",
+      "result": "pass",
+      "log": "Claim posted: https://github.com/joconne8/sprinthack-nd-2026/issues/13#issuecomment-5975520334"
+    },
+    {
+      "command": "Google Drive fetch PLAN, AMANDA, FOLLOWUP, WICKS, BRIEF, JACK",
+      "result": "pass",
+      "log": "Fetched direct Drive source content through connected Google Drive tool."
+    },
+    {
+      "command": "git diff --check",
+      "result": "pass",
+      "log": "No whitespace errors reported."
+    },
+    {
+      "command": "git status --short",
+      "result": "pass",
+      "log": "Reported GOV-01 artifacts as untracked; pre-existing untracked goodwill-reporting-assistant/ left untouched."
+    },
+    {
+      "command": "Select-String -Path planning/requirements/register.md,planning/process-map.md,reports/GOV-01/source-to-requirement-matrix.md -Pattern FOLLOWUP,REQ-ING-04,Sonia,Business Central,Copilot,50-55,GOV-02,GOV-03",
+      "result": "pass",
+      "log": "Confirmed required corrections and pending validations are present in GOV-01 artifacts."
+    },
+    {
+      "command": "git diff --cached --check",
+      "result": "fail_then_pass",
+      "log": "Initial staged check found trailing whitespace in metadata lines; repaired with apply_patch and reran successfully."
+    },
+    {
+      "command": "git diff --cached --stat",
+      "result": "pass",
+      "log": "5 files changed, 370 insertions."
+    },
+    {
+      "command": "git commit -m \"Add GOV-01 requirements and process map\"",
+      "result": "pass",
+      "log": "Created commit, then amended evidence. Final commit is recorded in the issue completion comment and final response to avoid a self-referential hash changing during amend."
+    },
+    {
+      "command": "git show --stat --oneline --no-renames HEAD",
+      "result": "pass",
+      "log": "Confirmed 5 GOV-01 files in commit 1f93e9f."
+    },
+    {
+      "command": "git status --short",
+      "result": "pass",
+      "log": "Only pre-existing untracked goodwill-reporting-assistant/ remains."
+    }
+  ],
+  "evidence_paths": [
+    "planning/requirements/register.md",
+    "planning/process-map.md",
+    "reports/GOV-01/source-to-requirement-matrix.md",
+    "reports/GOV-01/RESULT.md"
+  ],
+  "acceptance_checks": [
+    {
+      "check": "Every requirement links to Drive evidence, not merely legacy repo PRD.",
+      "result": "pass",
+      "evidence": "Source IDs and matrix cover PLAN, AMANDA, FOLLOWUP, WICKS, BRIEF and JACK."
+    },
+    {
+      "check": "Later Amanda follow-up overrides departed-manager staffing assumption.",
+      "result": "pass",
+      "evidence": "REQ-OPS-01 and process-map staffing gap."
+    },
+    {
+      "check": "Report availability distinct from Monday distribution.",
+      "result": "pass",
+      "evidence": "REQ-ING-04 and process-map current evidence summary."
+    },
+    {
+      "check": "Operator retrieval need connected to leadership visibility.",
+      "result": "pass",
+      "evidence": "REQ-ING-01, REQ-KPI-01, REQ-OPS-03 and weekend design implications."
+    },
+    {
+      "check": "Finance/IT/Sonia validation remains explicitly pending.",
+      "result": "pass",
+      "evidence": "Open questions OQ-03/OQ-06/OQ-08 and gaps GAP-02/GAP-03/GAP-06."
+    }
+  ],
+  "limitations": [
+    "GOV-01 is a planning/evidence task and does not freeze scope or contracts.",
+    "No application tests were run because no app/runtime code changed.",
+    "No production data, credentials, live vendor access, accounting posting or deployment was used.",
+    "Amanda slide/screenshot visual inspection remains for ING-01."
+  ],
+  "human_review_required": true
+}
