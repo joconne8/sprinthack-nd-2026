@@ -1,5 +1,20 @@
 # PRD 02: Data Pipeline, Validation, and Reconciliation
 
+## Primary source basis — Drive-led
+- [Goodwill — Three-Phase Solution and Overnight Agent Plan](https://drive.google.com/file/d/1RffkmafbqbMEs7o_lNaTvIRL3hW9paai/view?usp=drivesdk)
+- [Jack explanation.md](https://drive.google.com/file/d/1jrBRKAFzJlOVUC7mIsyTH3OrCGY-7qD6/view?usp=drivesdk)
+- [michael-wicks-plan.md](https://drive.google.com/file/d/1gip7aNE1TQdZmqNJQeRlPppVZ5iVuWCT/view?usp=drivesdk)
+- [Amanda Baumer Goodwill Meeting.md](https://drive.google.com/file/d/1WM1HJVAu_YF-Q48CQDa7SFwnPKg1FPlF/view?usp=drivesdk)
+- [goodwill-track-brief-v2.md](https://drive.google.com/file/d/1o0QBoew17f7IgEEHweBoe-VLQFGDEatg/view?usp=drivesdk)
+
+Relevant plan sections: §5 Trusted centralized data; §9 Synthetic data and realistic coverage.
+
+Jack’s walkthrough calls for centralization, ETL/DAG and SQL rather than LLM financial math. Wicks prioritizes low maintenance; Amanda describes master-Excel→Sonia→Power BI handoffs. The plan specifies grain, raw/staging/curated/metrics, reconciliation, overlaps and freshness while correcting exaggerated Excel/view/performance claims.
+
+## Source precedence
+Current user decisions govern. Primary evidence is the Google Drive stakeholder/mentor material; the Goodwill Three-Phase Solution and Overnight Agent Plan is the implementation synthesis. This card operationalizes those sources. Older goodwill/PRD.md and planning/agentic-build-plan.md are legacy implementation background, NOT governing requirements or automatic scope limits. Preserve corrections in the three-phase plan where earlier source notes contain unsupported technical claims. Freeze new scope/contracts through GOV-02/GOV-03.
+
+
 ## Status
 
 Proposed P0 workstream PRD. This is the trust layer between acquisition and dashboard.
