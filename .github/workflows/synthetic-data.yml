@@ -1,0 +1,27 @@
+name: Synthetic data integrity
+
+on:
+  pull_request:
+    paths:
+      - "goodwill/synthetic-data/**"
+      - ".github/workflows/synthetic-data.yml"
+  push:
+    paths:
+      - "goodwill/synthetic-data/**"
+      - ".github/workflows/synthetic-data.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+      - name: Check committed fixtures
+        run: python3 -m unittest discover -s goodwill/synthetic-data -p 'test_*.py' -v
+      - name: Ensure regeneration leaves no fixture changes
+        run: git diff --exit-code -- goodwill/synthetic-data
