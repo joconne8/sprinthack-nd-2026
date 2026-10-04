@@ -1,4 +1,4 @@
-> Original planning snapshot. For newer implementation context (including open synthetic-data PR #1 and published issue cards), read AGENT_CONTEXT.md and the latest issue comments. Historical statements about no repository publication apply only to original plan preparation.
+> Source snapshot fetched from the primary [Google Drive plan](https://drive.google.com/file/d/1RffkmafbqbMEs7o_lNaTvIRL3hW9paai/view?usp=drivesdk). Read DRIVE_SOURCE_REGISTER.md for authority and later corrections. Legacy PRD references inside this historical synthesis are background; its §7 P0/P1/P2 governs the revised backlog. Statements about unpublished work describe original preparation, not current repository state.
 
 # Goodwill Michiana: Three-Phase Solution and Overnight AI Engineering Plan
 
