@@ -1,0 +1,12 @@
+{
+  "task_id": "TASK-ID",
+  "state": "BLOCKED",
+  "source_requirement_ids": [],
+  "base_commit": null,
+  "head_commit": null,
+  "commands": [],
+  "evidence_paths": [],
+  "acceptance_checks": [],
+  "limitations": [],
+  "human_review_required": true
+}

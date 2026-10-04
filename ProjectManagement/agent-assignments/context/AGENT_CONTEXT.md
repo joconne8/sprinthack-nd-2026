@@ -1,3 +1,6 @@
+## Latest repository correction at packaging
+PR #1 is now merged (GitHub reports 2026-10-04T00:13:02Z). Source summaries/issue snapshots that call it an open draft are historical. DAT-01 validates the merged fixture/generator contribution in current main; do not regenerate a competing dataset or attempt to merge it again. Fixture checks still do not establish application correctness.
+
 # Shared Goodwill agent context — Drive-led revision
 
 ## Mandatory reading and authority
@@ -59,6 +62,3 @@ Remaining blockers and next human review:
 
 ## Workflow and Projects limitation
 Claim before edits. Dependencies require verified accepted artifacts, not only issue state. All cards remain unclaimed; human acceptance closes them. Current connection cannot access native Projects (403); issue refs are explicit dependency links, not native dependency objects. The bootstrap script attaches these existing issues using authorized Projects access, without launching agents.
-
-## Ready-to-run assignment package
-[All 43 task/coordination packets](https://github.com/joconne8/sprinthack-nd-2026/blob/main/ProjectManagement/agent-assignments/INDEX.md) and [launch guide](https://github.com/joconne8/sprinthack-nd-2026/blob/main/ProjectManagement/agent-assignments/LAUNCH_GUIDE.md) provide explicit preflight, dependencies, file lanes, outputs, tests and stop rules. Packaging does not launch agents or clear human gates. At package publication PR #1 is merged (GitHub reports 2026-10-04T00:13:02Z); validate its merged fixtures rather than duplicate or reintegrate them. Earlier open-draft descriptions are historical; tests must still be run independently.

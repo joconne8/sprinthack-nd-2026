@@ -1,0 +1,1899 @@
+{
+  "repository": "joconne8/sprinthack-nd-2026",
+  "source_git_tree_sha": "8abf7b2f1ef57d53f5f5b5e3e71ae22ff683f06b",
+  "primary_source": {
+    "id": "PLAN",
+    "file": "1RffkmafbqbMEs7o_lNaTvIRL3hW9paai",
+    "name": "Goodwill — Three-Phase Solution and Overnight Agent Plan",
+    "url": "https://drive.google.com/file/d/1RffkmafbqbMEs7o_lNaTvIRL3hW9paai/view?usp=drivesdk",
+    "modifiedTime": "2026-10-03T23:25:19.430Z"
+  },
+  "scope": "43 ready-to-paste packets: 36 bounded tasks and 7 coordination assignments; no agents launched",
+  "maximum_parallel_builders": 3,
+  "defaults": {
+    "max_minutes": 60,
+    "max_repair_attempts": 2,
+    "new_paid_services": false,
+    "unattended_merge": false,
+    "production_actions": false
+  },
+  "assignments": [
+    {
+      "id": "PM-00",
+      "title": "[PM-00] Goodwill shared delivery hub — three phases, dependencies and overnight agents",
+      "issue_url": "https://github.com/joconne8/sprinthack-nd-2026/issues/7",
+      "issue_number": 7,
+      "kind": "hub",
+      "priority": "P0",
+      "scope": "weekend",
+      "mode": "coordination-only",
+      "lane": "Human product owner / integrator",
+      "dependencies": [],
+      "dependency_urls": [],
+      "source_ids": [
+        "PLAN",
+        "AMANDA",
+        "WICKS",
+        "JACK",
+        "BRIEF",
+        "FOLLOWUP"
+      ],
+      "plan_sections": [
+        "§§1–15"
+      ],
+      "packet_path": "coordination/PM-00.md",
+      "expected_artifacts": [
+        "reports/PM-00/launch-readiness.md",
+        "reports/PM-00/lane-reservations.md",
+        "reports/PM-00/morning-review-plan.md"
+      ],
+      "limits": {
+        "max_minutes": 60,
+        "max_repair_attempts": 2,
+        "requires_recorded_runner_spend_cap": true
+      },
+      "dependency_level": null,
+      "start_state": "coordination-only",
+      "live_actions_authorized": false
+    },
+    {
+      "id": "E-GOV",
+      "title": "[E-GOV] Requirements, business constraints and frozen contracts",
+      "issue_url": "https://github.com/joconne8/sprinthack-nd-2026/issues/4",
+      "issue_number": 4,
+      "kind": "epic",
+      "priority": "P0",
+      "scope": "weekend",
+      "mode": "coordination-only",
+      "lane": "Human workstream owner (unassigned)",
+      "dependencies": [],
+      "dependency_urls": [],
+      "source_ids": [
+        "PLAN",
+        "AMANDA",
+        "FOLLOWUP",
+        "WICKS",
+        "BRIEF"
+      ],
+      "plan_sections": [
+        "§1 Evidence, chronology and corrections",
+        "§2 ESTEEM requirements",
+        "§15 Immediate decisions"
+      ],
+      "packet_path": "coordination/E-GOV.md",
+      "expected_artifacts": [
+        "reports/E-GOV/workstream-readiness.md",
+        "reports/E-GOV/interfaces-and-blockers.md",
+        "reports/E-GOV/evidence-review-checklist.md"
+      ],
+      "limits": {
+        "max_minutes": 60,
+        "max_repair_attempts": 2,
+        "requires_recorded_runner_spend_cap": true
+      },
+      "dependency_level": null,
+      "start_state": "coordination-only",
+      "live_actions_authorized": false
+    },
+    {
+      "id": "E-ING",
+      "title": "[E-ING] Authorized report acquisition and Upright-style demonstration",
+      "issue_url": "https://github.com/joconne8/sprinthack-nd-2026/issues/2",
+      "issue_number": 2,
+      "kind": "epic",
+      "priority": "P0",
+      "scope": "weekend",
+      "mode": "coordination-only",
+      "lane": "Human workstream owner (unassigned)",
+      "dependencies": [],
+      "dependency_urls": [],
+      "source_ids": [
+        "PLAN",
+        "AMANDA",
+        "WICKS",
+        "JACK",
+        "FOLLOWUP"
+      ],
+      "plan_sections": [
+        "§4 Reliable report acquisition",
+        "§7 Weekend P0/P1/P2"
+      ],
+      "packet_path": "coordination/E-ING.md",
+      "expected_artifacts": [
+        "reports/E-ING/workstream-readiness.md",
+        "reports/E-ING/interfaces-and-blockers.md",
+        "reports/E-ING/evidence-review-checklist.md"
+      ],
+      "limits": {
+        "max_minutes": 60,
+        "max_repair_attempts": 2,
+        "requires_recorded_runner_spend_cap": true
+      },
+      "dependency_level": null,
+      "start_state": "coordination-only",
+      "live_actions_authorized": false
+    },
+    {
+      "id": "E-DAT",
+      "title": "[E-DAT] Trusted centralized data, reconciliation and deterministic metrics",
+      "issue_url": "https://github.com/joconne8/sprinthack-nd-2026/issues/8",
+      "issue_number": 8,
+      "kind": "epic",
+      "priority": "P0",
+      "scope": "weekend",
+      "mode": "coordination-only",
+      "lane": "Human workstream owner (unassigned)",
+      "dependencies": [],
+      "dependency_urls": [],
+      "source_ids": [
+        "PLAN",
+        "JACK",
+        "WICKS",
+        "AMANDA",
+        "BRIEF"
+      ],
+      "plan_sections": [
+        "§5 Trusted centralized data",
+        "§9 Synthetic data and realistic coverage"
+      ],
+      "packet_path": "coordination/E-DAT.md",
+      "expected_artifacts": [
+        "reports/E-DAT/workstream-readiness.md",
+        "reports/E-DAT/interfaces-and-blockers.md",
+        "reports/E-DAT/evidence-review-checklist.md"
+      ],
+      "limits": {
+        "max_minutes": 60,
+        "max_repair_attempts": 2,
+        "requires_recorded_runner_spend_cap": true
+      },
+      "dependency_level": null,
+      "start_state": "coordination-only",
+      "live_actions_authorized": false
+    },
+    {
+      "id": "E-APP",
+      "title": "[E-APP] Dashboard, metric tools and bounded agentic interaction",
+      "issue_url": "https://github.com/joconne8/sprinthack-nd-2026/issues/6",
+      "issue_number": 6,
+      "kind": "epic",
+      "priority": "P0",
+      "scope": "weekend",
+      "mode": "coordination-only",
+      "lane": "Human workstream owner (unassigned)",
+      "dependencies": [],
+      "dependency_urls": [],
+      "source_ids": [
+        "PLAN",
+        "AMANDA",
+        "BRIEF",
+        "WICKS",
+        "JACK"
+      ],
+      "plan_sections": [
+        "§6 Dashboard and bounded agentic interaction",
+        "§7 Weekend P0/P1/P2"
+      ],
+      "packet_path": "coordination/E-APP.md",
+      "expected_artifacts": [
+        "reports/E-APP/workstream-readiness.md",
+        "reports/E-APP/interfaces-and-blockers.md",
+        "reports/E-APP/evidence-review-checklist.md"
+      ],
+      "limits": {
+        "max_minutes": 60,
+        "max_repair_attempts": 2,
+        "requires_recorded_runner_spend_cap": true
+      },
+      "dependency_level": null,
+      "start_state": "coordination-only",
+      "live_actions_authorized": false
+    },
+    {
+      "id": "E-ENG",
+      "title": "[E-ENG] Overnight agent engineering, CI and independent verification",
+      "issue_url": "https://github.com/joconne8/sprinthack-nd-2026/issues/5",
+      "issue_number": 5,
+      "kind": "epic",
+      "priority": "P0",
+      "scope": "weekend",
+      "mode": "coordination-only",
+      "lane": "Human workstream owner (unassigned)",
+      "dependencies": [],
+      "dependency_urls": [],
+      "source_ids": [
+        "PLAN",
+        "WICKS",
+        "BRIEF"
+      ],
+      "plan_sections": [
+        "§8 AI engineering practices for overnight work",
+        "§9 Synthetic data and realistic coverage"
+      ],
+      "packet_path": "coordination/E-ENG.md",
+      "expected_artifacts": [
+        "reports/E-ENG/workstream-readiness.md",
+        "reports/E-ENG/interfaces-and-blockers.md",
+        "reports/E-ENG/evidence-review-checklist.md"
+      ],
+      "limits": {
+        "max_minutes": 60,
+        "max_repair_attempts": 2,
+        "requires_recorded_runner_spend_cap": true
+      },
+      "dependency_level": null,
+      "start_state": "coordination-only",
+      "live_actions_authorized": false
+    },
+    {
+      "id": "E-REL",
+      "title": "[E-REL] Demo evidence, financial controls and production continuation",
+      "issue_url": "https://github.com/joconne8/sprinthack-nd-2026/issues/3",
+      "issue_number": 3,
+      "kind": "epic",
+      "priority": "P0",
+      "scope": "weekend",
+      "mode": "coordination-only",
+      "lane": "Human workstream owner (unassigned)",
+      "dependencies": [],
+      "dependency_urls": [],
+      "source_ids": [
+        "PLAN",
+        "AMANDA",
+        "FOLLOWUP",
+        "BRIEF",
+        "WICKS"
+      ],
+      "plan_sections": [
+        "§10 Finance and Business Central",
+        "§11 Production continuation",
+        "§12 Success metrics and ROI",
+        "§14 Demo narrative"
+      ],
+      "packet_path": "coordination/E-REL.md",
+      "expected_artifacts": [
+        "reports/E-REL/workstream-readiness.md",
+        "reports/E-REL/interfaces-and-blockers.md",
+        "reports/E-REL/evidence-review-checklist.md"
+      ],
+      "limits": {
+        "max_minutes": 60,
+        "max_repair_attempts": 2,
+        "requires_recorded_runner_spend_cap": true
+      },
+      "dependency_level": null,
+      "start_state": "coordination-only",
+      "live_actions_authorized": false
+    },
+    {
+      "id": "GOV-01",
+      "title": "[GOV-01] Build the stakeholder requirement register and current-state process map",
+      "issue_url": "https://github.com/joconne8/sprinthack-nd-2026/issues/13",
+      "issue_number": 13,
+      "kind": "task",
+      "priority": "P0",
+      "scope": "weekend",
+      "mode": "design-and-evidence",
+      "lane": "Product / discovery",
+      "dependencies": [],
+      "dependency_urls": [],
+      "source_ids": [
+        "PLAN",
+        "AMANDA",
+        "FOLLOWUP",
+        "WICKS",
+        "BRIEF"
+      ],
+      "plan_sections": [
+        "§1 Evidence, chronology and corrections",
+        "§2 ESTEEM requirements",
+        "§15 Immediate decisions"
+      ],
+      "packet_path": "tasks/GOV-01.md",
+      "expected_artifacts": [
+        "planning/requirements/register.md",
+        "planning/process-map.md",
+        "reports/GOV-01/source-to-requirement-matrix.md"
+      ],
+      "limits": {
+        "max_minutes": 60,
+        "max_repair_attempts": 2,
+        "requires_recorded_runner_spend_cap": true
+      },
+      "dependency_level": 0,
+      "start_state": "eligible-for-source-drafting-after-claim",
+      "live_actions_authorized": false
+    },
+    {
+      "id": "GOV-02",
+      "title": "[GOV-02] Freeze the acquisition-led scope and KPI contracts from Drive evidence",
+      "issue_url": "https://github.com/joconne8/sprinthack-nd-2026/issues/11",
+      "issue_number": 11,
+      "kind": "task",
+      "priority": "P0",
+      "scope": "weekend",
+      "mode": "design-and-evidence",
+      "lane": "Product / metric owner",
+      "dependencies": [
+        "GOV-01"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/13"
+      ],
+      "source_ids": [
+        "PLAN",
+        "AMANDA",
+        "FOLLOWUP",
+        "WICKS",
+        "BRIEF"
+      ],
+      "plan_sections": [
+        "§1 Evidence, chronology and corrections",
+        "§2 ESTEEM requirements",
+        "§15 Immediate decisions"
+      ],
+      "packet_path": "tasks/GOV-02.md",
+      "expected_artifacts": [
+        "planning/scope.md or SPEC.md (single authoritative choice)",
+        "planning/metric-dictionary.md",
+        "reports/GOV-02/decision-request.md"
+      ],
+      "limits": {
+        "max_minutes": 60,
+        "max_repair_attempts": 2,
+        "requires_recorded_runner_spend_cap": true
+      },
+      "dependency_level": 1,
+      "start_state": "blocked-pending-evidence",
+      "live_actions_authorized": false
+    },
+    {
+      "id": "GOV-03",
+      "title": "[GOV-03] Publish frozen acquisition, import, metric and agent-tool contracts",
+      "issue_url": "https://github.com/joconne8/sprinthack-nd-2026/issues/15",
+      "issue_number": 15,
+      "kind": "task",
+      "priority": "P0",
+      "scope": "weekend",
+      "mode": "contract-authoring",
+      "lane": "Contract owner",
+      "dependencies": [
+        "GOV-02"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/11"
+      ],
+      "source_ids": [
+        "PLAN",
+        "AMANDA",
+        "FOLLOWUP",
+        "WICKS",
+        "BRIEF"
+      ],
+      "plan_sections": [
+        "§1 Evidence, chronology and corrections",
+        "§2 ESTEEM requirements",
+        "§15 Immediate decisions"
+      ],
+      "packet_path": "tasks/GOV-03.md",
+      "expected_artifacts": [
+        "contracts/ with versioned schema/example/error contracts",
+        "reports/GOV-03/contract-test-results.md",
+        "reports/GOV-03/compatibility-notes.md"
+      ],
+      "limits": {
+        "max_minutes": 60,
+        "max_repair_attempts": 2,
+        "requires_recorded_runner_spend_cap": true
+      },
+      "dependency_level": 2,
+      "start_state": "blocked-pending-evidence",
+      "live_actions_authorized": false
+    },
+    {
+      "id": "GOV-04",
+      "title": "[GOV-04] Document architecture decisions and live-access security gates",
+      "issue_url": "https://github.com/joconne8/sprinthack-nd-2026/issues/9",
+      "issue_number": 9,
+      "kind": "task",
+      "priority": "P0",
+      "scope": "weekend",
+      "mode": "design-and-evidence",
+      "lane": "Architecture / IT liaison",
+      "dependencies": [
+        "GOV-01",
+        "GOV-02"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/13",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/11"
+      ],
+      "source_ids": [
+        "PLAN",
+        "AMANDA",
+        "FOLLOWUP",
+        "WICKS",
+        "BRIEF"
+      ],
+      "plan_sections": [
+        "§1 Evidence, chronology and corrections",
+        "§2 ESTEEM requirements",
+        "§15 Immediate decisions"
+      ],
+      "packet_path": "tasks/GOV-04.md",
+      "expected_artifacts": [
+        "planning/decisions/architecture.md",
+        "planning/security-and-access.md",
+        "reports/GOV-04/approval-gaps.md"
+      ],
+      "limits": {
+        "max_minutes": 60,
+        "max_repair_attempts": 2,
+        "requires_recorded_runner_spend_cap": true
+      },
+      "dependency_level": 2,
+      "start_state": "blocked-pending-evidence",
+      "live_actions_authorized": false
+    },
+    {
+      "id": "ING-01",
+      "title": "[ING-01] Inspect supplied slides and build a functional Upright-style HTML replica",
+      "issue_url": "https://github.com/joconne8/sprinthack-nd-2026/issues/14",
+      "issue_number": 14,
+      "kind": "task",
+      "priority": "P0",
+      "scope": "weekend",
+      "mode": "synthetic-build",
+      "lane": "Replica / browser agent",
+      "dependencies": [
+        "GOV-03",
+        "ENG-01"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/15",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/33"
+      ],
+      "source_ids": [
+        "PLAN",
+        "AMANDA",
+        "WICKS",
+        "JACK",
+        "FOLLOWUP"
+      ],
+      "plan_sections": [
+        "§4 Reliable report acquisition",
+        "§7 Weekend P0/P1/P2"
+      ],
+      "packet_path": "tasks/ING-01.md",
+      "expected_artifacts": [
+        "functional apps/portal-replica/ implementation",
+        "tests/replica/ positive and failure cases",
+        "reports/ING-01/visual-reference-map.md plus screenshots"
+      ],
+      "limits": {
+        "max_minutes": 60,
+        "max_repair_attempts": 2,
+        "requires_recorded_runner_spend_cap": true
+      },
+      "dependency_level": 4,
+      "start_state": "blocked-pending-evidence",
+      "live_actions_authorized": false
+    },
+    {
+      "id": "ING-02",
+      "title": "[ING-02] Implement parameterized deterministic browser replay against the replica",
+      "issue_url": "https://github.com/joconne8/sprinthack-nd-2026/issues/16",
+      "issue_number": 16,
+      "kind": "task",
+      "priority": "P0",
+      "scope": "weekend",
+      "mode": "synthetic-build",
+      "lane": "Replica / browser agent",
+      "dependencies": [
+        "ING-01",
+        "GOV-03"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/14",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/15"
+      ],
+      "source_ids": [
+        "PLAN",
+        "AMANDA",
+        "WICKS",
+        "JACK",
+        "FOLLOWUP"
+      ],
+      "plan_sections": [
+        "§4 Reliable report acquisition",
+        "§7 Weekend P0/P1/P2"
+      ],
+      "packet_path": "tasks/ING-02.md",
+      "expected_artifacts": [
+        "services/browser-flow/ replay plus versioned skill",
+        "tests/browser-flow/ date/delay/session/drift cases",
+        "reports/ING-02/download-manifests.json"
+      ],
+      "limits": {
+        "max_minutes": 60,
+        "max_repair_attempts": 2,
+        "requires_recorded_runner_spend_cap": true
+      },
+      "dependency_level": 5,
+      "start_state": "blocked-pending-evidence",
+      "live_actions_authorized": false
+    },
+    {
+      "id": "ING-03",
+      "title": "[ING-03] Verify acquired files and connect browser artifacts to import intake",
+      "issue_url": "https://github.com/joconne8/sprinthack-nd-2026/issues/17",
+      "issue_number": 17,
+      "kind": "task",
+      "priority": "P0",
+      "scope": "weekend",
+      "mode": "synthetic-build",
+      "lane": "Acquisition / integration agent",
+      "dependencies": [
+        "ING-02",
+        "DAT-02",
+        "GOV-03"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/16",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/22",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/15"
+      ],
+      "source_ids": [
+        "PLAN",
+        "AMANDA",
+        "WICKS",
+        "JACK",
+        "FOLLOWUP"
+      ],
+      "plan_sections": [
+        "§4 Reliable report acquisition",
+        "§7 Weekend P0/P1/P2"
+      ],
+      "packet_path": "tasks/ING-03.md",
+      "expected_artifacts": [
+        "services/acquisition/ verifier and importer handoff",
+        "tests/acquisition/ artifact/date/schema cases",
+        "reports/ING-03/checksum-chain.json"
+      ],
+      "limits": {
+        "max_minutes": 60,
+        "max_repair_attempts": 2,
+        "requires_recorded_runner_spend_cap": true
+      },
+      "dependency_level": 6,
+      "start_state": "blocked-pending-evidence",
+      "live_actions_authorized": false
+    },
+    {
+      "id": "ING-04",
+      "title": "[ING-04] Add bounded retries, run state, manual fallback and scheduler design",
+      "issue_url": "https://github.com/joconne8/sprinthack-nd-2026/issues/10",
+      "issue_number": 10,
+      "kind": "task",
+      "priority": "P1",
+      "scope": "weekend",
+      "mode": "synthetic-build",
+      "lane": "Acquisition agent",
+      "dependencies": [
+        "ING-03",
+        "DAT-08"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/17",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/20"
+      ],
+      "source_ids": [
+        "PLAN",
+        "AMANDA",
+        "WICKS",
+        "JACK",
+        "FOLLOWUP"
+      ],
+      "plan_sections": [
+        "§4 Reliable report acquisition",
+        "§7 Weekend P0/P1/P2"
+      ],
+      "packet_path": "tasks/ING-04.md",
+      "expected_artifacts": [
+        "bounded retry/run-state implementation",
+        "planning/operations/acquisition.md",
+        "reports/ING-04/recovery-tests.md"
+      ],
+      "limits": {
+        "max_minutes": 60,
+        "max_repair_attempts": 2,
+        "requires_recorded_runner_spend_cap": true
+      },
+      "dependency_level": 10,
+      "start_state": "blocked-pending-evidence",
+      "live_actions_authorized": false
+    },
+    {
+      "id": "ING-05",
+      "title": "[ING-05] Map nine sources to shared acquisition classes and source-specific adapters",
+      "issue_url": "https://github.com/joconne8/sprinthack-nd-2026/issues/12",
+      "issue_number": 12,
+      "kind": "task",
+      "priority": "P0",
+      "scope": "weekend",
+      "mode": "design-and-evidence",
+      "lane": "Integration / source owner liaison",
+      "dependencies": [
+        "GOV-01",
+        "GOV-03"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/13",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/15"
+      ],
+      "source_ids": [
+        "PLAN",
+        "AMANDA",
+        "WICKS",
+        "JACK",
+        "FOLLOWUP"
+      ],
+      "plan_sections": [
+        "§4 Reliable report acquisition",
+        "§7 Weekend P0/P1/P2"
+      ],
+      "packet_path": "tasks/ING-05.md",
+      "expected_artifacts": [
+        "planning/source-register.md",
+        "contracts/sources/ acquisition-class design (coordinate GOV-03 owner)",
+        "reports/ING-05/source-authority-and-overlap.md"
+      ],
+      "limits": {
+        "max_minutes": 60,
+        "max_repair_attempts": 2,
+        "requires_recorded_runner_spend_cap": true
+      },
+      "dependency_level": 3,
+      "start_state": "blocked-pending-evidence",
+      "live_actions_authorized": false
+    },
+    {
+      "id": "ING-06",
+      "title": "[ING-06] Evaluate Jev behind an optional browser decision-provider interface",
+      "issue_url": "https://github.com/joconne8/sprinthack-nd-2026/issues/18",
+      "issue_number": 18,
+      "kind": "task",
+      "priority": "P1",
+      "scope": "stretch",
+      "mode": "synthetic-build",
+      "lane": "Browser experiment agent",
+      "dependencies": [
+        "ING-02",
+        "GOV-04"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/16",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/9"
+      ],
+      "source_ids": [
+        "PLAN",
+        "AMANDA",
+        "WICKS",
+        "JACK",
+        "FOLLOWUP"
+      ],
+      "plan_sections": [
+        "§4 Reliable report acquisition",
+        "§7 Weekend P0/P1/P2"
+      ],
+      "packet_path": "tasks/ING-06.md",
+      "expected_artifacts": [
+        "experiments/jev/ synthetic evaluation only if approved access exists",
+        "planning/decisions/jev.md",
+        "reports/ING-06/measurements-and-limitations.md"
+      ],
+      "limits": {
+        "max_minutes": 60,
+        "max_repair_attempts": 2,
+        "requires_recorded_runner_spend_cap": true
+      },
+      "dependency_level": 6,
+      "start_state": "blocked-pending-evidence",
+      "live_actions_authorized": false
+    },
+    {
+      "id": "ING-07",
+      "title": "[ING-07] Design a reviewed macro-capture and skill-repair workflow",
+      "issue_url": "https://github.com/joconne8/sprinthack-nd-2026/issues/28",
+      "issue_number": 28,
+      "kind": "task",
+      "priority": "P2",
+      "scope": "pilot",
+      "mode": "design-and-evidence",
+      "lane": "Browser tooling / product",
+      "dependencies": [
+        "ING-02",
+        "ING-05",
+        "GOV-04"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/16",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/12",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/9"
+      ],
+      "source_ids": [
+        "PLAN",
+        "AMANDA",
+        "WICKS",
+        "JACK",
+        "FOLLOWUP"
+      ],
+      "plan_sections": [
+        "§4 Reliable report acquisition",
+        "§7 Weekend P0/P1/P2"
+      ],
+      "packet_path": "tasks/ING-07.md",
+      "expected_artifacts": [
+        "planning/recorder-design.md",
+        "reports/ING-07/redaction-threat-model.md",
+        "reports/ING-07/supported-flow-and-repair-plan.md"
+      ],
+      "limits": {
+        "max_minutes": 60,
+        "max_repair_attempts": 2,
+        "requires_recorded_runner_spend_cap": true
+      },
+      "dependency_level": 6,
+      "start_state": "blocked-pending-evidence",
+      "live_actions_authorized": false
+    },
+    {
+      "id": "DAT-01",
+      "title": "[DAT-01] Validate the merged expanded synthetic-data fixtures without duplicating work",
+      "issue_url": "https://github.com/joconne8/sprinthack-nd-2026/issues/25",
+      "issue_number": 25,
+      "kind": "task",
+      "priority": "P0",
+      "scope": "weekend",
+      "mode": "fixture-review",
+      "lane": "Data QA / human integrator",
+      "dependencies": [
+        "GOV-02"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/11"
+      ],
+      "source_ids": [
+        "PLAN",
+        "JACK",
+        "WICKS",
+        "AMANDA",
+        "BRIEF"
+      ],
+      "plan_sections": [
+        "§5 Trusted centralized data",
+        "§9 Synthetic data and realistic coverage"
+      ],
+      "packet_path": "tasks/DAT-01.md",
+      "expected_artifacts": [
+        "reports/DAT-01/pr1-review.md with exact tested commit",
+        "reports/DAT-01/integrity-and-regeneration-logs/",
+        "reports/DAT-01/integration-recommendation.md"
+      ],
+      "limits": {
+        "max_minutes": 60,
+        "max_repair_attempts": 2,
+        "requires_recorded_runner_spend_cap": true
+      },
+      "dependency_level": 2,
+      "start_state": "blocked-pending-evidence",
+      "live_actions_authorized": false
+    },
+    {
+      "id": "DAT-02",
+      "title": "[DAT-02] Implement immutable raw archive, import-batch schema and row lineage",
+      "issue_url": "https://github.com/joconne8/sprinthack-nd-2026/issues/22",
+      "issue_number": 22,
+      "kind": "task",
+      "priority": "P0",
+      "scope": "weekend",
+      "mode": "synthetic-build",
+      "lane": "Data pipeline agent",
+      "dependencies": [
+        "GOV-03",
+        "ENG-01"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/15",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/33"
+      ],
+      "source_ids": [
+        "PLAN",
+        "JACK",
+        "WICKS",
+        "AMANDA",
+        "BRIEF"
+      ],
+      "plan_sections": [
+        "§5 Trusted centralized data",
+        "§9 Synthetic data and realistic coverage"
+      ],
+      "packet_path": "tasks/DAT-02.md",
+      "expected_artifacts": [
+        "services/data/raw/ and owned migrations",
+        "tests/data/raw/ lineage/immutability tests",
+        "reports/DAT-02/grain-and-schema.md"
+      ],
+      "limits": {
+        "max_minutes": 60,
+        "max_repair_attempts": 2,
+        "requires_recorded_runner_spend_cap": true
+      },
+      "dependency_level": 4,
+      "start_state": "blocked-pending-evidence",
+      "live_actions_authorized": false
+    },
+    {
+      "id": "DAT-03",
+      "title": "[DAT-03] Implement the first acquisition-file parser and typed normalization contract",
+      "issue_url": "https://github.com/joconne8/sprinthack-nd-2026/issues/27",
+      "issue_number": 27,
+      "kind": "task",
+      "priority": "P0",
+      "scope": "weekend",
+      "mode": "synthetic-build",
+      "lane": "Data pipeline agent",
+      "dependencies": [
+        "DAT-01",
+        "DAT-02"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/25",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/22"
+      ],
+      "source_ids": [
+        "PLAN",
+        "JACK",
+        "WICKS",
+        "AMANDA",
+        "BRIEF"
+      ],
+      "plan_sections": [
+        "§5 Trusted centralized data",
+        "§9 Synthetic data and realistic coverage"
+      ],
+      "packet_path": "tasks/DAT-03.md",
+      "expected_artifacts": [
+        "services/data/parsers/ first acquired-report adapter",
+        "tests/data/parsers/ valid and malformed inputs",
+        "reports/DAT-03/normalized-row-examples.json"
+      ],
+      "limits": {
+        "max_minutes": 60,
+        "max_repair_attempts": 2,
+        "requires_recorded_runner_spend_cap": true
+      },
+      "dependency_level": 5,
+      "start_state": "blocked-pending-evidence",
+      "live_actions_authorized": false
+    },
+    {
+      "id": "DAT-04",
+      "title": "[DAT-04] Implement file and record idempotency, overlapping exports and corrections",
+      "issue_url": "https://github.com/joconne8/sprinthack-nd-2026/issues/19",
+      "issue_number": 19,
+      "kind": "task",
+      "priority": "P0",
+      "scope": "weekend",
+      "mode": "synthetic-build",
+      "lane": "Data pipeline agent",
+      "dependencies": [
+        "DAT-03"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/27"
+      ],
+      "source_ids": [
+        "PLAN",
+        "JACK",
+        "WICKS",
+        "AMANDA",
+        "BRIEF"
+      ],
+      "plan_sections": [
+        "§5 Trusted centralized data",
+        "§9 Synthetic data and realistic coverage"
+      ],
+      "packet_path": "tasks/DAT-04.md",
+      "expected_artifacts": [
+        "services/data/import/ identity/correction behavior",
+        "tests/data/idempotency/ replay/overlap/increment/correction",
+        "reports/DAT-04/before-after-controls.json"
+      ],
+      "limits": {
+        "max_minutes": 60,
+        "max_repair_attempts": 2,
+        "requires_recorded_runner_spend_cap": true
+      },
+      "dependency_level": 6,
+      "start_state": "blocked-pending-evidence",
+      "live_actions_authorized": false
+    },
+    {
+      "id": "DAT-05",
+      "title": "[DAT-05] Implement source-to-curated reconciliation and a recoverable exception queue",
+      "issue_url": "https://github.com/joconne8/sprinthack-nd-2026/issues/26",
+      "issue_number": 26,
+      "kind": "task",
+      "priority": "P0",
+      "scope": "weekend",
+      "mode": "synthetic-build",
+      "lane": "Data controls agent",
+      "dependencies": [
+        "DAT-03",
+        "DAT-04"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/27",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/19"
+      ],
+      "source_ids": [
+        "PLAN",
+        "JACK",
+        "WICKS",
+        "AMANDA",
+        "BRIEF"
+      ],
+      "plan_sections": [
+        "§5 Trusted centralized data",
+        "§9 Synthetic data and realistic coverage"
+      ],
+      "packet_path": "tasks/DAT-05.md",
+      "expected_artifacts": [
+        "services/data/reconciliation/ and exception lifecycle",
+        "tests/data/reconciliation/ seeded differences",
+        "reports/DAT-05/control-totals.md"
+      ],
+      "limits": {
+        "max_minutes": 60,
+        "max_repair_attempts": 2,
+        "requires_recorded_runner_spend_cap": true
+      },
+      "dependency_level": 7,
+      "start_state": "blocked-pending-evidence",
+      "live_actions_authorized": false
+    },
+    {
+      "id": "DAT-06",
+      "title": "[DAT-06] Build deterministic SQL metric marts and a versioned metric API",
+      "issue_url": "https://github.com/joconne8/sprinthack-nd-2026/issues/23",
+      "issue_number": 23,
+      "kind": "task",
+      "priority": "P0",
+      "scope": "weekend",
+      "mode": "synthetic-build",
+      "lane": "Data metrics agent",
+      "dependencies": [
+        "DAT-05",
+        "GOV-03"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/26",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/15"
+      ],
+      "source_ids": [
+        "PLAN",
+        "JACK",
+        "WICKS",
+        "AMANDA",
+        "BRIEF"
+      ],
+      "plan_sections": [
+        "§5 Trusted centralized data",
+        "§9 Synthetic data and realistic coverage"
+      ],
+      "packet_path": "tasks/DAT-06.md",
+      "expected_artifacts": [
+        "db/metrics/ and services/metrics/ definitions/results",
+        "tests/metrics/ independent expectations",
+        "reports/DAT-06/api-sql-ledger-comparison.md"
+      ],
+      "limits": {
+        "max_minutes": 60,
+        "max_repair_attempts": 2,
+        "requires_recorded_runner_spend_cap": true
+      },
+      "dependency_level": 8,
+      "start_state": "blocked-pending-evidence",
+      "live_actions_authorized": false
+    },
+    {
+      "id": "DAT-07",
+      "title": "[DAT-07] Implement listing-event and complete inventory-snapshot metrics",
+      "issue_url": "https://github.com/joconne8/sprinthack-nd-2026/issues/24",
+      "issue_number": 24,
+      "kind": "task",
+      "priority": "P1",
+      "scope": "weekend",
+      "mode": "synthetic-build",
+      "lane": "Data metrics agent",
+      "dependencies": [
+        "DAT-01",
+        "DAT-02",
+        "DAT-06"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/25",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/22",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/23"
+      ],
+      "source_ids": [
+        "PLAN",
+        "JACK",
+        "WICKS",
+        "AMANDA",
+        "BRIEF"
+      ],
+      "plan_sections": [
+        "§5 Trusted centralized data",
+        "§9 Synthetic data and realistic coverage"
+      ],
+      "packet_path": "tasks/DAT-07.md",
+      "expected_artifacts": [
+        "services/data/inventory/ and scoped inventory marts",
+        "tests/inventory/ complete and partial snapshots",
+        "reports/DAT-07/event-vs-snapshot-controls.md"
+      ],
+      "limits": {
+        "max_minutes": 60,
+        "max_repair_attempts": 2,
+        "requires_recorded_runner_spend_cap": true
+      },
+      "dependency_level": 9,
+      "start_state": "blocked-pending-evidence",
+      "live_actions_authorized": false
+    },
+    {
+      "id": "DAT-08",
+      "title": "[DAT-08] Implement source completeness, freshness and last-good publication controls",
+      "issue_url": "https://github.com/joconne8/sprinthack-nd-2026/issues/20",
+      "issue_number": 20,
+      "kind": "task",
+      "priority": "P0",
+      "scope": "weekend",
+      "mode": "synthetic-build",
+      "lane": "Data controls agent",
+      "dependencies": [
+        "DAT-05",
+        "DAT-06"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/26",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/23"
+      ],
+      "source_ids": [
+        "PLAN",
+        "JACK",
+        "WICKS",
+        "AMANDA",
+        "BRIEF"
+      ],
+      "plan_sections": [
+        "§5 Trusted centralized data",
+        "§9 Synthetic data and realistic coverage"
+      ],
+      "packet_path": "tasks/DAT-08.md",
+      "expected_artifacts": [
+        "services/data/publication/ atomic last-good publication",
+        "tests/data/coverage/ late/missing/failed-batch cases",
+        "reports/DAT-08/coverage-and-publication-demo.md"
+      ],
+      "limits": {
+        "max_minutes": 60,
+        "max_repair_attempts": 2,
+        "requires_recorded_runner_spend_cap": true
+      },
+      "dependency_level": 9,
+      "start_state": "blocked-pending-evidence",
+      "live_actions_authorized": false
+    },
+    {
+      "id": "DAT-09",
+      "title": "[DAT-09] Design DAG dependencies, controlled backfills and refresh performance checks",
+      "issue_url": "https://github.com/joconne8/sprinthack-nd-2026/issues/21",
+      "issue_number": 21,
+      "kind": "task",
+      "priority": "P1",
+      "scope": "pilot",
+      "mode": "design-and-evidence",
+      "lane": "Data operations",
+      "dependencies": [
+        "DAT-08",
+        "GOV-04"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/20",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/9"
+      ],
+      "source_ids": [
+        "PLAN",
+        "JACK",
+        "WICKS",
+        "AMANDA",
+        "BRIEF"
+      ],
+      "plan_sections": [
+        "§5 Trusted centralized data",
+        "§9 Synthetic data and realistic coverage"
+      ],
+      "packet_path": "tasks/DAT-09.md",
+      "expected_artifacts": [
+        "planning/data-operations.md with DAG/backfill/refresh design",
+        "synthetic backfill experiments only if safely supported",
+        "reports/DAT-09/measured-performance-and-recovery-plan.md"
+      ],
+      "limits": {
+        "max_minutes": 60,
+        "max_repair_attempts": 2,
+        "requires_recorded_runner_spend_cap": true
+      },
+      "dependency_level": 10,
+      "start_state": "blocked-pending-evidence",
+      "live_actions_authorized": false
+    },
+    {
+      "id": "APP-01",
+      "title": "[APP-01] Build Amanda’s intake and reporting-status operations view",
+      "issue_url": "https://github.com/joconne8/sprinthack-nd-2026/issues/38",
+      "issue_number": 38,
+      "kind": "task",
+      "priority": "P0",
+      "scope": "weekend",
+      "mode": "synthetic-build",
+      "lane": "Frontend agent",
+      "dependencies": [
+        "GOV-03",
+        "ENG-01"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/15",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/33"
+      ],
+      "source_ids": [
+        "PLAN",
+        "AMANDA",
+        "BRIEF",
+        "WICKS",
+        "JACK"
+      ],
+      "plan_sections": [
+        "§6 Dashboard and bounded agentic interaction",
+        "§7 Weekend P0/P1/P2"
+      ],
+      "packet_path": "tasks/APP-01.md",
+      "expected_artifacts": [
+        "apps/dashboard/src/operations/ operator view",
+        "tests/ui/operations/ state/error/accessibility cases",
+        "reports/APP-01/screenshots-and-api-evidence.md"
+      ],
+      "limits": {
+        "max_minutes": 60,
+        "max_repair_attempts": 2,
+        "requires_recorded_runner_spend_cap": true
+      },
+      "dependency_level": 4,
+      "start_state": "blocked-pending-evidence",
+      "live_actions_authorized": false
+    },
+    {
+      "id": "APP-02",
+      "title": "[APP-02] Build leadership visibility and a strategic KPI availability scorecard",
+      "issue_url": "https://github.com/joconne8/sprinthack-nd-2026/issues/32",
+      "issue_number": 32,
+      "kind": "task",
+      "priority": "P0",
+      "scope": "weekend",
+      "mode": "synthetic-build",
+      "lane": "Frontend agent",
+      "dependencies": [
+        "GOV-03",
+        "ENG-01"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/15",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/33"
+      ],
+      "source_ids": [
+        "PLAN",
+        "AMANDA",
+        "BRIEF",
+        "WICKS",
+        "JACK"
+      ],
+      "plan_sections": [
+        "§6 Dashboard and bounded agentic interaction",
+        "§7 Weekend P0/P1/P2"
+      ],
+      "packet_path": "tasks/APP-02.md",
+      "expected_artifacts": [
+        "apps/dashboard/src/metrics/ daily pulse and availability",
+        "tests/ui/metrics/ scope/empty/negative/missing-input cases",
+        "reports/APP-02/api-to-card-comparisons.md"
+      ],
+      "limits": {
+        "max_minutes": 60,
+        "max_repair_attempts": 2,
+        "requires_recorded_runner_spend_cap": true
+      },
+      "dependency_level": 4,
+      "start_state": "blocked-pending-evidence",
+      "live_actions_authorized": false
+    },
+    {
+      "id": "APP-03",
+      "title": "[APP-03] Deliver P0 source-row drilldown, with optional P1 Excel-compatible exports",
+      "issue_url": "https://github.com/joconne8/sprinthack-nd-2026/issues/34",
+      "issue_number": 34,
+      "kind": "task",
+      "priority": "P0",
+      "scope": "weekend",
+      "mode": "synthetic-build",
+      "lane": "Frontend / export agent",
+      "dependencies": [
+        "DAT-06",
+        "DAT-08",
+        "APP-02"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/23",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/20",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/32"
+      ],
+      "source_ids": [
+        "PLAN",
+        "AMANDA",
+        "BRIEF",
+        "WICKS",
+        "JACK"
+      ],
+      "plan_sections": [
+        "§6 Dashboard and bounded agentic interaction",
+        "§7 Weekend P0/P1/P2"
+      ],
+      "packet_path": "tasks/APP-03.md",
+      "expected_artifacts": [
+        "apps/dashboard/src/provenance/ source drilldown",
+        "tests/exports/ only if optional export implemented",
+        "reports/APP-03/drilldown-reconciliation.md"
+      ],
+      "limits": {
+        "max_minutes": 60,
+        "max_repair_attempts": 2,
+        "requires_recorded_runner_spend_cap": true
+      },
+      "dependency_level": 10,
+      "start_state": "blocked-pending-evidence",
+      "live_actions_authorized": false
+    },
+    {
+      "id": "APP-04",
+      "title": "[APP-04] Expose permission-scoped read-only metric and provenance tools",
+      "issue_url": "https://github.com/joconne8/sprinthack-nd-2026/issues/35",
+      "issue_number": 35,
+      "kind": "task",
+      "priority": "P1",
+      "scope": "stretch",
+      "mode": "synthetic-build",
+      "lane": "Agent tools backend",
+      "dependencies": [
+        "DAT-06",
+        "DAT-08",
+        "GOV-04"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/23",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/20",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/9"
+      ],
+      "source_ids": [
+        "PLAN",
+        "AMANDA",
+        "BRIEF",
+        "WICKS",
+        "JACK"
+      ],
+      "plan_sections": [
+        "§6 Dashboard and bounded agentic interaction",
+        "§7 Weekend P0/P1/P2"
+      ],
+      "packet_path": "tasks/APP-04.md",
+      "expected_artifacts": [
+        "services/agent-tools/ read-only typed tools",
+        "tests/agent-tools/ scopes/errors/limits cases",
+        "reports/APP-04/tool-output-and-audit-examples.json"
+      ],
+      "limits": {
+        "max_minutes": 60,
+        "max_repair_attempts": 2,
+        "requires_recorded_runner_spend_cap": true
+      },
+      "dependency_level": 10,
+      "start_state": "blocked-pending-evidence",
+      "live_actions_authorized": false
+    },
+    {
+      "id": "APP-05",
+      "title": "[APP-05] Build a grounded assistant with definitions, coverage and uncertainty",
+      "issue_url": "https://github.com/joconne8/sprinthack-nd-2026/issues/29",
+      "issue_number": 29,
+      "kind": "task",
+      "priority": "P1",
+      "scope": "stretch",
+      "mode": "synthetic-build",
+      "lane": "Assistant agent",
+      "dependencies": [
+        "APP-04",
+        "GOV-04"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/35",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/9"
+      ],
+      "source_ids": [
+        "PLAN",
+        "AMANDA",
+        "BRIEF",
+        "WICKS",
+        "JACK"
+      ],
+      "plan_sections": [
+        "§6 Dashboard and bounded agentic interaction",
+        "§7 Weekend P0/P1/P2"
+      ],
+      "packet_path": "tasks/APP-05.md",
+      "expected_artifacts": [
+        "services/assistant/ and scoped assistant UI if accepted",
+        "tests/assistant/ fixed questions including missing labor",
+        "reports/APP-05/numerical-agreement-and-labeling.md"
+      ],
+      "limits": {
+        "max_minutes": 60,
+        "max_repair_attempts": 2,
+        "requires_recorded_runner_spend_cap": true
+      },
+      "dependency_level": 11,
+      "start_state": "blocked-pending-evidence",
+      "live_actions_authorized": false
+    },
+    {
+      "id": "APP-06",
+      "title": "[APP-06] Evaluate prompt injection, permissions and unsupported agent questions",
+      "issue_url": "https://github.com/joconne8/sprinthack-nd-2026/issues/31",
+      "issue_number": 31,
+      "kind": "task",
+      "priority": "P1",
+      "scope": "stretch",
+      "mode": "synthetic-build",
+      "lane": "Independent AI QA",
+      "dependencies": [
+        "APP-04",
+        "APP-05",
+        "ENG-04"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/35",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/29",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/42"
+      ],
+      "source_ids": [
+        "PLAN",
+        "AMANDA",
+        "BRIEF",
+        "WICKS",
+        "JACK"
+      ],
+      "plan_sections": [
+        "§6 Dashboard and bounded agentic interaction",
+        "§7 Weekend P0/P1/P2"
+      ],
+      "packet_path": "tasks/APP-06.md",
+      "expected_artifacts": [
+        "tests/assistant-adversarial/ fixed attack set",
+        "reports/APP-06/evaluation-results.md",
+        "reports/APP-06/unresolved-defects.md"
+      ],
+      "limits": {
+        "max_minutes": 60,
+        "max_repair_attempts": 2,
+        "requires_recorded_runner_spend_cap": true
+      },
+      "dependency_level": 12,
+      "start_state": "blocked-pending-evidence",
+      "live_actions_authorized": false
+    },
+    {
+      "id": "APP-07",
+      "title": "[APP-07] Validate Microsoft Copilot and existing Power BI production integration",
+      "issue_url": "https://github.com/joconne8/sprinthack-nd-2026/issues/36",
+      "issue_number": 36,
+      "kind": "task",
+      "priority": "P2",
+      "scope": "pilot",
+      "mode": "design-and-evidence",
+      "lane": "Microsoft / IT liaison",
+      "dependencies": [
+        "GOV-04",
+        "APP-04"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/9",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/35"
+      ],
+      "source_ids": [
+        "PLAN",
+        "AMANDA",
+        "BRIEF",
+        "WICKS",
+        "JACK"
+      ],
+      "plan_sections": [
+        "§6 Dashboard and bounded agentic interaction",
+        "§7 Weekend P0/P1/P2"
+      ],
+      "packet_path": "tasks/APP-07.md",
+      "expected_artifacts": [
+        "planning/microsoft-integration.md",
+        "reports/APP-07/tenant-and-permission-validation-plan.md",
+        "reports/APP-07/microsoft-reuse-decision.md"
+      ],
+      "limits": {
+        "max_minutes": 60,
+        "max_repair_attempts": 2,
+        "requires_recorded_runner_spend_cap": true
+      },
+      "dependency_level": 11,
+      "start_state": "blocked-pending-evidence",
+      "live_actions_authorized": false
+    },
+    {
+      "id": "ENG-01",
+      "title": "[ENG-01] Scaffold one application stack and establish a passing smoke-test baseline",
+      "issue_url": "https://github.com/joconne8/sprinthack-nd-2026/issues/33",
+      "issue_number": 33,
+      "kind": "task",
+      "priority": "P0",
+      "scope": "weekend",
+      "mode": "synthetic-build",
+      "lane": "Platform agent",
+      "dependencies": [
+        "GOV-02",
+        "GOV-04"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/11",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/9"
+      ],
+      "source_ids": [
+        "PLAN",
+        "WICKS",
+        "BRIEF"
+      ],
+      "plan_sections": [
+        "§8 AI engineering practices for overnight work",
+        "§9 Synthetic data and realistic coverage"
+      ],
+      "packet_path": "tasks/ENG-01.md",
+      "expected_artifacts": [
+        "one scaffold/lockfile/CI baseline matching accepted stack",
+        "planning/development.md with actual runnable commands",
+        "reports/ENG-01/environment-and-smoke-test.md"
+      ],
+      "limits": {
+        "max_minutes": 60,
+        "max_repair_attempts": 2,
+        "requires_recorded_runner_spend_cap": true
+      },
+      "dependency_level": 3,
+      "start_state": "blocked-pending-evidence",
+      "live_actions_authorized": false
+    },
+    {
+      "id": "ENG-02",
+      "title": "[ENG-02] Establish agent claim protocol, file lanes and shared context ownership",
+      "issue_url": "https://github.com/joconne8/sprinthack-nd-2026/issues/37",
+      "issue_number": 37,
+      "kind": "task",
+      "priority": "P0",
+      "scope": "weekend",
+      "mode": "design-and-evidence",
+      "lane": "Human orchestrator",
+      "dependencies": [
+        "GOV-03"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/15"
+      ],
+      "source_ids": [
+        "PLAN",
+        "WICKS",
+        "BRIEF"
+      ],
+      "plan_sections": [
+        "§8 AI engineering practices for overnight work",
+        "§9 Synthetic data and realistic coverage"
+      ],
+      "packet_path": "tasks/ENG-02.md",
+      "expected_artifacts": [
+        "planning/file-ownership.md and claim/review conventions",
+        "reports/ENG-02/runner-task-packet-validation.md",
+        "proposed AGENTS.md refinements coordinated with its owner"
+      ],
+      "limits": {
+        "max_minutes": 60,
+        "max_repair_attempts": 2,
+        "requires_recorded_runner_spend_cap": true
+      },
+      "dependency_level": 3,
+      "start_state": "blocked-pending-evidence",
+      "live_actions_authorized": false
+    },
+    {
+      "id": "ENG-03",
+      "title": "[ENG-03] Configure bounded overnight runners with budgets, timeouts and reporting",
+      "issue_url": "https://github.com/joconne8/sprinthack-nd-2026/issues/30",
+      "issue_number": 30,
+      "kind": "task",
+      "priority": "P1",
+      "scope": "weekend",
+      "mode": "design-and-evidence",
+      "lane": "Human orchestrator / tooling",
+      "dependencies": [
+        "ENG-01",
+        "ENG-02",
+        "ING-03",
+        "DAT-06"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/33",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/37",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/17",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/23"
+      ],
+      "source_ids": [
+        "PLAN",
+        "WICKS",
+        "BRIEF"
+      ],
+      "plan_sections": [
+        "§8 AI engineering practices for overnight work",
+        "§9 Synthetic data and realistic coverage"
+      ],
+      "packet_path": "tasks/ENG-03.md",
+      "expected_artifacts": [
+        "planning/overnight-runbook.md",
+        "tooling/agent-runner/ bounded configuration only if supported",
+        "reports/ENG-03/trial-plan-and-cancellation-check.md"
+      ],
+      "limits": {
+        "max_minutes": 60,
+        "max_repair_attempts": 2,
+        "requires_recorded_runner_spend_cap": true
+      },
+      "dependency_level": 9,
+      "start_state": "blocked-pending-evidence",
+      "live_actions_authorized": false
+    },
+    {
+      "id": "ENG-04",
+      "title": "[ENG-04] Build independent expected totals and end-to-end acceptance tests",
+      "issue_url": "https://github.com/joconne8/sprinthack-nd-2026/issues/42",
+      "issue_number": 42,
+      "kind": "task",
+      "priority": "P0",
+      "scope": "weekend",
+      "mode": "synthetic-build",
+      "lane": "Independent QA agent",
+      "dependencies": [
+        "GOV-03",
+        "DAT-01",
+        "ENG-01"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/15",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/25",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/33"
+      ],
+      "source_ids": [
+        "PLAN",
+        "WICKS",
+        "BRIEF"
+      ],
+      "plan_sections": [
+        "§8 AI engineering practices for overnight work",
+        "§9 Synthetic data and realistic coverage"
+      ],
+      "packet_path": "tasks/ENG-04.md",
+      "expected_artifacts": [
+        "tests/acceptance/ independently derived ledger/demo tests",
+        "fixtures/expected-results/ with derivation",
+        "reports/ENG-04/regression-report.md"
+      ],
+      "limits": {
+        "max_minutes": 90,
+        "max_repair_attempts": 2,
+        "requires_recorded_runner_spend_cap": true
+      },
+      "dependency_level": 4,
+      "start_state": "blocked-pending-evidence",
+      "live_actions_authorized": false
+    },
+    {
+      "id": "ENG-05",
+      "title": "[ENG-05] Run morning human review, dependency-order integration and feature freeze",
+      "issue_url": "https://github.com/joconne8/sprinthack-nd-2026/issues/44",
+      "issue_number": 44,
+      "kind": "task",
+      "priority": "P0",
+      "scope": "weekend",
+      "mode": "human-review",
+      "lane": "Human integrator",
+      "dependencies": [
+        "ENG-04",
+        "ING-03",
+        "DAT-08",
+        "APP-01",
+        "APP-02"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/42",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/17",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/20",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/38",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/32"
+      ],
+      "source_ids": [
+        "PLAN",
+        "WICKS",
+        "BRIEF"
+      ],
+      "plan_sections": [
+        "§8 AI engineering practices for overnight work",
+        "§9 Synthetic data and realistic coverage"
+      ],
+      "packet_path": "tasks/ENG-05.md",
+      "expected_artifacts": [
+        "reports/integration/human-review-checklist.md",
+        "reports/integration/integrated-commit-and-regression.md",
+        "planning/release-checklist.md (human decisions recorded, not invented)"
+      ],
+      "limits": {
+        "max_minutes": 60,
+        "max_repair_attempts": 2,
+        "requires_recorded_runner_spend_cap": true
+      },
+      "dependency_level": 10,
+      "start_state": "blocked-pending-evidence",
+      "live_actions_authorized": false
+    },
+    {
+      "id": "REL-01",
+      "title": "[REL-01] Prepare source-backed pitch, recorded demo and honest submission evidence",
+      "issue_url": "https://github.com/joconne8/sprinthack-nd-2026/issues/43",
+      "issue_number": 43,
+      "kind": "task",
+      "priority": "P0",
+      "scope": "weekend",
+      "mode": "design-and-evidence",
+      "lane": "Pitch / demo owner",
+      "dependencies": [
+        "ENG-05",
+        "APP-03"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/44",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/34"
+      ],
+      "source_ids": [
+        "PLAN",
+        "AMANDA",
+        "FOLLOWUP",
+        "BRIEF",
+        "WICKS"
+      ],
+      "plan_sections": [
+        "§10 Finance and Business Central",
+        "§11 Production continuation",
+        "§12 Success metrics and ROI",
+        "§14 Demo narrative"
+      ],
+      "packet_path": "tasks/REL-01.md",
+      "expected_artifacts": [
+        "DEMO.md and planning/pitch/ source-backed script",
+        "reports/demo/ rehearsal and recording checklist",
+        "reports/REL-01/submission-and-claims-checklist.md"
+      ],
+      "limits": {
+        "max_minutes": 60,
+        "max_repair_attempts": 2,
+        "requires_recorded_runner_spend_cap": true
+      },
+      "dependency_level": 11,
+      "start_state": "blocked-pending-evidence",
+      "live_actions_authorized": false
+    },
+    {
+      "id": "REL-02",
+      "title": "[REL-02] Plan workbook parity and gated Business Central journal/invoice validation",
+      "issue_url": "https://github.com/joconne8/sprinthack-nd-2026/issues/41",
+      "issue_number": 41,
+      "kind": "task",
+      "priority": "P2",
+      "scope": "pilot",
+      "mode": "design-and-evidence",
+      "lane": "Finance / accounting liaison",
+      "dependencies": [
+        "GOV-01",
+        "DAT-05",
+        "GOV-04"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/13",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/26",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/9"
+      ],
+      "source_ids": [
+        "PLAN",
+        "AMANDA",
+        "FOLLOWUP",
+        "BRIEF",
+        "WICKS"
+      ],
+      "plan_sections": [
+        "§10 Finance and Business Central",
+        "§11 Production continuation",
+        "§12 Success metrics and ROI",
+        "§14 Demo narrative"
+      ],
+      "packet_path": "tasks/REL-02.md",
+      "expected_artifacts": [
+        "planning/finance/workbook-parity-and-BC-gates.md",
+        "contracts/business-central/ proposed schema only",
+        "reports/REL-02/finance-validation-questions.md"
+      ],
+      "limits": {
+        "max_minutes": 60,
+        "max_repair_attempts": 2,
+        "requires_recorded_runner_spend_cap": true
+      },
+      "dependency_level": 8,
+      "start_state": "blocked-pending-evidence",
+      "live_actions_authorized": false
+    },
+    {
+      "id": "REL-03",
+      "title": "[REL-03] Measure operational baseline and conservative ROI without invented savings",
+      "issue_url": "https://github.com/joconne8/sprinthack-nd-2026/issues/40",
+      "issue_number": 40,
+      "kind": "task",
+      "priority": "P1",
+      "scope": "pilot",
+      "mode": "design-and-evidence",
+      "lane": "Product / operations analyst",
+      "dependencies": [
+        "GOV-01",
+        "ING-04"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/13",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/10"
+      ],
+      "source_ids": [
+        "PLAN",
+        "AMANDA",
+        "FOLLOWUP",
+        "BRIEF",
+        "WICKS"
+      ],
+      "plan_sections": [
+        "§10 Finance and Business Central",
+        "§11 Production continuation",
+        "§12 Success metrics and ROI",
+        "§14 Demo narrative"
+      ],
+      "packet_path": "tasks/REL-03.md",
+      "expected_artifacts": [
+        "planning/measurement-and-roi.md",
+        "reports/baseline/ proposed collection sheet",
+        "reports/REL-03/assumptions-register.md"
+      ],
+      "limits": {
+        "max_minutes": 60,
+        "max_repair_attempts": 2,
+        "requires_recorded_runner_spend_cap": true
+      },
+      "dependency_level": 11,
+      "start_state": "blocked-pending-evidence",
+      "live_actions_authorized": false
+    },
+    {
+      "id": "REL-04",
+      "title": "[REL-04] Define the approved pilot, support ownership and staged handover gates",
+      "issue_url": "https://github.com/joconne8/sprinthack-nd-2026/issues/39",
+      "issue_number": 39,
+      "kind": "task",
+      "priority": "P2",
+      "scope": "pilot",
+      "mode": "design-and-evidence",
+      "lane": "Product / IT / operations",
+      "dependencies": [
+        "GOV-04",
+        "ING-05",
+        "DAT-09",
+        "APP-07",
+        "REL-03"
+      ],
+      "dependency_urls": [
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/9",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/12",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/21",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/36",
+        "https://github.com/joconne8/sprinthack-nd-2026/issues/40"
+      ],
+      "source_ids": [
+        "PLAN",
+        "AMANDA",
+        "FOLLOWUP",
+        "BRIEF",
+        "WICKS"
+      ],
+      "plan_sections": [
+        "§10 Finance and Business Central",
+        "§11 Production continuation",
+        "§12 Success metrics and ROI",
+        "§14 Demo narrative"
+      ],
+      "packet_path": "tasks/REL-04.md",
+      "expected_artifacts": [
+        "planning/pilot-and-handover.md",
+        "planning/operations/ support/rollback draft",
+        "reports/REL-04/go-no-go-and-owner-questions.md"
+      ],
+      "limits": {
+        "max_minutes": 60,
+        "max_repair_attempts": 2,
+        "requires_recorded_runner_spend_cap": true
+      },
+      "dependency_level": 12,
+      "start_state": "blocked-pending-evidence",
+      "live_actions_authorized": false
+    }
+  ],
+  "source_git_commit_sha": "ee7291d515a10da51be0ee9e887dfa53b73b5650",
+  "latest_fixture_pr": {
+    "number": 1,
+    "state": "merged",
+    "merged_at": "2026-10-04T00:13:02Z",
+    "merge_commit_sha": "ee7291d515a10da51be0ee9e887dfa53b73b5650",
+    "app_tests_verified": false
+  }
+}

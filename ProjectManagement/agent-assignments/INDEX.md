@@ -1,0 +1,49 @@
+# All ready-to-paste assignments
+
+43 standalone packets: 36 execution tasks plus 7 coordination roles. Scope/priority is not permission to execute; verify gates and claims. All source authority comes from Drive evidence and the three-phase plan.
+
+| ID | Packet | Mode | Priority / scope | Hard dependencies |
+|---|---|---|---|---|
+| [PM-00](coordination/PM-00.md) | [[PM-00] Goodwill shared delivery hub — three phases, dependencies and overnight agents](https://github.com/joconne8/sprinthack-nd-2026/issues/7) | coordination-only | P0 / weekend | None |
+| [E-GOV](coordination/E-GOV.md) | [[E-GOV] Requirements, business constraints and frozen contracts](https://github.com/joconne8/sprinthack-nd-2026/issues/4) | coordination-only | P0 / weekend | None |
+| [E-ING](coordination/E-ING.md) | [[E-ING] Authorized report acquisition and Upright-style demonstration](https://github.com/joconne8/sprinthack-nd-2026/issues/2) | coordination-only | P0 / weekend | None |
+| [E-DAT](coordination/E-DAT.md) | [[E-DAT] Trusted centralized data, reconciliation and deterministic metrics](https://github.com/joconne8/sprinthack-nd-2026/issues/8) | coordination-only | P0 / weekend | None |
+| [E-APP](coordination/E-APP.md) | [[E-APP] Dashboard, metric tools and bounded agentic interaction](https://github.com/joconne8/sprinthack-nd-2026/issues/6) | coordination-only | P0 / weekend | None |
+| [E-ENG](coordination/E-ENG.md) | [[E-ENG] Overnight agent engineering, CI and independent verification](https://github.com/joconne8/sprinthack-nd-2026/issues/5) | coordination-only | P0 / weekend | None |
+| [E-REL](coordination/E-REL.md) | [[E-REL] Demo evidence, financial controls and production continuation](https://github.com/joconne8/sprinthack-nd-2026/issues/3) | coordination-only | P0 / weekend | None |
+| [GOV-01](tasks/GOV-01.md) | [[GOV-01] Build the stakeholder requirement register and current-state process map](https://github.com/joconne8/sprinthack-nd-2026/issues/13) | design-and-evidence | P0 / weekend | None |
+| [GOV-02](tasks/GOV-02.md) | [[GOV-02] Freeze the acquisition-led scope and KPI contracts from Drive evidence](https://github.com/joconne8/sprinthack-nd-2026/issues/11) | design-and-evidence | P0 / weekend | GOV-01 |
+| [GOV-03](tasks/GOV-03.md) | [[GOV-03] Publish frozen acquisition, import, metric and agent-tool contracts](https://github.com/joconne8/sprinthack-nd-2026/issues/15) | contract-authoring | P0 / weekend | GOV-02 |
+| [GOV-04](tasks/GOV-04.md) | [[GOV-04] Document architecture decisions and live-access security gates](https://github.com/joconne8/sprinthack-nd-2026/issues/9) | design-and-evidence | P0 / weekend | GOV-01, GOV-02 |
+| [ING-01](tasks/ING-01.md) | [[ING-01] Inspect supplied slides and build a functional Upright-style HTML replica](https://github.com/joconne8/sprinthack-nd-2026/issues/14) | synthetic-build | P0 / weekend | GOV-03, ENG-01 |
+| [ING-02](tasks/ING-02.md) | [[ING-02] Implement parameterized deterministic browser replay against the replica](https://github.com/joconne8/sprinthack-nd-2026/issues/16) | synthetic-build | P0 / weekend | ING-01, GOV-03 |
+| [ING-03](tasks/ING-03.md) | [[ING-03] Verify acquired files and connect browser artifacts to import intake](https://github.com/joconne8/sprinthack-nd-2026/issues/17) | synthetic-build | P0 / weekend | ING-02, DAT-02, GOV-03 |
+| [ING-04](tasks/ING-04.md) | [[ING-04] Add bounded retries, run state, manual fallback and scheduler design](https://github.com/joconne8/sprinthack-nd-2026/issues/10) | synthetic-build | P1 / weekend | ING-03, DAT-08 |
+| [ING-05](tasks/ING-05.md) | [[ING-05] Map nine sources to shared acquisition classes and source-specific adapters](https://github.com/joconne8/sprinthack-nd-2026/issues/12) | design-and-evidence | P0 / weekend | GOV-01, GOV-03 |
+| [ING-06](tasks/ING-06.md) | [[ING-06] Evaluate Jev behind an optional browser decision-provider interface](https://github.com/joconne8/sprinthack-nd-2026/issues/18) | synthetic-build | P1 / stretch | ING-02, GOV-04 |
+| [ING-07](tasks/ING-07.md) | [[ING-07] Design a reviewed macro-capture and skill-repair workflow](https://github.com/joconne8/sprinthack-nd-2026/issues/28) | design-and-evidence | P2 / pilot | ING-02, ING-05, GOV-04 |
+| [DAT-01](tasks/DAT-01.md) | [[DAT-01] Validate and integrate the existing expanded synthetic-data PR without duplicating it](https://github.com/joconne8/sprinthack-nd-2026/issues/25) | fixture-review | P0 / weekend | GOV-02 |
+| [DAT-02](tasks/DAT-02.md) | [[DAT-02] Implement immutable raw archive, import-batch schema and row lineage](https://github.com/joconne8/sprinthack-nd-2026/issues/22) | synthetic-build | P0 / weekend | GOV-03, ENG-01 |
+| [DAT-03](tasks/DAT-03.md) | [[DAT-03] Implement the first acquisition-file parser and typed normalization contract](https://github.com/joconne8/sprinthack-nd-2026/issues/27) | synthetic-build | P0 / weekend | DAT-01, DAT-02 |
+| [DAT-04](tasks/DAT-04.md) | [[DAT-04] Implement file and record idempotency, overlapping exports and corrections](https://github.com/joconne8/sprinthack-nd-2026/issues/19) | synthetic-build | P0 / weekend | DAT-03 |
+| [DAT-05](tasks/DAT-05.md) | [[DAT-05] Implement source-to-curated reconciliation and a recoverable exception queue](https://github.com/joconne8/sprinthack-nd-2026/issues/26) | synthetic-build | P0 / weekend | DAT-03, DAT-04 |
+| [DAT-06](tasks/DAT-06.md) | [[DAT-06] Build deterministic SQL metric marts and a versioned metric API](https://github.com/joconne8/sprinthack-nd-2026/issues/23) | synthetic-build | P0 / weekend | DAT-05, GOV-03 |
+| [DAT-07](tasks/DAT-07.md) | [[DAT-07] Implement listing-event and complete inventory-snapshot metrics](https://github.com/joconne8/sprinthack-nd-2026/issues/24) | synthetic-build | P1 / weekend | DAT-01, DAT-02, DAT-06 |
+| [DAT-08](tasks/DAT-08.md) | [[DAT-08] Implement source completeness, freshness and last-good publication controls](https://github.com/joconne8/sprinthack-nd-2026/issues/20) | synthetic-build | P0 / weekend | DAT-05, DAT-06 |
+| [DAT-09](tasks/DAT-09.md) | [[DAT-09] Design DAG dependencies, controlled backfills and refresh performance checks](https://github.com/joconne8/sprinthack-nd-2026/issues/21) | design-and-evidence | P1 / pilot | DAT-08, GOV-04 |
+| [APP-01](tasks/APP-01.md) | [[APP-01] Build Amanda’s intake and reporting-status operations view](https://github.com/joconne8/sprinthack-nd-2026/issues/38) | synthetic-build | P0 / weekend | GOV-03, ENG-01 |
+| [APP-02](tasks/APP-02.md) | [[APP-02] Build leadership visibility and a strategic KPI availability scorecard](https://github.com/joconne8/sprinthack-nd-2026/issues/32) | synthetic-build | P0 / weekend | GOV-03, ENG-01 |
+| [APP-03](tasks/APP-03.md) | [[APP-03] Deliver P0 source-row drilldown, with optional P1 Excel-compatible exports](https://github.com/joconne8/sprinthack-nd-2026/issues/34) | synthetic-build | P0 / weekend | DAT-06, DAT-08, APP-02 |
+| [APP-04](tasks/APP-04.md) | [[APP-04] Expose permission-scoped read-only metric and provenance tools](https://github.com/joconne8/sprinthack-nd-2026/issues/35) | synthetic-build | P1 / stretch | DAT-06, DAT-08, GOV-04 |
+| [APP-05](tasks/APP-05.md) | [[APP-05] Build a grounded assistant with definitions, coverage and uncertainty](https://github.com/joconne8/sprinthack-nd-2026/issues/29) | synthetic-build | P1 / stretch | APP-04, GOV-04 |
+| [APP-06](tasks/APP-06.md) | [[APP-06] Evaluate prompt injection, permissions and unsupported agent questions](https://github.com/joconne8/sprinthack-nd-2026/issues/31) | synthetic-build | P1 / stretch | APP-04, APP-05, ENG-04 |
+| [APP-07](tasks/APP-07.md) | [[APP-07] Validate Microsoft Copilot and existing Power BI production integration](https://github.com/joconne8/sprinthack-nd-2026/issues/36) | design-and-evidence | P2 / pilot | GOV-04, APP-04 |
+| [ENG-01](tasks/ENG-01.md) | [[ENG-01] Scaffold one application stack and establish a passing smoke-test baseline](https://github.com/joconne8/sprinthack-nd-2026/issues/33) | synthetic-build | P0 / weekend | GOV-02, GOV-04 |
+| [ENG-02](tasks/ENG-02.md) | [[ENG-02] Establish agent claim protocol, file lanes and shared context ownership](https://github.com/joconne8/sprinthack-nd-2026/issues/37) | design-and-evidence | P0 / weekend | GOV-03 |
+| [ENG-03](tasks/ENG-03.md) | [[ENG-03] Configure bounded overnight runners with budgets, timeouts and reporting](https://github.com/joconne8/sprinthack-nd-2026/issues/30) | design-and-evidence | P1 / weekend | ENG-01, ENG-02, ING-03, DAT-06 |
+| [ENG-04](tasks/ENG-04.md) | [[ENG-04] Build independent expected totals and end-to-end acceptance tests](https://github.com/joconne8/sprinthack-nd-2026/issues/42) | synthetic-build | P0 / weekend | GOV-03, DAT-01, ENG-01 |
+| [ENG-05](tasks/ENG-05.md) | [[ENG-05] Run morning human review, dependency-order integration and feature freeze](https://github.com/joconne8/sprinthack-nd-2026/issues/44) | human-review | P0 / weekend | ENG-04, ING-03, DAT-08, APP-01, APP-02 |
+| [REL-01](tasks/REL-01.md) | [[REL-01] Prepare source-backed pitch, recorded demo and honest submission evidence](https://github.com/joconne8/sprinthack-nd-2026/issues/43) | design-and-evidence | P0 / weekend | ENG-05, APP-03 |
+| [REL-02](tasks/REL-02.md) | [[REL-02] Plan workbook parity and gated Business Central journal/invoice validation](https://github.com/joconne8/sprinthack-nd-2026/issues/41) | design-and-evidence | P2 / pilot | GOV-01, DAT-05, GOV-04 |
+| [REL-03](tasks/REL-03.md) | [[REL-03] Measure operational baseline and conservative ROI without invented savings](https://github.com/joconne8/sprinthack-nd-2026/issues/40) | design-and-evidence | P1 / pilot | GOV-01, ING-04 |
+| [REL-04](tasks/REL-04.md) | [[REL-04] Define the approved pilot, support ownership and staged handover gates](https://github.com/joconne8/sprinthack-nd-2026/issues/39) | design-and-evidence | P2 / pilot | GOV-04, ING-05, DAT-09, APP-07, REL-03 |

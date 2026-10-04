@@ -73,3 +73,6 @@ For each PRD, fill these fields before work starts:
 - Evidence location
 
 A subtask moves to Done only when a different reviewer verifies its acceptance criteria and evidence. Agent or developer messages saying "done" are not sufficient.
+
+## Ready-to-run assignment package
+[All 43 task/coordination packets](https://github.com/joconne8/sprinthack-nd-2026/blob/main/ProjectManagement/agent-assignments/INDEX.md) and [launch guide](https://github.com/joconne8/sprinthack-nd-2026/blob/main/ProjectManagement/agent-assignments/LAUNCH_GUIDE.md) provide explicit preflight, dependencies, file lanes, outputs, tests and stop rules. Packaging does not launch agents or clear human gates. At package publication PR #1 is merged (GitHub reports 2026-10-04T00:13:02Z); validate its merged fixtures rather than duplicate or reintegrate them. Earlier open-draft descriptions are historical; tests must still be run independently.
