@@ -1,0 +1,25 @@
+{
+  "task": "ENG-04",
+  "issue": "https://github.com/joconne8/sprinthack-nd-2026/issues/42",
+  "state": "READY_FOR_REVIEW",
+  "accepted": false,
+  "operator": "Claude Code assisting Jack mc",
+  "branch": "jack-mc/eng-04-preflight",
+  "base_commit": "610035efd3ffb1157f1b2ce5f3bc500417a1dfe5",
+  "python": "3.9.6",
+  "run_at_utc": "2026-10-04T03:47:59Z",
+  "commands": [
+    {"cmd": "PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests/acceptance -p 'test_*.py' -v", "result": "25 run, OK, 2 skipped", "log": "logs/acceptance.log"},
+    {"cmd": "PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -v", "result": "61 run, OK, 2 skipped", "log": "logs/tests-all.log"},
+    {"cmd": "PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s acquisition/tests -p 'test_*.py'", "result": "23 run, OK", "log": "logs/acquisition.log"}
+  ],
+  "expected_results": "fixtures/expected-results/eng04_control_ledger.json",
+  "demo_evidence": "demo-sequence-evidence.json",
+  "downloaded_files": {
+    "artifacts/upright_paid_orders_2026-09-29_2026-09-29_synthetic.csv": "e79cb1e7ed4e01af279d268fb599b115e32ff6b729de6af0614274ba2426a6cb",
+    "artifacts/upright_paid_orders_2026-09-29_2026-09-30_synthetic.csv": "f51b7287d87948e8b8d6b19f56e7240ffdb00608c611d317e19e798684263869"
+  },
+  "seeded_defects_caught": ["refunds_ignored", "shipping_tax_fees_included", "source_net_field_used", "unstable_duplicate_key", "forced_complete_coverage", "guessed_store_mapping"],
+  "not_run": ["dashboard/browser acceptance (no UI in main)", "export (deferred from P0)", "remote CI matrix (runs on PR)"],
+  "synthetic_only": true
+}

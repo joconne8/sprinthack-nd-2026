@@ -1,0 +1,63 @@
+127.0.0.1 - - [03/Oct/2026 23:47:44] "POST /api/reports HTTP/1.1" 202 -
+127.0.0.1 - - [03/Oct/2026 23:47:44] "GET /api/reports/c61672f64a864910853aa3f46798a267 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:47:44] "GET /api/reports/c61672f64a864910853aa3f46798a267 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:47:44] "GET /api/reports/c61672f64a864910853aa3f46798a267 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:47:44] "GET /api/reports/c61672f64a864910853aa3f46798a267 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:47:44] "GET /api/reports/c61672f64a864910853aa3f46798a267 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:47:44] "GET /api/reports/c61672f64a864910853aa3f46798a267 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:47:44] "GET /api/reports/c61672f64a864910853aa3f46798a267 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:47:44] "GET /api/reports/c61672f64a864910853aa3f46798a267 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:47:44] "GET /api/reports/c61672f64a864910853aa3f46798a267/download HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:47:44] "GET /api/reports/c61672f64a864910853aa3f46798a267/manifest HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:47:45] "POST /api/reports HTTP/1.1" 202 -
+127.0.0.1 - - [03/Oct/2026 23:47:45] "GET /api/reports/e21ec16c95904152b77148e6b3fae23a HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:47:45] "GET /api/reports/e21ec16c95904152b77148e6b3fae23a HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:47:45] "GET /api/reports/e21ec16c95904152b77148e6b3fae23a HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:47:45] "GET /api/reports/e21ec16c95904152b77148e6b3fae23a HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:47:45] "GET /api/reports/e21ec16c95904152b77148e6b3fae23a HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:47:45] "GET /api/reports/e21ec16c95904152b77148e6b3fae23a HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:47:45] "GET /api/reports/e21ec16c95904152b77148e6b3fae23a HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:47:45] "GET /api/reports/e21ec16c95904152b77148e6b3fae23a HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:47:45] "GET /api/reports/e21ec16c95904152b77148e6b3fae23a/download HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:47:45] "GET /api/reports/e21ec16c95904152b77148e6b3fae23a/manifest HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:47:46] "POST /api/reports HTTP/1.1" 202 -
+127.0.0.1 - - [03/Oct/2026 23:47:46] "GET /api/reports/9ccba50d62d94889a26c1d0c32b15f6f HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:47:46] "GET /api/reports/9ccba50d62d94889a26c1d0c32b15f6f HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:47:46] "GET /api/reports/9ccba50d62d94889a26c1d0c32b15f6f HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:47:46] "GET /api/reports/9ccba50d62d94889a26c1d0c32b15f6f HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:47:46] "GET /api/reports/9ccba50d62d94889a26c1d0c32b15f6f HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:47:46] "GET /api/reports/9ccba50d62d94889a26c1d0c32b15f6f HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:47:46] "GET /api/reports/9ccba50d62d94889a26c1d0c32b15f6f HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:47:46] "GET /api/reports/9ccba50d62d94889a26c1d0c32b15f6f HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:47:46] "GET /api/reports/9ccba50d62d94889a26c1d0c32b15f6f/download HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:47:46] "GET /api/reports/9ccba50d62d94889a26c1d0c32b15f6f/manifest HTTP/1.1" 200 -
+test_dashboard_shows_api_values (test_demo_sequence.DemoSequenceTests) ... skipped 'BLOCKED: no dashboard UI in main (APP-01..03 not merged)'
+test_downloaded_bytes_are_exactly_what_was_imported_and_archived (test_demo_sequence.DemoSequenceTests) ... ok
+test_export_matches_evidence (test_demo_sequence.DemoSequenceTests) ... skipped 'Export is deferred from P0 (planning/development.md); not silently waived'
+test_first_day_import_matches_qa_raw_sum (test_demo_sequence.DemoSequenceTests) ... ok
+test_overlapping_two_day_file_adds_only_new_day (test_demo_sequence.DemoSequenceTests) ... ok
+test_portal_manifest_total_agrees_with_qa_and_api (test_demo_sequence.DemoSequenceTests) ... ok
+test_replay_changes_nothing (test_demo_sequence.DemoSequenceTests) ... ok
+test_buyer_namespaces_and_store_keys (test_independent_ledger.IndependentLedgerTests) ... ok
+test_exact_duplicate_within_file_counts_once (test_independent_ledger.IndependentLedgerTests) ... ok
+test_inclusive_edges_and_alternate_dates (test_independent_ledger.IndependentLedgerTests) ... ok
+test_invalid_money_keeps_last_good (test_independent_ledger.IndependentLedgerTests) ... ok
+test_invalid_rows_fail_without_publishing (test_independent_ledger.IndependentLedgerTests) ... ok
+test_missing_buyer_keeps_sales_but_hides_customers (test_independent_ledger.IndependentLedgerTests) ... ok
+test_missing_day_is_unknown_not_zero (test_independent_ledger.IndependentLedgerTests) ... ok
+test_missing_sources_are_unavailable (test_independent_ledger.IndependentLedgerTests) ... ok
+test_other_timezone_report_only_partially_covers_day (test_independent_ledger.IndependentLedgerTests) ... ok
+test_refunds_replay_overlap_and_correction (test_independent_ledger.IndependentLedgerTests) ... ok
+test_row_outside_requested_period_blocks_file (test_independent_ledger.IndependentLedgerTests) ... ok
+test_duplicate_counting_is_caught (test_seeded_defects.SeededDefectTests) ... ok
+test_false_complete_coverage_is_caught (test_seeded_defects.SeededDefectTests) ... ok
+test_guessed_store_mapping_is_caught (test_seeded_defects.SeededDefectTests) ... ok
+test_unmodified_implementation_passes_the_same_checks (test_seeded_defects.SeededDefectTests) ... ok
+test_wrong_formula_ignoring_refunds_is_caught (test_seeded_defects.SeededDefectTests) ... ok
+test_wrong_formula_including_shipping_tax_fees_is_caught (test_seeded_defects.SeededDefectTests) ... ok
+test_wrong_formula_using_source_net_field_is_caught (test_seeded_defects.SeededDefectTests) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 4.684s
+
+OK (skipped=2)
