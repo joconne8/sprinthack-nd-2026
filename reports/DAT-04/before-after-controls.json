@@ -1,0 +1,485 @@
+{
+  "synthetic": true,
+  "initial": {
+    "contract_version": "goodwill-v1",
+    "batch_id": "ee9c8b44ba8d4503a44ee05c9da2d4f2",
+    "source": "upright_replica",
+    "report_type": "paid_orders",
+    "status": "imported",
+    "synthetic": true,
+    "file": {
+      "file_id": "346bb1d49720d7b8b3b65315f37eb97b8f6f30e2463f9e55a8421009b1ed0344",
+      "checksum": "346bb1d49720d7b8b3b65315f37eb97b8f6f30e2463f9e55a8421009b1ed0344",
+      "byte_size": 622
+    },
+    "period": {
+      "start_date": "2026-09-30",
+      "end_date": "2026-09-30",
+      "source_timezone": "America/New_York"
+    },
+    "counts": {
+      "row_count": 2,
+      "accepted_rows": 2,
+      "rejected_rows": 0,
+      "duplicate_rows": 0,
+      "corrected_rows": 0
+    },
+    "reconciliation": {
+      "accepted_gross": "30.00",
+      "accepted_refunds": "3.00",
+      "accepted_rows": 2,
+      "control_differences": [],
+      "counts_balanced": true,
+      "duplicate_gross": "0.00",
+      "duplicate_refunds": "0.00",
+      "duplicate_rows": 0,
+      "rejected_gross": "0.00",
+      "rejected_refunds": "0.00",
+      "rejected_rows": 0,
+      "source_gross": "30.00",
+      "source_refunds": "3.00",
+      "source_rows": 2,
+      "state": "verified"
+    },
+    "error": null,
+    "exceptions": [],
+    "parser_version": "sales-parser-v1",
+    "rule_version": "trusted-data-v1",
+    "recorded_at": "2026-10-04T03:16:38.874903+00:00"
+  },
+  "before": {
+    "contract_version": "goodwill-v1",
+    "synthetic": true,
+    "filters_applied": {
+      "start_date": "2026-09-30",
+      "end_date": "2026-09-30",
+      "source": "upright_replica",
+      "platform": null,
+      "store": null,
+      "reporting_timezone": "America/New_York"
+    },
+    "metric_run_id": "3d5c0b09fe394966ae2cbd0d03b3dd59",
+    "metrics": [
+      {
+        "metric_id": "M-DEMO-NET-SALES",
+        "metric_version": "demo-net-sales-v1",
+        "value": "27.00",
+        "unit": "USD",
+        "availability": "available",
+        "availability_reason": null,
+        "definition": "Item sales minus refunds; excludes shipping, tax and fees"
+      },
+      {
+        "metric_id": "M-PLATFORM-CUSTOMERS",
+        "metric_version": "platform-customers-v1",
+        "value": "2",
+        "unit": "buyers",
+        "availability": "available",
+        "availability_reason": null,
+        "definition": "Distinct non-empty buyer IDs within one platform and selected period"
+      },
+      {
+        "metric_id": "R-LABOR-PRODUCTIVITY",
+        "metric_version": "roadmap-v1",
+        "value": null,
+        "unit": "unavailable",
+        "availability": "unavailable",
+        "availability_reason": "Matched labor hours and allocation policy are unavailable",
+        "definition": "Requires approved matching inputs and definitions"
+      },
+      {
+        "metric_id": "R-MARGIN",
+        "metric_version": "roadmap-v1",
+        "value": null,
+        "unit": "unavailable",
+        "availability": "unavailable",
+        "availability_reason": "Approved costs and allocations are unavailable",
+        "definition": "Requires approved matching inputs and definitions"
+      },
+      {
+        "metric_id": "R-SELL-THROUGH",
+        "metric_version": "roadmap-v1",
+        "value": null,
+        "unit": "unavailable",
+        "availability": "unavailable",
+        "availability_reason": "Approved eligible cohort, window and relist policy are unavailable",
+        "definition": "Requires approved matching inputs and definitions"
+      },
+      {
+        "metric_id": "R-REVENUE-GROWTH",
+        "metric_version": "roadmap-v1",
+        "value": null,
+        "unit": "unavailable",
+        "availability": "unavailable",
+        "availability_reason": "Comparable prior-year inputs are unavailable",
+        "definition": "Requires approved matching inputs and definitions"
+      }
+    ],
+    "coverage": {
+      "expected_days": [
+        "2026-09-30"
+      ],
+      "complete_days": [
+        "2026-09-30"
+      ],
+      "missing_or_partial_days": [],
+      "state": "complete"
+    },
+    "freshness": {
+      "published_at": "2026-10-04T03:16:38.874903+00:00",
+      "latest_import_at": "2026-10-04T03:16:38.874903+00:00",
+      "is_last_good": false,
+      "publication_state": "published",
+      "warning": null
+    },
+    "reconciliation_state": "verified",
+    "evidence": {
+      "row_count": 2,
+      "gross_item_sales": "30.00",
+      "refunds": "3.00",
+      "missing_store_rows": 0
+    }
+  },
+  "replay": {
+    "contract_version": "goodwill-v1",
+    "batch_id": "e2654e2cd39e48d1a315d5710eb5a2f4",
+    "source": "upright_replica",
+    "report_type": "paid_orders",
+    "status": "duplicate_noop",
+    "synthetic": true,
+    "file": {
+      "file_id": "346bb1d49720d7b8b3b65315f37eb97b8f6f30e2463f9e55a8421009b1ed0344",
+      "checksum": "346bb1d49720d7b8b3b65315f37eb97b8f6f30e2463f9e55a8421009b1ed0344",
+      "byte_size": 622
+    },
+    "period": {
+      "start_date": "2026-09-30",
+      "end_date": "2026-09-30",
+      "source_timezone": "America/New_York"
+    },
+    "counts": {
+      "row_count": 2,
+      "accepted_rows": 0,
+      "rejected_rows": 0,
+      "duplicate_rows": 2,
+      "corrected_rows": 0
+    },
+    "reconciliation": {
+      "accepted_gross": "0.00",
+      "accepted_refunds": "0.00",
+      "accepted_rows": 0,
+      "control_differences": [],
+      "counts_balanced": true,
+      "duplicate_gross": "30.00",
+      "duplicate_refunds": "3.00",
+      "duplicate_rows": 2,
+      "rejected_gross": "0.00",
+      "rejected_refunds": "0.00",
+      "rejected_rows": 0,
+      "source_gross": "30.00",
+      "source_refunds": "3.00",
+      "source_rows": 2,
+      "state": "verified"
+    },
+    "error": null,
+    "exceptions": [],
+    "parser_version": "sales-parser-v1",
+    "rule_version": "trusted-data-v1",
+    "recorded_at": "2026-10-04T03:16:38.885530+00:00"
+  },
+  "unapproved_correction": {
+    "contract_version": "goodwill-v1",
+    "batch_id": "8c8419dc57cb4c22bcdd8644f8509108",
+    "source": "upright_replica",
+    "report_type": "paid_orders",
+    "status": "failed",
+    "synthetic": true,
+    "file": {
+      "file_id": "9dff368bb8bde2008fba710026d582fff6d6f9068c152ba0c1ad0af1e1a78798",
+      "checksum": "9dff368bb8bde2008fba710026d582fff6d6f9068c152ba0c1ad0af1e1a78798",
+      "byte_size": 622
+    },
+    "period": {
+      "start_date": "2026-09-30",
+      "end_date": "2026-09-30",
+      "source_timezone": "America/New_York"
+    },
+    "counts": {
+      "row_count": 2,
+      "accepted_rows": 0,
+      "rejected_rows": 1,
+      "duplicate_rows": 1,
+      "corrected_rows": 0
+    },
+    "reconciliation": {
+      "accepted_gross": "0.00",
+      "accepted_refunds": "0.00",
+      "accepted_rows": 0,
+      "control_differences": [],
+      "counts_balanced": true,
+      "duplicate_gross": "20.00",
+      "duplicate_refunds": "2.00",
+      "duplicate_rows": 1,
+      "rejected_gross": "10.00",
+      "rejected_refunds": "5.00",
+      "rejected_rows": 1,
+      "source_gross": "30.00",
+      "source_refunds": "7.00",
+      "source_rows": 2,
+      "state": "blocked"
+    },
+    "error": {
+      "code": "reconciliation_blocked",
+      "detail": "{\"accepted_gross\":\"0.00\",\"accepted_refunds\":\"0.00\",\"accepted_rows\":0,\"control_differences\":[],\"counts_balanced\":true,\"duplicate_gross\":\"20.00\",\"duplicate_refunds\":\"2.00\",\"duplicate_rows\":1,\"rejected_gross\":\"10.00\",\"rejected_refunds\":\"5.00\",\"rejected_rows\":1,\"source_gross\":\"30.00\",\"source_refunds\":\"7.00\",\"source_rows\":2,\"state\":\"blocked\"}"
+    },
+    "exceptions": [
+      {
+        "id": "0a1a746a08f94319bcdf712193e5b55f",
+        "batch_id": "8c8419dc57cb4c22bcdd8644f8509108",
+        "row_number": 1,
+        "code": "correction_requires_approval",
+        "detail": "[\"A\"]",
+        "owner_role": "Data maintainer",
+        "status": "open",
+        "resolution": null,
+        "resolved_at": null
+      }
+    ],
+    "parser_version": "sales-parser-v1",
+    "rule_version": "trusted-data-v1",
+    "recorded_at": "2026-10-04T03:16:38.887091+00:00"
+  },
+  "last_good_after_failure": {
+    "contract_version": "goodwill-v1",
+    "synthetic": true,
+    "filters_applied": {
+      "start_date": "2026-09-30",
+      "end_date": "2026-09-30",
+      "source": "upright_replica",
+      "platform": null,
+      "store": null,
+      "reporting_timezone": "America/New_York"
+    },
+    "metric_run_id": "3d5c0b09fe394966ae2cbd0d03b3dd59",
+    "metrics": [
+      {
+        "metric_id": "M-DEMO-NET-SALES",
+        "metric_version": "demo-net-sales-v1",
+        "value": "27.00",
+        "unit": "USD",
+        "availability": "partial",
+        "availability_reason": "Latest import failed; retaining verified last-good data",
+        "definition": "Item sales minus refunds; excludes shipping, tax and fees"
+      },
+      {
+        "metric_id": "M-PLATFORM-CUSTOMERS",
+        "metric_version": "platform-customers-v1",
+        "value": "2",
+        "unit": "buyers",
+        "availability": "partial",
+        "availability_reason": "Latest import failed; retaining verified last-good data",
+        "definition": "Distinct non-empty buyer IDs within one platform and selected period"
+      },
+      {
+        "metric_id": "R-LABOR-PRODUCTIVITY",
+        "metric_version": "roadmap-v1",
+        "value": null,
+        "unit": "unavailable",
+        "availability": "unavailable",
+        "availability_reason": "Matched labor hours and allocation policy are unavailable",
+        "definition": "Requires approved matching inputs and definitions"
+      },
+      {
+        "metric_id": "R-MARGIN",
+        "metric_version": "roadmap-v1",
+        "value": null,
+        "unit": "unavailable",
+        "availability": "unavailable",
+        "availability_reason": "Approved costs and allocations are unavailable",
+        "definition": "Requires approved matching inputs and definitions"
+      },
+      {
+        "metric_id": "R-SELL-THROUGH",
+        "metric_version": "roadmap-v1",
+        "value": null,
+        "unit": "unavailable",
+        "availability": "unavailable",
+        "availability_reason": "Approved eligible cohort, window and relist policy are unavailable",
+        "definition": "Requires approved matching inputs and definitions"
+      },
+      {
+        "metric_id": "R-REVENUE-GROWTH",
+        "metric_version": "roadmap-v1",
+        "value": null,
+        "unit": "unavailable",
+        "availability": "unavailable",
+        "availability_reason": "Comparable prior-year inputs are unavailable",
+        "definition": "Requires approved matching inputs and definitions"
+      }
+    ],
+    "coverage": {
+      "expected_days": [
+        "2026-09-30"
+      ],
+      "complete_days": [
+        "2026-09-30"
+      ],
+      "missing_or_partial_days": [],
+      "state": "complete"
+    },
+    "freshness": {
+      "published_at": "2026-10-04T03:16:38.874903+00:00",
+      "latest_import_at": "2026-10-04T03:16:38.887091+00:00",
+      "is_last_good": true,
+      "publication_state": "stale_last_good",
+      "warning": "Latest import failed; retaining verified last-good data"
+    },
+    "reconciliation_state": "verified",
+    "evidence": {
+      "row_count": 2,
+      "gross_item_sales": "30.00",
+      "refunds": "3.00",
+      "missing_store_rows": 0
+    }
+  },
+  "explicit_correction": {
+    "contract_version": "goodwill-v1",
+    "batch_id": "9c26ad4fe94148d291fae1e80f86f005",
+    "source": "upright_replica",
+    "report_type": "paid_orders",
+    "status": "imported",
+    "synthetic": true,
+    "file": {
+      "file_id": "9dff368bb8bde2008fba710026d582fff6d6f9068c152ba0c1ad0af1e1a78798",
+      "checksum": "9dff368bb8bde2008fba710026d582fff6d6f9068c152ba0c1ad0af1e1a78798",
+      "byte_size": 622
+    },
+    "period": {
+      "start_date": "2026-09-30",
+      "end_date": "2026-09-30",
+      "source_timezone": "America/New_York"
+    },
+    "counts": {
+      "row_count": 2,
+      "accepted_rows": 1,
+      "rejected_rows": 0,
+      "duplicate_rows": 1,
+      "corrected_rows": 1
+    },
+    "reconciliation": {
+      "accepted_gross": "10.00",
+      "accepted_refunds": "5.00",
+      "accepted_rows": 1,
+      "control_differences": [],
+      "counts_balanced": true,
+      "duplicate_gross": "20.00",
+      "duplicate_refunds": "2.00",
+      "duplicate_rows": 1,
+      "rejected_gross": "0.00",
+      "rejected_refunds": "0.00",
+      "rejected_rows": 0,
+      "source_gross": "30.00",
+      "source_refunds": "7.00",
+      "source_rows": 2,
+      "state": "verified"
+    },
+    "error": null,
+    "exceptions": [],
+    "parser_version": "sales-parser-v1",
+    "rule_version": "trusted-data-v1",
+    "recorded_at": "2026-10-04T03:16:38.889611+00:00"
+  },
+  "after": {
+    "contract_version": "goodwill-v1",
+    "synthetic": true,
+    "filters_applied": {
+      "start_date": "2026-09-30",
+      "end_date": "2026-09-30",
+      "source": "upright_replica",
+      "platform": null,
+      "store": null,
+      "reporting_timezone": "America/New_York"
+    },
+    "metric_run_id": "718e65f562ac42ae9210f14bfdc00fd1",
+    "metrics": [
+      {
+        "metric_id": "M-DEMO-NET-SALES",
+        "metric_version": "demo-net-sales-v1",
+        "value": "23.00",
+        "unit": "USD",
+        "availability": "available",
+        "availability_reason": null,
+        "definition": "Item sales minus refunds; excludes shipping, tax and fees"
+      },
+      {
+        "metric_id": "M-PLATFORM-CUSTOMERS",
+        "metric_version": "platform-customers-v1",
+        "value": "2",
+        "unit": "buyers",
+        "availability": "available",
+        "availability_reason": null,
+        "definition": "Distinct non-empty buyer IDs within one platform and selected period"
+      },
+      {
+        "metric_id": "R-LABOR-PRODUCTIVITY",
+        "metric_version": "roadmap-v1",
+        "value": null,
+        "unit": "unavailable",
+        "availability": "unavailable",
+        "availability_reason": "Matched labor hours and allocation policy are unavailable",
+        "definition": "Requires approved matching inputs and definitions"
+      },
+      {
+        "metric_id": "R-MARGIN",
+        "metric_version": "roadmap-v1",
+        "value": null,
+        "unit": "unavailable",
+        "availability": "unavailable",
+        "availability_reason": "Approved costs and allocations are unavailable",
+        "definition": "Requires approved matching inputs and definitions"
+      },
+      {
+        "metric_id": "R-SELL-THROUGH",
+        "metric_version": "roadmap-v1",
+        "value": null,
+        "unit": "unavailable",
+        "availability": "unavailable",
+        "availability_reason": "Approved eligible cohort, window and relist policy are unavailable",
+        "definition": "Requires approved matching inputs and definitions"
+      },
+      {
+        "metric_id": "R-REVENUE-GROWTH",
+        "metric_version": "roadmap-v1",
+        "value": null,
+        "unit": "unavailable",
+        "availability": "unavailable",
+        "availability_reason": "Comparable prior-year inputs are unavailable",
+        "definition": "Requires approved matching inputs and definitions"
+      }
+    ],
+    "coverage": {
+      "expected_days": [
+        "2026-09-30"
+      ],
+      "complete_days": [
+        "2026-09-30"
+      ],
+      "missing_or_partial_days": [],
+      "state": "complete"
+    },
+    "freshness": {
+      "published_at": "2026-10-04T03:16:38.889611+00:00",
+      "latest_import_at": "2026-10-04T03:16:38.889611+00:00",
+      "is_last_good": false,
+      "publication_state": "published",
+      "warning": null
+    },
+    "reconciliation_state": "verified",
+    "evidence": {
+      "row_count": 2,
+      "gross_item_sales": "30.00",
+      "refunds": "7.00",
+      "missing_store_rows": 0
+    }
+  }
+}

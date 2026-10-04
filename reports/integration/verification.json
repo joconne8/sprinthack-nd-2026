@@ -1,0 +1,224 @@
+{
+  "state": "READY_FOR_REVIEW",
+  "accepted": false,
+  "base_commit": "b329c0fece37c1694b4d84c0c55e609dc931f854",
+  "tested_state": "working tree before local handoff commit",
+  "branch": "peyton/jackoc-data-foundation",
+  "python": "3.9.6 (default, Aug 25 2026, 21:26:21) \n[Clang 21.0.0 (clang-2100.3.34.2)]",
+  "commands": [
+    {
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "cwd": "/Users/peytondoty/sprinthack-nd-2026",
+      "exit_code": 0,
+      "elapsed_seconds": 5.475097,
+      "log": "logs/foundation-tests.log"
+    },
+    {
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "acquisition/tests",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "cwd": "/Users/peytondoty/sprinthack-nd-2026",
+      "exit_code": 0,
+      "elapsed_seconds": 0.053965,
+      "log": "logs/acquisition-tests.log"
+    },
+    {
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "reports/DAT-01/review_fixtures.py"
+      ],
+      "cwd": "/Users/peytondoty/sprinthack-nd-2026",
+      "exit_code": 0,
+      "elapsed_seconds": 0.079931,
+      "log": "logs/fixture-review.json"
+    },
+    {
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "scripts/benchmark_data.py"
+      ],
+      "cwd": "/Users/peytondoty/sprinthack-nd-2026",
+      "exit_code": 0,
+      "elapsed_seconds": 0.313419,
+      "log": "logs/benchmark.json"
+    },
+    {
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "goodwill/synthetic-data",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "cwd": "/var/folders/1t/r8vbq2ns31z3ld8d_36zw3s40000gn/T/goodwill-fixture-verify-cv1vg6ix",
+      "exit_code": 0,
+      "elapsed_seconds": 0.358569,
+      "log": "logs/fixture-suite.log"
+    },
+    {
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-m",
+        "goodwill_app",
+        "--state-root",
+        "/var/folders/1t/r8vbq2ns31z3ld8d_36zw3s40000gn/T/goodwill-cli-verify-ovz56amu",
+        "init"
+      ],
+      "cwd": "/Users/peytondoty/sprinthack-nd-2026",
+      "exit_code": 0,
+      "elapsed_seconds": 0.044313,
+      "log": "logs/cli-init.json"
+    },
+    {
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-m",
+        "goodwill_app",
+        "--state-root",
+        "/var/folders/1t/r8vbq2ns31z3ld8d_36zw3s40000gn/T/goodwill-cli-verify-ovz56amu",
+        "import",
+        "--csv",
+        "data ingestion/examples/upright_paid_orders_2026-09-30_2026-09-30_synthetic.csv",
+        "--manifest",
+        "data ingestion/examples/upright_paid_orders_2026-09-30_2026-09-30_synthetic.manifest.json"
+      ],
+      "cwd": "/Users/peytondoty/sprinthack-nd-2026",
+      "exit_code": 0,
+      "elapsed_seconds": 0.040997,
+      "log": "logs/cli-import.json"
+    },
+    {
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-m",
+        "goodwill_app",
+        "--state-root",
+        "/var/folders/1t/r8vbq2ns31z3ld8d_36zw3s40000gn/T/goodwill-cli-verify-ovz56amu",
+        "metrics",
+        "--start-date",
+        "2026-09-30",
+        "--end-date",
+        "2026-09-30",
+        "--source",
+        "upright_replica"
+      ],
+      "cwd": "/Users/peytondoty/sprinthack-nd-2026",
+      "exit_code": 0,
+      "elapsed_seconds": 0.035055,
+      "log": "logs/cli-metrics.json"
+    },
+    {
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "contracts/build_schemas.py"
+      ],
+      "cwd": "/Users/peytondoty/sprinthack-nd-2026",
+      "exit_code": 0,
+      "elapsed_seconds": 0.01882,
+      "log": "logs/schema-generation.log"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/Users/peytondoty/sprinthack-nd-2026",
+      "exit_code": 0,
+      "elapsed_seconds": 0.009041,
+      "log": "logs/diff-check.log"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "--",
+        "goodwill/synthetic-data",
+        "acquisition",
+        "data ingestion"
+      ],
+      "cwd": "/Users/peytondoty/sprinthack-nd-2026",
+      "exit_code": 0,
+      "elapsed_seconds": 0.008734,
+      "log": "logs/other-lanes-unchanged.log"
+    }
+  ],
+  "schema_regeneration_identical": true,
+  "implementation_file_sha256": {
+    "services/__init__.py": "8c23ec15cbb5626829d8c0bd6d4859c45bd141a7448c8ccad70b80ce72d63e42",
+    "services/data/__init__.py": "d3ec38562e171e6093b8775d98f15a1d5a7b3b5dd324beab90ee5b7ee21d0a04",
+    "services/data/adapters.py": "ceec1a6dfe6af433a37ee3a1ebac9f4225ec8c5e924f53c7a4d0ea290c44b426",
+    "services/data/contracts.py": "57ff6292f2b24174bf78c8fee145969c8baea92659da9c85abc611b4a233cfa8",
+    "services/data/database.py": "2eb1c9d56cdbb0590949a39fd3b6242e3e6c7a9e7503548143096e065dc9ce8d",
+    "services/data/importer.py": "13f4bfc236464561443c8cdca43635e6190b90b6126ce7b71dac29bc479ad731",
+    "services/data/inventory/__init__.py": "acfb5fade1f48e327725d1c8b3b357c7216ea642708f027486d3bd44b4e5282e",
+    "services/data/inventory/store.py": "2ca2bc968635967477d1850db395454b45f0b1f44ca2308c309f56284a374784",
+    "services/data/parsers/__init__.py": "b6ee268d747b2b41d55122bd7030ef295600501030f65cb2d3e1582b95dcbf5c",
+    "services/data/parsers/sales.py": "39d1be7b8446571bcb9d47d5e3501527f57da918889e264e4971bec6c0714dca",
+    "services/data/publication/__init__.py": "579b829fd0091fabd3a4a47bca77060c42e840d809f92ab129928c0e11c22542",
+    "services/data/publication/coverage.py": "66fce3bb4ca491b856392bbc89ca72b31b3cb98c04169f30835c1d5d13fdb14c",
+    "services/data/raw/__init__.py": "e948231455afc74a4315de1098e68f5a752908ce8322a2c61348a55619229366",
+    "services/data/raw/archive.py": "1df915fcc34dacff479053696ec59588783c68ff69a250c417667ac07ef2324e",
+    "services/data/reconciliation/__init__.py": "f1cebff1819ee1abbfe7efad4973f918cdb6cc0cb4551c7ba979327675c3aa22",
+    "services/data/reconciliation/controls.py": "b08b4c1914d78681951d43c195671711c2d41ec835d16f9cfcf93c812cc8fde8",
+    "services/metrics/__init__.py": "23bd6509949ddb0f01e4a457c3f490315cafa7e6a6265368fd900d2eb333f69d",
+    "services/metrics/query.py": "76c3e83dd0a315b714e4905def58f2cf0260f9cee74a88dad1cdc88a4cce6996",
+    "apps/api/__init__.py": "5d25232d3eb0d01c0eb42aaa1f9b8b13d9fb12d4851d4623e2153386c3b5f3a0",
+    "apps/api/server.py": "b0b309116cfc98b59a7d48eb9d28b8df1d78dd6f720b74abc534ed6d64aa4369",
+    "goodwill_app/__init__.py": "521b77f7bba666f1f24d599459302cc0fe9946fc824d17be0968a0e446e48aef",
+    "goodwill_app/__main__.py": "4f35bbccb97c178e2eaf4d669a16677eabab373156d50babdaec8cabde71c0db",
+    "db/migrations/001_trusted_data.sql": "e9b6579abc0ad60800be87a6e459b312475d5f2fb529d11bde0e7903a17aa4ef",
+    "contracts/build_schemas.py": "f7bbda06e2319964e8f6c02302749974cba0d132a8433ca41f474b0d40249b99",
+    "contracts/sources/acquisition-classes.md": "2e1e5ec284cf935251be0e4f15a2e9e48383697f18a99a1325814396c1a33230",
+    "contracts/v1/batch.schema.json": "8252c0c5778405332f16edd4c9ecb557c79e70dd06176c260a5e02d4d2e7392f",
+    "contracts/v1/client.ts": "df306866bb053a409cc9cf6f024835ee5abe839a1b4776a83c71a6cc5af44e32",
+    "contracts/v1/error.schema.json": "3513be8f2eb992dcc588faf278cc343ba4b550d5c0d7f991d9af8f02d43ced1e",
+    "contracts/v1/evidence.schema.json": "46478986dad16114b2663c1cebadeebaecb9fe570ed81bc0ce584709d5116abb",
+    "contracts/v1/examples/batch-failed.json": "3f39bd8cec3d61b5967abb57b3d547e8e807e42be47116ab3284b3fadc0d60dd",
+    "contracts/v1/examples/batch-imported.json": "be6550e553799c498425c2265cc75f71d3bd21bd517a6a6a21dc4d95d863ab39",
+    "contracts/v1/examples/evidence.json": "5b84e8ee2d545e0d2832162e8974005824056db7a30b1b814e8c63a0f31925b3",
+    "contracts/v1/examples/metrics-available.json": "e7c93313fc0397fade26eb26f2e951dbf847c4bd60da63771b479f708d5c8c2f",
+    "contracts/v1/examples/metrics-last-good.json": "e724a82f899634c8435f2a529fa23c6177d44f0791fe6180f97e04125080d88e",
+    "contracts/v1/examples/metrics-partial.json": "2cb5d35c35fd14d2c7ee5d8d96b9f9d8a62da84c8b92f774ccae13a6a180339a",
+    "contracts/v1/examples/metrics-unavailable.json": "7d4fece7ad1d64788f2dae4529e36a351aa90cb2d3bf70369d9f783d897d5503",
+    "contracts/v1/inventory.schema.json": "3c43716006d40e21f1ca05a079b406b8a500d2cc9ebc016b686d6ca8a76c3c57",
+    "contracts/v1/manifest.schema.json": "59166faa5e6907a193d31222eb4e0c0dd15f4cfe8118ee73cd74b1441fb17766",
+    "contracts/v1/metrics.schema.json": "88702d854ef17be0633b600e58f67485b8573aa40b027f7ddf0740f23d40858a",
+    "tests/__init__.py": "52b66987be634c6b28167a036eda2112a8a0dbe39b6c3b4a6ab4f95047211ec8",
+    "tests/helpers.py": "e18c2f5f2529e18318138969ea21e77b0f0f910894beefed782e1aa51351f466",
+    "tests/test_adapters_and_backfill.py": "95ad7cdaea6cea816785da0dcb179f72051e4ca1649e3c33f4bcbd76454762f4",
+    "tests/test_contract_examples.py": "d7cc6c0d2ee5f46968f23fe6606cdf6a459a3de269e101893ea4cc8aa24ce3d5",
+    "tests/test_http_integration.py": "6e796d4ff1b23827070d1b533497ba237408edf070e17029c2487751ca9707b4",
+    "tests/test_inventory.py": "3d628549dabeefc783642d688ebf747c4e471049fa2ad74964e1173ba83c7e59",
+    "tests/test_pipeline.py": "31b9f537b965b057fdfa7412fa83708867169ba881e3390491e752d9454b25d7"
+  },
+  "not_run": [
+    "React/TypeScript compile or browser UI checks (Node absent)",
+    "independent ENG-04 acceptance",
+    "remote GitHub CI",
+    "live Goodwill/provider/Microsoft integration"
+  ],
+  "authorization": "Peyton reported Jack OC approval and explicitly requested combined setup/data work; no stakeholder acceptance invented",
+  "passed": true
+}

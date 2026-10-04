@@ -1,0 +1,13 @@
+{
+  "task": "DAT-04",
+  "state": "READY_FOR_REVIEW",
+  "accepted": false,
+  "branch": "peyton/jackoc-data-foundation",
+  "base_commit": "b329c0fece37c1694b4d84c0c55e609dc931f854",
+  "evidence": "../integration/verification.json",
+  "artifacts": [
+    "services/data/importer.py",
+    "reports/DAT-04/before-after-controls.json"
+  ],
+  "limitations": "Changed keys require allow_corrections. Historical runs retained. Missing records do not imply deletion; full replacement/tombstones are not implemented."
+}

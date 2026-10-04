@@ -1,0 +1,14 @@
+{
+  "task": "E-DAT",
+  "state": "READY_FOR_REVIEW",
+  "accepted": false,
+  "branch": "peyton/jackoc-data-foundation",
+  "base_commit": "b329c0fece37c1694b4d84c0c55e609dc931f854",
+  "evidence": "../integration/verification.json",
+  "artifacts": [
+    "services/data/",
+    "services/metrics/",
+    "planning/development.md"
+  ],
+  "limitations": "Acquisition and data handoffs are tested; UI wiring and independent acceptance remain separate team work."
+}

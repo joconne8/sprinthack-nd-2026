@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Goodwill v1 manifest",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "goodwill-v1"
+    },
+    "source_schema_version": {
+      "type": "string",
+      "enum": [
+        "replica-v1",
+        "fixture-v1",
+        "goodwill-v1"
+      ]
+    },
+    "source_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "report_type": {
+      "type": "string",
+      "minLength": 1
+    },
+    "requested_start_date": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "requested_end_date": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "reporting_timezone": {
+      "type": "string",
+      "minLength": 1
+    },
+    "file_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "file_checksum": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "row_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "currency": {
+      "const": "USD",
+      "type": "string"
+    },
+    "synthetic": {
+      "type": "boolean",
+      "const": true
+    },
+    "filters": {
+      "type": "object",
+      "properties": {
+        "channels": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "accounts": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "order_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "skus": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "payment_status": {
+          "type": "string",
+          "enum": [
+            "All",
+            "Paid",
+            "Refunded"
+          ]
+        }
+      },
+      "required": [
+        "channels",
+        "accounts",
+        "order_ids",
+        "skus",
+        "payment_status"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "schema_version",
+    "source_schema_version",
+    "source_name",
+    "report_type",
+    "requested_start_date",
+    "requested_end_date",
+    "reporting_timezone",
+    "file_name",
+    "file_checksum",
+    "row_count",
+    "currency",
+    "synthetic",
+    "filters"
+  ],
+  "additionalProperties": false
+}

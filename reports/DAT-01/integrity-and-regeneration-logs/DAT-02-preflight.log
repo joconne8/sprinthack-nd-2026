@@ -1,0 +1,8 @@
+Assignment: DAT-02 — [DAT-02] Implement immutable raw archive, import-batch schema and row lineage
+Mode: synthetic-build | max elapsed minutes: 60
+Do not execute live/pilot actions. Supervisor packets are coordination-only.
+This checker does not verify artifact content, run tests, or launch workers.
+
+BLOCKED:
+- GOV-03: human acceptance not recorded
+- ENG-01: human acceptance not recorded

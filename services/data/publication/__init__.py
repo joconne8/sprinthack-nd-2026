@@ -1,0 +1,1 @@
+"""Atomic publication and coverage."""

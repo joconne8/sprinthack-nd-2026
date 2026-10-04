@@ -1,0 +1,31 @@
+name: Trusted synthetic data pipeline
+on:
+  pull_request:
+  push:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ['3.9', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Verify schema regeneration
+        run: |
+          python3 contracts/build_schemas.py
+          git diff --exit-code -- contracts/v1
+      - name: Contract, data and exact portal-file integration tests
+        run: python3 -m unittest discover -s tests -v
+      - name: Existing acquisition tests
+        run: python3 -m unittest discover -s acquisition/tests -p 'test_*.py' -v
+      - name: Read-only fixture review
+        run: python3 reports/DAT-01/review_fixtures.py
+      - name: Fixture integrity and regeneration
+        run: |
+          python3 -m unittest discover -s goodwill/synthetic-data -p 'test_*.py' -v
+          git diff --exit-code -- goodwill/synthetic-data

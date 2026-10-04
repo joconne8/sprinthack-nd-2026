@@ -1,0 +1,2482 @@
+{
+  "scope": "preparatory fixture review; not importer or task acceptance",
+  "expected_result_basis": "existing generated manifest; not independent QA ledger",
+  "currency": "USD",
+  "metrics_by_source": [
+    {
+      "source": "ShopGoodwill",
+      "file": "06_shopgoodwill_periodic_reports_aug2026.csv",
+      "rows": 1800,
+      "gross_item_sales": "114403.37",
+      "refunds": "3141.19",
+      "demo_net_sales": "111262.18",
+      "source_net_field": "net_sales",
+      "source_net_total": "141865.59",
+      "missing_store_rows": 8,
+      "missing_buyer_rows": 0
+    },
+    {
+      "source": "eBay",
+      "file": "08_ebay_listing_sales_aug2026.csv",
+      "rows": 900,
+      "gross_item_sales": "56990.67",
+      "refunds": "1475.41",
+      "demo_net_sales": "55515.26",
+      "source_net_field": "payout_amount",
+      "source_net_total": "57046.74",
+      "missing_store_rows": 0,
+      "missing_buyer_rows": 0
+    },
+    {
+      "source": "Upright",
+      "file": "02_upright_paid_order_items_aug2026.csv",
+      "rows": 650,
+      "gross_item_sales": "37021.26",
+      "refunds": "864.16",
+      "demo_net_sales": "36157.10",
+      "source_net_field": "net_sales",
+      "source_net_total": "42895.51",
+      "missing_store_rows": 0,
+      "missing_buyer_rows": 8
+    }
+  ],
+  "combined_revenue": null,
+  "combined_revenue_reason": "source authority/overlap decisions are unresolved",
+  "listing_month_counts": {
+    "2026-06": 69,
+    "2026-07": 1669,
+    "2026-08": 1443
+  },
+  "snapshots": [
+    {
+      "snapshot_at": "2026-08-01T23:59:59-04:00",
+      "inventory": 2577,
+      "backlog": 832
+    },
+    {
+      "snapshot_at": "2026-08-15T23:59:59-04:00",
+      "inventory": 2196,
+      "backlog": 757
+    },
+    {
+      "snapshot_at": "2026-08-31T23:59:59-04:00",
+      "inventory": 1246,
+      "backlog": 765
+    }
+  ],
+  "exception_fields": {
+    "buyer_id": 8,
+    "supplier": 5,
+    "store_id": 8
+  },
+  "checks": [
+    {
+      "check": "pack synthetic label",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "check": "01_cash_monkey_orders_aug2026.csv: row count",
+      "expected": 500,
+      "actual": 500,
+      "passed": true
+    },
+    {
+      "check": "01_cash_monkey_orders_aug2026.csv: checksum",
+      "expected": "51e008d6d2ad58eb18cd29476d3f470cbc8066b2d7438f5e488990e8c04527c0",
+      "actual": "51e008d6d2ad58eb18cd29476d3f470cbc8066b2d7438f5e488990e8c04527c0",
+      "passed": true
+    },
+    {
+      "check": "02_upright_paid_order_items_aug2026.csv: row count",
+      "expected": 650,
+      "actual": 650,
+      "passed": true
+    },
+    {
+      "check": "02_upright_paid_order_items_aug2026.csv: checksum",
+      "expected": "3ffd1bdae4a5f79d25788120833be99499b05791a255fcfd2f7b378254d5a1ab",
+      "actual": "3ffd1bdae4a5f79d25788120833be99499b05791a255fcfd2f7b378254d5a1ab",
+      "passed": true
+    },
+    {
+      "check": "03_jewelry_report_aug2026.csv: row count",
+      "expected": 240,
+      "actual": 240,
+      "passed": true
+    },
+    {
+      "check": "03_jewelry_report_aug2026.csv: checksum",
+      "expected": "96e94636606bb677f8e1c46db933a613ba008384356742c7f7770be2264e4718",
+      "actual": "96e94636606bb677f8e1c46db933a613ba008384356742c7f7770be2264e4718",
+      "passed": true
+    },
+    {
+      "check": "04_shipping_osm_pb_easypost_aug2026.csv: row count",
+      "expected": 3457,
+      "actual": 3457,
+      "passed": true
+    },
+    {
+      "check": "04_shipping_osm_pb_easypost_aug2026.csv: checksum",
+      "expected": "635ebc41da539be5b249c771282cb5f74b8d7065bcb12ae7234547f745d06423",
+      "actual": "635ebc41da539be5b249c771282cb5f74b8d7065bcb12ae7234547f745d06423",
+      "passed": true
+    },
+    {
+      "check": "05_fedex_charges_refunds_aug2026.csv: row count",
+      "expected": 802,
+      "actual": 802,
+      "passed": true
+    },
+    {
+      "check": "05_fedex_charges_refunds_aug2026.csv: checksum",
+      "expected": "2480dd5bcf5feddfc13db3a0ce78efdee89a37da17d6ecc24c570e6a74bd0446",
+      "actual": "2480dd5bcf5feddfc13db3a0ce78efdee89a37da17d6ecc24c570e6a74bd0446",
+      "passed": true
+    },
+    {
+      "check": "06_shopgoodwill_periodic_reports_aug2026.csv: row count",
+      "expected": 1800,
+      "actual": 1800,
+      "passed": true
+    },
+    {
+      "check": "06_shopgoodwill_periodic_reports_aug2026.csv: checksum",
+      "expected": "1e1285b81b46e114acabdb96073e22fdd51a53c020fcbd93d5d4e7250fc6e725",
+      "actual": "1e1285b81b46e114acabdb96073e22fdd51a53c020fcbd93d5d4e7250fc6e725",
+      "passed": true
+    },
+    {
+      "check": "07_goodwill_books_payment_statement_aug2026.csv: row count",
+      "expected": 450,
+      "actual": 450,
+      "passed": true
+    },
+    {
+      "check": "07_goodwill_books_payment_statement_aug2026.csv: checksum",
+      "expected": "4d8f16c4dbfc4f00ffca095fc7a7440879de286a361a3277d5333407ea5052d4",
+      "actual": "4d8f16c4dbfc4f00ffca095fc7a7440879de286a361a3277d5333407ea5052d4",
+      "passed": true
+    },
+    {
+      "check": "08_ebay_listing_sales_aug2026.csv: row count",
+      "expected": 900,
+      "actual": 900,
+      "passed": true
+    },
+    {
+      "check": "08_ebay_listing_sales_aug2026.csv: checksum",
+      "expected": "7b59b4eb7004747961839b7f7b1fe90811a4cf2483e20dce1da46ac7c625e425",
+      "actual": "7b59b4eb7004747961839b7f7b1fe90811a4cf2483e20dce1da46ac7c625e425",
+      "passed": true
+    },
+    {
+      "check": "09_amazon_payments_summary_aug2026.csv: row count",
+      "expected": 650,
+      "actual": 650,
+      "passed": true
+    },
+    {
+      "check": "09_amazon_payments_summary_aug2026.csv: checksum",
+      "expected": "9c1300a896fa306111ca29d417a90f0ab753cb8365871820a8520434d3c0a8eb",
+      "actual": "9c1300a896fa306111ca29d417a90f0ab753cb8365871820a8520434d3c0a8eb",
+      "passed": true
+    },
+    {
+      "check": "10_stores.csv: row count",
+      "expected": 24,
+      "actual": 24,
+      "passed": true
+    },
+    {
+      "check": "10_stores.csv: checksum",
+      "expected": "026cd444c32ee49478198b6d24800707b8c777cdbd808318f2b5c8c58422eee4",
+      "actual": "026cd444c32ee49478198b6d24800707b8c777cdbd808318f2b5c8c58422eee4",
+      "passed": true
+    },
+    {
+      "check": "11_listing_events_aug2026.csv: row count",
+      "expected": 3181,
+      "actual": 3181,
+      "passed": true
+    },
+    {
+      "check": "11_listing_events_aug2026.csv: checksum",
+      "expected": "041a11ffc3c80360deecfc9a077979959c008d9d43b346b7a569114f3243469f",
+      "actual": "041a11ffc3c80360deecfc9a077979959c008d9d43b346b7a569114f3243469f",
+      "passed": true
+    },
+    {
+      "check": "12_inventory_snapshots_aug2026.csv: row count",
+      "expected": 6019,
+      "actual": 6019,
+      "passed": true
+    },
+    {
+      "check": "12_inventory_snapshots_aug2026.csv: checksum",
+      "expected": "c725f84a6f42ab4944f0091f42cba40ae8c4a42493f7bb7d81af4c637319fdc0",
+      "actual": "c725f84a6f42ab4944f0091f42cba40ae8c4a42493f7bb7d81af4c637319fdc0",
+      "passed": true
+    },
+    {
+      "check": "13_item_catalog.csv: row count",
+      "expected": 3900,
+      "actual": 3900,
+      "passed": true
+    },
+    {
+      "check": "13_item_catalog.csv: checksum",
+      "expected": "73dba993c40f40e6498f6a4245fe72c282be2c12ffce5a0200e1e2460ade5565",
+      "actual": "73dba993c40f40e6498f6a4245fe72c282be2c12ffce5a0200e1e2460ade5565",
+      "passed": true
+    },
+    {
+      "check": "14_quality_exceptions.csv: row count",
+      "expected": 21,
+      "actual": 21,
+      "passed": true
+    },
+    {
+      "check": "14_quality_exceptions.csv: checksum",
+      "expected": "3e3397181d91ec961754247140223cc890ec2151e307b51a6d1263da2cd5b36a",
+      "actual": "3e3397181d91ec961754247140223cc890ec2151e307b51a6d1263da2cd5b36a",
+      "passed": true
+    },
+    {
+      "check": "15_order_lifecycle.csv: row count",
+      "expected": 4950,
+      "actual": 4950,
+      "passed": true
+    },
+    {
+      "check": "15_order_lifecycle.csv: checksum",
+      "expected": "f35aca87e47492ce10e1890fdf215865697b1272920bd332effe508068f41f9a",
+      "actual": "f35aca87e47492ce10e1890fdf215865697b1272920bd332effe508068f41f9a",
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-01: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-01: demo net sales",
+      "expected": "2377.15",
+      "actual": "2377.15",
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-01: row count",
+      "expected": 53,
+      "actual": 53,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-01: buyers",
+      "expected": 51,
+      "actual": 51,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-01: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-02: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-02: demo net sales",
+      "expected": "4683.75",
+      "actual": "4683.75",
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-02: row count",
+      "expected": 63,
+      "actual": 63,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-02: buyers",
+      "expected": 60,
+      "actual": 60,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-02: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-03: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-03: demo net sales",
+      "expected": "2640.76",
+      "actual": "2640.76",
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-03: row count",
+      "expected": 55,
+      "actual": 55,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-03: buyers",
+      "expected": 54,
+      "actual": 54,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-03: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-04: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-04: demo net sales",
+      "expected": "5468.22",
+      "actual": "5468.22",
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-04: row count",
+      "expected": 72,
+      "actual": 72,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-04: buyers",
+      "expected": 71,
+      "actual": 71,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-04: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-05: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-05: demo net sales",
+      "expected": "2302.30",
+      "actual": "2302.30",
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-05: row count",
+      "expected": 49,
+      "actual": 49,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-05: buyers",
+      "expected": 48,
+      "actual": 48,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-05: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-06: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-06: demo net sales",
+      "expected": "1976.90",
+      "actual": "1976.90",
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-06: row count",
+      "expected": 41,
+      "actual": 41,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-06: buyers",
+      "expected": 41,
+      "actual": 41,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-06: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-07: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-07: demo net sales",
+      "expected": "2301.44",
+      "actual": "2301.44",
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-07: row count",
+      "expected": 44,
+      "actual": 44,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-07: buyers",
+      "expected": 44,
+      "actual": 44,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-07: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-08: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-08: demo net sales",
+      "expected": "4373.81",
+      "actual": "4373.81",
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-08: row count",
+      "expected": 76,
+      "actual": 76,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-08: buyers",
+      "expected": 74,
+      "actual": 74,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-08: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-09: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-09: demo net sales",
+      "expected": "5638.88",
+      "actual": "5638.88",
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-09: row count",
+      "expected": 68,
+      "actual": 68,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-09: buyers",
+      "expected": 66,
+      "actual": 66,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-09: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-10: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-10: demo net sales",
+      "expected": "4164.69",
+      "actual": "4164.69",
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-10: row count",
+      "expected": 51,
+      "actual": 51,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-10: buyers",
+      "expected": 51,
+      "actual": 51,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-10: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-11: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-11: demo net sales",
+      "expected": "2823.29",
+      "actual": "2823.29",
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-11: row count",
+      "expected": 49,
+      "actual": 49,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-11: buyers",
+      "expected": 49,
+      "actual": 49,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-11: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-12: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-12: demo net sales",
+      "expected": "4393.62",
+      "actual": "4393.62",
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-12: row count",
+      "expected": 51,
+      "actual": 51,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-12: buyers",
+      "expected": 51,
+      "actual": 51,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-12: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-13: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-13: demo net sales",
+      "expected": "3811.38",
+      "actual": "3811.38",
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-13: row count",
+      "expected": 54,
+      "actual": 54,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-13: buyers",
+      "expected": 53,
+      "actual": 53,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-13: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-14: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-14: demo net sales",
+      "expected": "3000.00",
+      "actual": "3000.00",
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-14: row count",
+      "expected": 55,
+      "actual": 55,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-14: buyers",
+      "expected": 53,
+      "actual": 53,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-14: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-15: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-15: demo net sales",
+      "expected": "3773.52",
+      "actual": "3773.52",
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-15: row count",
+      "expected": 71,
+      "actual": 71,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-15: buyers",
+      "expected": 70,
+      "actual": 70,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-15: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-16: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-16: demo net sales",
+      "expected": "3710.13",
+      "actual": "3710.13",
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-16: row count",
+      "expected": 65,
+      "actual": 65,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-16: buyers",
+      "expected": 62,
+      "actual": 62,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-16: missing stores",
+      "expected": 2,
+      "actual": 2,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-17: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-17: demo net sales",
+      "expected": "3267.89",
+      "actual": "3267.89",
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-17: row count",
+      "expected": 55,
+      "actual": 55,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-17: buyers",
+      "expected": 54,
+      "actual": 54,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-17: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-18: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-18: demo net sales",
+      "expected": "2271.14",
+      "actual": "2271.14",
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-18: row count",
+      "expected": 40,
+      "actual": 40,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-18: buyers",
+      "expected": 38,
+      "actual": 38,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-18: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-19: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-19: demo net sales",
+      "expected": "3511.35",
+      "actual": "3511.35",
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-19: row count",
+      "expected": 42,
+      "actual": 42,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-19: buyers",
+      "expected": 41,
+      "actual": 41,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-19: missing stores",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-20: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-20: demo net sales",
+      "expected": "2856.77",
+      "actual": "2856.77",
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-20: row count",
+      "expected": 54,
+      "actual": 54,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-20: buyers",
+      "expected": 54,
+      "actual": 54,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-20: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-21: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-21: demo net sales",
+      "expected": "5509.02",
+      "actual": "5509.02",
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-21: row count",
+      "expected": 65,
+      "actual": 65,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-21: buyers",
+      "expected": 63,
+      "actual": 63,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-21: missing stores",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-22: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-22: demo net sales",
+      "expected": "4183.82",
+      "actual": "4183.82",
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-22: row count",
+      "expected": 58,
+      "actual": 58,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-22: buyers",
+      "expected": 58,
+      "actual": 58,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-22: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-23: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-23: demo net sales",
+      "expected": "3276.84",
+      "actual": "3276.84",
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-23: row count",
+      "expected": 66,
+      "actual": 66,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-23: buyers",
+      "expected": 62,
+      "actual": 62,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-23: missing stores",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-24: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-24: demo net sales",
+      "expected": "3910.69",
+      "actual": "3910.69",
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-24: row count",
+      "expected": 55,
+      "actual": 55,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-24: buyers",
+      "expected": 53,
+      "actual": 53,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-24: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-25: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-25: demo net sales",
+      "expected": "2974.12",
+      "actual": "2974.12",
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-25: row count",
+      "expected": 56,
+      "actual": 56,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-25: buyers",
+      "expected": 56,
+      "actual": 56,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-25: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-26: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-26: demo net sales",
+      "expected": "4891.25",
+      "actual": "4891.25",
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-26: row count",
+      "expected": 56,
+      "actual": 56,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-26: buyers",
+      "expected": 55,
+      "actual": 55,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-26: missing stores",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-27: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-27: demo net sales",
+      "expected": "2514.72",
+      "actual": "2514.72",
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-27: row count",
+      "expected": 49,
+      "actual": 49,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-27: buyers",
+      "expected": 47,
+      "actual": 47,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-27: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-28: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-28: demo net sales",
+      "expected": "3007.62",
+      "actual": "3007.62",
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-28: row count",
+      "expected": 63,
+      "actual": 63,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-28: buyers",
+      "expected": 61,
+      "actual": 61,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-28: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-29: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-29: demo net sales",
+      "expected": "3838.85",
+      "actual": "3838.85",
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-29: row count",
+      "expected": 76,
+      "actual": 76,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-29: buyers",
+      "expected": 68,
+      "actual": 68,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-29: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-30: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-30: demo net sales",
+      "expected": "3707.39",
+      "actual": "3707.39",
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-30: row count",
+      "expected": 74,
+      "actual": 74,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-30: buyers",
+      "expected": 71,
+      "actual": 71,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-30: missing stores",
+      "expected": 2,
+      "actual": 2,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-31: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-31: demo net sales",
+      "expected": "4100.87",
+      "actual": "4100.87",
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-31: row count",
+      "expected": 74,
+      "actual": 74,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-31: buyers",
+      "expected": 70,
+      "actual": 70,
+      "passed": true
+    },
+    {
+      "check": "ShopGoodwill/2026-08-31: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-01: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-01: demo net sales",
+      "expected": "1970.67",
+      "actual": "1970.67",
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-01: row count",
+      "expected": 25,
+      "actual": 25,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-01: buyers",
+      "expected": 25,
+      "actual": 25,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-01: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-02: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-02: demo net sales",
+      "expected": "1350.10",
+      "actual": "1350.10",
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-02: row count",
+      "expected": 28,
+      "actual": 28,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-02: buyers",
+      "expected": 26,
+      "actual": 26,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-02: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-03: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-03: demo net sales",
+      "expected": "1322.92",
+      "actual": "1322.92",
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-03: row count",
+      "expected": 20,
+      "actual": 20,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-03: buyers",
+      "expected": 18,
+      "actual": 18,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-03: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-04: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-04: demo net sales",
+      "expected": "1442.12",
+      "actual": "1442.12",
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-04: row count",
+      "expected": 25,
+      "actual": 25,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-04: buyers",
+      "expected": 25,
+      "actual": 25,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-04: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-05: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-05: demo net sales",
+      "expected": "1767.04",
+      "actual": "1767.04",
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-05: row count",
+      "expected": 31,
+      "actual": 31,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-05: buyers",
+      "expected": 30,
+      "actual": 30,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-05: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-06: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-06: demo net sales",
+      "expected": "1362.61",
+      "actual": "1362.61",
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-06: row count",
+      "expected": 24,
+      "actual": 24,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-06: buyers",
+      "expected": 23,
+      "actual": 23,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-06: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-07: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-07: demo net sales",
+      "expected": "2136.00",
+      "actual": "2136.00",
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-07: row count",
+      "expected": 33,
+      "actual": 33,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-07: buyers",
+      "expected": 32,
+      "actual": 32,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-07: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-08: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-08: demo net sales",
+      "expected": "1262.07",
+      "actual": "1262.07",
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-08: row count",
+      "expected": 34,
+      "actual": 34,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-08: buyers",
+      "expected": 34,
+      "actual": 34,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-08: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-09: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-09: demo net sales",
+      "expected": "1530.03",
+      "actual": "1530.03",
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-09: row count",
+      "expected": 36,
+      "actual": 36,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-09: buyers",
+      "expected": 33,
+      "actual": 33,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-09: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-10: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-10: demo net sales",
+      "expected": "1696.85",
+      "actual": "1696.85",
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-10: row count",
+      "expected": 27,
+      "actual": 27,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-10: buyers",
+      "expected": 27,
+      "actual": 27,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-10: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-11: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-11: demo net sales",
+      "expected": "1305.20",
+      "actual": "1305.20",
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-11: row count",
+      "expected": 24,
+      "actual": 24,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-11: buyers",
+      "expected": 24,
+      "actual": 24,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-11: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-12: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-12: demo net sales",
+      "expected": "2539.22",
+      "actual": "2539.22",
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-12: row count",
+      "expected": 26,
+      "actual": 26,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-12: buyers",
+      "expected": 26,
+      "actual": 26,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-12: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-13: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-13: demo net sales",
+      "expected": "1085.34",
+      "actual": "1085.34",
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-13: row count",
+      "expected": 21,
+      "actual": 21,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-13: buyers",
+      "expected": 20,
+      "actual": 20,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-13: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-14: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-14: demo net sales",
+      "expected": "1638.44",
+      "actual": "1638.44",
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-14: row count",
+      "expected": 20,
+      "actual": 20,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-14: buyers",
+      "expected": 20,
+      "actual": 20,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-14: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-15: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-15: demo net sales",
+      "expected": "2335.16",
+      "actual": "2335.16",
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-15: row count",
+      "expected": 35,
+      "actual": 35,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-15: buyers",
+      "expected": 33,
+      "actual": 33,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-15: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-16: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-16: demo net sales",
+      "expected": "1720.20",
+      "actual": "1720.20",
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-16: row count",
+      "expected": 34,
+      "actual": 34,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-16: buyers",
+      "expected": 34,
+      "actual": 34,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-16: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-17: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-17: demo net sales",
+      "expected": "669.50",
+      "actual": "669.50",
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-17: row count",
+      "expected": 17,
+      "actual": 17,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-17: buyers",
+      "expected": 17,
+      "actual": 17,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-17: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-18: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-18: demo net sales",
+      "expected": "2873.91",
+      "actual": "2873.91",
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-18: row count",
+      "expected": 36,
+      "actual": 36,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-18: buyers",
+      "expected": 34,
+      "actual": 34,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-18: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-19: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-19: demo net sales",
+      "expected": "1182.78",
+      "actual": "1182.78",
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-19: row count",
+      "expected": 22,
+      "actual": 22,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-19: buyers",
+      "expected": 22,
+      "actual": 22,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-19: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-20: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-20: demo net sales",
+      "expected": "1468.54",
+      "actual": "1468.54",
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-20: row count",
+      "expected": 25,
+      "actual": 25,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-20: buyers",
+      "expected": 25,
+      "actual": 25,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-20: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-21: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-21: demo net sales",
+      "expected": "1935.88",
+      "actual": "1935.88",
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-21: row count",
+      "expected": 26,
+      "actual": 26,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-21: buyers",
+      "expected": 26,
+      "actual": 26,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-21: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-22: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-22: demo net sales",
+      "expected": "2124.55",
+      "actual": "2124.55",
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-22: row count",
+      "expected": 31,
+      "actual": 31,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-22: buyers",
+      "expected": 31,
+      "actual": 31,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-22: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-23: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-23: demo net sales",
+      "expected": "1251.11",
+      "actual": "1251.11",
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-23: row count",
+      "expected": 26,
+      "actual": 26,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-23: buyers",
+      "expected": 26,
+      "actual": 26,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-23: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-24: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-24: demo net sales",
+      "expected": "2996.94",
+      "actual": "2996.94",
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-24: row count",
+      "expected": 32,
+      "actual": 32,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-24: buyers",
+      "expected": 32,
+      "actual": 32,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-24: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-25: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-25: demo net sales",
+      "expected": "1456.63",
+      "actual": "1456.63",
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-25: row count",
+      "expected": 26,
+      "actual": 26,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-25: buyers",
+      "expected": 26,
+      "actual": 26,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-25: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-26: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-26: demo net sales",
+      "expected": "1245.56",
+      "actual": "1245.56",
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-26: row count",
+      "expected": 29,
+      "actual": 29,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-26: buyers",
+      "expected": 28,
+      "actual": 28,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-26: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-27: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-27: demo net sales",
+      "expected": "1637.80",
+      "actual": "1637.80",
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-27: row count",
+      "expected": 26,
+      "actual": 26,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-27: buyers",
+      "expected": 25,
+      "actual": 25,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-27: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-28: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-28: demo net sales",
+      "expected": "1236.12",
+      "actual": "1236.12",
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-28: row count",
+      "expected": 22,
+      "actual": 22,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-28: buyers",
+      "expected": 21,
+      "actual": 21,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-28: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-29: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-29: demo net sales",
+      "expected": "4539.51",
+      "actual": "4539.51",
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-29: row count",
+      "expected": 49,
+      "actual": 49,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-29: buyers",
+      "expected": 46,
+      "actual": 46,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-29: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-30: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-30: demo net sales",
+      "expected": "2520.06",
+      "actual": "2520.06",
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-30: row count",
+      "expected": 53,
+      "actual": 53,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-30: buyers",
+      "expected": 47,
+      "actual": 47,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-30: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-31: exactly one control",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-31: demo net sales",
+      "expected": "1912.40",
+      "actual": "1912.40",
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-31: row count",
+      "expected": 37,
+      "actual": 37,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-31: buyers",
+      "expected": 33,
+      "actual": 33,
+      "passed": true
+    },
+    {
+      "check": "eBay/2026-08-31: missing stores",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "check": "declared exception coverage",
+      "expected": [
+        [
+          "02_upright_paid_order_items_aug2026.csv",
+          "224",
+          "buyer_id"
+        ],
+        [
+          "02_upright_paid_order_items_aug2026.csv",
+          "249",
+          "buyer_id"
+        ],
+        [
+          "02_upright_paid_order_items_aug2026.csv",
+          "376",
+          "buyer_id"
+        ],
+        [
+          "02_upright_paid_order_items_aug2026.csv",
+          "382",
+          "buyer_id"
+        ],
+        [
+          "02_upright_paid_order_items_aug2026.csv",
+          "423",
+          "buyer_id"
+        ],
+        [
+          "02_upright_paid_order_items_aug2026.csv",
+          "504",
+          "buyer_id"
+        ],
+        [
+          "02_upright_paid_order_items_aug2026.csv",
+          "530",
+          "buyer_id"
+        ],
+        [
+          "02_upright_paid_order_items_aug2026.csv",
+          "628",
+          "buyer_id"
+        ],
+        [
+          "03_jewelry_report_aug2026.csv",
+          "19",
+          "supplier"
+        ],
+        [
+          "03_jewelry_report_aug2026.csv",
+          "218",
+          "supplier"
+        ],
+        [
+          "03_jewelry_report_aug2026.csv",
+          "26",
+          "supplier"
+        ],
+        [
+          "03_jewelry_report_aug2026.csv",
+          "44",
+          "supplier"
+        ],
+        [
+          "03_jewelry_report_aug2026.csv",
+          "55",
+          "supplier"
+        ],
+        [
+          "04_shipping_osm_pb_easypost_aug2026.csv",
+          "1816",
+          "store_id"
+        ],
+        [
+          "04_shipping_osm_pb_easypost_aug2026.csv",
+          "1825",
+          "store_id"
+        ],
+        [
+          "04_shipping_osm_pb_easypost_aug2026.csv",
+          "2146",
+          "store_id"
+        ],
+        [
+          "04_shipping_osm_pb_easypost_aug2026.csv",
+          "2367",
+          "store_id"
+        ],
+        [
+          "04_shipping_osm_pb_easypost_aug2026.csv",
+          "2605",
+          "store_id"
+        ],
+        [
+          "04_shipping_osm_pb_easypost_aug2026.csv",
+          "2996",
+          "store_id"
+        ],
+        [
+          "04_shipping_osm_pb_easypost_aug2026.csv",
+          "3442",
+          "store_id"
+        ],
+        [
+          "06_shopgoodwill_periodic_reports_aug2026.csv",
+          "1052",
+          "store_id"
+        ],
+        [
+          "06_shopgoodwill_periodic_reports_aug2026.csv",
+          "1152",
+          "store_id"
+        ],
+        [
+          "06_shopgoodwill_periodic_reports_aug2026.csv",
+          "1255",
+          "store_id"
+        ],
+        [
+          "06_shopgoodwill_periodic_reports_aug2026.csv",
+          "1439",
+          "store_id"
+        ],
+        [
+          "06_shopgoodwill_periodic_reports_aug2026.csv",
+          "1710",
+          "store_id"
+        ],
+        [
+          "06_shopgoodwill_periodic_reports_aug2026.csv",
+          "1714",
+          "store_id"
+        ],
+        [
+          "06_shopgoodwill_periodic_reports_aug2026.csv",
+          "856",
+          "store_id"
+        ],
+        [
+          "06_shopgoodwill_periodic_reports_aug2026.csv",
+          "866",
+          "store_id"
+        ]
+      ],
+      "actual": [
+        [
+          "02_upright_paid_order_items_aug2026.csv",
+          "224",
+          "buyer_id"
+        ],
+        [
+          "02_upright_paid_order_items_aug2026.csv",
+          "249",
+          "buyer_id"
+        ],
+        [
+          "02_upright_paid_order_items_aug2026.csv",
+          "376",
+          "buyer_id"
+        ],
+        [
+          "02_upright_paid_order_items_aug2026.csv",
+          "382",
+          "buyer_id"
+        ],
+        [
+          "02_upright_paid_order_items_aug2026.csv",
+          "423",
+          "buyer_id"
+        ],
+        [
+          "02_upright_paid_order_items_aug2026.csv",
+          "504",
+          "buyer_id"
+        ],
+        [
+          "02_upright_paid_order_items_aug2026.csv",
+          "530",
+          "buyer_id"
+        ],
+        [
+          "02_upright_paid_order_items_aug2026.csv",
+          "628",
+          "buyer_id"
+        ],
+        [
+          "03_jewelry_report_aug2026.csv",
+          "19",
+          "supplier"
+        ],
+        [
+          "03_jewelry_report_aug2026.csv",
+          "218",
+          "supplier"
+        ],
+        [
+          "03_jewelry_report_aug2026.csv",
+          "26",
+          "supplier"
+        ],
+        [
+          "03_jewelry_report_aug2026.csv",
+          "44",
+          "supplier"
+        ],
+        [
+          "03_jewelry_report_aug2026.csv",
+          "55",
+          "supplier"
+        ],
+        [
+          "06_shopgoodwill_periodic_reports_aug2026.csv",
+          "1052",
+          "store_id"
+        ],
+        [
+          "06_shopgoodwill_periodic_reports_aug2026.csv",
+          "1152",
+          "store_id"
+        ],
+        [
+          "06_shopgoodwill_periodic_reports_aug2026.csv",
+          "1255",
+          "store_id"
+        ],
+        [
+          "06_shopgoodwill_periodic_reports_aug2026.csv",
+          "1439",
+          "store_id"
+        ],
+        [
+          "06_shopgoodwill_periodic_reports_aug2026.csv",
+          "1710",
+          "store_id"
+        ],
+        [
+          "06_shopgoodwill_periodic_reports_aug2026.csv",
+          "1714",
+          "store_id"
+        ],
+        [
+          "06_shopgoodwill_periodic_reports_aug2026.csv",
+          "856",
+          "store_id"
+        ],
+        [
+          "06_shopgoodwill_periodic_reports_aug2026.csv",
+          "866",
+          "store_id"
+        ]
+      ],
+      "passed": false
+    },
+    {
+      "check": "exception ledger count",
+      "expected": 21,
+      "actual": 21,
+      "passed": true
+    },
+    {
+      "check": "exception ledger unique locations",
+      "expected": 21,
+      "actual": 21,
+      "passed": true
+    },
+    {
+      "check": "unique item/snapshot keys",
+      "expected": 6019,
+      "actual": 6019,
+      "passed": true
+    },
+    {
+      "check": "2026-08-01T23:59:59-04:00: inventory",
+      "expected": 2577,
+      "actual": 2577,
+      "passed": true
+    },
+    {
+      "check": "2026-08-01T23:59:59-04:00: backlog",
+      "expected": 832,
+      "actual": 832,
+      "passed": true
+    },
+    {
+      "check": "2026-08-01T23:59:59-04:00: states",
+      "expected": {
+        "awaiting_inspection": 194,
+        "awaiting_photography": 268,
+        "listed": 1745,
+        "ready_to_list": 232,
+        "received": 138
+      },
+      "actual": {
+        "listed": 1745,
+        "awaiting_photography": 268,
+        "received": 138,
+        "awaiting_inspection": 194,
+        "ready_to_list": 232
+      },
+      "passed": true
+    },
+    {
+      "check": "2026-08-15T23:59:59-04:00: inventory",
+      "expected": 2196,
+      "actual": 2196,
+      "passed": true
+    },
+    {
+      "check": "2026-08-15T23:59:59-04:00: backlog",
+      "expected": 757,
+      "actual": 757,
+      "passed": true
+    },
+    {
+      "check": "2026-08-15T23:59:59-04:00: states",
+      "expected": {
+        "awaiting_inspection": 146,
+        "awaiting_photography": 153,
+        "listed": 1439,
+        "ready_to_list": 371,
+        "received": 87
+      },
+      "actual": {
+        "listed": 1439,
+        "received": 87,
+        "awaiting_photography": 153,
+        "awaiting_inspection": 146,
+        "ready_to_list": 371
+      },
+      "passed": true
+    },
+    {
+      "check": "2026-08-31T23:59:59-04:00: inventory",
+      "expected": 1246,
+      "actual": 1246,
+      "passed": true
+    },
+    {
+      "check": "2026-08-31T23:59:59-04:00: backlog",
+      "expected": 765,
+      "actual": 765,
+      "passed": true
+    },
+    {
+      "check": "2026-08-31T23:59:59-04:00: states",
+      "expected": {
+        "awaiting_inspection": 64,
+        "awaiting_photography": 113,
+        "listed": 481,
+        "ready_to_list": 543,
+        "received": 45
+      },
+      "actual": {
+        "awaiting_inspection": 64,
+        "ready_to_list": 543,
+        "listed": 481,
+        "awaiting_photography": 113,
+        "received": 45
+      },
+      "passed": true
+    }
+  ],
+  "passed": false
+}

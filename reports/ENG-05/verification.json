@@ -1,0 +1,13 @@
+{
+  "task": "ENG-05",
+  "state": "READY_FOR_REVIEW",
+  "accepted": false,
+  "branch": "peyton/jackoc-data-foundation",
+  "base_commit": "b329c0fece37c1694b4d84c0c55e609dc931f854",
+  "evidence": "../integration/verification.json",
+  "artifacts": [
+    "planning/release-checklist.md",
+    "reports/integration/verification.json"
+  ],
+  "limitations": "Exact-file API critical path passes locally. Landon UI, independent ENG-04 and human integration/freeze remain pending; no merge/deployment performed."
+}

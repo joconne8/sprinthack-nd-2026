@@ -1,0 +1,14 @@
+{
+  "task": "GOV-01",
+  "state": "READY_FOR_REVIEW",
+  "accepted": false,
+  "branch": "peyton/jackoc-data-foundation",
+  "base_commit": "b329c0fece37c1694b4d84c0c55e609dc931f854",
+  "evidence": "../integration/verification.json",
+  "artifacts": [
+    "planning/requirements/register.md",
+    "planning/process-map.md",
+    "reports/GOV-01/source-to-requirement-matrix.md"
+  ],
+  "limitations": "Primary Drive and live issue comments remain inaccessible. Evidence is from the registered repository snapshots and Jack OC proposals, not a claimed fresh stakeholder interview."
+}

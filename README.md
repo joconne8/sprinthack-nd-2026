@@ -4,7 +4,10 @@ This repo is organized around the current recommended build: Goodwill Michiana e
 
 ## Current build
 
-- [Goodwill PRD](goodwill/PRD.md) - active product scope, data contract, validation requirements, and demo script.
+- [Local scope](planning/scope.md), [metric dictionary](planning/metric-dictionary.md), and [v1 contracts](planning/contracts.md) - shared synthetic implementation conventions.
+- [Development quick start](planning/development.md) - runnable Python/SQLite CLI/API, acquisition handoff, and team test commands.
+- [Combined setup/data evidence](reports/integration/RESULT.md) - implementation and remaining independent UI/QA review checkpoints.
+- [Earlier Goodwill PRD](goodwill/PRD.md) - legacy implementation background; current source-led scope governs.
 - [Synthetic enterprise data pack](goodwill/synthetic-data/README.md) - reproducible fictional source exports, linked listing/inventory inputs, reconciliation controls, and importer test fixtures.
 
 ## Planning
@@ -27,4 +30,3 @@ This repo is organized around the current recommended build: Goodwill Michiana e
 - [Beacon Credential Watch PRD](archive/prds/01-beacon-credentialing.md)
 - [DIU Metadata Hiding PRD](archive/prds/03-diu-metadata-hiding.md)
 - [DIU RF Spectrum Analysis PRD](archive/prds/04-diu-rf-spectrum.md)
-

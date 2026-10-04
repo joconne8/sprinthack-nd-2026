@@ -1,0 +1,13 @@
+{
+  "task": "DAT-01",
+  "state": "READY_FOR_REVIEW",
+  "accepted": false,
+  "branch": "peyton/jackoc-data-foundation",
+  "base_commit": "b329c0fece37c1694b4d84c0c55e609dc931f854",
+  "evidence": "../integration/verification.json",
+  "artifacts": [
+    "reports/DAT-01/pr1-review.md",
+    "reports/integration/logs/fixture-review.json"
+  ],
+  "limitations": "10 supplied tests plus 354 review checks pass. Ledger retains 21 root exceptions; seven related shipping gaps have verified root lineage. Fixture bytes unchanged."
+}

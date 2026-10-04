@@ -1,0 +1,14 @@
+{
+  "task": "DAT-03",
+  "state": "READY_FOR_REVIEW",
+  "accepted": false,
+  "branch": "peyton/jackoc-data-foundation",
+  "base_commit": "b329c0fece37c1694b4d84c0c55e609dc931f854",
+  "evidence": "../integration/verification.json",
+  "artifacts": [
+    "services/data/parsers/",
+    "services/data/adapters.py",
+    "reports/DAT-03/normalized-row-examples.json"
+  ],
+  "limitations": "Source dates/timezone preserved; reporting dates convert offset timestamps. No claim of actual Upright compatibility; no invented values for missing fields."
+}

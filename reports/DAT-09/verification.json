@@ -1,0 +1,14 @@
+{
+  "task": "DAT-09",
+  "state": "READY_FOR_REVIEW",
+  "accepted": false,
+  "branch": "peyton/jackoc-data-foundation",
+  "base_commit": "b329c0fece37c1694b4d84c0c55e609dc931f854",
+  "evidence": "../integration/verification.json",
+  "artifacts": [
+    "planning/data-operations.md",
+    "scripts/benchmark_data.py",
+    "reports/integration/logs/benchmark.json"
+  ],
+  "limitations": "Pilot design only; no scheduler/live operation. Local 650/1800/900-row timings are not production performance guarantees."
+}

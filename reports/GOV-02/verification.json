@@ -1,0 +1,13 @@
+{
+  "task": "GOV-02",
+  "state": "READY_FOR_REVIEW",
+  "accepted": false,
+  "branch": "peyton/jackoc-data-foundation",
+  "base_commit": "b329c0fece37c1694b4d84c0c55e609dc931f854",
+  "evidence": "../integration/verification.json",
+  "artifacts": [
+    "planning/scope.md",
+    "planning/metric-dictionary.md"
+  ],
+  "limitations": "Peyton reported Jack OC delegation. Synthetic demo rules are selected for local implementation; Goodwill/finance/IT acceptance is not fabricated."
+}
