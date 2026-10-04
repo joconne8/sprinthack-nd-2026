@@ -1,0 +1,126 @@
+{
+  "passed": true,
+  "synthetic": true,
+  "runs": [
+    {
+      "run_id": "32fd2f7b-89be-4700-a818-370a0db5ff47",
+      "period": {
+        "start_date": "2026-09-30",
+        "end_date": "2026-09-30",
+        "source": "upright_replica"
+      },
+      "checksum": "ecea88180c9f6ce7a74a40b819cfbffcb1b4543f000ade7da76ff8855d2f166b",
+      "byte_size": 31624,
+      "source_rows": 128,
+      "reporting_rows": 128,
+      "expected_net_sales": "7127.78",
+      "api_net_sales": "7127.78",
+      "coverage": "unavailable",
+      "same_bytes_verified": true,
+      "intake_verified": true,
+      "replay": "duplicate_noop"
+    },
+    {
+      "run_id": "46594e96-1ff3-466f-a3a4-c86a3ef55b13",
+      "period": {
+        "start_date": "2026-10-01",
+        "end_date": "2026-10-02",
+        "source": "upright_replica"
+      },
+      "checksum": "408b5d063d886e130de2d511adf8766a63d7b26c75b021542f8d51db4b2841fb",
+      "byte_size": 63010,
+      "source_rows": 256,
+      "reporting_rows": 256,
+      "expected_net_sales": "14255.20",
+      "api_net_sales": "14255.20",
+      "coverage": "unavailable",
+      "same_bytes_verified": true,
+      "intake_verified": true,
+      "replay": "duplicate_noop"
+    }
+  ],
+  "expired_session": "expired_session",
+  "limits": [
+    "No product UI",
+    "Not independent ENG-04 acceptance",
+    "No live source compatibility"
+  ]
+}
+127.0.0.1 - - [03/Oct/2026 23:43:54] "GET /upright HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:43:54] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:43:54] "GET /static/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:43:54] "GET /upright/reports HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:43:54] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:43:54] "GET /static/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:43:55] "GET /upright/reports/paid-orders HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:43:55] "GET /static/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:43:55] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:43:55] "GET /api/reports HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:43:55] "POST /api/reports HTTP/1.1" 202 -
+127.0.0.1 - - [03/Oct/2026 23:43:55] "GET /api/reports HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:43:55] "GET /api/reports/ebff8c8391954d1e93d4feeb678dc38c HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:43:55] "GET /api/reports HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:43:55] "GET /api/reports/ebff8c8391954d1e93d4feeb678dc38c HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:43:55] "GET /api/reports HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:43:56] "GET /api/reports/ebff8c8391954d1e93d4feeb678dc38c HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:43:56] "GET /api/reports HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:43:56] "GET /api/reports/ebff8c8391954d1e93d4feeb678dc38c HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:43:56] "GET /api/reports HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:43:56] "GET /api/reports/ebff8c8391954d1e93d4feeb678dc38c/download HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:43:56] "GET /api/reports/ebff8c8391954d1e93d4feeb678dc38c/manifest HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:43:56] "GET /upright HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:43:56] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:43:56] "GET /static/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:43:56] "GET /upright/reports HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:43:56] "GET /static/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:43:56] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:43:56] "GET /upright/reports/paid-orders HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:43:56] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:43:56] "GET /static/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:43:56] "GET /api/reports HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:43:56] "POST /api/reports HTTP/1.1" 202 -
+127.0.0.1 - - [03/Oct/2026 23:43:56] "GET /api/reports HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:43:56] "GET /api/reports/685aa0a4687f4910a182cd13cf3af9ea HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:43:56] "GET /api/reports HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:43:57] "GET /api/reports/685aa0a4687f4910a182cd13cf3af9ea HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:43:57] "GET /api/reports HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:43:57] "GET /api/reports/685aa0a4687f4910a182cd13cf3af9ea HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:43:57] "GET /api/reports HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:43:57] "GET /api/reports/685aa0a4687f4910a182cd13cf3af9ea HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:43:57] "GET /api/reports HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:43:57] "GET /api/reports/685aa0a4687f4910a182cd13cf3af9ea/download HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:43:57] "GET /api/reports/685aa0a4687f4910a182cd13cf3af9ea/manifest HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:43:58] "GET /upright HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:43:58] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:43:58] "GET /static/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:43:58] "GET /upright/reports HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:43:58] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:43:58] "GET /static/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:43:58] "GET /upright/reports/paid-orders HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:43:58] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:43:58] "GET /static/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:43:58] "GET /api/reports HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2026 23:43:58] "POST /api/reports HTTP/1.1" 401 -
+{"run_id":"32fd2f7b-89be-4700-a818-370a0db5ff47","skill":"upright-paid-orders-replica@0.1.0","msg":"step goto"}
+{"run_id":"32fd2f7b-89be-4700-a818-370a0db5ff47","skill":"upright-paid-orders-replica@0.1.0","msg":"step click"}
+{"run_id":"32fd2f7b-89be-4700-a818-370a0db5ff47","skill":"upright-paid-orders-replica@0.1.0","msg":"step click"}
+{"run_id":"32fd2f7b-89be-4700-a818-370a0db5ff47","skill":"upright-paid-orders-replica@0.1.0","msg":"step fill"}
+{"run_id":"32fd2f7b-89be-4700-a818-370a0db5ff47","skill":"upright-paid-orders-replica@0.1.0","msg":"step fill"}
+{"run_id":"32fd2f7b-89be-4700-a818-370a0db5ff47","skill":"upright-paid-orders-replica@0.1.0","msg":"step click"}
+{"run_id":"32fd2f7b-89be-4700-a818-370a0db5ff47","skill":"upright-paid-orders-replica@0.1.0","msg":"step wait_state"}
+{"run_id":"32fd2f7b-89be-4700-a818-370a0db5ff47","skill":"upright-paid-orders-replica@0.1.0","msg":"step download"}
+{"run_id":"46594e96-1ff3-466f-a3a4-c86a3ef55b13","skill":"upright-paid-orders-replica@0.1.0","msg":"step goto"}
+{"run_id":"46594e96-1ff3-466f-a3a4-c86a3ef55b13","skill":"upright-paid-orders-replica@0.1.0","msg":"step click"}
+{"run_id":"46594e96-1ff3-466f-a3a4-c86a3ef55b13","skill":"upright-paid-orders-replica@0.1.0","msg":"step click"}
+{"run_id":"46594e96-1ff3-466f-a3a4-c86a3ef55b13","skill":"upright-paid-orders-replica@0.1.0","msg":"step fill"}
+{"run_id":"46594e96-1ff3-466f-a3a4-c86a3ef55b13","skill":"upright-paid-orders-replica@0.1.0","msg":"step fill"}
+{"run_id":"46594e96-1ff3-466f-a3a4-c86a3ef55b13","skill":"upright-paid-orders-replica@0.1.0","msg":"step click"}
+{"run_id":"46594e96-1ff3-466f-a3a4-c86a3ef55b13","skill":"upright-paid-orders-replica@0.1.0","msg":"step wait_state"}
+{"run_id":"46594e96-1ff3-466f-a3a4-c86a3ef55b13","skill":"upright-paid-orders-replica@0.1.0","msg":"step download"}
+{"run_id":"595bb8f2-3cf0-4889-9828-c58ba0dedf11","skill":"upright-paid-orders-replica@0.1.0","msg":"step goto"}
+{"run_id":"595bb8f2-3cf0-4889-9828-c58ba0dedf11","skill":"upright-paid-orders-replica@0.1.0","msg":"step click"}
+{"run_id":"595bb8f2-3cf0-4889-9828-c58ba0dedf11","skill":"upright-paid-orders-replica@0.1.0","msg":"step click"}
+{"run_id":"595bb8f2-3cf0-4889-9828-c58ba0dedf11","skill":"upright-paid-orders-replica@0.1.0","msg":"step fill"}
+{"run_id":"595bb8f2-3cf0-4889-9828-c58ba0dedf11","skill":"upright-paid-orders-replica@0.1.0","msg":"step fill"}
+{"run_id":"595bb8f2-3cf0-4889-9828-c58ba0dedf11","skill":"upright-paid-orders-replica@0.1.0","msg":"step click"}
+{"run_id":"595bb8f2-3cf0-4889-9828-c58ba0dedf11","skill":"upright-paid-orders-replica@0.1.0","msg":"step wait_state"}

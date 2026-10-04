@@ -2,10 +2,17 @@
 
 Runtime: Python 3.9+ with zoneinfo data. Locally verified on Python 3.9.6/macOS.
 SQLite and HTTP libraries ship with Python; no install, production secrets or
-paid service is needed. CI is configured for Python 3.9/3.12; remote CI has not
-yet run. Node is absent locally, so TypeScript/client/browser builds were not
-verified. This is the deliberate prototype exception documented in
+paid service is needed for the API. CI is configured for Python 3.9/3.12; remote
+CI results remain unverified. The original foundation run had no Node; the
+completion checks below verify a separate client/browser toolchain. This is the
+deliberate prototype exception documented in
 `planning/decisions/architecture.md`.
+
+Completion update: the API still needs only Python/SQLite. The shared client was
+strictly compiled with TypeScript 5.6.3 and the existing browser skill was verified
+with Node 22.14.0, Playwright 1.62.1 and installed Chrome. Tools were isolated in
+`/private/tmp`; no system Node installation or new product UI was created.
+Reproducible verification dependencies are pinned in `tools/verification/`.
 
 From the repository root:
 
@@ -88,6 +95,34 @@ required. It drives actual portal HTTP generation/download and the data API,
 but does not substitute for independent browser/UI acceptance. Existing fixture
 regeneration tests overwrite fixtures; `scripts/verify_foundation.py` runs them
 in a temporary git-archive extraction to preserve the working tree.
+
+Shared client and separate browser runtime checks (Node 22.14.0 was tested):
+
+```sh
+npm ci --prefix tools/verification --ignore-scripts --no-audit --no-fund
+node tools/verification/node_modules/typescript/bin/tsc --strict --target ES2020 --module commonjs --lib ES2020,DOM --outDir .runtime/client-test contracts/v1/client.ts
+node tests/client.test.cjs .runtime/client-test
+node tools/verification/node_modules/playwright/cli.js install chromium
+python3 scripts/verify_browser_handoff.py --node-modules tools/verification/node_modules
+python3 scripts/check_completion_artifacts.py
+```
+
+Alternatively supply `--chrome-path` with the executable path of an installed
+Chrome instead of downloading Chromium. The browser verifier starts temporary
+loopback servers itself, executes Hugh's unchanged skill for two periods, verifies
+the actual downloads through unchanged intake, imports the original manifests,
+compares reporting-day Decimal ledger/API/evidence totals, verifies exact archived
+bytes, checks duplicate replay and an expired session. Full-source coverage remains
+unknown/partial when the original skill selects filtered reports. The API warning
+is retained. This does not constitute Landon's UI or independent ENG-04 acceptance.
+
+Actual lane mapping for this prototype: `tests/test_pipeline.py` covers the
+packet's proposed raw/parser/idempotency/reconciliation/coverage directories;
+`tests/test_inventory.py` covers inventory; `tests/test_adapters_and_backfill.py`
+covers intake and backfill; `tests/test_http_integration.py` covers API/portal;
+`tests/test_contract_boundaries.py` and `tests/client.test.cjs` cover shared
+interfaces. `services/data/importer.py` is the packet's import service lane.
+No parallel stack or duplicate test-directory hierarchy is required.
 
 Handoff to Jack mc: derive an independent expected ledger, verify source-row sums,
 alternate dates, repeat/overlap imports, corrections, malformed files, coverage,

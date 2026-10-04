@@ -1,0 +1,189 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Goodwill v1 staging",
+  "type": "object",
+  "properties": {
+    "contract_version": {
+      "type": "string",
+      "const": "goodwill-v1"
+    },
+    "synthetic": {
+      "type": "boolean",
+      "const": true
+    },
+    "total_rows": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "rows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "source_row_number": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "accepted",
+              "duplicate",
+              "corrected",
+              "rejected"
+            ]
+          },
+          "reason": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "file_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "batch_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "original_row": {
+            "type": "object"
+          },
+          "normalized_row": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "record_key": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "source": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "reporting_date": {
+                    "type": "string",
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                    "format": "date"
+                  },
+                  "source_date": {
+                    "type": "string",
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                    "format": "date"
+                  },
+                  "source_timestamp": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "platform": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "store_id": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "buyer_id": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "currency": {
+                    "const": "USD"
+                  },
+                  "item_id": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "gross_cents": {
+                    "type": "integer"
+                  },
+                  "refund_cents": {
+                    "type": "integer"
+                  },
+                  "warnings": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                },
+                "required": [
+                  "record_key",
+                  "source",
+                  "reporting_date",
+                  "source_date",
+                  "source_timestamp",
+                  "platform",
+                  "store_id",
+                  "buyer_id",
+                  "currency",
+                  "item_id",
+                  "gross_cents",
+                  "refund_cents",
+                  "warnings"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "source_row_number",
+          "status",
+          "reason",
+          "file_id",
+          "batch_id",
+          "original_row",
+          "normalized_row"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "contract_version",
+    "synthetic",
+    "total_rows",
+    "rows"
+  ],
+  "additionalProperties": false
+}

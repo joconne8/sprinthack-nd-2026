@@ -2,13 +2,18 @@
   "task": "DAT-05",
   "state": "READY_FOR_REVIEW",
   "accepted": false,
-  "branch": "peyton/jackoc-data-foundation",
-  "base_commit": "b329c0fece37c1694b4d84c0c55e609dc931f854",
-  "evidence": "../integration/verification.json",
+  "branch": "peyton/jackoc-data-completion",
+  "base_commit": "610035efd3ffb1157f1b2ce5f3bc500417a1dfe5",
+  "evidence": "../integration/completion-verification.json",
   "artifacts": [
     "services/data/reconciliation/",
     "services/data/importer.py",
     "reports/DAT-05/control-totals.md"
   ],
-  "limitations": "Rejected rows/control differences block publication; numeric unknowns stay null. Exception resolutions are audited notes, not silent fact repairs."
+  "limitations": "Rejected rows/control differences block publication; numeric unknowns stay null. Exception resolutions are audited notes, not silent fact repairs.",
+  "prior_evidence": "../integration/verification.json",
+  "completion_status": "../integration/completion-status.md",
+  "remaining_acceptance": [
+    "Human/independent review"
+  ]
 }

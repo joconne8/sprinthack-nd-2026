@@ -30,7 +30,9 @@ prototype storage, not approval of a production warehouse.
 
 React or another UI can use the same API. Landon owns operations/leadership/
 drilldown screens; this session does not replace his application lane. TypeScript
-contracts are supplied but Node/type/build/browser checks remain unrun here.
+contracts are supplied; completion evidence now includes strict TypeScript
+compilation and the unchanged skill in a separate Node/Playwright/Chrome runtime.
+Landon's product UI is still not implemented or accepted by this session.
 Existing deterministic browser replay remains separate from model-assisted Jev.
 
 Production evaluation should first consider approved file delivery → governed
@@ -39,3 +41,36 @@ only if measured history, reconciliation, concurrency and access requirements
 cannot be met there. Excel is not disqualified by an invented row limit.
 Goodwill must designate maintenance/rule/security owners; no staffing cost is
 assumed. No database/model/dashboard purchase is required by this decision.
+
+## GOV-04 proposal reconciliation and production comparison
+
+Reviewed Jack OC's GOV-04 proposal `49ac1ad` against merged foundation `610035e`.
+Its repo-native Python/SQLite choice, bridge-first production path and conditional
+managed storage agree with this implementation. Preserve the actual Python 3.9+
+API prerequisites; the proposal's Python 3.10+ and static dashboard describe a
+proposed runtime, not an already installed frontend. Landon chooses and builds
+the UI in his lane against this API. Browser replay is a separate Node/Playwright
+runtime, never evidence that a web host supports browser jobs.
+
+| Control | Approved folder / Power Query / existing Power BI | Managed relational layer |
+|---|---|---|
+| Setup and cost | Reuses paid-for Microsoft tools; validate actual licenses/refresh path | Requires IT-approved hosting, cost and operational ownership |
+| Raw evidence | Retain source files plus manifest/hash/row identifiers | Retain the same archive and row lineage; database alone is insufficient |
+| Reconciliation/corrections | Explicit query controls and governed workbook history | Constraints, transactions and versioned facts support auditable changes |
+| Concurrency/access | Existing workspace permissions, checked in pilot | Governed identities/roles and tested access boundaries |
+| Support | Named workbook/query and Power BI owners | Named platform, rule and incident owners |
+| Decision trigger | First production bridge, subject to partner approval | Pilot evidence of unmet lineage/history/concurrency/access/refresh requirements |
+
+A managed service is considered only when a measured gap and named owners justify
+it. No universal Excel row threshold or assumed support salary is a decision
+criterion. Production leadership stays in existing Power BI until assessed; the
+weekend custom application demonstrates the reporting flow and operations needs.
+
+Production process ownership is Amanda with assistant responsibilities unverified;
+IT/platform, finance/rule steward and support escalation people are unassigned.
+Tenant identities, provider permission, browser session ownership, retention and
+Microsoft/finance handoffs remain gates in `reports/GOV-04/approval-gaps.md`.
+An approved Copilot route is required before production AI. Jev is optional
+probabilistic discovery; model-free replay is the synthetic baseline. Neither is
+permission to use a live session. Changes are reviewed and rollback retains the
+matching SQLite backup and immutable raw archive.

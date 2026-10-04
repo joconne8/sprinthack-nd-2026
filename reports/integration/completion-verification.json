@@ -1,0 +1,389 @@
+{
+  "state": "READY_FOR_REVIEW",
+  "accepted": false,
+  "independent_acceptance": false,
+  "base_commit": "610035efd3ffb1157f1b2ce5f3bc500417a1dfe5",
+  "tested_state": "working tree; exact implementation hashes below",
+  "branch": "peyton/jackoc-data-completion",
+  "python": "3.9.6 (default, Aug 25 2026, 21:26:21) \n[Clang 21.0.0 (clang-2100.3.34.2)]",
+  "commands": [
+    {
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "contracts/build_schemas.py"
+      ],
+      "cwd": "/Users/peytondoty/sprinthack-nd-2026",
+      "exit_code": 0,
+      "elapsed_seconds": 0.021515,
+      "log": "completion-logs/schema-client-generation.log"
+    },
+    {
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-m",
+        "compileall",
+        "-q",
+        "apps",
+        "services",
+        "goodwill_app",
+        "contracts",
+        "scripts",
+        "tests"
+      ],
+      "cwd": "/Users/peytondoty/sprinthack-nd-2026",
+      "exit_code": 0,
+      "elapsed_seconds": 0.038305,
+      "log": "completion-logs/python-syntax.log"
+    },
+    {
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "scripts/check_completion_artifacts.py"
+      ],
+      "cwd": "/Users/peytondoty/sprinthack-nd-2026",
+      "exit_code": 0,
+      "elapsed_seconds": 0.019258,
+      "log": "completion-logs/task-artifacts.json"
+    },
+    {
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "cwd": "/Users/peytondoty/sprinthack-nd-2026",
+      "exit_code": 0,
+      "elapsed_seconds": 6.516655,
+      "log": "completion-logs/foundation-tests.log"
+    },
+    {
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "acquisition/tests",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "cwd": "/Users/peytondoty/sprinthack-nd-2026",
+      "exit_code": 0,
+      "elapsed_seconds": 0.049647,
+      "log": "completion-logs/acquisition-tests.log"
+    },
+    {
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "reports/DAT-01/review_fixtures.py"
+      ],
+      "cwd": "/Users/peytondoty/sprinthack-nd-2026",
+      "exit_code": 0,
+      "elapsed_seconds": 0.080701,
+      "log": "completion-logs/fixture-review.json"
+    },
+    {
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "scripts/benchmark_data.py"
+      ],
+      "cwd": "/Users/peytondoty/sprinthack-nd-2026",
+      "exit_code": 0,
+      "elapsed_seconds": 0.337078,
+      "log": "completion-logs/benchmark.json"
+    },
+    {
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "goodwill/synthetic-data",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "cwd": "/var/folders/1t/r8vbq2ns31z3ld8d_36zw3s40000gn/T/goodwill-completion-fixtures-h8gmec7y",
+      "exit_code": 0,
+      "elapsed_seconds": 0.358959,
+      "log": "completion-logs/fixture-suite.log"
+    },
+    {
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-m",
+        "goodwill_app",
+        "--state-root",
+        "/var/folders/1t/r8vbq2ns31z3ld8d_36zw3s40000gn/T/goodwill-completion-cli-o3ne6t6z",
+        "init"
+      ],
+      "cwd": "/Users/peytondoty/sprinthack-nd-2026",
+      "exit_code": 0,
+      "elapsed_seconds": 0.039966,
+      "log": "completion-logs/cli-init.json"
+    },
+    {
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-m",
+        "goodwill_app",
+        "--state-root",
+        "/var/folders/1t/r8vbq2ns31z3ld8d_36zw3s40000gn/T/goodwill-completion-cli-o3ne6t6z",
+        "import",
+        "--csv",
+        "data ingestion/examples/upright_paid_orders_2026-09-30_2026-09-30_synthetic.csv",
+        "--manifest",
+        "data ingestion/examples/upright_paid_orders_2026-09-30_2026-09-30_synthetic.manifest.json"
+      ],
+      "cwd": "/Users/peytondoty/sprinthack-nd-2026",
+      "exit_code": 0,
+      "elapsed_seconds": 0.043564,
+      "log": "completion-logs/cli-import.json"
+    },
+    {
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-m",
+        "goodwill_app",
+        "--state-root",
+        "/var/folders/1t/r8vbq2ns31z3ld8d_36zw3s40000gn/T/goodwill-completion-cli-o3ne6t6z",
+        "metrics",
+        "--start-date",
+        "2026-09-30",
+        "--end-date",
+        "2026-09-30",
+        "--source",
+        "upright_replica"
+      ],
+      "cwd": "/Users/peytondoty/sprinthack-nd-2026",
+      "exit_code": 0,
+      "elapsed_seconds": 0.035958,
+      "log": "completion-logs/cli-metrics.json"
+    },
+    {
+      "command": [
+        "/private/tmp/goodwill-completion-tools/node-v22.14.0-darwin-arm64/bin/node",
+        "--version"
+      ],
+      "cwd": "/Users/peytondoty/sprinthack-nd-2026",
+      "exit_code": 0,
+      "elapsed_seconds": 0.011336,
+      "log": "completion-logs/node-version.log"
+    },
+    {
+      "command": [
+        "/private/tmp/goodwill-completion-tools/node-v22.14.0-darwin-arm64/bin/node",
+        "/private/tmp/goodwill-completion-tools/packages/node_modules/typescript/bin/tsc",
+        "--version"
+      ],
+      "cwd": "/Users/peytondoty/sprinthack-nd-2026",
+      "exit_code": 0,
+      "elapsed_seconds": 0.059095,
+      "log": "completion-logs/typescript-version.log"
+    },
+    {
+      "command": [
+        "/private/tmp/goodwill-completion-tools/node-v22.14.0-darwin-arm64/bin/node",
+        "-e",
+        "console.log(require(process.argv[1]).version)",
+        "/private/tmp/goodwill-completion-tools/packages/node_modules/playwright/package.json"
+      ],
+      "cwd": "/Users/peytondoty/sprinthack-nd-2026",
+      "exit_code": 0,
+      "elapsed_seconds": 0.019793,
+      "log": "completion-logs/playwright-version.log"
+    },
+    {
+      "command": [
+        "/private/tmp/goodwill-completion-tools/node-v22.14.0-darwin-arm64/bin/node",
+        "/private/tmp/goodwill-completion-tools/packages/node_modules/typescript/bin/tsc",
+        "--strict",
+        "--target",
+        "ES2020",
+        "--module",
+        "commonjs",
+        "--lib",
+        "ES2020,DOM",
+        "--outDir",
+        "/var/folders/1t/r8vbq2ns31z3ld8d_36zw3s40000gn/T/goodwill-completion-client-mn4ixgrb",
+        "contracts/v1/client.ts"
+      ],
+      "cwd": "/Users/peytondoty/sprinthack-nd-2026",
+      "exit_code": 0,
+      "elapsed_seconds": 0.381808,
+      "log": "completion-logs/client-build.log"
+    },
+    {
+      "command": [
+        "/private/tmp/goodwill-completion-tools/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/client.test.cjs",
+        "/var/folders/1t/r8vbq2ns31z3ld8d_36zw3s40000gn/T/goodwill-completion-client-mn4ixgrb"
+      ],
+      "cwd": "/Users/peytondoty/sprinthack-nd-2026",
+      "exit_code": 0,
+      "elapsed_seconds": 0.020727,
+      "log": "completion-logs/client-tests.log"
+    },
+    {
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "scripts/verify_browser_handoff.py",
+        "--node",
+        "/private/tmp/goodwill-completion-tools/node-v22.14.0-darwin-arm64/bin/node",
+        "--node-modules",
+        "/private/tmp/goodwill-completion-tools/packages/node_modules",
+        "--chrome-path",
+        "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+      ],
+      "cwd": "/Users/peytondoty/sprinthack-nd-2026",
+      "exit_code": 0,
+      "elapsed_seconds": 4.859106,
+      "log": "completion-logs/browser-handoff.log"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/Users/peytondoty/sprinthack-nd-2026",
+      "exit_code": 0,
+      "elapsed_seconds": 0.021295,
+      "log": "completion-logs/diff-check.log"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "610035efd3ffb1157f1b2ce5f3bc500417a1dfe5",
+        "--",
+        "goodwill/synthetic-data",
+        "acquisition",
+        "data ingestion"
+      ],
+      "cwd": "/Users/peytondoty/sprinthack-nd-2026",
+      "exit_code": 0,
+      "elapsed_seconds": 0.009429,
+      "log": "completion-logs/other-lanes-unchanged.log"
+    },
+    {
+      "command": [
+        "/private/tmp/goodwill-completion-tools/node-v22.14.0-darwin-arm64/bin/npm",
+        "ci",
+        "--prefix",
+        "/private/tmp/goodwill-completion-tools/locked-packages",
+        "--cache",
+        "/private/tmp/goodwill-completion-tools/npm-cache",
+        "--ignore-scripts",
+        "--no-audit",
+        "--no-fund"
+      ],
+      "cwd": "/Users/peytondoty/sprinthack-nd-2026",
+      "exit_code": 0,
+      "elapsed_seconds": 0.47465,
+      "log": "completion-logs/locked-tool-install.log"
+    }
+  ],
+  "schema_and_client_regeneration_identical": true,
+  "cli_expected_result_matches": true,
+  "elapsed_seconds": 12.986134,
+  "implementation_file_sha256": {
+    "apps/api/__init__.py": "5d25232d3eb0d01c0eb42aaa1f9b8b13d9fb12d4851d4623e2153386c3b5f3a0",
+    "apps/api/server.py": "2e8b57325f52df23af27d2ead1eb4c4385fbeb6f1c0104dcccdcd7534cc43a08",
+    "services/__init__.py": "8c23ec15cbb5626829d8c0bd6d4859c45bd141a7448c8ccad70b80ce72d63e42",
+    "services/data/__init__.py": "d3ec38562e171e6093b8775d98f15a1d5a7b3b5dd324beab90ee5b7ee21d0a04",
+    "services/data/adapters.py": "ceec1a6dfe6af433a37ee3a1ebac9f4225ec8c5e924f53c7a4d0ea290c44b426",
+    "services/data/contracts.py": "720ad0dd38d8ea57f4b8371f5ccb81251142e66b900063dd816312c8f6a74a3b",
+    "services/data/database.py": "2eb1c9d56cdbb0590949a39fd3b6242e3e6c7a9e7503548143096e065dc9ce8d",
+    "services/data/importer.py": "13f4bfc236464561443c8cdca43635e6190b90b6126ce7b71dac29bc479ad731",
+    "services/data/inventory/__init__.py": "acfb5fade1f48e327725d1c8b3b357c7216ea642708f027486d3bd44b4e5282e",
+    "services/data/inventory/store.py": "2ca2bc968635967477d1850db395454b45f0b1f44ca2308c309f56284a374784",
+    "services/data/parsers/__init__.py": "b6ee268d747b2b41d55122bd7030ef295600501030f65cb2d3e1582b95dcbf5c",
+    "services/data/parsers/sales.py": "39d1be7b8446571bcb9d47d5e3501527f57da918889e264e4971bec6c0714dca",
+    "services/data/publication/__init__.py": "579b829fd0091fabd3a4a47bca77060c42e840d809f92ab129928c0e11c22542",
+    "services/data/publication/coverage.py": "66fce3bb4ca491b856392bbc89ca72b31b3cb98c04169f30835c1d5d13fdb14c",
+    "services/data/raw/__init__.py": "e948231455afc74a4315de1098e68f5a752908ce8322a2c61348a55619229366",
+    "services/data/raw/archive.py": "1df915fcc34dacff479053696ec59588783c68ff69a250c417667ac07ef2324e",
+    "services/data/reconciliation/__init__.py": "f1cebff1819ee1abbfe7efad4973f918cdb6cc0cb4551c7ba979327675c3aa22",
+    "services/data/reconciliation/controls.py": "b08b4c1914d78681951d43c195671711c2d41ec835d16f9cfcf93c812cc8fde8",
+    "services/metrics/__init__.py": "23bd6509949ddb0f01e4a457c3f490315cafa7e6a6265368fd900d2eb333f69d",
+    "services/metrics/query.py": "76c3e83dd0a315b714e4905def58f2cf0260f9cee74a88dad1cdc88a4cce6996",
+    "goodwill_app/__init__.py": "521b77f7bba666f1f24d599459302cc0fe9946fc824d17be0968a0e446e48aef",
+    "goodwill_app/__main__.py": "4f35bbccb97c178e2eaf4d669a16677eabab373156d50babdaec8cabde71c0db",
+    "db/migrations/001_trusted_data.sql": "e9b6579abc0ad60800be87a6e459b312475d5f2fb529d11bde0e7903a17aa4ef",
+    "contracts/build_schemas.py": "b9c254db305b6a399c78b65f20081cbe0646014eb9f2038e2e0f38d4387f81f6",
+    "contracts/sources/acquisition-classes.md": "2e1e5ec284cf935251be0e4f15a2e9e48383697f18a99a1325814396c1a33230",
+    "contracts/v1/batch.schema.json": "c294a382da3ed05a6e205027ab80634932e42fa64277031a9f8952628ede8e6c",
+    "contracts/v1/client.ts": "1edc84fc4c1ebf794995dbb698685203cb793ca3d1ab09cdc8d23a38e106f6e1",
+    "contracts/v1/error.schema.json": "3513be8f2eb992dcc588faf278cc343ba4b550d5c0d7f991d9af8f02d43ced1e",
+    "contracts/v1/evidence-query.schema.json": "108f549e6f5a1782dca53acf02149d882da6e96a6eee3ff8712edbb43fb7e6c3",
+    "contracts/v1/evidence.schema.json": "6e7c3b5c18ab52d2c7cba03e16e910183f7178da4285debfc85894c67aeed2c7",
+    "contracts/v1/examples/batch-failed.json": "3f39bd8cec3d61b5967abb57b3d547e8e807e42be47116ab3284b3fadc0d60dd",
+    "contracts/v1/examples/batch-imported.json": "be6550e553799c498425c2265cc75f71d3bd21bd517a6a6a21dc4d95d863ab39",
+    "contracts/v1/examples/evidence.json": "5b84e8ee2d545e0d2832162e8974005824056db7a30b1b814e8c63a0f31925b3",
+    "contracts/v1/examples/metrics-available.json": "e7c93313fc0397fade26eb26f2e951dbf847c4bd60da63771b479f708d5c8c2f",
+    "contracts/v1/examples/metrics-last-good.json": "e724a82f899634c8435f2a529fa23c6177d44f0791fe6180f97e04125080d88e",
+    "contracts/v1/examples/metrics-partial.json": "2cb5d35c35fd14d2c7ee5d8d96b9f9d8a62da84c8b92f774ccae13a6a180339a",
+    "contracts/v1/examples/metrics-unavailable.json": "7d4fece7ad1d64788f2dae4529e36a351aa90cb2d3bf70369d9f783d897d5503",
+    "contracts/v1/health.schema.json": "2d44edb58f15b65941eaf8db8a19fb8bd186a638e992c83a6878b602e9d2c04f",
+    "contracts/v1/import-request.schema.json": "9c9e1e557f2f897014e3529a3c93331b5e0723fad5079f47f24a5940d6cca996",
+    "contracts/v1/imports.schema.json": "eb0d3fdb37cd8bad125f070984c6f419043ff4e51be11e60320f314d6f3dd498",
+    "contracts/v1/inventory.schema.json": "cadcfb9d52c3d6d98aaf88e8e947c9b8493f2463b5df6c9062e09289d7576ba4",
+    "contracts/v1/manifest.schema.json": "1ba14bf7ab06f0ad07bc8d2cb5d200bf3a9b51565cac4123d2292bbea39d470d",
+    "contracts/v1/metrics-query.schema.json": "0615e5e84ed4e078bb2181f44f2fea768adfa1d597045a5a70adaba54299562f",
+    "contracts/v1/metrics.schema.json": "a6d285fb3fca2a67c3e3e2af47ce87fada1cb169d438f41854bd6ca6b3a1ab2f",
+    "contracts/v1/resolution-request.schema.json": "0f3b0aadc76e0a47bb8e9efe9c7c86662a6acf9be85d98219ea5e319035b4da1",
+    "contracts/v1/resolution.schema.json": "18be1859cd9b5bc1cad3fcee9100930c4021fe75613b3e024de8ca1bb67e88bb",
+    "contracts/v1/staging.schema.json": "f24427b98249b0c370cdb917bd6e39efe1e08b9418fb9bb88ff99bee76a972d1",
+    "contracts/v1/tool-request.schema.json": "1297ff28a970ace09203781863454cde1f86a90043a98ad56ccddafb29327a6e",
+    "contracts/v1/tool-response.schema.json": "6dea15ba99c8f8702f6e3baf9dd0712bb7c2786ae19708f30dcdd1a9121db716",
+    "contracts/v1/types.ts": "a98098597869fcab47083021943687fb5afa1cd1c7554a08e0ee8d4e22731b57",
+    "scripts/benchmark_data.py": "7b510407a350cb994391d2758bf8695e29062b2f4f928542f95a4d74ad2d8a81",
+    "scripts/browser_handoff.cjs": "e21c0c8ec6fa82eeb2f7d532e1765f1436907d527f90ff03c75e3de7220ee04f",
+    "scripts/build_contract_examples.py": "836d06663fce5d286082c8d546ef742bc2efd97e0ae708a8eb8b0299b6a3b6b1",
+    "scripts/check_completion_artifacts.py": "a82ffcd4ecd3b0fb46fd89d4e0b3f98f845c5dde5af4bfbc370143697aa2e1cf",
+    "scripts/verify_browser_handoff.py": "03e072b964cf5e5c5b57b32ec3c9e57409d2aac589d8d4474978d2725d9f47bf",
+    "scripts/verify_completion.py": "b8c86471ee8d1f15298d9f30b36ae7d7f924ecdc75e4579807fa1049315639b2",
+    "scripts/verify_foundation.py": "712ae92b6c52ac12c699c0eb692aa837889498997a3cdd6baf0740fcc53692c6",
+    "tests/__init__.py": "52b66987be634c6b28167a036eda2112a8a0dbe39b6c3b4a6ab4f95047211ec8",
+    "tests/client.test.cjs": "1d0b34d96e4fbd5423aaad9b5ddb9bd076372c5d45931b2daa00812bd3f20a30",
+    "tests/helpers.py": "e18c2f5f2529e18318138969ea21e77b0f0f910894beefed782e1aa51351f466",
+    "tests/test_adapters_and_backfill.py": "95ad7cdaea6cea816785da0dcb179f72051e4ca1649e3c33f4bcbd76454762f4",
+    "tests/test_contract_boundaries.py": "48aa36d4889d4a734820a285f66678f6c1802f59f7d71d8d98108808ff82e575",
+    "tests/test_contract_examples.py": "d7cc6c0d2ee5f46968f23fe6606cdf6a459a3de269e101893ea4cc8aa24ce3d5",
+    "tests/test_http_integration.py": "146413dc0dcebf91148de8a6b3c7fbf93dc5b1f0bb55c127118a8910ed24db31",
+    "tests/test_inventory.py": "3d628549dabeefc783642d688ebf747c4e471049fa2ad74964e1173ba83c7e59",
+    "tests/test_pipeline.py": "31b9f537b965b057fdfa7412fa83708867169ba881e3390491e752d9454b25d7",
+    "tools/verification/package-lock.json": "14106c62670d1a9769405a4b8633dedfdae535971b8318c2e72c2c22777eede1",
+    "tools/verification/package.json": "4ca732edf0ec1436365a936ea9cce3e4ab8e3a4635880a2687567e2e0a3884da"
+  },
+  "not_run": [
+    "Landon product UI acceptance",
+    "Independent ENG-04 review",
+    "Remote GitHub CI",
+    "Live Goodwill/provider/Microsoft integrations"
+  ],
+  "eng05_remaining": [
+    "APP-01/02/03 integrated UI",
+    "ENG-04 independent evidence",
+    "human acceptance/freeze on reviewed commit"
+  ],
+  "spend": "No paid service or model calls; token totals are not exposed",
+  "authorization": "User requested completion of Peyton and delegated Jack OC lanes; no human acceptance invented",
+  "passed": true,
+  "toolchain": {
+    "node": "22.14.0",
+    "typescript": "5.6.3",
+    "playwright": "1.62.1",
+    "chrome": "154.0.8037.57",
+    "node_archive_sha256": "e9404633bc02a5162c5c573b1e2490f5fb44648345d64a958b17e325729a5e42",
+    "install": "isolated temporary directories; lockfile clean install verified"
+  }
+}

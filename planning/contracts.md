@@ -92,3 +92,28 @@ zero-row verified source can yield zero; an absent source cannot.
 Schema changes are additive only within v1; semantic/grain changes require a new
 version and migration. Frontend mock examples validate the same backend schemas.
 No assistant, unrestricted SQL tool, export or live integration is activated.
+
+## Completion and parallel-proposal reconciliation
+
+The baseline is the foundation merged in PR #52 at `610035e`. The GOV-03
+proposal at `4464458` predates that integration and defines different `1.0.0`
+envelopes. Its useful controls are incorporated into this baseline; its schema
+must not overwrite the running API. Detailed mapping is in
+`reports/GOV-03/compatibility-notes.md`. This is the implementation choice under
+Peyton's authorized combined lane, pending human review, not a claim that Jack
+OC accepted the proposal or that GitHub issues were closed.
+
+Request schemas now accompany responses: metrics-query, evidence-query,
+import-request and resolution-request. Imports/staging, health and resolution
+responses have schemas too. API requests reject unknown/ignored filters, invalid
+calendar dates, unbounded evidence pages and non-boolean correction flags.
+Backend imports still independently verify original manifest/date/hash/bytes.
+`contracts/build_schemas.py` generates all schemas and `types.ts` from one
+structural source. `client.ts` consumes those types, retains failed batch bodies
+in `ApiError`, and has no mock fallback. Run schema regeneration and strict
+TypeScript compilation before changing the shared interfaces.
+
+The design-only tool-request/tool-response schemas allow `get_metrics` and
+`get_evidence` with the same requests/responses. No tool execution endpoint,
+assistant, identity integration or write action is implemented. Consumers must
+validate external JSON at runtime; TypeScript types alone do not validate JSON.

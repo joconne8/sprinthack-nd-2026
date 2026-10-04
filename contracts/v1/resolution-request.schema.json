@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Goodwill v1 resolution-request",
+  "type": "object",
+  "properties": {
+    "resolution": {
+      "type": "string",
+      "pattern": "\\S",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "resolution"
+  ],
+  "additionalProperties": false
+}

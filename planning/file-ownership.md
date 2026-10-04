@@ -23,3 +23,19 @@ This implementation can be pushed for team review. Everyone can fetch the branch
 ordinary `git pull` on main will receive it only after a human reviews/merges it.
 Independent ENG-04 and human ENG-05 acceptance remain outstanding. Do not invent
 an `accepted_tasks` record or mark issues done to bypass those reviews.
+
+## Current combined completion branch
+
+PR #52 merged the shared foundation into main at `610035e`. Follow-up work lives
+on `peyton/jackoc-data-completion`, with claim and exact verification in
+`reports/integration/completion-claim.md` and `completion-verification.json`.
+This supersedes the historical push instructions above, not other owners' lanes.
+`contracts/build_schemas.py` owns schemas and generated `types.ts`; edit that
+source instead of independently changing generated client interfaces.
+
+Dispatch Landon against the documented API, Hugh against original manifest plus
+exact bytes/full intake record, and Jack mc against independently derived expected
+results. Jack OC's old GOV-03/GOV-04 branches are reconciled proposals; do not
+overwrite the shared baseline with conflicting versions. Human integrator records
+acceptance on a reviewed commit after the UI/QA checks. No issue comments were
+posted because current connector access remains 404.

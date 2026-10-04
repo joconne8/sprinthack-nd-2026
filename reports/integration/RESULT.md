@@ -1,5 +1,13 @@
 # Combined Jack OC / Peyton foundation handoff
 
+Current follow-up: `peyton/jackoc-data-completion`, base main `610035e` (PR #52).
+See `completion-status.md` and `completion-verification.json` for the reconciled
+contracts/architecture, generated shared types/client, fresh full regression and
+real browser-file handoff. All checks passed. Task implementation/design outputs
+are ready for human review; final ENG-05 freeze still needs APP-01/02/03 and
+independent ENG-04. This session has not pushed, merged, closed issues or
+self-accepted tasks. The original handoff below is retained as historical context.
+
 State: READY_FOR_REVIEW, not independently accepted/DONE.
 Branch: `peyton/jackoc-data-foundation`.
 Base: `b329c0fece37c1694b4d84c0c55e609dc931f854`.

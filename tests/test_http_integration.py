@@ -64,6 +64,7 @@ class HttpTests(unittest.TestCase):
         _, raw = request(self.base+"/api/v1/files/"+batch["file"]["file_id"])
         self.assertEqual(raw, data)
         _, listed = request(self.base+"/api/v1/imports")
+        validate("imports.schema.json", json.loads(listed))
         self.assertEqual(len(json.loads(listed)["imports"]), 1)
 
     def test_bad_input_and_cross_origin_write_fail_safely(self):
@@ -84,8 +85,43 @@ class HttpTests(unittest.TestCase):
         batch = json.loads(body)
         _, body = request(self.base+f"/api/v1/imports/{batch['batch_id']}/rows?status=rejected")
         rejected = json.loads(body)
+        validate("staging.schema.json", rejected)
         self.assertEqual(rejected["rows"][0]["source_row_number"], 1)
         self.assertEqual(rejected["rows"][0]["reason"], "invalid_money")
+
+    def test_invalid_request_cannot_create_batch_or_ignore_filters(self):
+        data, manifest = payload([row()])
+        for change in ({"allow_corrections": "false"}, {"manifest": []}, {"csv_text": ""}):
+            status, body = request(self.base+"/api/v1/imports", {"csv_text": data.decode(), "manifest": manifest, **change})
+            self.assertEqual(status, 400)
+            validate("error.schema.json", json.loads(body))
+        self.assertEqual(self.pipeline.batches(), [])
+        query = "start_date=2026-09-30&end_date=2026-09-30&source=upright_replica"
+        for path in ("/api/v1/metrics?"+query+"&limit=1", "/api/v1/metrics?"+query+"&source=other",
+                     "/api/v1/evidence?"+query+"&run_id=missing&limit=201", "/api/v1/imports?source=other"):
+            status, body = request(self.base+path)
+            self.assertEqual(status, 400)
+            validate("error.schema.json", json.loads(body))
+
+    def test_resolution_is_audited_and_staging_keeps_original_input(self):
+        data, manifest = payload([row(store_id="")])
+        status, body = request(self.base+"/api/v1/imports", {"csv_text": data.decode(), "manifest": manifest})
+        self.assertEqual(status, 201)
+        batch = json.loads(body)
+        exception = batch["exceptions"][0]
+        path = self.base+f"/api/v1/exceptions/{exception['id']}/resolve"
+        status, _ = request(path, {"resolution": "   "})
+        self.assertEqual(status, 400)
+        note = "Reviewed original source; store still unknown."
+        status, body = request(path, {"resolution": note})
+        self.assertEqual(status, 200)
+        validate("resolution.schema.json", json.loads(body))
+        reviewed = self.pipeline.batch(batch["batch_id"])
+        self.assertEqual(reviewed["exceptions"][0]["resolution"], note)
+        _, body = request(self.base+f"/api/v1/imports/{batch['batch_id']}/rows")
+        rows = validate("staging.schema.json", json.loads(body))
+        self.assertEqual(rows["rows"][0]["original_row"]["store_id"], "")
+        self.assertIsNone(rows["rows"][0]["normalized_row"]["store_id"])
 
     def test_real_portal_download_alternate_dates_and_failure(self):
         path = Path(__file__).resolve().parents[1]/"data ingestion/server.py"
