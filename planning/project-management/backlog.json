@@ -27,6 +27,17 @@
         "scope:weekend",
         "state:backlog",
         "gate:human"
+      ],
+      "source_ids": [
+        "PLAN",
+        "AMANDA",
+        "WICKS",
+        "JACK",
+        "BRIEF",
+        "FOLLOWUP"
+      ],
+      "plan_sections": [
+        "§§1–15"
       ]
     },
     {
@@ -52,6 +63,18 @@
         "scope:weekend",
         "state:backlog",
         "gate:human"
+      ],
+      "source_ids": [
+        "PLAN",
+        "AMANDA",
+        "FOLLOWUP",
+        "WICKS",
+        "BRIEF"
+      ],
+      "plan_sections": [
+        "§1 Evidence, chronology and corrections",
+        "§2 ESTEEM requirements",
+        "§15 Immediate decisions"
       ]
     },
     {
@@ -77,6 +100,17 @@
         "scope:weekend",
         "state:backlog",
         "gate:human"
+      ],
+      "source_ids": [
+        "PLAN",
+        "AMANDA",
+        "WICKS",
+        "JACK",
+        "FOLLOWUP"
+      ],
+      "plan_sections": [
+        "§4 Reliable report acquisition",
+        "§7 Weekend P0/P1/P2"
       ]
     },
     {
@@ -102,6 +136,17 @@
         "scope:weekend",
         "state:backlog",
         "gate:human"
+      ],
+      "source_ids": [
+        "PLAN",
+        "JACK",
+        "WICKS",
+        "AMANDA",
+        "BRIEF"
+      ],
+      "plan_sections": [
+        "§5 Trusted centralized data",
+        "§9 Synthetic data and realistic coverage"
       ]
     },
     {
@@ -127,6 +172,17 @@
         "scope:weekend",
         "state:backlog",
         "gate:human"
+      ],
+      "source_ids": [
+        "PLAN",
+        "AMANDA",
+        "BRIEF",
+        "WICKS",
+        "JACK"
+      ],
+      "plan_sections": [
+        "§6 Dashboard and bounded agentic interaction",
+        "§7 Weekend P0/P1/P2"
       ]
     },
     {
@@ -152,6 +208,15 @@
         "scope:weekend",
         "state:backlog",
         "gate:human"
+      ],
+      "source_ids": [
+        "PLAN",
+        "WICKS",
+        "BRIEF"
+      ],
+      "plan_sections": [
+        "§8 AI engineering practices for overnight work",
+        "§9 Synthetic data and realistic coverage"
       ]
     },
     {
@@ -177,6 +242,19 @@
         "scope:weekend",
         "state:backlog",
         "gate:human"
+      ],
+      "source_ids": [
+        "PLAN",
+        "AMANDA",
+        "FOLLOWUP",
+        "BRIEF",
+        "WICKS"
+      ],
+      "plan_sections": [
+        "§10 Finance and Business Central",
+        "§11 Production continuation",
+        "§12 Success metrics and ROI",
+        "§14 Demo narrative"
       ]
     },
     {
@@ -198,17 +276,29 @@
         "goodwill-plan",
         "type:task",
         "phase:governance",
-        "priority:P0",
-        "scope:weekend",
         "state:backlog",
-        "gate:human"
+        "gate:human",
+        "priority:P0",
+        "scope:weekend"
+      ],
+      "source_ids": [
+        "PLAN",
+        "AMANDA",
+        "FOLLOWUP",
+        "WICKS",
+        "BRIEF"
+      ],
+      "plan_sections": [
+        "§1 Evidence, chronology and corrections",
+        "§2 ESTEEM requirements",
+        "§15 Immediate decisions"
       ]
     },
     {
       "id": "GOV-02",
       "number": 11,
       "url": "https://github.com/joconne8/sprinthack-nd-2026/issues/11",
-      "title": "Freeze weekend scope, metric dictionary and demo truthfulness rules",
+      "title": "Freeze the acquisition-led scope and KPI contracts from Drive evidence",
       "kind": "task",
       "phase": "Governance",
       "priority": "P0",
@@ -227,10 +317,22 @@
         "goodwill-plan",
         "type:task",
         "phase:governance",
-        "priority:P0",
-        "scope:weekend",
         "state:blocked",
-        "gate:human"
+        "gate:human",
+        "priority:P0",
+        "scope:weekend"
+      ],
+      "source_ids": [
+        "PLAN",
+        "AMANDA",
+        "FOLLOWUP",
+        "WICKS",
+        "BRIEF"
+      ],
+      "plan_sections": [
+        "§1 Evidence, chronology and corrections",
+        "§2 ESTEEM requirements",
+        "§15 Immediate decisions"
       ]
     },
     {
@@ -260,6 +362,18 @@
         "scope:weekend",
         "state:blocked",
         "gate:human"
+      ],
+      "source_ids": [
+        "PLAN",
+        "AMANDA",
+        "FOLLOWUP",
+        "WICKS",
+        "BRIEF"
+      ],
+      "plan_sections": [
+        "§1 Evidence, chronology and corrections",
+        "§2 ESTEEM requirements",
+        "§15 Immediate decisions"
       ]
     },
     {
@@ -287,10 +401,22 @@
         "goodwill-plan",
         "type:task",
         "phase:governance",
-        "priority:P0",
-        "scope:weekend",
         "state:blocked",
-        "gate:human"
+        "gate:human",
+        "priority:P0",
+        "scope:weekend"
+      ],
+      "source_ids": [
+        "PLAN",
+        "AMANDA",
+        "FOLLOWUP",
+        "WICKS",
+        "BRIEF"
+      ],
+      "plan_sections": [
+        "§1 Evidence, chronology and corrections",
+        "§2 ESTEEM requirements",
+        "§15 Immediate decisions"
       ]
     },
     {
@@ -321,6 +447,17 @@
         "priority:P0",
         "scope:weekend",
         "state:blocked"
+      ],
+      "source_ids": [
+        "PLAN",
+        "AMANDA",
+        "WICKS",
+        "JACK",
+        "FOLLOWUP"
+      ],
+      "plan_sections": [
+        "§4 Reliable report acquisition",
+        "§7 Weekend P0/P1/P2"
       ]
     },
     {
@@ -351,6 +488,17 @@
         "priority:P0",
         "scope:weekend",
         "state:blocked"
+      ],
+      "source_ids": [
+        "PLAN",
+        "AMANDA",
+        "WICKS",
+        "JACK",
+        "FOLLOWUP"
+      ],
+      "plan_sections": [
+        "§4 Reliable report acquisition",
+        "§7 Weekend P0/P1/P2"
       ]
     },
     {
@@ -383,6 +531,17 @@
         "priority:P0",
         "scope:weekend",
         "state:blocked"
+      ],
+      "source_ids": [
+        "PLAN",
+        "AMANDA",
+        "WICKS",
+        "JACK",
+        "FOLLOWUP"
+      ],
+      "plan_sections": [
+        "§4 Reliable report acquisition",
+        "§7 Weekend P0/P1/P2"
       ]
     },
     {
@@ -413,6 +572,17 @@
         "priority:P1",
         "scope:weekend",
         "state:blocked"
+      ],
+      "source_ids": [
+        "PLAN",
+        "AMANDA",
+        "WICKS",
+        "JACK",
+        "FOLLOWUP"
+      ],
+      "plan_sections": [
+        "§4 Reliable report acquisition",
+        "§7 Weekend P0/P1/P2"
       ]
     },
     {
@@ -422,8 +592,8 @@
       "title": "Map nine sources to shared acquisition classes and source-specific adapters",
       "kind": "task",
       "phase": "Phase 1 — Ingestion",
-      "priority": "P1",
-      "scope": "pilot",
+      "priority": "P0",
+      "scope": "weekend",
       "lane": "Integration / source owner liaison",
       "human_gate": true,
       "initial_workflow": "Blocked",
@@ -440,10 +610,21 @@
         "goodwill-plan",
         "type:task",
         "phase:1-ingestion",
-        "priority:P1",
-        "scope:pilot",
         "state:blocked",
-        "gate:human"
+        "gate:human",
+        "priority:P0",
+        "scope:weekend"
+      ],
+      "source_ids": [
+        "PLAN",
+        "AMANDA",
+        "WICKS",
+        "JACK",
+        "FOLLOWUP"
+      ],
+      "plan_sections": [
+        "§4 Reliable report acquisition",
+        "§7 Weekend P0/P1/P2"
       ]
     },
     {
@@ -453,7 +634,7 @@
       "title": "Evaluate Jev behind an optional browser decision-provider interface",
       "kind": "task",
       "phase": "Phase 1 — Ingestion",
-      "priority": "P2",
+      "priority": "P1",
       "scope": "stretch",
       "lane": "Browser experiment agent",
       "human_gate": true,
@@ -471,10 +652,21 @@
         "goodwill-plan",
         "type:task",
         "phase:1-ingestion",
-        "priority:P2",
-        "scope:stretch",
         "state:blocked",
-        "gate:human"
+        "gate:human",
+        "priority:P1",
+        "scope:stretch"
+      ],
+      "source_ids": [
+        "PLAN",
+        "AMANDA",
+        "WICKS",
+        "JACK",
+        "FOLLOWUP"
+      ],
+      "plan_sections": [
+        "§4 Reliable report acquisition",
+        "§7 Weekend P0/P1/P2"
       ]
     },
     {
@@ -508,6 +700,17 @@
         "scope:pilot",
         "state:blocked",
         "gate:human"
+      ],
+      "source_ids": [
+        "PLAN",
+        "AMANDA",
+        "WICKS",
+        "JACK",
+        "FOLLOWUP"
+      ],
+      "plan_sections": [
+        "§4 Reliable report acquisition",
+        "§7 Weekend P0/P1/P2"
       ]
     },
     {
@@ -537,6 +740,17 @@
         "scope:weekend",
         "state:blocked",
         "gate:human"
+      ],
+      "source_ids": [
+        "PLAN",
+        "JACK",
+        "WICKS",
+        "AMANDA",
+        "BRIEF"
+      ],
+      "plan_sections": [
+        "§5 Trusted centralized data",
+        "§9 Synthetic data and realistic coverage"
       ]
     },
     {
@@ -564,16 +778,27 @@
         "goodwill-plan",
         "type:task",
         "phase:2-data",
+        "state:blocked",
         "priority:P0",
-        "scope:weekend",
-        "state:blocked"
+        "scope:weekend"
+      ],
+      "source_ids": [
+        "PLAN",
+        "JACK",
+        "WICKS",
+        "AMANDA",
+        "BRIEF"
+      ],
+      "plan_sections": [
+        "§5 Trusted centralized data",
+        "§9 Synthetic data and realistic coverage"
       ]
     },
     {
       "id": "DAT-03",
       "number": 27,
       "url": "https://github.com/joconne8/sprinthack-nd-2026/issues/27",
-      "title": "Build typed parsers and normalization for the scoped platform exports",
+      "title": "Implement the first acquisition-file parser and typed normalization contract",
       "kind": "task",
       "phase": "Phase 2 — Data",
       "priority": "P0",
@@ -594,9 +819,20 @@
         "goodwill-plan",
         "type:task",
         "phase:2-data",
+        "state:blocked",
         "priority:P0",
-        "scope:weekend",
-        "state:blocked"
+        "scope:weekend"
+      ],
+      "source_ids": [
+        "PLAN",
+        "JACK",
+        "WICKS",
+        "AMANDA",
+        "BRIEF"
+      ],
+      "plan_sections": [
+        "§5 Trusted centralized data",
+        "§9 Synthetic data and realistic coverage"
       ]
     },
     {
@@ -625,6 +861,17 @@
         "priority:P0",
         "scope:weekend",
         "state:blocked"
+      ],
+      "source_ids": [
+        "PLAN",
+        "JACK",
+        "WICKS",
+        "AMANDA",
+        "BRIEF"
+      ],
+      "plan_sections": [
+        "§5 Trusted centralized data",
+        "§9 Synthetic data and realistic coverage"
       ]
     },
     {
@@ -655,6 +902,17 @@
         "priority:P0",
         "scope:weekend",
         "state:blocked"
+      ],
+      "source_ids": [
+        "PLAN",
+        "JACK",
+        "WICKS",
+        "AMANDA",
+        "BRIEF"
+      ],
+      "plan_sections": [
+        "§5 Trusted centralized data",
+        "§9 Synthetic data and realistic coverage"
       ]
     },
     {
@@ -682,9 +940,20 @@
         "goodwill-plan",
         "type:task",
         "phase:2-data",
+        "state:blocked",
         "priority:P0",
-        "scope:weekend",
-        "state:blocked"
+        "scope:weekend"
+      ],
+      "source_ids": [
+        "PLAN",
+        "JACK",
+        "WICKS",
+        "AMANDA",
+        "BRIEF"
+      ],
+      "plan_sections": [
+        "§5 Trusted centralized data",
+        "§9 Synthetic data and realistic coverage"
       ]
     },
     {
@@ -717,6 +986,17 @@
         "priority:P1",
         "scope:weekend",
         "state:blocked"
+      ],
+      "source_ids": [
+        "PLAN",
+        "JACK",
+        "WICKS",
+        "AMANDA",
+        "BRIEF"
+      ],
+      "plan_sections": [
+        "§5 Trusted centralized data",
+        "§9 Synthetic data and realistic coverage"
       ]
     },
     {
@@ -747,6 +1027,17 @@
         "priority:P0",
         "scope:weekend",
         "state:blocked"
+      ],
+      "source_ids": [
+        "PLAN",
+        "JACK",
+        "WICKS",
+        "AMANDA",
+        "BRIEF"
+      ],
+      "plan_sections": [
+        "§5 Trusted centralized data",
+        "§9 Synthetic data and realistic coverage"
       ]
     },
     {
@@ -777,6 +1068,17 @@
         "priority:P1",
         "scope:pilot",
         "state:blocked"
+      ],
+      "source_ids": [
+        "PLAN",
+        "JACK",
+        "WICKS",
+        "AMANDA",
+        "BRIEF"
+      ],
+      "plan_sections": [
+        "§5 Trusted centralized data",
+        "§9 Synthetic data and realistic coverage"
       ]
     },
     {
@@ -804,16 +1106,27 @@
         "goodwill-plan",
         "type:task",
         "phase:3-application",
+        "state:blocked",
         "priority:P0",
-        "scope:weekend",
-        "state:blocked"
+        "scope:weekend"
+      ],
+      "source_ids": [
+        "PLAN",
+        "AMANDA",
+        "BRIEF",
+        "WICKS",
+        "JACK"
+      ],
+      "plan_sections": [
+        "§6 Dashboard and bounded agentic interaction",
+        "§7 Weekend P0/P1/P2"
       ]
     },
     {
       "id": "APP-02",
       "number": 32,
       "url": "https://github.com/joconne8/sprinthack-nd-2026/issues/32",
-      "title": "Build focused daily pulse and executive metric views",
+      "title": "Build leadership visibility and a strategic KPI availability scorecard",
       "kind": "task",
       "phase": "Phase 3 — Application",
       "priority": "P0",
@@ -834,19 +1147,30 @@
         "goodwill-plan",
         "type:task",
         "phase:3-application",
+        "state:blocked",
         "priority:P0",
-        "scope:weekend",
-        "state:blocked"
+        "scope:weekend"
+      ],
+      "source_ids": [
+        "PLAN",
+        "AMANDA",
+        "BRIEF",
+        "WICKS",
+        "JACK"
+      ],
+      "plan_sections": [
+        "§6 Dashboard and bounded agentic interaction",
+        "§7 Weekend P0/P1/P2"
       ]
     },
     {
       "id": "APP-03",
       "number": 34,
       "url": "https://github.com/joconne8/sprinthack-nd-2026/issues/34",
-      "title": "Implement source-row drilldown and Excel-compatible summary exports",
+      "title": "Deliver P0 source-row drilldown, with optional P1 Excel-compatible exports",
       "kind": "task",
       "phase": "Phase 3 — Application",
-      "priority": "P1",
+      "priority": "P0",
       "scope": "weekend",
       "lane": "Frontend / export agent",
       "human_gate": false,
@@ -866,9 +1190,20 @@
         "goodwill-plan",
         "type:task",
         "phase:3-application",
-        "priority:P1",
-        "scope:weekend",
-        "state:blocked"
+        "state:blocked",
+        "priority:P0",
+        "scope:weekend"
+      ],
+      "source_ids": [
+        "PLAN",
+        "AMANDA",
+        "BRIEF",
+        "WICKS",
+        "JACK"
+      ],
+      "plan_sections": [
+        "§6 Dashboard and bounded agentic interaction",
+        "§7 Weekend P0/P1/P2"
       ]
     },
     {
@@ -901,6 +1236,17 @@
         "priority:P1",
         "scope:stretch",
         "state:blocked"
+      ],
+      "source_ids": [
+        "PLAN",
+        "AMANDA",
+        "BRIEF",
+        "WICKS",
+        "JACK"
+      ],
+      "plan_sections": [
+        "§6 Dashboard and bounded agentic interaction",
+        "§7 Weekend P0/P1/P2"
       ]
     },
     {
@@ -910,7 +1256,7 @@
       "title": "Build a grounded assistant with definitions, coverage and uncertainty",
       "kind": "task",
       "phase": "Phase 3 — Application",
-      "priority": "P2",
+      "priority": "P1",
       "scope": "stretch",
       "lane": "Assistant agent",
       "human_gate": true,
@@ -928,10 +1274,21 @@
         "goodwill-plan",
         "type:task",
         "phase:3-application",
-        "priority:P2",
-        "scope:stretch",
         "state:blocked",
-        "gate:human"
+        "gate:human",
+        "priority:P1",
+        "scope:stretch"
+      ],
+      "source_ids": [
+        "PLAN",
+        "AMANDA",
+        "BRIEF",
+        "WICKS",
+        "JACK"
+      ],
+      "plan_sections": [
+        "§6 Dashboard and bounded agentic interaction",
+        "§7 Weekend P0/P1/P2"
       ]
     },
     {
@@ -964,6 +1321,17 @@
         "priority:P1",
         "scope:stretch",
         "state:blocked"
+      ],
+      "source_ids": [
+        "PLAN",
+        "AMANDA",
+        "BRIEF",
+        "WICKS",
+        "JACK"
+      ],
+      "plan_sections": [
+        "§6 Dashboard and bounded agentic interaction",
+        "§7 Weekend P0/P1/P2"
       ]
     },
     {
@@ -995,6 +1363,17 @@
         "scope:pilot",
         "state:blocked",
         "gate:human"
+      ],
+      "source_ids": [
+        "PLAN",
+        "AMANDA",
+        "BRIEF",
+        "WICKS",
+        "JACK"
+      ],
+      "plan_sections": [
+        "§6 Dashboard and bounded agentic interaction",
+        "§7 Weekend P0/P1/P2"
       ]
     },
     {
@@ -1025,6 +1404,15 @@
         "priority:P0",
         "scope:weekend",
         "state:blocked"
+      ],
+      "source_ids": [
+        "PLAN",
+        "WICKS",
+        "BRIEF"
+      ],
+      "plan_sections": [
+        "§8 AI engineering practices for overnight work",
+        "§9 Synthetic data and realistic coverage"
       ]
     },
     {
@@ -1054,6 +1442,15 @@
         "scope:weekend",
         "state:blocked",
         "gate:human"
+      ],
+      "source_ids": [
+        "PLAN",
+        "WICKS",
+        "BRIEF"
+      ],
+      "plan_sections": [
+        "§8 AI engineering practices for overnight work",
+        "§9 Synthetic data and realistic coverage"
       ]
     },
     {
@@ -1089,6 +1486,15 @@
         "scope:weekend",
         "state:blocked",
         "gate:human"
+      ],
+      "source_ids": [
+        "PLAN",
+        "WICKS",
+        "BRIEF"
+      ],
+      "plan_sections": [
+        "§8 AI engineering practices for overnight work",
+        "§9 Synthetic data and realistic coverage"
       ]
     },
     {
@@ -1121,6 +1527,15 @@
         "priority:P0",
         "scope:weekend",
         "state:blocked"
+      ],
+      "source_ids": [
+        "PLAN",
+        "WICKS",
+        "BRIEF"
+      ],
+      "plan_sections": [
+        "§8 AI engineering practices for overnight work",
+        "§9 Synthetic data and realistic coverage"
       ]
     },
     {
@@ -1158,6 +1573,15 @@
         "scope:weekend",
         "state:blocked",
         "gate:human"
+      ],
+      "source_ids": [
+        "PLAN",
+        "WICKS",
+        "BRIEF"
+      ],
+      "plan_sections": [
+        "§8 AI engineering practices for overnight work",
+        "§9 Synthetic data and realistic coverage"
       ]
     },
     {
@@ -1185,10 +1609,23 @@
         "goodwill-plan",
         "type:task",
         "phase:rollout",
-        "priority:P0",
-        "scope:weekend",
         "state:blocked",
-        "gate:human"
+        "gate:human",
+        "priority:P0",
+        "scope:weekend"
+      ],
+      "source_ids": [
+        "PLAN",
+        "AMANDA",
+        "FOLLOWUP",
+        "BRIEF",
+        "WICKS"
+      ],
+      "plan_sections": [
+        "§10 Finance and Business Central",
+        "§11 Production continuation",
+        "§12 Success metrics and ROI",
+        "§14 Demo narrative"
       ]
     },
     {
@@ -1222,6 +1659,19 @@
         "scope:pilot",
         "state:blocked",
         "gate:human"
+      ],
+      "source_ids": [
+        "PLAN",
+        "AMANDA",
+        "FOLLOWUP",
+        "BRIEF",
+        "WICKS"
+      ],
+      "plan_sections": [
+        "§10 Finance and Business Central",
+        "§11 Production continuation",
+        "§12 Success metrics and ROI",
+        "§14 Demo narrative"
       ]
     },
     {
@@ -1253,6 +1703,19 @@
         "scope:pilot",
         "state:blocked",
         "gate:human"
+      ],
+      "source_ids": [
+        "PLAN",
+        "AMANDA",
+        "FOLLOWUP",
+        "BRIEF",
+        "WICKS"
+      ],
+      "plan_sections": [
+        "§10 Finance and Business Central",
+        "§11 Production continuation",
+        "§12 Success metrics and ROI",
+        "§14 Demo narrative"
       ]
     },
     {
@@ -1290,7 +1753,76 @@
         "scope:pilot",
         "state:blocked",
         "gate:human"
+      ],
+      "source_ids": [
+        "PLAN",
+        "AMANDA",
+        "FOLLOWUP",
+        "BRIEF",
+        "WICKS"
+      ],
+      "plan_sections": [
+        "§10 Finance and Business Central",
+        "§11 Production continuation",
+        "§12 Success metrics and ROI",
+        "§14 Demo narrative"
       ]
     }
-  ]
+  ],
+  "source_authority": {
+    "policy": "Current user decisions govern. Primary evidence is the Google Drive stakeholder/mentor material; the Goodwill Three-Phase Solution and Overnight Agent Plan is the implementation synthesis. This card operationalizes those sources. Older goodwill/PRD.md and planning/agentic-build-plan.md are legacy implementation background, NOT governing requirements or automatic scope limits. Preserve corrections in the three-phase plan where earlier source notes contain unsupported technical claims. Freeze new scope/contracts through GOV-02/GOV-03.",
+    "primary_plan": {
+      "id": "PLAN",
+      "file": "1RffkmafbqbMEs7o_lNaTvIRL3hW9paai",
+      "name": "Goodwill — Three-Phase Solution and Overnight Agent Plan",
+      "url": "https://drive.google.com/file/d/1RffkmafbqbMEs7o_lNaTvIRL3hW9paai/view?usp=drivesdk",
+      "modifiedTime": "2026-10-03T23:25:19.430Z"
+    },
+    "sources": {
+      "PLAN": {
+        "id": "PLAN",
+        "file": "1RffkmafbqbMEs7o_lNaTvIRL3hW9paai",
+        "name": "Goodwill — Three-Phase Solution and Overnight Agent Plan",
+        "url": "https://drive.google.com/file/d/1RffkmafbqbMEs7o_lNaTvIRL3hW9paai/view?usp=drivesdk",
+        "modifiedTime": "2026-10-03T23:25:19.430Z"
+      },
+      "JACK": {
+        "id": "JACK",
+        "file": "1jrBRKAFzJlOVUC7mIsyTH3OrCGY-7qD6",
+        "name": "Jack explanation.md",
+        "url": "https://drive.google.com/file/d/1jrBRKAFzJlOVUC7mIsyTH3OrCGY-7qD6/view?usp=drivesdk",
+        "modifiedTime": "2026-10-03T22:12:14.527Z"
+      },
+      "WICKS": {
+        "id": "WICKS",
+        "file": "1gip7aNE1TQdZmqNJQeRlPppVZ5iVuWCT",
+        "name": "michael-wicks-plan.md",
+        "url": "https://drive.google.com/file/d/1gip7aNE1TQdZmqNJQeRlPppVZ5iVuWCT/view?usp=drivesdk",
+        "modifiedTime": "2026-10-03T21:14:35.668Z"
+      },
+      "AMANDA": {
+        "id": "AMANDA",
+        "file": "1WM1HJVAu_YF-Q48CQDa7SFwnPKg1FPlF",
+        "name": "Amanda Baumer Goodwill Meeting.md",
+        "url": "https://drive.google.com/file/d/1WM1HJVAu_YF-Q48CQDa7SFwnPKg1FPlF/view?usp=drivesdk",
+        "modifiedTime": "2026-10-03T19:44:57.776Z"
+      },
+      "FOLLOWUP": {
+        "id": "FOLLOWUP",
+        "file": "1yveSPTDJ4PUVi1MjMvCP6ovVtyVy-M7UGOeDdDngz7g",
+        "name": "Amanda2.0",
+        "native": true,
+        "url": "https://docs.google.com/document/d/1yveSPTDJ4PUVi1MjMvCP6ovVtyVy-M7UGOeDdDngz7g/edit?usp=drivesdk",
+        "modifiedTime": "2026-10-03T21:31:07.771Z"
+      },
+      "BRIEF": {
+        "id": "BRIEF",
+        "file": "1o0QBoew17f7IgEEHweBoe-VLQFGDEatg",
+        "name": "goodwill-track-brief-v2.md",
+        "url": "https://drive.google.com/file/d/1o0QBoew17f7IgEEHweBoe-VLQFGDEatg/view?usp=drivesdk",
+        "modifiedTime": "2026-10-03T21:48:55.970Z"
+      }
+    },
+    "legacy_documents_role": "Non-authoritative implementation background"
+  }
 }
