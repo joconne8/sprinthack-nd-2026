@@ -1,0 +1,10 @@
+{
+  "error": {
+    "code": "timeout",
+    "message": "The metric query exceeded its 10 second limit. No value was returned.",
+    "retriable": true,
+    "details": {
+      "metric_id": "M-DEMO-NET-SALES"
+    }
+  }
+}

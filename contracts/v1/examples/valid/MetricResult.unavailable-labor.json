@@ -1,0 +1,39 @@
+{
+  "contract_version": "1.0.0",
+  "metric_id": "R-LABOR-PRODUCTIVITY",
+  "metric_version": "GOV-02-metrics-v0.1",
+  "filters": {
+    "start_date": "2026-09-30",
+    "end_date": "2026-10-02",
+    "store_id": null,
+    "platform": null,
+    "source_name": null
+  },
+  "availability": "unavailable",
+  "availability_reason": "missing_input",
+  "availability_detail": "No labor-hour source exists. Revenue per labor hour needs matched labor hours for the same scope and an approved revenue definition.",
+  "value": null,
+  "unit": "USD",
+  "coverage": {
+    "state": "not_applicable",
+    "expected_reports": 0,
+    "received_reports": 0,
+    "missing": []
+  },
+  "freshness": {
+    "publication_state": "unpublished",
+    "published_at": null,
+    "metric_run_id": null,
+    "source_file_ids": [],
+    "stale_reason": null
+  },
+  "reconciliation_state": "not_applicable",
+  "definition": {
+    "formula": "revenue / matched labor hours (definition not approved)",
+    "grain": "store and period",
+    "exclusions": [],
+    "dictionary_ref": "planning/metric-dictionary.md#strategic-roadmap-metrics"
+  },
+  "evidence": null,
+  "synthetic": true
+}

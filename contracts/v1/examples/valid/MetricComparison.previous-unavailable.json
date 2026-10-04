@@ -1,0 +1,108 @@
+{
+  "contract_version": "1.0.0",
+  "current": {
+    "contract_version": "1.0.0",
+    "metric_id": "M-DEMO-NET-SALES",
+    "metric_version": "GOV-02-metrics-v0.1",
+    "filters": {
+      "start_date": "2026-09-30",
+      "end_date": "2026-09-30",
+      "store_id": "GW-001",
+      "platform": null,
+      "source_name": "upright_replica"
+    },
+    "availability": "available",
+    "availability_reason": null,
+    "value": {
+      "amount": "74.50",
+      "currency": "USD"
+    },
+    "unit": "USD",
+    "coverage": {
+      "state": "complete",
+      "expected_reports": 1,
+      "received_reports": 1,
+      "missing": []
+    },
+    "freshness": {
+      "publication_state": "published",
+      "published_at": "2026-10-01T13:06:00Z",
+      "metric_run_id": "mrun-20260930-gw001-0001",
+      "source_file_ids": [
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ],
+      "stale_reason": null
+    },
+    "reconciliation_state": "reconciled",
+    "definition": {
+      "formula": "sum(item sales) - sum(refunds); excludes shipping, tax and fees",
+      "grain": "reporting date, source/report, platform, store, currency",
+      "exclusions": [
+        "shipping",
+        "tax",
+        "marketplace fees",
+        "settlements",
+        "expenses"
+      ],
+      "dictionary_ref": "planning/metric-dictionary.md#p0-metrics"
+    },
+    "evidence": {
+      "metric_run_id": "mrun-20260930-gw001-0001",
+      "supporting_rows_href": "/api/v1/metric-runs/mrun-20260930-gw001-0001/rows"
+    },
+    "synthetic": true
+  },
+  "previous": {
+    "contract_version": "1.0.0",
+    "metric_id": "M-DEMO-NET-SALES",
+    "metric_version": "GOV-02-metrics-v0.1",
+    "filters": {
+      "start_date": "2026-09-29",
+      "end_date": "2026-09-29",
+      "store_id": "GW-001",
+      "platform": null,
+      "source_name": "upright_replica"
+    },
+    "availability": "unavailable",
+    "availability_reason": "missing_source",
+    "availability_detail": "No upright_replica report was acquired for 2026-09-29.",
+    "value": null,
+    "unit": "USD",
+    "coverage": {
+      "state": "missing",
+      "expected_reports": 1,
+      "received_reports": 0,
+      "missing": [
+        {
+          "source_name": "upright_replica",
+          "report_type": "paid_orders",
+          "reporting_date": "2026-09-29"
+        }
+      ]
+    },
+    "freshness": {
+      "publication_state": "unpublished",
+      "published_at": null,
+      "metric_run_id": null,
+      "source_file_ids": [],
+      "stale_reason": null
+    },
+    "reconciliation_state": "not_applicable",
+    "definition": {
+      "formula": "sum(item sales) - sum(refunds); excludes shipping, tax and fees",
+      "grain": "reporting date, source/report, platform, store, currency",
+      "exclusions": [
+        "shipping",
+        "tax",
+        "marketplace fees",
+        "settlements",
+        "expenses"
+      ],
+      "dictionary_ref": "planning/metric-dictionary.md#p0-metrics"
+    },
+    "evidence": null,
+    "synthetic": true
+  },
+  "change": null,
+  "synthetic": true
+}

@@ -1,0 +1,74 @@
+# validator self-tests
+PASS  self-test: null type rejects object
+PASS  self-test: type list accepts null
+PASS  self-test: integer rejects 1.5
+PASS  self-test: oneOf rejects two matches
+PASS  self-test: if/then enforced
+PASS  self-test: if false skips then
+PASS  self-test: additionalProperties false
+PASS  self-test: required enforced
+PASS  self-test: pattern enforced
+PASS  self-test: date rejects 2026-02-30
+PASS  self-test: date-time requires an offset
+PASS  self-test: not enforced
+PASS  self-test: anyOf accepts one match
+PASS  self-test: minimum enforced
+PASS  self-test: $ref sibling rejected
+PASS  self-test: cents round-trip
+
+# schema lint
+PASS  bundle lint (66 definitions)
+
+# valid examples: must pass schema and semantic rules
+PASS  examples/valid/AcquisitionRun.needs-human-expired-session.json as AcquisitionRun
+PASS  examples/valid/AcquisitionRun.report-unavailable-exhausted.json as AcquisitionRun
+PASS  examples/valid/AcquisitionRun.succeeded.json as AcquisitionRun
+PASS  examples/valid/ErrorResponse.timeout.json as ErrorResponse
+PASS  examples/valid/ErrorResponse.unsupported-metric.json as ErrorResponse
+PASS  examples/valid/ImportBatch.duplicate-noop.json as ImportBatch
+PASS  examples/valid/ImportBatch.imported.json as ImportBatch
+PASS  examples/valid/ImportBatch.late-correction.json as ImportBatch
+PASS  examples/valid/ImportBatch.malformed-unreconciled.json as ImportBatch
+PASS  examples/valid/ImportBatch.with-rejections.json as ImportBatch
+PASS  examples/valid/IntakeResult.rejected-checksum.json as IntakeResult
+PASS  examples/valid/IntakeResult.verified.json as IntakeResult
+PASS  examples/valid/MetricComparison.previous-unavailable.json as MetricComparison
+PASS  examples/valid/MetricResult.available.json as MetricResult
+PASS  examples/valid/MetricResult.partial-missing-day.json as MetricResult
+PASS  examples/valid/MetricResult.stale-last-good.json as MetricResult
+PASS  examples/valid/MetricResult.unavailable-labor.json as MetricResult
+PASS  examples/valid/RerunProposal.awaiting-approval.json as RerunProposal
+PASS  examples/valid/SourceCoverage.p0-2026-09-30-to-10-02.json as SourceCoverage
+PASS  examples/valid/SourcePackageManifest.upright-p0.json as SourcePackageManifest
+PASS  examples/valid/SupportingRows.gw001-2026-09-30.json as SupportingRows
+PASS  examples/valid/ToolRequest.get-metric.json as ToolRequest
+PASS  examples/valid/ToolRequest.propose-rerun.json as ToolRequest
+PASS  expected-reports.json as ExpectedReports
+
+# cross-example rules
+PASS  examples/valid/MetricResult.available.json value equals examples/valid/SupportingRows.gw001-2026-09-30.json displayed_value
+
+# invalid examples: must be rejected by schema or semantic rules
+PASS  examples/invalid/AcquisitionRun.needs-human-without-owner.json rejected  -- AcquisitionRun: missing required "owner_role"
+PASS  examples/invalid/ImportBatch.duplicate-without-reference.json rejected  -- ImportBatch: missing required "duplicate_of_batch_id"
+PASS  examples/invalid/ImportBatch.reconciled-but-unbalanced.json rejected  -- ImportBatch: reconciled but source_reported.item_sales != accepted + rejected
+PASS  examples/invalid/ImportBatch.synthetic-false.json rejected  -- ImportBatch/synthetic: must equal true
+PASS  examples/invalid/MetricResult.available-with-partial-coverage.json rejected  -- MetricResult: available metric requires complete coverage
+PASS  examples/invalid/MetricResult.available-without-value.json rejected  -- MetricResult/value: matches a forbidden shape
+PASS  examples/invalid/MetricResult.money-as-number.json rejected  -- MetricResult/value: matches none of the allowed shapes
+PASS  examples/invalid/MetricResult.red-green-target.json rejected  -- MetricResult: unexpected property "target_status"
+PASS  examples/invalid/MetricResult.unavailable-with-zero.json rejected  -- MetricResult/value: expected null, got object
+PASS  examples/invalid/SourceCoverage.not-connected-with-run.json rejected  -- SourceCoverage/sources/0/latest_run: expected null, got object
+PASS  examples/invalid/SourcePackageManifest.los-angeles-timezone.json rejected  -- SourcePackageManifest/reporting_timezone: must equal "America/New_York"
+PASS  examples/invalid/SourcePackageManifest.money-as-number.json rejected  -- SourcePackageManifest/source_reported_totals/item_sales: expected string, got integer
+PASS  examples/invalid/SupportingRows.totals-mismatch.json rejected  -- SupportingRows: matches_displayed_value contradicts the totals
+PASS  examples/invalid/ToolRequest.write-action.json rejected  -- ToolRequest: matches 0 oneOf shapes, needs exactly 1
+
+# replica output compatibility (data ingestion/examples, upright 2026-09-30)
+PASS  replica CSV SHA-256 equals its manifest  -- ecea88180c9f6ce7a74a40b819cfbffcb1b4543f000ade7da76ff8855d2f166b
+PASS  translated replica manifest fails ONLY on reporting_timezone (America/Los_Angeles) -- KNOWN GAP until ING-02 requests America/New_York
+
+# top-level contracts with no valid example
+none missing
+
+58 passed, 0 failed

@@ -1,0 +1,24 @@
+{
+  "contract_version": "1.0.0",
+  "run_id": "run-20261002-upright-0001",
+  "skill_or_adapter_version": "upright-paid-orders-replica@0.1.0",
+  "acquisition_class": "portal_export",
+  "source_name": "upright_replica",
+  "report_type": "paid_orders",
+  "requested_start_date": "2026-10-02",
+  "requested_end_date": "2026-10-02",
+  "reporting_timezone": "America/New_York",
+  "status": "needs_human",
+  "attempts": [
+    {
+      "attempt_number": 1,
+      "started_at": "2026-10-03T13:02:00Z",
+      "outcome": "expired_session",
+      "detail": "Replica showed the login page at step 2; replay stopped without retrying."
+    }
+  ],
+  "failure_type": "expired_session",
+  "cause": "expired_session: login page shown at step 2",
+  "finished_at": "2026-10-03T13:02:09Z",
+  "synthetic": true
+}

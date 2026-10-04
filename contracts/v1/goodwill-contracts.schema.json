@@ -1,0 +1,1005 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/joconne8/sprinthack-nd-2026/blob/main/contracts/v1/goodwill-contracts.schema.json",
+  "title": "Goodwill weekend data contracts v1",
+  "description": "GOV-03 contract bundle, version 1.0.0. Each entry under definitions is one contract; validate an instance against #/definitions/<Name>. Synthetic-only: real Goodwill data requires a new major version and approval. Owner: Jack OC (GOV-03). Design notes: planning/contracts.md.",
+  "definitions": {
+    "ContractVersion": {
+      "description": "Bundle version the producer targeted. Consumers reject any other major version.",
+      "type": "string",
+      "pattern": "^1\\.[0-9]+\\.[0-9]+$"
+    },
+    "Synthetic": {
+      "description": "v1 is synthetic-only (REQ-SEC-01). Real data requires contracts v2 plus Goodwill approval.",
+      "const": true
+    },
+    "Date": {
+      "description": "Calendar date in the reporting timezone, YYYY-MM-DD.",
+      "type": "string",
+      "format": "date",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "NullableDate": {
+      "anyOf": [{ "$ref": "#/definitions/Date" }, { "type": "null" }]
+    },
+    "DateTime": {
+      "description": "ISO 8601 timestamp with Z or an explicit offset.",
+      "type": "string",
+      "format": "date-time"
+    },
+    "NullableDateTime": {
+      "anyOf": [{ "$ref": "#/definitions/DateTime" }, { "type": "null" }]
+    },
+    "ReportingTimezone": {
+      "description": "Single reporting timezone frozen by GOV-02 (planning/scope.md; GOV-01 OQ-05). Reports are requested and labelled in this zone; importers never convert silently.",
+      "const": "America/New_York"
+    },
+    "Sha256": {
+      "description": "Lowercase hex SHA-256 of the exact file bytes.",
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "Decimal2": {
+      "description": "Money amount as a decimal string with exactly two fraction digits. Never a JSON number. Arithmetic is done in integer cents.",
+      "type": "string",
+      "pattern": "^-?(0|[1-9][0-9]*)\\.[0-9]{2}$"
+    },
+    "NullableDecimal2": {
+      "anyOf": [{ "$ref": "#/definitions/Decimal2" }, { "type": "null" }]
+    },
+    "Currency": {
+      "description": "ISO 4217 code. v1 supports USD only; unlike currencies are never aggregated (GOV-02).",
+      "enum": ["USD"]
+    },
+    "Money": {
+      "type": "object",
+      "required": ["amount", "currency"],
+      "additionalProperties": false,
+      "properties": {
+        "amount": { "$ref": "#/definitions/Decimal2" },
+        "currency": { "$ref": "#/definitions/Currency" }
+      }
+    },
+    "Count": {
+      "type": "object",
+      "required": ["count"],
+      "additionalProperties": false,
+      "properties": {
+        "count": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "SourceId": {
+      "description": "Stable snake_case source identifier, as listed in contracts/v1/expected-reports.json.",
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]*$"
+    },
+    "ConnectedSource": {
+      "description": "Sources with a working synthetic acquisition path in v1. Everything else is not_connected.",
+      "enum": ["upright_replica", "cash_monkey_replica"]
+    },
+    "ReportType": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]*$"
+    },
+    "Period": {
+      "type": "object",
+      "required": ["start_date", "end_date"],
+      "additionalProperties": false,
+      "properties": {
+        "start_date": { "$ref": "#/definitions/Date" },
+        "end_date": { "$ref": "#/definitions/Date" }
+      }
+    },
+    "RunId": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{2,127}$"
+    },
+    "BatchId": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{2,127}$"
+    },
+    "MetricRunId": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{2,127}$"
+    },
+    "AcquisitionClass": {
+      "description": "ING-05 acquisition classes (contracts/sources/acquisition-classes.md).",
+      "enum": ["api", "portal_export", "scheduled_file", "manual_upload", "statement_lookup"]
+    },
+    "AcquisitionFailureType": {
+      "description": "Typed acquisition failures. Retriable: timeout, download_failed, report_unavailable. Needs a human: expired_session, mfa, captcha, access_denied, label_changed, wrong_page. Permanent: host_not_allowed, bad_params.",
+      "enum": [
+        "timeout",
+        "download_failed",
+        "report_unavailable",
+        "expired_session",
+        "mfa",
+        "captcha",
+        "access_denied",
+        "label_changed",
+        "wrong_page",
+        "host_not_allowed",
+        "bad_params"
+      ]
+    },
+    "RunStatus": {
+      "description": "Acquisition run state, adopted from acquisition/run_state.py (ING-04 draft).",
+      "enum": ["pending", "running", "succeeded", "failed_retriable_exhausted", "needs_human", "failed_permanent"]
+    },
+    "SourcePackageManifest": {
+      "description": "Acquisition -> intake handoff (ING-02 -> ING-03). Emitted only together with the exact delivered bytes. Failed acquisitions produce an AcquisitionRun, never a manifest.",
+      "type": "object",
+      "required": [
+        "contract_version",
+        "run_id",
+        "acquisition_class",
+        "source_name",
+        "report_type",
+        "requested_start_date",
+        "requested_end_date",
+        "reporting_timezone",
+        "file_name",
+        "file_checksum",
+        "checksum_algorithm",
+        "byte_size",
+        "row_count",
+        "coverage_start_date",
+        "coverage_end_date",
+        "downloaded_at",
+        "skill_or_adapter_version",
+        "synthetic"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "contract_version": { "$ref": "#/definitions/ContractVersion" },
+        "run_id": { "$ref": "#/definitions/RunId" },
+        "acquisition_class": { "$ref": "#/definitions/AcquisitionClass" },
+        "source_name": { "$ref": "#/definitions/ConnectedSource" },
+        "report_type": { "$ref": "#/definitions/ReportType" },
+        "requested_start_date": { "$ref": "#/definitions/Date" },
+        "requested_end_date": { "$ref": "#/definitions/Date" },
+        "reporting_timezone": { "$ref": "#/definitions/ReportingTimezone" },
+        "file_name": { "type": "string", "pattern": "^[A-Za-z0-9._-]+\\.csv$" },
+        "file_checksum": { "$ref": "#/definitions/Sha256" },
+        "checksum_algorithm": { "const": "SHA-256" },
+        "byte_size": { "type": "integer", "minimum": 1 },
+        "row_count": { "type": "integer", "minimum": 0 },
+        "coverage_start_date": { "$ref": "#/definitions/NullableDate" },
+        "coverage_end_date": { "$ref": "#/definitions/NullableDate" },
+        "downloaded_at": { "$ref": "#/definitions/DateTime" },
+        "skill_or_adapter_version": { "type": "string", "minLength": 1 },
+        "synthetic": { "$ref": "#/definitions/Synthetic" },
+        "currency": { "$ref": "#/definitions/Currency" },
+        "source_package_id": { "type": "string", "minLength": 1 },
+        "source_reported_totals": {
+          "description": "Totals printed by the source. Informational: importers recompute from rows and reconcile against these, never trust them.",
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "item_sales": { "$ref": "#/definitions/Decimal2" },
+            "refunds": { "$ref": "#/definitions/Decimal2" },
+            "demo_net_sales": { "$ref": "#/definitions/Decimal2" }
+          }
+        },
+        "source_metadata": {
+          "description": "Source-specific extras (for example replica-v1 fields). Never used for metrics.",
+          "type": "object"
+        }
+      }
+    },
+    "AcquisitionAttempt": {
+      "type": "object",
+      "required": ["attempt_number", "started_at", "outcome"],
+      "additionalProperties": false,
+      "properties": {
+        "attempt_number": { "type": "integer", "minimum": 1 },
+        "started_at": { "$ref": "#/definitions/DateTime" },
+        "outcome": {
+          "anyOf": [{ "const": "delivered" }, { "$ref": "#/definitions/AcquisitionFailureType" }]
+        },
+        "detail": { "type": "string" }
+      }
+    },
+    "AcquisitionRun": {
+      "description": "One parameterized acquisition request and its bounded attempts (ING-02/ING-04). Retries never deliver twice.",
+      "type": "object",
+      "required": [
+        "contract_version",
+        "run_id",
+        "skill_or_adapter_version",
+        "acquisition_class",
+        "source_name",
+        "report_type",
+        "requested_start_date",
+        "requested_end_date",
+        "reporting_timezone",
+        "status",
+        "attempts",
+        "synthetic"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "contract_version": { "$ref": "#/definitions/ContractVersion" },
+        "run_id": { "$ref": "#/definitions/RunId" },
+        "skill_or_adapter_version": { "type": "string", "minLength": 1 },
+        "acquisition_class": { "$ref": "#/definitions/AcquisitionClass" },
+        "source_name": { "$ref": "#/definitions/ConnectedSource" },
+        "report_type": { "$ref": "#/definitions/ReportType" },
+        "requested_start_date": { "$ref": "#/definitions/Date" },
+        "requested_end_date": { "$ref": "#/definitions/Date" },
+        "reporting_timezone": { "$ref": "#/definitions/ReportingTimezone" },
+        "status": { "$ref": "#/definitions/RunStatus" },
+        "attempts": { "type": "array", "items": { "$ref": "#/definitions/AcquisitionAttempt" } },
+        "failure_type": { "$ref": "#/definitions/AcquisitionFailureType" },
+        "cause": { "type": "string" },
+        "owner_role": {
+          "description": "Role that must act next. Never a named or departed individual (REQ-OPS-01).",
+          "type": "string",
+          "minLength": 1
+        },
+        "source_file_id": { "$ref": "#/definitions/Sha256" },
+        "finished_at": { "$ref": "#/definitions/NullableDateTime" },
+        "synthetic": { "$ref": "#/definitions/Synthetic" }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "status": { "const": "succeeded" } }, "required": ["status"] },
+          "then": { "required": ["source_file_id", "finished_at"] }
+        },
+        {
+          "if": {
+            "properties": { "status": { "enum": ["needs_human", "failed_retriable_exhausted", "failed_permanent"] } },
+            "required": ["status"]
+          },
+          "then": { "required": ["failure_type", "owner_role", "finished_at"] }
+        }
+      ]
+    },
+    "ImportState": {
+      "enum": ["not_submitted", "submitted", "imported", "duplicate_noop", "imported_with_rejections", "failed"]
+    },
+    "VerifiedSourceFile": {
+      "description": "ING-03 -> DAT-02 handoff: verified bytes archived immutably. Acquisition success is not publication.",
+      "type": "object",
+      "required": [
+        "contract_version",
+        "intake_state",
+        "source_file_id",
+        "run_id",
+        "artifact_ref",
+        "newly_archived",
+        "recorded_at",
+        "byte_size",
+        "row_count",
+        "coverage_start_date",
+        "coverage_end_date",
+        "import_state",
+        "manifest",
+        "synthetic"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "contract_version": { "$ref": "#/definitions/ContractVersion" },
+        "intake_state": { "const": "acquired_verified" },
+        "source_file_id": { "$ref": "#/definitions/Sha256" },
+        "run_id": { "$ref": "#/definitions/RunId" },
+        "artifact_ref": {
+          "description": "Content-addressed archive location of the exact bytes.",
+          "type": "string",
+          "minLength": 1
+        },
+        "newly_archived": { "type": "boolean" },
+        "recorded_at": { "$ref": "#/definitions/DateTime" },
+        "byte_size": { "type": "integer", "minimum": 1 },
+        "row_count": { "type": "integer", "minimum": 0 },
+        "coverage_start_date": { "$ref": "#/definitions/NullableDate" },
+        "coverage_end_date": { "$ref": "#/definitions/NullableDate" },
+        "import_state": { "$ref": "#/definitions/ImportState" },
+        "manifest": { "$ref": "#/definitions/SourcePackageManifest" },
+        "synthetic": { "$ref": "#/definitions/Synthetic" }
+      }
+    },
+    "IntakeRejectionCode": {
+      "description": "Intake verification failures (acquisition/intake.py plus timezone_mismatch). Nothing is archived or handed off.",
+      "enum": [
+        "file_missing",
+        "file_empty",
+        "manifest_incomplete",
+        "wrong_report",
+        "wrong_period_in_manifest",
+        "timezone_mismatch",
+        "checksum_mismatch",
+        "not_utf8",
+        "unknown_schema",
+        "unexpected_schema",
+        "row_count_mismatch",
+        "malformed_row",
+        "not_labeled_synthetic",
+        "row_outside_requested_period",
+        "archive_corrupt",
+        "run_id_reused"
+      ]
+    },
+    "IntakeRejection": {
+      "type": "object",
+      "required": ["contract_version", "intake_state", "run_id", "rejection_code", "detail", "recorded_at", "synthetic"],
+      "additionalProperties": false,
+      "properties": {
+        "contract_version": { "$ref": "#/definitions/ContractVersion" },
+        "intake_state": { "const": "rejected" },
+        "run_id": { "$ref": "#/definitions/RunId" },
+        "rejection_code": { "$ref": "#/definitions/IntakeRejectionCode" },
+        "detail": { "type": "string" },
+        "recorded_at": { "$ref": "#/definitions/DateTime" },
+        "synthetic": { "$ref": "#/definitions/Synthetic" }
+      }
+    },
+    "IntakeResult": {
+      "oneOf": [{ "$ref": "#/definitions/VerifiedSourceFile" }, { "$ref": "#/definitions/IntakeRejection" }]
+    },
+    "ImportOutcome": {
+      "enum": ["imported", "duplicate_noop", "imported_with_rejections", "failed"]
+    },
+    "RowRejectionReason": {
+      "enum": [
+        "missing_required_field",
+        "invalid_money",
+        "invalid_date",
+        "unsupported_currency",
+        "row_outside_period",
+        "not_labeled_synthetic",
+        "duplicate_key_in_file",
+        "malformed_row"
+      ]
+    },
+    "RejectedRow": {
+      "type": "object",
+      "required": ["source_row_index", "source_record_key", "reason", "field", "detail"],
+      "additionalProperties": false,
+      "properties": {
+        "source_row_index": {
+          "description": "1-based index of the data record after CSV parsing; the header is not counted.",
+          "type": "integer",
+          "minimum": 1
+        },
+        "source_record_key": { "type": ["string", "null"] },
+        "reason": { "$ref": "#/definitions/RowRejectionReason" },
+        "field": { "type": ["string", "null"] },
+        "detail": { "type": "string" }
+      }
+    },
+    "AmountPair": {
+      "description": "Item sales and refunds as decimal strings; null where amounts could not be parsed.",
+      "type": "object",
+      "required": ["item_sales", "refunds"],
+      "additionalProperties": false,
+      "properties": {
+        "item_sales": { "$ref": "#/definitions/NullableDecimal2" },
+        "refunds": { "$ref": "#/definitions/NullableDecimal2" }
+      }
+    },
+    "ImportReconciliation": {
+      "description": "reconciled means source_reported = accepted + rejected for every field, compared in integer cents (DAT-05 enforces).",
+      "type": "object",
+      "required": ["state", "currency", "source_reported", "accepted", "rejected"],
+      "additionalProperties": false,
+      "properties": {
+        "state": { "enum": ["reconciled", "unreconciled", "not_applicable"] },
+        "currency": { "$ref": "#/definitions/Currency" },
+        "source_reported": { "anyOf": [{ "$ref": "#/definitions/AmountPair" }, { "type": "null" }] },
+        "accepted": { "$ref": "#/definitions/AmountPair" },
+        "rejected": { "$ref": "#/definitions/AmountPair" },
+        "note": { "type": "string" }
+      }
+    },
+    "ImportCounts": {
+      "type": "object",
+      "required": ["rows_in_file", "accepted", "rejected", "replaced_by_correction", "unchanged_duplicates"],
+      "additionalProperties": false,
+      "properties": {
+        "rows_in_file": { "type": "integer", "minimum": 0 },
+        "accepted": { "type": "integer", "minimum": 0 },
+        "rejected": { "type": "integer", "minimum": 0 },
+        "replaced_by_correction": { "type": "integer", "minimum": 0 },
+        "unchanged_duplicates": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "ImportBatch": {
+      "description": "DAT-02..DAT-05 import of one verified source file. Same bytes twice -> duplicate_noop (idempotency_key = file checksum). Changed rows in a later file follow upsert_policy.",
+      "type": "object",
+      "required": [
+        "contract_version",
+        "import_batch_id",
+        "idempotency_key",
+        "source_file_id",
+        "run_id",
+        "outcome",
+        "parser_version",
+        "upsert_policy",
+        "started_at",
+        "finished_at",
+        "counts",
+        "reconciliation",
+        "rejected_rows",
+        "synthetic"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "contract_version": { "$ref": "#/definitions/ContractVersion" },
+        "import_batch_id": { "$ref": "#/definitions/BatchId" },
+        "idempotency_key": { "$ref": "#/definitions/Sha256" },
+        "source_file_id": { "$ref": "#/definitions/Sha256" },
+        "run_id": { "$ref": "#/definitions/RunId" },
+        "outcome": { "$ref": "#/definitions/ImportOutcome" },
+        "parser_version": { "type": "string", "minLength": 1 },
+        "upsert_policy": { "const": "latest_acquired_wins_with_history" },
+        "duplicate_of_batch_id": { "$ref": "#/definitions/BatchId" },
+        "error": { "$ref": "#/definitions/ErrorBody" },
+        "started_at": { "$ref": "#/definitions/DateTime" },
+        "finished_at": { "$ref": "#/definitions/DateTime" },
+        "counts": { "$ref": "#/definitions/ImportCounts" },
+        "reconciliation": { "$ref": "#/definitions/ImportReconciliation" },
+        "rejected_rows": { "type": "array", "items": { "$ref": "#/definitions/RejectedRow" } },
+        "synthetic": { "$ref": "#/definitions/Synthetic" }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "outcome": { "const": "duplicate_noop" } }, "required": ["outcome"] },
+          "then": { "required": ["duplicate_of_batch_id"] }
+        },
+        {
+          "if": { "properties": { "outcome": { "const": "failed" } }, "required": ["outcome"] },
+          "then": { "required": ["error"] }
+        },
+        {
+          "if": { "properties": { "outcome": { "const": "imported_with_rejections" } }, "required": ["outcome"] },
+          "then": { "properties": { "rejected_rows": { "minItems": 1 } } }
+        }
+      ]
+    },
+    "SourceRowRef": {
+      "description": "Lineage from a metric to one accepted source row (REQ-DAT-01).",
+      "type": "object",
+      "required": ["source_file_id", "source_row_index", "source_record_key", "import_batch_id"],
+      "additionalProperties": false,
+      "properties": {
+        "source_file_id": { "$ref": "#/definitions/Sha256" },
+        "source_row_index": { "type": "integer", "minimum": 1 },
+        "source_record_key": { "type": "string", "minLength": 1 },
+        "import_batch_id": { "$ref": "#/definitions/BatchId" }
+      }
+    },
+    "MetricId": {
+      "description": "Scalar metric IDs from planning/metric-dictionary.md (GOV-02-metrics-v0.1). M-DRILLDOWN-ROWS is the SupportingRows contract; M-SUMMARY-EXPORT is a P1 file output.",
+      "enum": [
+        "M-DEMO-NET-SALES",
+        "M-SOURCE-COVERAGE",
+        "M-REJECTED-ROWS",
+        "M-PLATFORM-CUSTOMERS",
+        "M-LISTINGS-CREATED",
+        "M-UNLISTED-BACKLOG",
+        "R-REVENUE-GROWTH",
+        "R-LABOR-PRODUCTIVITY",
+        "R-MARGIN",
+        "R-SELL-THROUGH",
+        "R-CATEGORY-PERFORMANCE",
+        "R-REPEAT-BUYERS"
+      ]
+    },
+    "MetricVersion": {
+      "const": "GOV-02-metrics-v0.1"
+    },
+    "MetricFilters": {
+      "type": "object",
+      "required": ["start_date", "end_date", "store_id", "platform", "source_name"],
+      "additionalProperties": false,
+      "properties": {
+        "start_date": { "$ref": "#/definitions/Date" },
+        "end_date": { "$ref": "#/definitions/Date" },
+        "store_id": { "type": ["string", "null"] },
+        "platform": { "type": ["string", "null"] },
+        "source_name": { "anyOf": [{ "$ref": "#/definitions/SourceId" }, { "type": "null" }] }
+      }
+    },
+    "AvailabilityReason": {
+      "enum": [
+        "missing_source",
+        "partial_coverage",
+        "missing_input",
+        "definition_not_approved",
+        "out_of_weekend_scope",
+        "stale_publication",
+        "upstream_error"
+      ]
+    },
+    "MissingReport": {
+      "type": "object",
+      "required": ["source_name", "report_type", "reporting_date"],
+      "additionalProperties": false,
+      "properties": {
+        "source_name": { "$ref": "#/definitions/SourceId" },
+        "report_type": { "$ref": "#/definitions/ReportType" },
+        "reporting_date": { "$ref": "#/definitions/Date" }
+      }
+    },
+    "MetricCoverage": {
+      "type": "object",
+      "required": ["state", "expected_reports", "received_reports", "missing"],
+      "additionalProperties": false,
+      "properties": {
+        "state": { "enum": ["complete", "partial", "missing", "not_applicable"] },
+        "expected_reports": { "type": "integer", "minimum": 0 },
+        "received_reports": { "type": "integer", "minimum": 0 },
+        "missing": { "type": "array", "items": { "$ref": "#/definitions/MissingReport" } }
+      }
+    },
+    "Freshness": {
+      "type": "object",
+      "required": ["publication_state", "published_at", "metric_run_id", "source_file_ids", "stale_reason"],
+      "additionalProperties": false,
+      "properties": {
+        "publication_state": { "enum": ["published", "stale_last_good", "unpublished"] },
+        "published_at": { "$ref": "#/definitions/NullableDateTime" },
+        "metric_run_id": { "anyOf": [{ "$ref": "#/definitions/MetricRunId" }, { "type": "null" }] },
+        "source_file_ids": { "type": "array", "items": { "$ref": "#/definitions/Sha256" } },
+        "stale_reason": { "type": ["string", "null"] }
+      }
+    },
+    "MetricDefinitionSummary": {
+      "type": "object",
+      "required": ["formula", "grain", "exclusions", "dictionary_ref"],
+      "additionalProperties": false,
+      "properties": {
+        "formula": { "type": "string", "minLength": 1 },
+        "grain": { "type": "string", "minLength": 1 },
+        "exclusions": { "type": "array", "items": { "type": "string" } },
+        "dictionary_ref": { "type": "string", "pattern": "^planning/metric-dictionary\\.md#" }
+      }
+    },
+    "MetricEvidence": {
+      "type": "object",
+      "required": ["metric_run_id", "supporting_rows_href"],
+      "additionalProperties": false,
+      "properties": {
+        "metric_run_id": { "$ref": "#/definitions/MetricRunId" },
+        "supporting_rows_href": { "type": "string", "pattern": "^/api/v1/metric-runs/[A-Za-z0-9._:-]+/rows$" }
+      }
+    },
+    "MetricResult": {
+      "description": "Deterministic metric API response (DAT-06), shown unchanged by the dashboard (APP-02) and returned unchanged by tools (APP-04). v1 has no target or red/green field.",
+      "type": "object",
+      "required": [
+        "contract_version",
+        "metric_id",
+        "metric_version",
+        "filters",
+        "availability",
+        "availability_reason",
+        "value",
+        "unit",
+        "coverage",
+        "freshness",
+        "reconciliation_state",
+        "definition",
+        "evidence",
+        "synthetic"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "contract_version": { "$ref": "#/definitions/ContractVersion" },
+        "metric_id": { "$ref": "#/definitions/MetricId" },
+        "metric_version": { "$ref": "#/definitions/MetricVersion" },
+        "filters": { "$ref": "#/definitions/MetricFilters" },
+        "availability": { "enum": ["available", "partial", "unavailable"] },
+        "availability_reason": { "anyOf": [{ "$ref": "#/definitions/AvailabilityReason" }, { "type": "null" }] },
+        "availability_detail": { "type": "string" },
+        "value": {
+          "anyOf": [{ "$ref": "#/definitions/Money" }, { "$ref": "#/definitions/Count" }, { "type": "null" }]
+        },
+        "unit": { "enum": ["USD", "count"] },
+        "coverage": { "$ref": "#/definitions/MetricCoverage" },
+        "freshness": { "$ref": "#/definitions/Freshness" },
+        "reconciliation_state": { "enum": ["reconciled", "unreconciled", "not_applicable"] },
+        "definition": { "$ref": "#/definitions/MetricDefinitionSummary" },
+        "evidence": { "anyOf": [{ "$ref": "#/definitions/MetricEvidence" }, { "type": "null" }] },
+        "synthetic": { "$ref": "#/definitions/Synthetic" }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "availability": { "const": "unavailable" } }, "required": ["availability"] },
+          "then": {
+            "properties": {
+              "value": { "type": "null" },
+              "evidence": { "type": "null" },
+              "availability_reason": { "$ref": "#/definitions/AvailabilityReason" }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "availability": { "const": "partial" } }, "required": ["availability"] },
+          "then": { "properties": { "availability_reason": { "$ref": "#/definitions/AvailabilityReason" } } }
+        },
+        {
+          "if": { "properties": { "availability": { "const": "available" } }, "required": ["availability"] },
+          "then": { "properties": { "value": { "not": { "type": "null" } }, "availability_reason": { "type": "null" } } }
+        },
+        {
+          "if": { "properties": { "unit": { "const": "USD" } }, "required": ["unit"] },
+          "then": { "properties": { "value": { "anyOf": [{ "$ref": "#/definitions/Money" }, { "type": "null" }] } } }
+        },
+        {
+          "if": { "properties": { "unit": { "const": "count" } }, "required": ["unit"] },
+          "then": { "properties": { "value": { "anyOf": [{ "$ref": "#/definitions/Count" }, { "type": "null" }] } } }
+        }
+      ]
+    },
+    "SupportingRow": {
+      "type": "object",
+      "required": ["source_ref", "reporting_date", "store_id", "channel", "item_sales", "refunds", "contribution"],
+      "additionalProperties": false,
+      "properties": {
+        "source_ref": { "$ref": "#/definitions/SourceRowRef" },
+        "reporting_date": { "$ref": "#/definitions/Date" },
+        "store_id": { "type": ["string", "null"] },
+        "channel": { "type": ["string", "null"] },
+        "item_sales": { "$ref": "#/definitions/Decimal2" },
+        "refunds": { "$ref": "#/definitions/Decimal2" },
+        "contribution": { "$ref": "#/definitions/Decimal2" }
+      }
+    },
+    "SupportingRowsPage": {
+      "type": "object",
+      "required": ["limit", "offset", "total_rows"],
+      "additionalProperties": false,
+      "properties": {
+        "limit": { "type": "integer", "minimum": 1, "maximum": 500 },
+        "offset": { "type": "integer", "minimum": 0 },
+        "total_rows": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "SupportingRowsTotals": {
+      "description": "Totals over all rows of the metric run, not only this page.",
+      "type": "object",
+      "required": ["sum_item_sales", "sum_refunds", "sum_contribution", "displayed_value", "matches_displayed_value"],
+      "additionalProperties": false,
+      "properties": {
+        "sum_item_sales": { "$ref": "#/definitions/Decimal2" },
+        "sum_refunds": { "$ref": "#/definitions/Decimal2" },
+        "sum_contribution": { "$ref": "#/definitions/Decimal2" },
+        "displayed_value": { "$ref": "#/definitions/Decimal2" },
+        "matches_displayed_value": { "type": "boolean" }
+      }
+    },
+    "SupportingRows": {
+      "description": "Drilldown for one metric run (APP-03, M-DRILLDOWN-ROWS). sum(contribution) over all pages equals the displayed value.",
+      "type": "object",
+      "required": [
+        "contract_version",
+        "metric_run_id",
+        "metric_id",
+        "metric_version",
+        "filters",
+        "currency",
+        "rows",
+        "page",
+        "totals",
+        "rejected_rows_in_scope",
+        "synthetic"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "contract_version": { "$ref": "#/definitions/ContractVersion" },
+        "metric_run_id": { "$ref": "#/definitions/MetricRunId" },
+        "metric_id": { "$ref": "#/definitions/MetricId" },
+        "metric_version": { "$ref": "#/definitions/MetricVersion" },
+        "filters": { "$ref": "#/definitions/MetricFilters" },
+        "currency": { "$ref": "#/definitions/Currency" },
+        "rows": { "type": "array", "items": { "$ref": "#/definitions/SupportingRow" } },
+        "page": { "$ref": "#/definitions/SupportingRowsPage" },
+        "totals": { "$ref": "#/definitions/SupportingRowsTotals" },
+        "rejected_rows_in_scope": { "type": "integer", "minimum": 0 },
+        "synthetic": { "$ref": "#/definitions/Synthetic" }
+      }
+    },
+    "ConnectionState": {
+      "enum": ["connected_synthetic", "not_connected"]
+    },
+    "ExpectedCadence": {
+      "enum": ["daily", "weekly", "monthly", "on_demand", "none"]
+    },
+    "LatestRunSummary": {
+      "type": "object",
+      "required": ["run_id", "status", "finished_at"],
+      "additionalProperties": false,
+      "properties": {
+        "run_id": { "$ref": "#/definitions/RunId" },
+        "status": { "$ref": "#/definitions/RunStatus" },
+        "finished_at": { "$ref": "#/definitions/NullableDateTime" },
+        "failure_type": { "$ref": "#/definitions/AcquisitionFailureType" },
+        "owner_role": { "type": "string", "minLength": 1 }
+      }
+    },
+    "LatestImportSummary": {
+      "type": "object",
+      "required": ["import_batch_id", "outcome", "finished_at"],
+      "additionalProperties": false,
+      "properties": {
+        "import_batch_id": { "$ref": "#/definitions/BatchId" },
+        "outcome": { "$ref": "#/definitions/ImportOutcome" },
+        "finished_at": { "$ref": "#/definitions/DateTime" }
+      }
+    },
+    "CoverageEntry": {
+      "type": "object",
+      "required": [
+        "source_name",
+        "report_type",
+        "connection_state",
+        "expected_cadence",
+        "status",
+        "expected_dates",
+        "received_dates",
+        "missing_dates",
+        "latest_run",
+        "latest_import",
+        "publication_state"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "source_name": { "$ref": "#/definitions/SourceId" },
+        "report_type": { "$ref": "#/definitions/ReportType" },
+        "connection_state": { "$ref": "#/definitions/ConnectionState" },
+        "expected_cadence": { "$ref": "#/definitions/ExpectedCadence" },
+        "status": { "enum": ["complete", "partial", "missing", "not_connected"] },
+        "expected_dates": { "type": "integer", "minimum": 0 },
+        "received_dates": { "type": "integer", "minimum": 0 },
+        "missing_dates": { "type": "array", "items": { "$ref": "#/definitions/Date" } },
+        "latest_run": { "anyOf": [{ "$ref": "#/definitions/LatestRunSummary" }, { "type": "null" }] },
+        "latest_import": { "anyOf": [{ "$ref": "#/definitions/LatestImportSummary" }, { "type": "null" }] },
+        "publication_state": { "enum": ["published", "stale_last_good", "unpublished", "not_applicable"] }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "connection_state": { "const": "not_connected" } }, "required": ["connection_state"] },
+          "then": {
+            "properties": {
+              "status": { "const": "not_connected" },
+              "latest_run": { "type": "null" },
+              "latest_import": { "type": "null" },
+              "publication_state": { "const": "not_applicable" }
+            }
+          }
+        }
+      ]
+    },
+    "SourceCoverage": {
+      "description": "Operations view input (APP-01) and M-SOURCE-COVERAGE input. Sources that are not connected are listed explicitly, never hidden.",
+      "type": "object",
+      "required": ["contract_version", "period", "reporting_timezone", "generated_at", "sources", "synthetic"],
+      "additionalProperties": false,
+      "properties": {
+        "contract_version": { "$ref": "#/definitions/ContractVersion" },
+        "period": { "$ref": "#/definitions/Period" },
+        "reporting_timezone": { "$ref": "#/definitions/ReportingTimezone" },
+        "generated_at": { "$ref": "#/definitions/DateTime" },
+        "sources": { "type": "array", "minItems": 1, "items": { "$ref": "#/definitions/CoverageEntry" } },
+        "synthetic": { "$ref": "#/definitions/Synthetic" }
+      }
+    },
+    "ExpectedReport": {
+      "type": "object",
+      "required": ["source_name", "report_type", "acquisition_class", "connection_state", "expected_cadence", "p0", "note"],
+      "additionalProperties": false,
+      "properties": {
+        "source_name": { "$ref": "#/definitions/SourceId" },
+        "report_type": { "$ref": "#/definitions/ReportType" },
+        "acquisition_class": { "$ref": "#/definitions/AcquisitionClass" },
+        "connection_state": { "$ref": "#/definitions/ConnectionState" },
+        "expected_cadence": { "$ref": "#/definitions/ExpectedCadence" },
+        "p0": { "type": "boolean" },
+        "note": { "type": "string" }
+      }
+    },
+    "ExpectedReports": {
+      "description": "Which reports are expected per reporting date. Drives M-SOURCE-COVERAGE and the operations view.",
+      "type": "object",
+      "required": ["contract_version", "reporting_timezone", "reports"],
+      "additionalProperties": false,
+      "properties": {
+        "contract_version": { "$ref": "#/definitions/ContractVersion" },
+        "reporting_timezone": { "$ref": "#/definitions/ReportingTimezone" },
+        "reports": { "type": "array", "minItems": 1, "items": { "$ref": "#/definitions/ExpectedReport" } }
+      }
+    },
+    "ErrorBody": {
+      "type": "object",
+      "required": ["code", "message", "retriable"],
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "enum": [
+            "invalid_request",
+            "unsupported_metric",
+            "not_found",
+            "conflict",
+            "permission_denied",
+            "upstream_unavailable",
+            "timeout",
+            "internal_error"
+          ]
+        },
+        "message": { "type": "string", "minLength": 1 },
+        "retriable": { "type": "boolean" },
+        "details": { "type": "object" }
+      }
+    },
+    "ErrorResponse": {
+      "description": "Every non-2xx API or tool response. Clients display it; they never fall back to mock or invented values.",
+      "type": "object",
+      "required": ["error"],
+      "additionalProperties": false,
+      "properties": {
+        "error": { "$ref": "#/definitions/ErrorBody" }
+      }
+    },
+    "MetricComparison": {
+      "description": "compare_metric response. change is null when either side is not available.",
+      "type": "object",
+      "required": ["contract_version", "current", "previous", "change", "synthetic"],
+      "additionalProperties": false,
+      "properties": {
+        "contract_version": { "$ref": "#/definitions/ContractVersion" },
+        "current": { "$ref": "#/definitions/MetricResult" },
+        "previous": { "$ref": "#/definitions/MetricResult" },
+        "change": { "anyOf": [{ "$ref": "#/definitions/Money" }, { "$ref": "#/definitions/Count" }, { "type": "null" }] },
+        "synthetic": { "$ref": "#/definitions/Synthetic" }
+      }
+    },
+    "RerunProposal": {
+      "description": "propose_report_rerun response. A proposal only: nothing runs until a human approves it.",
+      "type": "object",
+      "required": [
+        "contract_version",
+        "proposal_id",
+        "status",
+        "source_name",
+        "report_type",
+        "period",
+        "requires_approval_from",
+        "synthetic"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "contract_version": { "$ref": "#/definitions/ContractVersion" },
+        "proposal_id": { "$ref": "#/definitions/RunId" },
+        "status": { "const": "awaiting_human_approval" },
+        "source_name": { "$ref": "#/definitions/ConnectedSource" },
+        "report_type": { "$ref": "#/definitions/ReportType" },
+        "period": { "$ref": "#/definitions/Period" },
+        "requires_approval_from": { "type": "string", "minLength": 1 },
+        "synthetic": { "$ref": "#/definitions/Synthetic" }
+      }
+    },
+    "ToolRequest": {
+      "description": "APP-04 read-only tool calls (P1). Responses reuse MetricResult, MetricComparison, SourceCoverage, ImportBatch, SupportingRows, RerunProposal or ErrorResponse.",
+      "oneOf": [
+        {
+          "type": "object",
+          "required": ["tool", "arguments"],
+          "additionalProperties": false,
+          "properties": {
+            "tool": { "const": "get_metric" },
+            "arguments": {
+              "type": "object",
+              "required": ["metric_id", "filters"],
+              "additionalProperties": false,
+              "properties": {
+                "metric_id": { "$ref": "#/definitions/MetricId" },
+                "filters": { "$ref": "#/definitions/MetricFilters" }
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": ["tool", "arguments"],
+          "additionalProperties": false,
+          "properties": {
+            "tool": { "const": "compare_metric" },
+            "arguments": {
+              "type": "object",
+              "required": ["metric_id", "filters", "comparison_period"],
+              "additionalProperties": false,
+              "properties": {
+                "metric_id": { "$ref": "#/definitions/MetricId" },
+                "filters": { "$ref": "#/definitions/MetricFilters" },
+                "comparison_period": { "$ref": "#/definitions/Period" }
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": ["tool", "arguments"],
+          "additionalProperties": false,
+          "properties": {
+            "tool": { "const": "get_source_coverage" },
+            "arguments": {
+              "type": "object",
+              "required": ["period"],
+              "additionalProperties": false,
+              "properties": { "period": { "$ref": "#/definitions/Period" } }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": ["tool", "arguments"],
+          "additionalProperties": false,
+          "properties": {
+            "tool": { "const": "get_reconciliation" },
+            "arguments": {
+              "type": "object",
+              "required": ["import_batch_id"],
+              "additionalProperties": false,
+              "properties": { "import_batch_id": { "$ref": "#/definitions/BatchId" } }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": ["tool", "arguments"],
+          "additionalProperties": false,
+          "properties": {
+            "tool": { "const": "get_metric_definition" },
+            "arguments": {
+              "type": "object",
+              "required": ["metric_id", "metric_version"],
+              "additionalProperties": false,
+              "properties": {
+                "metric_id": { "$ref": "#/definitions/MetricId" },
+                "metric_version": { "$ref": "#/definitions/MetricVersion" }
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": ["tool", "arguments"],
+          "additionalProperties": false,
+          "properties": {
+            "tool": { "const": "get_supporting_rows" },
+            "arguments": {
+              "type": "object",
+              "required": ["metric_run_id", "limit", "offset"],
+              "additionalProperties": false,
+              "properties": {
+                "metric_run_id": { "$ref": "#/definitions/MetricRunId" },
+                "limit": { "type": "integer", "minimum": 1, "maximum": 500 },
+                "offset": { "type": "integer", "minimum": 0 }
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": ["tool", "arguments"],
+          "additionalProperties": false,
+          "properties": {
+            "tool": { "const": "propose_report_rerun" },
+            "arguments": {
+              "type": "object",
+              "required": ["source_name", "report_type", "period"],
+              "additionalProperties": false,
+              "properties": {
+                "source_name": { "$ref": "#/definitions/ConnectedSource" },
+                "report_type": { "$ref": "#/definitions/ReportType" },
+                "period": { "$ref": "#/definitions/Period" }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

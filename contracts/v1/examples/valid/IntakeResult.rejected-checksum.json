@@ -1,0 +1,9 @@
+{
+  "contract_version": "1.0.0",
+  "intake_state": "rejected",
+  "run_id": "run-20261001-upright-0002",
+  "rejection_code": "checksum_mismatch",
+  "detail": "Computed SHA-256 differs from the manifest; the file was not archived or handed off.",
+  "recorded_at": "2026-10-02T13:06:01Z",
+  "synthetic": true
+}

@@ -1,0 +1,50 @@
+{
+  "task_id": "GOV-03",
+  "state": "READY_FOR_REVIEW",
+  "source_requirement_ids": ["REQ-ING-01", "REQ-ING-03", "REQ-ING-05", "REQ-DAT-01", "REQ-DAT-02", "REQ-DAT-03", "REQ-DAT-04", "REQ-DAT-05", "REQ-KPI-01", "REQ-KPI-02", "REQ-KPI-03", "REQ-OPS-01", "REQ-OPS-03", "REQ-SEC-01", "REQ-AI-01", "REQ-FIN-01"],
+  "operator": "Claude Code session on Landon's machine; user acting as Jack OC",
+  "branch": "jackoc/GOV-03-contracts",
+  "base_commit": "f36684c4719bdeb714e91c2755cb55abf02e3d2b",
+  "head_commit": "the commit that adds this file on jackoc/GOV-03-contracts",
+  "dependencies": {
+    "GOV-02": {
+      "accepted_commit": "38120523f60ff9cc0f888146b9450be5be74f674",
+      "branch_head": "0e1fde53fe290f1b1730f0d93e496314e1d1165c",
+      "acceptance": "User acting as Jack OC replied 'accept' in session on 2026-10-04; not yet merged to main (PR #48 carries it)"
+    }
+  },
+  "contract_version": "1.0.0",
+  "commands": [
+    {"command": "git switch -c jackoc/GOV-03-contracts 0e1fde5 && git merge --no-ff origin/main", "result": "pass", "log": "clean merge f36684c; no overlapping paths"},
+    {"command": "sha256sum 'data ingestion/examples/upright_paid_orders_2026-09-30_2026-09-30_synthetic.csv'", "result": "pass", "log": "ecea88180c9f6ce7a74a40b819cfbffcb1b4543f000ade7da76ff8855d2f166b equals manifest file_checksum"},
+    {"command": "gawk integer-cent sums of gross_sales and refund_amount over the replica CSV", "result": "pass", "log": "rows=128 item_sales=7353.00 refunds=225.22 demo_net=7127.78; equals manifest"},
+    {"command": "ELECTRON_RUN_AS_NODE=1 Code.exe <scratchpad>/gen-examples.cjs <repo>", "result": "pass", "log": "valid: 23, invalid: 14 (one-off generator, not committed)"},
+    {"command": "ELECTRON_RUN_AS_NODE=1 Code.exe contracts/tests/validate-contracts.cjs (first run)", "result": "fail", "log": "crash: semantic cent arithmetic ran on a schema-invalid number; repair 1 made semantic rules run only after the schema passes"},
+    {"command": "ELECTRON_RUN_AS_NODE=1 Code.exe contracts/tests/validate-contracts.cjs", "result": "pass", "log": "reports/GOV-03/contract-run.log: 58 passed, 0 failed, exit 0"},
+    {"command": "negative control: MetricResult.available amount 74.50 -> 74.51, rerun, restore, rerun", "result": "pass", "log": "reports/GOV-03/negative-control-run.log: 57 passed, 1 failed, exit 1; restored run 58/0 exit 0"}
+  ],
+  "evidence_paths": [
+    "contracts/v1/goodwill-contracts.schema.json",
+    "contracts/v1/expected-reports.json",
+    "contracts/v1/examples/",
+    "contracts/tests/validate-contracts.cjs",
+    "planning/contracts.md",
+    "reports/GOV-03/compatibility-notes.md",
+    "reports/GOV-03/contract-test-results.md",
+    "reports/GOV-03/contract-run.log",
+    "reports/GOV-03/negative-control-run.log"
+  ],
+  "acceptance_checks": [
+    {"check": "Browser output can enter the importer without undocumented translation", "result": "pass_with_known_gap", "detail": "documented translation replayed on real replica output; fails only on reporting_timezone until ING-02 requests America/New_York"},
+    {"check": "Frontend and tool fixtures validate against the same schemas as backend responses", "result": "pass_for_fixtures", "detail": "single bundle and shared fixtures; implementation-side tests not possible yet"},
+    {"check": "Schema versions, compatibility policy and tests cover duplicate, late, malformed and missing-source cases", "result": "pass", "detail": "contract_version + semver policy; fixtures for each case"}
+  ],
+  "limitations": [
+    "Bundled checker implements only the draft-07 subset used; no ajv run",
+    "No type generation or implementation-side contract tests yet",
+    "API paths are proposals; payload shapes are frozen",
+    "Examples are illustrative, not expected results",
+    "GOV-02 acceptance given in session, not yet recorded on GitHub"
+  ],
+  "human_review_required": true
+}

@@ -1,0 +1,61 @@
+{
+  "contract_version": "1.0.0",
+  "metric_id": "M-DEMO-NET-SALES",
+  "metric_version": "GOV-02-metrics-v0.1",
+  "filters": {
+    "start_date": "2026-09-30",
+    "end_date": "2026-10-02",
+    "store_id": null,
+    "platform": null,
+    "source_name": "upright_replica"
+  },
+  "availability": "partial",
+  "availability_reason": "partial_coverage",
+  "availability_detail": "The 2026-10-02 report was not acquired (expired_session, waiting on a Goodwill operator). The value covers 2026-09-30 and 2026-10-01 only.",
+  "value": {
+    "amount": "2315.00",
+    "currency": "USD"
+  },
+  "unit": "USD",
+  "coverage": {
+    "state": "partial",
+    "expected_reports": 3,
+    "received_reports": 2,
+    "missing": [
+      {
+        "source_name": "upright_replica",
+        "report_type": "paid_orders",
+        "reporting_date": "2026-10-02"
+      }
+    ]
+  },
+  "freshness": {
+    "publication_state": "published",
+    "published_at": "2026-10-03T13:20:00Z",
+    "metric_run_id": "mrun-20260930-20261002-0004",
+    "source_file_ids": [
+      "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+    ],
+    "stale_reason": null
+  },
+  "reconciliation_state": "reconciled",
+  "definition": {
+    "formula": "sum(item sales) - sum(refunds); excludes shipping, tax and fees",
+    "grain": "reporting date, source/report, platform, store, currency",
+    "exclusions": [
+      "shipping",
+      "tax",
+      "marketplace fees",
+      "settlements",
+      "expenses"
+    ],
+    "dictionary_ref": "planning/metric-dictionary.md#p0-metrics"
+  },
+  "evidence": {
+    "metric_run_id": "mrun-20260930-20261002-0004",
+    "supporting_rows_href": "/api/v1/metric-runs/mrun-20260930-20261002-0004/rows"
+  },
+  "synthetic": true
+}

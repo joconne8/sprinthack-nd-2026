@@ -1,0 +1,38 @@
+{
+  "contract_version": "1.0.0",
+  "import_batch_id": "batch-20260930-0002",
+  "idempotency_key": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "source_file_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "run_id": "run-20260930-upright-0001",
+  "outcome": "duplicate_noop",
+  "parser_version": "upright-paid-orders-parser@0.1.0",
+  "upsert_policy": "latest_acquired_wins_with_history",
+  "started_at": "2026-10-01T15:00:00Z",
+  "finished_at": "2026-10-01T15:00:00Z",
+  "counts": {
+    "rows_in_file": 24,
+    "accepted": 0,
+    "rejected": 0,
+    "replaced_by_correction": 0,
+    "unchanged_duplicates": 24
+  },
+  "reconciliation": {
+    "state": "not_applicable",
+    "currency": "USD",
+    "source_reported": {
+      "item_sales": "1250.00",
+      "refunds": "50.00"
+    },
+    "accepted": {
+      "item_sales": "0.00",
+      "refunds": "0.00"
+    },
+    "rejected": {
+      "item_sales": "0.00",
+      "refunds": "0.00"
+    },
+    "note": "Same bytes as batch-20260930-0001; nothing re-imported and totals unchanged."
+  },
+  "rejected_rows": [],
+  "synthetic": true
+}

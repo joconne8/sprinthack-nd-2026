@@ -1,0 +1,141 @@
+{
+  "contract_version": "1.0.0",
+  "period": {
+    "start_date": "2026-09-30",
+    "end_date": "2026-10-02"
+  },
+  "reporting_timezone": "America/New_York",
+  "generated_at": "2026-10-03T13:21:00Z",
+  "sources": [
+    {
+      "source_name": "upright_replica",
+      "report_type": "paid_orders",
+      "connection_state": "connected_synthetic",
+      "expected_cadence": "daily",
+      "status": "partial",
+      "expected_dates": 3,
+      "received_dates": 2,
+      "missing_dates": [
+        "2026-10-02"
+      ],
+      "latest_run": {
+        "run_id": "run-20261002-upright-0001",
+        "status": "needs_human",
+        "finished_at": "2026-10-03T13:02:09Z",
+        "failure_type": "expired_session",
+        "owner_role": "Goodwill operator (re-authenticate)"
+      },
+      "latest_import": {
+        "import_batch_id": "batch-20260930-0003",
+        "outcome": "imported",
+        "finished_at": "2026-10-02T13:12:05Z"
+      },
+      "publication_state": "published"
+    },
+    {
+      "source_name": "cash_monkey_replica",
+      "report_type": "orders",
+      "connection_state": "connected_synthetic",
+      "expected_cadence": "on_demand",
+      "status": "complete",
+      "expected_dates": 0,
+      "received_dates": 0,
+      "missing_dates": [],
+      "latest_run": null,
+      "latest_import": null,
+      "publication_state": "not_applicable"
+    },
+    {
+      "source_name": "jewelry_report",
+      "report_type": "jewelry_sales",
+      "connection_state": "not_connected",
+      "expected_cadence": "none",
+      "status": "not_connected",
+      "expected_dates": 0,
+      "received_dates": 0,
+      "missing_dates": [],
+      "latest_run": null,
+      "latest_import": null,
+      "publication_state": "not_applicable"
+    },
+    {
+      "source_name": "shipping_osm_pb_easypost",
+      "report_type": "shipping_charges",
+      "connection_state": "not_connected",
+      "expected_cadence": "none",
+      "status": "not_connected",
+      "expected_dates": 0,
+      "received_dates": 0,
+      "missing_dates": [],
+      "latest_run": null,
+      "latest_import": null,
+      "publication_state": "not_applicable"
+    },
+    {
+      "source_name": "fedex_charges_refunds",
+      "report_type": "charges_refunds",
+      "connection_state": "not_connected",
+      "expected_cadence": "none",
+      "status": "not_connected",
+      "expected_dates": 0,
+      "received_dates": 0,
+      "missing_dates": [],
+      "latest_run": null,
+      "latest_import": null,
+      "publication_state": "not_applicable"
+    },
+    {
+      "source_name": "shopgoodwill_reports",
+      "report_type": "periodic_reports",
+      "connection_state": "not_connected",
+      "expected_cadence": "none",
+      "status": "not_connected",
+      "expected_dates": 0,
+      "received_dates": 0,
+      "missing_dates": [],
+      "latest_run": null,
+      "latest_import": null,
+      "publication_state": "not_applicable"
+    },
+    {
+      "source_name": "goodwill_books_statement",
+      "report_type": "payment_statement",
+      "connection_state": "not_connected",
+      "expected_cadence": "none",
+      "status": "not_connected",
+      "expected_dates": 0,
+      "received_dates": 0,
+      "missing_dates": [],
+      "latest_run": null,
+      "latest_import": null,
+      "publication_state": "not_applicable"
+    },
+    {
+      "source_name": "ebay_listing_sales",
+      "report_type": "listing_sales",
+      "connection_state": "not_connected",
+      "expected_cadence": "none",
+      "status": "not_connected",
+      "expected_dates": 0,
+      "received_dates": 0,
+      "missing_dates": [],
+      "latest_run": null,
+      "latest_import": null,
+      "publication_state": "not_applicable"
+    },
+    {
+      "source_name": "amazon_payments_summary",
+      "report_type": "payments_summary",
+      "connection_state": "not_connected",
+      "expected_cadence": "none",
+      "status": "not_connected",
+      "expected_dates": 0,
+      "received_dates": 0,
+      "missing_dates": [],
+      "latest_run": null,
+      "latest_import": null,
+      "publication_state": "not_applicable"
+    }
+  ],
+  "synthetic": true
+}

@@ -1,0 +1,29 @@
+{
+  "contract_version": "1.0.0",
+  "period": {
+    "start_date": "2026-09-30",
+    "end_date": "2026-09-30"
+  },
+  "reporting_timezone": "America/New_York",
+  "generated_at": "2026-10-01T13:21:00Z",
+  "sources": [
+    {
+      "source_name": "jewelry_report",
+      "report_type": "jewelry_sales",
+      "connection_state": "not_connected",
+      "expected_cadence": "none",
+      "status": "not_connected",
+      "expected_dates": 0,
+      "received_dates": 0,
+      "missing_dates": [],
+      "latest_run": {
+        "run_id": "run-20260930-jewelry-0001",
+        "status": "succeeded",
+        "finished_at": "2026-10-01T13:00:00Z"
+      },
+      "latest_import": null,
+      "publication_state": "not_applicable"
+    }
+  ],
+  "synthetic": true
+}

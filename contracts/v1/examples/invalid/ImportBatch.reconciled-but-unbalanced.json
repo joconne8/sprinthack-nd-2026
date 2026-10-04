@@ -1,0 +1,52 @@
+{
+  "contract_version": "1.0.0",
+  "import_batch_id": "batch-20261001-0001",
+  "idempotency_key": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+  "source_file_id": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+  "run_id": "run-20261001-upright-0001",
+  "outcome": "imported_with_rejections",
+  "parser_version": "upright-paid-orders-parser@0.1.0",
+  "upsert_policy": "latest_acquired_wins_with_history",
+  "started_at": "2026-10-02T13:08:29Z",
+  "finished_at": "2026-10-02T13:08:30Z",
+  "counts": {
+    "rows_in_file": 24,
+    "accepted": 22,
+    "rejected": 2,
+    "replaced_by_correction": 0,
+    "unchanged_duplicates": 0
+  },
+  "reconciliation": {
+    "state": "reconciled",
+    "currency": "USD",
+    "source_reported": {
+      "item_sales": "1250.00",
+      "refunds": "40.00"
+    },
+    "accepted": {
+      "item_sales": "1180.00",
+      "refunds": "40.00"
+    },
+    "rejected": {
+      "item_sales": "60.00",
+      "refunds": "0.00"
+    }
+  },
+  "rejected_rows": [
+    {
+      "source_row_index": 7,
+      "source_record_key": "UP-20261001-0006",
+      "reason": "duplicate_key_in_file",
+      "field": "paid_order_id",
+      "detail": "Second occurrence of paid_order_id UP-20261001-0006 (first at row 6)."
+    },
+    {
+      "source_row_index": 15,
+      "source_record_key": "UP-20261001-0015",
+      "reason": "missing_required_field",
+      "field": "paid_at",
+      "detail": "paid_at is empty, so the row cannot be dated."
+    }
+  ],
+  "synthetic": true
+}

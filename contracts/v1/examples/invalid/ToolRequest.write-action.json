@@ -1,0 +1,6 @@
+{
+  "tool": "post_journal_entry",
+  "arguments": {
+    "amount": "100.00"
+  }
+}

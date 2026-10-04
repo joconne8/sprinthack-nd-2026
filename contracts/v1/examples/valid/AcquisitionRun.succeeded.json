@@ -1,0 +1,22 @@
+{
+  "contract_version": "1.0.0",
+  "run_id": "run-20260930-upright-0001",
+  "skill_or_adapter_version": "upright-paid-orders-replica@0.1.0",
+  "acquisition_class": "portal_export",
+  "source_name": "upright_replica",
+  "report_type": "paid_orders",
+  "requested_start_date": "2026-09-30",
+  "requested_end_date": "2026-09-30",
+  "reporting_timezone": "America/New_York",
+  "status": "succeeded",
+  "attempts": [
+    {
+      "attempt_number": 1,
+      "started_at": "2026-10-01T13:04:40Z",
+      "outcome": "delivered"
+    }
+  ],
+  "source_file_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "finished_at": "2026-10-01T13:05:12Z",
+  "synthetic": true
+}

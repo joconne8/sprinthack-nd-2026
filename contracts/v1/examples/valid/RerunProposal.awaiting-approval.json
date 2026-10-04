@@ -1,0 +1,13 @@
+{
+  "contract_version": "1.0.0",
+  "proposal_id": "proposal-20261002-0001",
+  "status": "awaiting_human_approval",
+  "source_name": "upright_replica",
+  "report_type": "paid_orders",
+  "period": {
+    "start_date": "2026-10-02",
+    "end_date": "2026-10-02"
+  },
+  "requires_approval_from": "Goodwill operator",
+  "synthetic": true
+}

@@ -1,0 +1,34 @@
+{
+  "contract_version": "1.0.0",
+  "run_id": "run-20261004-upright-0001",
+  "skill_or_adapter_version": "upright-paid-orders-replica@0.1.0",
+  "acquisition_class": "portal_export",
+  "source_name": "upright_replica",
+  "report_type": "paid_orders",
+  "requested_start_date": "2026-10-04",
+  "requested_end_date": "2026-10-04",
+  "reporting_timezone": "America/New_York",
+  "status": "failed_retriable_exhausted",
+  "attempts": [
+    {
+      "attempt_number": 1,
+      "started_at": "2026-10-05T13:00:00Z",
+      "outcome": "report_unavailable"
+    },
+    {
+      "attempt_number": 2,
+      "started_at": "2026-10-05T13:05:00Z",
+      "outcome": "report_unavailable"
+    },
+    {
+      "attempt_number": 3,
+      "started_at": "2026-10-05T13:15:00Z",
+      "outcome": "report_unavailable"
+    }
+  ],
+  "failure_type": "report_unavailable",
+  "cause": "3 attempts: last report_unavailable",
+  "owner_role": "Acquisition maintainer",
+  "finished_at": "2026-10-05T13:15:20Z",
+  "synthetic": true
+}

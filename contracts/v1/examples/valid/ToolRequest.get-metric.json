@@ -1,0 +1,13 @@
+{
+  "tool": "get_metric",
+  "arguments": {
+    "metric_id": "M-DEMO-NET-SALES",
+    "filters": {
+      "start_date": "2026-09-30",
+      "end_date": "2026-09-30",
+      "store_id": "GW-001",
+      "platform": null,
+      "source_name": "upright_replica"
+    }
+  }
+}

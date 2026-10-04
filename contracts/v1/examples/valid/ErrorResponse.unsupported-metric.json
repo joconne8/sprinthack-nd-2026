@@ -1,0 +1,10 @@
+{
+  "error": {
+    "code": "unsupported_metric",
+    "message": "No metric named M-NPS exists in GOV-02-metrics-v0.1.",
+    "retriable": false,
+    "details": {
+      "metric_id": "M-NPS"
+    }
+  }
+}

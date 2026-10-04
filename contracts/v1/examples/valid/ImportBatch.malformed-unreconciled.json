@@ -1,0 +1,46 @@
+{
+  "contract_version": "1.0.0",
+  "import_batch_id": "batch-20261003-0002",
+  "idempotency_key": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+  "source_file_id": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+  "run_id": "run-20261003-upright-0002",
+  "outcome": "imported_with_rejections",
+  "parser_version": "upright-paid-orders-parser@0.1.0",
+  "upsert_policy": "latest_acquired_wins_with_history",
+  "started_at": "2026-10-04T15:30:00Z",
+  "finished_at": "2026-10-04T15:30:01Z",
+  "counts": {
+    "rows_in_file": 20,
+    "accepted": 19,
+    "rejected": 1,
+    "replaced_by_correction": 0,
+    "unchanged_duplicates": 0
+  },
+  "reconciliation": {
+    "state": "unreconciled",
+    "currency": "USD",
+    "source_reported": {
+      "item_sales": "980.00",
+      "refunds": "20.00"
+    },
+    "accepted": {
+      "item_sales": "967.50",
+      "refunds": "20.00"
+    },
+    "rejected": {
+      "item_sales": null,
+      "refunds": "0.00"
+    },
+    "note": "Row 11 gross_sales is '12,50' and cannot be parsed, so the 12.50 gap between source and accepted totals is unexplained. Publication of this batch is blocked."
+  },
+  "rejected_rows": [
+    {
+      "source_row_index": 11,
+      "source_record_key": "UP-20261003-0011",
+      "reason": "invalid_money",
+      "field": "gross_sales",
+      "detail": "Value '12,50' is not a decimal amount."
+    }
+  ],
+  "synthetic": true
+}

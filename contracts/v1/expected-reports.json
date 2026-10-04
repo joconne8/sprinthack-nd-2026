@@ -1,0 +1,87 @@
+{
+  "contract_version": "1.0.0",
+  "reporting_timezone": "America/New_York",
+  "reports": [
+    {
+      "source_name": "upright_replica",
+      "report_type": "paid_orders",
+      "acquisition_class": "portal_export",
+      "connection_state": "connected_synthetic",
+      "expected_cadence": "daily",
+      "p0": true,
+      "note": "P0: one report per reporting date from the Upright-style replica (ING-01/02). Synthetic only; not a live Upright integration."
+    },
+    {
+      "source_name": "cash_monkey_replica",
+      "report_type": "orders",
+      "acquisition_class": "portal_export",
+      "connection_state": "connected_synthetic",
+      "expected_cadence": "on_demand",
+      "p0": false,
+      "note": "P1 second source. The replica exists, but it does not count toward P0 coverage."
+    },
+    {
+      "source_name": "jewelry_report",
+      "report_type": "jewelry_sales",
+      "acquisition_class": "manual_upload",
+      "connection_state": "not_connected",
+      "expected_cadence": "none",
+      "p0": false,
+      "note": "Provided report; supplier mapping unconfirmed. Class and cadence are hypotheses (planning/source-register.md)."
+    },
+    {
+      "source_name": "shipping_osm_pb_easypost",
+      "report_type": "shipping_charges",
+      "acquisition_class": "portal_export",
+      "connection_state": "not_connected",
+      "expected_cadence": "none",
+      "p0": false,
+      "note": "Expense data, not revenue. Export versus statement lookup is unconfirmed."
+    },
+    {
+      "source_name": "fedex_charges_refunds",
+      "report_type": "charges_refunds",
+      "acquisition_class": "portal_export",
+      "connection_state": "not_connected",
+      "expected_cadence": "none",
+      "p0": false,
+      "note": "Expense and refund netting. Export versus accounting lookup is unconfirmed."
+    },
+    {
+      "source_name": "shopgoodwill_reports",
+      "report_type": "periodic_reports",
+      "acquisition_class": "portal_export",
+      "connection_state": "not_connected",
+      "expected_cadence": "none",
+      "p0": false,
+      "note": "May overlap Upright transactions; needs a system-of-record rule before combining."
+    },
+    {
+      "source_name": "goodwill_books_statement",
+      "report_type": "payment_statement",
+      "acquisition_class": "scheduled_file",
+      "connection_state": "not_connected",
+      "expected_cadence": "none",
+      "p0": false,
+      "note": "Monthly payout statement: a settlement, not transaction revenue."
+    },
+    {
+      "source_name": "ebay_listing_sales",
+      "report_type": "listing_sales",
+      "acquisition_class": "portal_export",
+      "connection_state": "not_connected",
+      "expected_cadence": "none",
+      "p0": false,
+      "note": "API only if authorized; otherwise portal export. Unconfirmed."
+    },
+    {
+      "source_name": "amazon_payments_summary",
+      "report_type": "payments_summary",
+      "acquisition_class": "portal_export",
+      "connection_state": "not_connected",
+      "expected_cadence": "none",
+      "p0": false,
+      "note": "Asynchronous generated report; a payment summary, not sales revenue."
+    }
+  ]
+}

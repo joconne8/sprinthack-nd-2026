@@ -1,0 +1,11 @@
+{
+  "tool": "propose_report_rerun",
+  "arguments": {
+    "source_name": "upright_replica",
+    "report_type": "paid_orders",
+    "period": {
+      "start_date": "2026-10-02",
+      "end_date": "2026-10-02"
+    }
+  }
+}

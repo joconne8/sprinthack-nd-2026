@@ -1,0 +1,29 @@
+{
+  "contract_version": "1.0.0",
+  "run_id": "run-20260930-upright-0001",
+  "acquisition_class": "portal_export",
+  "source_name": "upright_replica",
+  "report_type": "paid_orders",
+  "requested_start_date": "2026-09-30",
+  "requested_end_date": "2026-09-30",
+  "reporting_timezone": "America/New_York",
+  "file_name": "upright_paid_orders_2026-09-30_2026-09-30_synthetic.csv",
+  "file_checksum": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "checksum_algorithm": "SHA-256",
+  "byte_size": 4096,
+  "row_count": 24,
+  "coverage_start_date": "2026-09-30",
+  "coverage_end_date": "2026-09-30",
+  "downloaded_at": "2026-10-01T13:05:12Z",
+  "skill_or_adapter_version": "upright-paid-orders-replica@0.1.0",
+  "synthetic": true,
+  "currency": "USD",
+  "source_reported_totals": {
+    "item_sales": 1250,
+    "refunds": "50.00",
+    "demo_net_sales": "1200.00"
+  },
+  "source_metadata": {
+    "replica_schema_version": "replica-v1"
+  }
+}

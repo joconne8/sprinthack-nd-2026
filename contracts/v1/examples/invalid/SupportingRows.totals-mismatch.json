@@ -1,0 +1,72 @@
+{
+  "contract_version": "1.0.0",
+  "metric_run_id": "mrun-20260930-gw001-0001",
+  "metric_id": "M-DEMO-NET-SALES",
+  "metric_version": "GOV-02-metrics-v0.1",
+  "filters": {
+    "start_date": "2026-09-30",
+    "end_date": "2026-09-30",
+    "store_id": "GW-001",
+    "platform": null,
+    "source_name": "upright_replica"
+  },
+  "currency": "USD",
+  "rows": [
+    {
+      "source_ref": {
+        "source_file_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "source_row_index": 1,
+        "source_record_key": "UP-20260930-0001",
+        "import_batch_id": "batch-20260930-0001"
+      },
+      "reporting_date": "2026-09-30",
+      "store_id": "GW-001",
+      "channel": "Shopgoodwill",
+      "item_sales": "40.00",
+      "refunds": "0.00",
+      "contribution": "40.00"
+    },
+    {
+      "source_ref": {
+        "source_file_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "source_row_index": 5,
+        "source_record_key": "UP-20260930-0005",
+        "import_batch_id": "batch-20260930-0001"
+      },
+      "reporting_date": "2026-09-30",
+      "store_id": "GW-001",
+      "channel": "eBay",
+      "item_sales": "25.50",
+      "refunds": "5.50",
+      "contribution": "20.00"
+    },
+    {
+      "source_ref": {
+        "source_file_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "source_row_index": 9,
+        "source_record_key": "UP-20260930-0009",
+        "import_batch_id": "batch-20260930-0001"
+      },
+      "reporting_date": "2026-09-30",
+      "store_id": "GW-001",
+      "channel": "Shopgoodwill",
+      "item_sales": "14.50",
+      "refunds": "0.00",
+      "contribution": "14.50"
+    }
+  ],
+  "page": {
+    "limit": 50,
+    "offset": 0,
+    "total_rows": 3
+  },
+  "totals": {
+    "sum_item_sales": "80.00",
+    "sum_refunds": "5.50",
+    "sum_contribution": "74.50",
+    "displayed_value": "80.00",
+    "matches_displayed_value": true
+  },
+  "rejected_rows_in_scope": 0,
+  "synthetic": true
+}

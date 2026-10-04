@@ -1,0 +1,38 @@
+{
+  "contract_version": "1.0.0",
+  "import_batch_id": "batch-20260930-0003",
+  "idempotency_key": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "source_file_id": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "run_id": "run-20260930-upright-0002",
+  "outcome": "imported",
+  "parser_version": "upright-paid-orders-parser@0.1.0",
+  "upsert_policy": "latest_acquired_wins_with_history",
+  "started_at": "2026-10-02T13:12:04Z",
+  "finished_at": "2026-10-02T13:12:05Z",
+  "counts": {
+    "rows_in_file": 24,
+    "accepted": 24,
+    "rejected": 0,
+    "replaced_by_correction": 2,
+    "unchanged_duplicates": 22
+  },
+  "reconciliation": {
+    "state": "reconciled",
+    "currency": "USD",
+    "source_reported": {
+      "item_sales": "1250.00",
+      "refunds": "75.00"
+    },
+    "accepted": {
+      "item_sales": "1250.00",
+      "refunds": "75.00"
+    },
+    "rejected": {
+      "item_sales": "0.00",
+      "refunds": "0.00"
+    },
+    "note": "Revised export for 2026-09-30: two refunds rose by a combined 25.00. Changed rows get new versions; previous versions are kept."
+  },
+  "rejected_rows": [],
+  "synthetic": true
+}
