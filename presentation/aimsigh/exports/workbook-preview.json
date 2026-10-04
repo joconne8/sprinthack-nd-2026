@@ -1,0 +1,104 @@
+{
+  "workbook": "september2026.xlsx",
+  "snapshot_id": "af6902a4d40023ab704cf653b9c50b2f5dbe3e1fcaf5657bed293b8fad57efbb",
+  "sheets": [
+    "Definitions",
+    "Monthly Summary",
+    "2026-09-01",
+    "2026-09-02",
+    "2026-09-03",
+    "2026-09-04",
+    "2026-09-05",
+    "2026-09-06",
+    "2026-09-07",
+    "2026-09-08",
+    "2026-09-09",
+    "2026-09-10",
+    "2026-09-11",
+    "2026-09-12",
+    "2026-09-13",
+    "2026-09-14",
+    "2026-09-15",
+    "2026-09-16",
+    "2026-09-17",
+    "2026-09-18",
+    "2026-09-19",
+    "2026-09-20",
+    "2026-09-21",
+    "2026-09-22",
+    "2026-09-23",
+    "2026-09-24",
+    "2026-09-25",
+    "2026-09-26",
+    "2026-09-27",
+    "2026-09-28",
+    "2026-09-29",
+    "2026-09-30",
+    "Normalized Sales",
+    "Labor Inputs",
+    "Shipping Inputs",
+    "Customer Counts",
+    "Reconciliation",
+    "Source Evidence",
+    "Source Register"
+  ],
+  "daily_tabs": 30,
+  "monthly_rows": [
+    {
+      "A": "metric_id",
+      "B": "value",
+      "C": "unit",
+      "D": "availability",
+      "E": "availability_reason"
+    },
+    {
+      "A": "net_sales",
+      "B": "254059.4",
+      "C": "USD",
+      "D": "available"
+    },
+    {
+      "A": "labor_hours",
+      "B": "1968.0",
+      "C": "hours",
+      "D": "available"
+    },
+    {
+      "A": "revenue_per_labor_hour",
+      "B": "129.1",
+      "C": "USD/hour",
+      "D": "available"
+    },
+    {
+      "A": "fees",
+      "B": "26240.14",
+      "C": "USD",
+      "D": "available"
+    },
+    {
+      "A": "shipping_expense",
+      "B": "16800.0",
+      "C": "USD",
+      "D": "available"
+    },
+    {
+      "A": "labor_cost",
+      "B": "39360.0",
+      "C": "USD",
+      "D": "available"
+    },
+    {
+      "A": "contribution",
+      "B": "171659.26",
+      "C": "USD",
+      "D": "available"
+    },
+    {
+      "A": "contribution_margin",
+      "B": "67.57",
+      "C": "percent",
+      "D": "available"
+    }
+  ],
+  "source": "actual XLSX cached cell values"
+}

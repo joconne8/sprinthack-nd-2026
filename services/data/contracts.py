@@ -61,9 +61,12 @@ def day(value):
         raise DataError("invalid_date", value)
 
 
-def validate(schema_name, value):
+def validate(schema_name, value, schema_dir=None, definition=None):
     """Validate the exact shipped schema, including nested response/example shapes."""
-    schema = json.loads((Path(__file__).resolve().parents[2] / "contracts/v1" / schema_name).read_text())
+    directory = Path(schema_dir) if schema_dir else Path(__file__).resolve().parents[2] / "contracts/v1"
+    schema = json.loads((directory / schema_name).read_text())
+    if definition:
+        schema = {"$defs": schema["$defs"], "$ref": "#/$defs/" + definition}
 
     def visit(rule, item, path):
         if "$ref" in rule:

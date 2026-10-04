@@ -1,0 +1,68 @@
+{
+  "allowed_hosts": [
+    "localhost",
+    "127.0.0.1"
+  ],
+  "parameters": [
+    "start_date",
+    "end_date"
+  ],
+  "report_type": "paid_orders",
+  "skill_id": "4237090d9fda45fea326d2a5d0eba0c1",
+  "skill_version": "1.0.0",
+  "source_name": "upright_replica",
+  "status": "human action recording; awaiting recipe approval",
+  "steps": [
+    {
+      "op": "goto",
+      "path": "/upright"
+    },
+    {
+      "op": "goto",
+      "path": "/upright/reports"
+    },
+    {
+      "op": "goto",
+      "path": "/upright/reports/paid-orders"
+    },
+    {
+      "label": "Start date",
+      "op": "fill",
+      "value": "{start_date}"
+    },
+    {
+      "label": "End date",
+      "op": "fill",
+      "value": "{end_date}"
+    },
+    {
+      "label": "Timezone",
+      "op": "select",
+      "value": "America/Indiana/Indianapolis"
+    },
+    {
+      "label": "Payment status",
+      "op": "select",
+      "value": "All"
+    },
+    {
+      "name": "Generate report",
+      "op": "click",
+      "role": "button"
+    },
+    {
+      "failed_class": "error",
+      "op": "wait_state",
+      "ready_class": "success",
+      "selector": "#messages"
+    },
+    {
+      "op": "download",
+      "selector": "[data-testid=\"download-{job_id}\"]"
+    }
+  ],
+  "timeouts_ms": {
+    "step": 5000,
+    "total": 40000
+  }
+}

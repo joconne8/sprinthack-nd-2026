@@ -1,0 +1,2 @@
+# Excel delivery only; the existing data foundation remains stdlib Python.
+XlsxWriter==3.2.9

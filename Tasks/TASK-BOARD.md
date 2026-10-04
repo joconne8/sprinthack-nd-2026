@@ -1,12 +1,13 @@
 # Goodwill build board
 
-> **October 4 final release:** the synthetic acquired-file → verified data → connected dashboard slice is implemented.
-> Final browser/clean-checkout results: [release evidence](../reports/release/verification.json).
-> Presentation: [HTML deck](../presentation/index.html), [PowerPoint](../presentation/goodwill-progress.pptx),
-> [PDF](../presentation/goodwill-progress.pdf), [narrated video](../presentation/demo.mp4), [demo guide](../DEMO.md).
-> Peyton authorized remaining QA/release completion and overnight checks until October 5, 10 a.m. Eastern.
-> Pending human review/merge and organizer upload; P1 exports, assistant and live/pilot work stay deferred.
-> Original ownership/task histories below remain for traceability; they do not describe current runtime readiness.
+> **October 4 Aimsigh showcase:** record and replay both synthetic portals, verify shared snapshots,
+> download Excel, explore the dashboard, and ask evidence-backed local questions.
+> Actual sample records drive every displayed number: [sample data](../goodwill/showcase-data/README.md).
+> Verification: [showcase evidence](../reports/SHOWCASE/verification.json).
+> Present: [HTML slides](../presentation/aimsigh/index.html), [PowerPoint](../presentation/aimsigh/aimsigh-showcase.pptx),
+> [PDF](../presentation/aimsigh/aimsigh-showcase.pdf), [narrated walkthrough](../presentation/aimsigh/walkthrough.mp4), [launch guide](../DEMO.md).
+> Human review, merge and submission remain separate. Live Microsoft integrations and production accounting are pilot work.
+> Earlier task histories and P0 evidence below remain for traceability.
 
 
 Current delivery status uses the newer GOV/ING/DAT/APP/ENG/REL assignments in

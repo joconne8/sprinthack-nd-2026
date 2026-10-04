@@ -1,0 +1,55 @@
+{
+  "passed": true,
+  "snapshot_id": "af6902a4d40023ab704cf653b9c50b2f5dbe3e1fcaf5657bed293b8fad57efbb",
+  "voice": "offline macOS synthetic voice: Samantha",
+  "phases": [
+    {
+      "index": 0,
+      "title": "The reporting problem",
+      "start": 0.911,
+      "end": 30.913
+    },
+    {
+      "index": 1,
+      "title": "Teach the task once",
+      "start": 30.913,
+      "end": 65.914
+    },
+    {
+      "index": 2,
+      "title": "Replay and verify",
+      "start": 65.914,
+      "end": 100.916
+    },
+    {
+      "index": 3,
+      "title": "Deliver the workbook",
+      "start": 100.916,
+      "end": 130.917
+    },
+    {
+      "index": 4,
+      "title": "Understand the daily picture",
+      "start": 130.917,
+      "end": 162.511
+    },
+    {
+      "index": 5,
+      "title": "Inspect the comparison",
+      "start": 162.511,
+      "end": 197.512
+    },
+    {
+      "index": 6,
+      "title": "Ask beside the dashboard",
+      "start": 197.512,
+      "end": 227.517
+    },
+    {
+      "index": 7,
+      "title": "A controlled next step",
+      "start": 227.517,
+      "end": 249.007
+    }
+  ]
+}

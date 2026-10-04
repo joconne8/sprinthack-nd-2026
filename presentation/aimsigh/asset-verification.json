@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "snapshot_id": "af6902a4d40023ab704cf653b9c50b2f5dbe3e1fcaf5657bed293b8fad57efbb",
+  "slide_count": 15,
+  "main_presentation_seconds": 900,
+  "narrated_video_seconds": 248.918005,
+  "editable_native_text_runs": 145,
+  "local_only": true,
+  "synthetic": true,
+  "human_accepted": false,
+  "files": {
+    "presentation/aimsigh/index.html": {
+      "bytes": 1439809,
+      "sha256": "c388e612c2a520d642853b63e4c2d377fc9816badae46564cb0ed7391d2acc43"
+    },
+    "presentation/aimsigh/aimsigh-showcase.pdf": {
+      "bytes": 1712028,
+      "sha256": "375ea28e65adc26b188b95cf677466585f95f3edce039c651233cb272b4e0bd2"
+    },
+    "presentation/aimsigh/aimsigh-showcase.pptx": {
+      "bytes": 1094458,
+      "sha256": "96bc91150a3aea551846ca6da4aaf15b1bb9d728764323069cb28644c3c0786c"
+    },
+    "presentation/aimsigh/walkthrough.mp4": {
+      "bytes": 9547033,
+      "sha256": "0bf9c00c019595342f0f054649b47cb28681a7f79241f63602cf326f12a11a59"
+    },
+    "presentation/aimsigh/exports/september2026.xlsx": {
+      "bytes": 617283,
+      "sha256": "4dd460968f36b6c014d0eb0a805bd158bf9452658b89263fbf0181d067659d49"
+    }
+  }
+}

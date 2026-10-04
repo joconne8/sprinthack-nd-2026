@@ -46,13 +46,58 @@ def main():
     serve.add_argument('--node-modules', help='Directory containing pinned Playwright')
     serve.add_argument('--chrome-path', help='Installed Chrome executable (optional)')
     serve.add_argument('--replica-url', help='Existing loopback replica; otherwise start a local replica')
+    demo = commands.add_parser('demo', help='Isolated Aimsigh rehearsal with matched sample inputs')
+    demo_commands = demo.add_subparsers(dest='demo_command', required=True)
+    prepare = demo_commands.add_parser('prepare', help='Seed September 1–29 through the real importer')
+    prepare.add_argument('--checkpoint', action='store_true', help='Seed the verified complete-month recovery checkpoint')
+    reset = demo_commands.add_parser('reset', help='Reset only a marked isolated Aimsigh state directory')
+    reset.add_argument('--checkpoint', action='store_true')
+    demo_serve = demo_commands.add_parser('serve')
+    demo_serve.add_argument('--port', type=int, default=8000)
+    demo_serve.add_argument('--node')
+    demo_serve.add_argument('--node-modules')
+    demo_serve.add_argument('--chrome-path')
+    demo_serve.add_argument('--replica-url')
     commands.add_parser("imports")
     resolve = commands.add_parser("resolve-exception")
     resolve.add_argument("--id", required=True)
     resolve.add_argument("--resolution", required=True)
     args = parser.parse_args()
+    if args.command == 'demo' and args.state_root == '.runtime':
+        args.state_root = '.runtime/aimsigh-demo'
     pipeline = Pipeline(args.state_root)
     try:
+        if args.command == 'demo' and args.demo_command in ('prepare', 'reset'):
+            from services.showcase.service import ShowcaseService
+            import os
+            import shutil
+            marker = pipeline.root / '.aimsigh-demo.json'
+            if args.demo_command == 'reset':
+                if not marker.is_file():
+                    raise DataError('reset_denied', 'Reset requires an isolated state previously marked by demo prepare')
+                details = json.loads(marker.read_text())
+                if details.get('isolated_showcase') is not True or (pipeline.root / '.git').exists():
+                    raise DataError('reset_denied', 'Only a marked isolated showcase state can be reset')
+                if details.get('pid'):
+                    try:
+                        os.kill(details['pid'], 0)
+                    except ProcessLookupError:
+                        pass
+                    else:
+                        raise DataError('state_busy', 'Stop the active demo server before resetting')
+                shutil.rmtree(pipeline.root)
+                pipeline = Pipeline(args.state_root)
+            elif not marker.exists() and pipeline.root.exists() and any(pipeline.root.iterdir()):
+                raise DataError('state_existing', 'Use a fresh isolated state for the Aimsigh rehearsal')
+            pipeline.root.mkdir(parents=True, exist_ok=True)
+            marker.write_text(json.dumps({'synthetic': True, 'isolated_showcase': True}))
+            result = ShowcaseService(pipeline).prepare(args.checkpoint)
+            print(json.dumps(result, indent=2))
+            return 0
+        if args.command == 'demo':
+            if not (pipeline.root / '.aimsigh-demo.json').is_file():
+                raise DataError('prepare_required', 'Run demo prepare first to load the matched sample data')
+            args.command = 'serve'
         if args.command == "init":
             pipeline.db().close()
             result = {"state_root": str(pipeline.root), "synthetic": True}
@@ -96,14 +141,23 @@ def main():
             manager = AcquisitionManager(pipeline, args.replica_url or f'http://127.0.0.1:{replica.server_port}',
                                          args.node, args.node_modules, chrome)
             server = make_server(pipeline, args.port, acquisition=manager)
+            marker = pipeline.root / '.aimsigh-demo.json'
+            if marker.exists():
+                import os
+                marker.write_text(json.dumps({'synthetic': True, 'isolated_showcase': True, 'pid': os.getpid()}))
             print(f"Synthetic Goodwill dashboard: http://127.0.0.1:{server.server_port}/", flush=True)
+            print(f"Aimsigh showcase: http://127.0.0.1:{server.server_port}/showcase", flush=True)
             try:
                 server.serve_forever()
             except KeyboardInterrupt:
                 pass
             finally:
                 server.server_close()
+                if server.showcase.runner:
+                    server.showcase.runner.close()
                 manager.close()
+                if marker.exists():
+                    marker.write_text(json.dumps({'synthetic': True, 'isolated_showcase': True}))
                 if replica:
                     replica.shutdown()
                     replica.server_close()

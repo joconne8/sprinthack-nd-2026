@@ -1,0 +1,35 @@
+test_cash_monkey_also_imports (test_e2e_import.E2E) ... ok
+test_downloaded_checksum_matches_imported_raw_file (test_e2e_import.E2E) ... ok
+test_importer_rejects_tampered_bytes_even_if_intake_were_bypassed (test_e2e_import.E2E) ... ok
+test_resubmitting_same_file_does_not_double_publish (test_e2e_import.E2E) ... ok
+test_wrong_date_range_never_reaches_importer (test_e2e_import.E2E) ... ok
+test_archive_is_byte_identical_and_read_only (test_intake.IntakeTests) ... ok
+test_existing_request_does_not_hide_changed_archive (test_intake.IntakeTests) ... ok
+test_happy_path_both_sources (test_intake.IntakeTests) ... ok
+test_incomplete_manifest_rejected (test_intake.IntakeTests) ... ok
+test_missing_and_empty_file_rejected (test_intake.IntakeTests) ... ok
+test_request_is_idempotent_and_does_not_advance_import_state (test_intake.IntakeTests) ... ok
+test_row_outside_period_rejected (test_intake.IntakeTests) ... ok
+test_run_id_cannot_be_reused (test_intake.IntakeTests) ... ok
+test_same_bytes_not_archived_twice (test_intake.IntakeTests) ... ok
+test_submit_is_idempotent_and_records_real_import_state (test_intake.IntakeTests) ... ok
+test_tampered_bytes_rejected (test_intake.IntakeTests) ... ok
+test_truncated_file_row_count_rejected (test_intake.IntakeTests) ... ok
+test_unexpected_schema_rejected (test_intake.IntakeTests) ... ok
+test_unlabeled_synthetic_rejected (test_intake.IntakeTests) ... ok
+test_wrong_date_range_rejected (test_intake.IntakeTests) ... ok
+test_wrong_report_rejected (test_intake.IntakeTests) ... ok
+test_auth_and_policy_never_retried (test_run_state.RunStateTests) ... ok
+test_deadline_stops_retry (test_run_state.RunStateTests) ... ok
+test_retries_bounded (test_run_state.RunStateTests) ... ok
+test_retries_then_succeeds_once (test_run_state.RunStateTests) ... ok
+test_success_not_repeated (test_run_state.RunStateTests) ... ok
+test_unknown_failure_fails_closed (test_run_state.RunStateTests) ... ok
+test_dates_are_parameters_not_literals (test_skill_config.SkillConfigTests) ... ok
+test_no_secrets_and_local_hosts_only (test_skill_config.SkillConfigTests) ... ok
+test_runner_blocks_non_allowed_hosts_in_source (test_skill_config.SkillConfigTests) ... ok
+
+----------------------------------------------------------------------
+Ran 30 tests in 0.095s
+
+OK

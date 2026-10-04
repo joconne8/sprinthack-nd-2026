@@ -1,0 +1,132 @@
+{
+  "passed": true,
+  "draft": false,
+  "slide_count": 15,
+  "duration_seconds": 900,
+  "offline_navigation": true,
+  "speaker_notes": true,
+  "pdf": "aimsigh-showcase.pdf",
+  "screenshots_contained": true,
+  "slides": [
+    {
+      "slide": 1,
+      "overflow": [],
+      "images": [],
+      "visible": 1
+    },
+    {
+      "slide": 2,
+      "overflow": [],
+      "images": [],
+      "visible": 1
+    },
+    {
+      "slide": 3,
+      "overflow": [],
+      "images": [],
+      "visible": 1
+    },
+    {
+      "slide": 4,
+      "overflow": [],
+      "images": [],
+      "visible": 1
+    },
+    {
+      "slide": 5,
+      "overflow": [],
+      "images": [
+        {
+          "loaded": true,
+          "fit": "contain"
+        }
+      ],
+      "visible": 1
+    },
+    {
+      "slide": 6,
+      "overflow": [],
+      "images": [
+        {
+          "loaded": true,
+          "fit": "contain"
+        }
+      ],
+      "visible": 1
+    },
+    {
+      "slide": 7,
+      "overflow": [],
+      "images": [],
+      "visible": 1
+    },
+    {
+      "slide": 8,
+      "overflow": [],
+      "images": [],
+      "visible": 1
+    },
+    {
+      "slide": 9,
+      "overflow": [],
+      "images": [
+        {
+          "loaded": true,
+          "fit": "contain"
+        }
+      ],
+      "visible": 1
+    },
+    {
+      "slide": 10,
+      "overflow": [],
+      "images": [],
+      "visible": 1
+    },
+    {
+      "slide": 11,
+      "overflow": [],
+      "images": [
+        {
+          "loaded": true,
+          "fit": "contain"
+        }
+      ],
+      "visible": 1
+    },
+    {
+      "slide": 12,
+      "overflow": [],
+      "images": [
+        {
+          "loaded": true,
+          "fit": "contain"
+        }
+      ],
+      "visible": 1
+    },
+    {
+      "slide": 13,
+      "overflow": [],
+      "images": [
+        {
+          "loaded": true,
+          "fit": "contain"
+        }
+      ],
+      "visible": 1
+    },
+    {
+      "slide": 14,
+      "overflow": [],
+      "images": [],
+      "visible": 1
+    },
+    {
+      "slide": 15,
+      "overflow": [],
+      "images": [],
+      "visible": 1
+    }
+  ]
+}

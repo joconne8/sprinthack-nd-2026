@@ -50,9 +50,13 @@ def main():
     p.add_argument('--node', required=True); p.add_argument('--node-modules', required=True); p.add_argument('--chrome-path')
     p.add_argument('--until', required=True); p.add_argument('--interval-seconds', type=int, default=3600)
     p.add_argument('--max-cycles', type=int, default=36); p.add_argument('--dry-run', action='store_true')
+    p.add_argument('--showcase', action='store_true', help='Include the real Aimsigh browser/Excel/conversation acceptance')
+    p.add_argument('--command-timeout-seconds', type=int, default=90)
     args = p.parse_args(); deadline = parse_deadline(args.until)
     if not 60 <= args.interval_seconds <= 7200 or not 1 <= args.max_cycles <= 36:
         p.error('Use a 60–7200 second interval and 1–36 cycles')
+    if not 10 <= args.command_timeout_seconds <= 300:
+        p.error('Command timeout must be 10–300 seconds')
     if deadline <= datetime.now(timezone.utc): p.error('Deadline must be in the future')
     source = args.source.resolve(); output = args.output.resolve(); output.mkdir(parents=True, exist_ok=True)
     if subprocess.check_output(['git', 'status', '--porcelain'], cwd=source): p.error('Frozen source checkout must be clean')
@@ -63,6 +67,8 @@ def main():
               'cycles': [], 'spend': 'No model/paid-service calls; local tests only', 'changes_code': False}
     stop_file = output / 'STOP'
     env = dict(os.environ, PYTHONDONTWRITEBYTECODE='1', GOODWILL_NODE=args.node, GOODWILL_NODE_MODULES=args.node_modules)
+    env['PATH'] = str(Path(args.node).resolve().parent) + os.pathsep + env.get('PATH', '')
+    env['NODE_PATH'] = args.node_modules
     if args.chrome_path: env['CHROME_PATH'] = args.chrome_path
     commands = [
         [sys.executable, '-m', 'unittest', 'discover', '-s', 'tests', '-v'],
@@ -86,12 +92,18 @@ def main():
         status['state']='running'; folder=output/f'cycle-{number:02d}';folder.mkdir(exist_ok=True)
         cycle={'number':number,'started_at_utc':datetime.now(timezone.utc).isoformat(),'commands':[]};status['cycles'].append(cycle);save()
         cycle_env=dict(env,GOODWILL_QA_OUTPUT=str(folder/'browser'))
-        for index, command in enumerate(commands):
+        cycle_commands = list(commands)
+        if args.showcase:
+            acceptance = [sys.executable, 'scripts/verify_showcase.py', '--node', args.node,
+                          '--node-modules', args.node_modules, '--output', str(folder/'showcase')]
+            if args.chrome_path: acceptance += ['--chrome-path', args.chrome_path]
+            cycle_commands.append(acceptance)
+        for index, command in enumerate(cycle_commands):
             remaining=(deadline-datetime.now(timezone.utc)).total_seconds()
-            result=run_bounded(command,source,folder/f'{index+1}.log',cycle_env,min(90,max(0,remaining)),stop_file)
+            result=run_bounded(command,source,folder/f'{index+1}.log',cycle_env,min(args.command_timeout_seconds,max(0,remaining)),stop_file)
             cycle['commands'].append({'command':command,**result});save()
             if result['exit_code'] != 0: break
-        cycle['passed']=len(cycle['commands'])==len(commands) and all(c['exit_code']==0 for c in cycle['commands'])
+        cycle['passed']=len(cycle['commands'])==len(cycle_commands) and all(c['exit_code']==0 for c in cycle['commands'])
         cycle['finished_at_utc']=datetime.now(timezone.utc).isoformat()
         failures=0 if cycle['passed'] else failures+1
         if stop_file.exists(): status['state']='cancelled';save();break

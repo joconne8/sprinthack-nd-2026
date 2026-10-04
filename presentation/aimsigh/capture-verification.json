@@ -1,0 +1,2075 @@
+{
+  "passed": true,
+  "recording": "Actual local browser interactions; fictional sales; invented labor/cost inputs; no external model",
+  "initial_snapshot_id": "1940dbdcb3fbdea57687fd4addfe0c9d3c8dc30b5c33ca1411a703d46e3e2b86",
+  "snapshot_id": "af6902a4d40023ab704cf653b9c50b2f5dbe3e1fcaf5657bed293b8fad57efbb",
+  "capture_sha256": {
+    "captures/collection.png": "9c08e87ad9f2e5ce71126ba63e6d057e27516f6d89e7e78b2115014b8ca03130",
+    "captures/comparison.png": "12b4d2e7693c87953e17933c04f4defc7091d8eb0ed217e8e234310cb237c7eb",
+    "captures/conversation.png": "e506bc9535b91637260ea32ece3e5e034e9aaf8b92811887b5db66096fe977ad",
+    "captures/dashboard.png": "3537381f94856cc87e52d5fb47a909d44d9c8cc27d343ab120e46ee846525903",
+    "captures/delivery.png": "949c10c8df35394b5c0e7342641a5cacfa3147272845fe055f64c84775472e87",
+    "captures/evidence.png": "22da6aa65d904d9308cd6d24a6d62a8401b4edfa35445e69a300a2d15d3850df",
+    "captures/final-delivery.png": "0c0f58fe97508359efda0bb97eba87a2e3c014565bfef98ad382e8add2f4bc71",
+    "captures/initial-dashboard.png": "c74fb590add24ceea0238695c55b459575ab06a9df3452015146f60227ee5c45",
+    "captures/labor-evidence.png": "f9b7adb576e4bd1ff8be781680e23d9c1c47dfc5c10061a30ca8ae9946b56427",
+    "captures/recording.png": "115b1d8d63cac40b3f8244e668ba309a40981cbccb3636c19c6ea00c9c4a1253",
+    "captures/unsupported.png": "02da6dad8153747bd36fd629acbb6fa2decae07cdf36fed7f0f1d4b0b5945631",
+    "captures/workbook.png": "6825820d6a9467d65753017fa29cf66b66d1648b46705148d1fe6a4dbf36a8ef"
+  },
+  "results": {
+    "initial_snapshot": {
+      "auxiliary": [
+        {
+          "checksum": "248df72ae828fe2fc791f1c6624b4853860a2567ea0efbff938b0a03c4e73d88",
+          "definition_version": "showcase-september-v1",
+          "input_id": "61404691c26c244750f2bd6f76bf66ed25bfcbe78268cba115b1fcc8961a7554",
+          "kind": "labor"
+        },
+        {
+          "checksum": "ecc8df53a75e626ddc8d7a31b7307cac76cbd63e547a6b65bb578689c7cc1e2c",
+          "definition_version": "showcase-september-v1",
+          "input_id": "c8499d21dc835feaa76963e96e02e668e00196521489b41b5de84cff33c6c597",
+          "kind": "shipping"
+        }
+      ],
+      "contract_version": "showcase-v1",
+      "definition_version": "showcase-september-v1",
+      "month": "2026-09",
+      "published_at": "2026-10-04T17:08:59.468077+00:00",
+      "snapshot_id": "1940dbdcb3fbdea57687fd4addfe0c9d3c8dc30b5c33ca1411a703d46e3e2b86",
+      "sources": [
+        {
+          "coverage": {
+            "covered_days": [
+              "2026-09-01",
+              "2026-09-02",
+              "2026-09-03",
+              "2026-09-04",
+              "2026-09-05",
+              "2026-09-06",
+              "2026-09-07",
+              "2026-09-08",
+              "2026-09-09",
+              "2026-09-10",
+              "2026-09-11",
+              "2026-09-12",
+              "2026-09-13",
+              "2026-09-14",
+              "2026-09-15",
+              "2026-09-16",
+              "2026-09-17",
+              "2026-09-18",
+              "2026-09-19",
+              "2026-09-20",
+              "2026-09-21",
+              "2026-09-22",
+              "2026-09-23",
+              "2026-09-24",
+              "2026-09-25",
+              "2026-09-26",
+              "2026-09-27",
+              "2026-09-28",
+              "2026-09-29"
+            ],
+            "expected_days": [
+              "2026-09-01",
+              "2026-09-02",
+              "2026-09-03",
+              "2026-09-04",
+              "2026-09-05",
+              "2026-09-06",
+              "2026-09-07",
+              "2026-09-08",
+              "2026-09-09",
+              "2026-09-10",
+              "2026-09-11",
+              "2026-09-12",
+              "2026-09-13",
+              "2026-09-14",
+              "2026-09-15",
+              "2026-09-16",
+              "2026-09-17",
+              "2026-09-18",
+              "2026-09-19",
+              "2026-09-20",
+              "2026-09-21",
+              "2026-09-22",
+              "2026-09-23",
+              "2026-09-24",
+              "2026-09-25",
+              "2026-09-26",
+              "2026-09-27",
+              "2026-09-28",
+              "2026-09-29",
+              "2026-09-30"
+            ],
+            "missing_days": [
+              "2026-09-30"
+            ],
+            "state": "partial"
+          },
+          "latest_batch_id": "69ea4b7684ae434cbc5664be7b833655",
+          "latest_import_state": "published",
+          "metric_run_id": "e28d2f9ef62d42dd86fd29952f429bfa",
+          "source": "upright_replica"
+        },
+        {
+          "coverage": {
+            "covered_days": [
+              "2026-09-01",
+              "2026-09-02",
+              "2026-09-03",
+              "2026-09-04",
+              "2026-09-05",
+              "2026-09-06",
+              "2026-09-07",
+              "2026-09-08",
+              "2026-09-09",
+              "2026-09-10",
+              "2026-09-11",
+              "2026-09-12",
+              "2026-09-13",
+              "2026-09-14",
+              "2026-09-15",
+              "2026-09-16",
+              "2026-09-17",
+              "2026-09-18",
+              "2026-09-19",
+              "2026-09-20",
+              "2026-09-21",
+              "2026-09-22",
+              "2026-09-23",
+              "2026-09-24",
+              "2026-09-25",
+              "2026-09-26",
+              "2026-09-27",
+              "2026-09-28",
+              "2026-09-29"
+            ],
+            "expected_days": [
+              "2026-09-01",
+              "2026-09-02",
+              "2026-09-03",
+              "2026-09-04",
+              "2026-09-05",
+              "2026-09-06",
+              "2026-09-07",
+              "2026-09-08",
+              "2026-09-09",
+              "2026-09-10",
+              "2026-09-11",
+              "2026-09-12",
+              "2026-09-13",
+              "2026-09-14",
+              "2026-09-15",
+              "2026-09-16",
+              "2026-09-17",
+              "2026-09-18",
+              "2026-09-19",
+              "2026-09-20",
+              "2026-09-21",
+              "2026-09-22",
+              "2026-09-23",
+              "2026-09-24",
+              "2026-09-25",
+              "2026-09-26",
+              "2026-09-27",
+              "2026-09-28",
+              "2026-09-29",
+              "2026-09-30"
+            ],
+            "missing_days": [
+              "2026-09-30"
+            ],
+            "state": "partial"
+          },
+          "latest_batch_id": "0168240676f345bea619b737809a9880",
+          "latest_import_state": "published",
+          "metric_run_id": "248e958e3e4b4c6c96471cd882abffd4",
+          "source": "cash_monkey_replica"
+        }
+      ],
+      "synthetic": true
+    },
+    "upright_replica": {
+      "attempts": [
+        {
+          "n": 1,
+          "ok": true,
+          "type": "ok"
+        }
+      ],
+      "batch_id": "1bb7cfc8b4b749c5b31d0f910a282c5a",
+      "cause": "",
+      "checksum": "543247470f52449fbf285b97fc714858ada89758a7c2fd687a2227d5be2e45e3",
+      "contract_version": "showcase-v1",
+      "end_date": "2026-09-30",
+      "finished_at": "2026-10-04T17:10:16.435264+00:00",
+      "headed": false,
+      "import_state": "imported",
+      "mode": "normal",
+      "owner_role": "",
+      "publication_state": "published",
+      "recipe_id": "4237090d9fda45fea326d2a5d0eba0c1",
+      "recipe_version": "1.0.0",
+      "requested_at": "2026-10-04T17:10:12.063934+00:00",
+      "row_count": 128,
+      "run_id": "7bd161054e924c6f9c40e476cc859893",
+      "snapshot_id": "29c4aca0b420538210dfe1d1c1ec12339d71671bd19912c5ec1d97c727f6f2d3",
+      "source": "upright_replica",
+      "stage": "complete",
+      "start_date": "2026-09-30",
+      "status": "succeeded",
+      "synthetic": true
+    },
+    "cash_monkey_replica": {
+      "attempts": [
+        {
+          "n": 1,
+          "ok": true,
+          "type": "ok"
+        }
+      ],
+      "batch_id": "cdaeaa384963416eb77b1175122c4a76",
+      "cause": "",
+      "checksum": "b16cb801b88e68366ad173920b660be75d0415c4186d1a3e446399b194607101",
+      "contract_version": "showcase-v1",
+      "end_date": "2026-09-30",
+      "finished_at": "2026-10-04T17:10:20.893659+00:00",
+      "headed": false,
+      "import_state": "imported",
+      "mode": "normal",
+      "owner_role": "",
+      "publication_state": "published",
+      "recipe_id": "cash-monkey-baseline",
+      "recipe_version": "1.0.0",
+      "requested_at": "2026-10-04T17:10:17.044341+00:00",
+      "row_count": 32,
+      "run_id": "e087decb9dc64b1a916279a2af465b69",
+      "snapshot_id": "af6902a4d40023ab704cf653b9c50b2f5dbe3e1fcaf5657bed293b8fad57efbb",
+      "source": "cash_monkey_replica",
+      "stage": "complete",
+      "start_date": "2026-09-30",
+      "status": "succeeded",
+      "synthetic": true
+    },
+    "snapshot": {
+      "auxiliary": [
+        {
+          "checksum": "248df72ae828fe2fc791f1c6624b4853860a2567ea0efbff938b0a03c4e73d88",
+          "definition_version": "showcase-september-v1",
+          "input_id": "61404691c26c244750f2bd6f76bf66ed25bfcbe78268cba115b1fcc8961a7554",
+          "kind": "labor"
+        },
+        {
+          "checksum": "ecc8df53a75e626ddc8d7a31b7307cac76cbd63e547a6b65bb578689c7cc1e2c",
+          "definition_version": "showcase-september-v1",
+          "input_id": "c8499d21dc835feaa76963e96e02e668e00196521489b41b5de84cff33c6c597",
+          "kind": "shipping"
+        }
+      ],
+      "contract_version": "showcase-v1",
+      "definition_version": "showcase-september-v1",
+      "month": "2026-09",
+      "published_at": "2026-10-04T17:10:20.893111+00:00",
+      "snapshot_id": "af6902a4d40023ab704cf653b9c50b2f5dbe3e1fcaf5657bed293b8fad57efbb",
+      "sources": [
+        {
+          "coverage": {
+            "covered_days": [
+              "2026-09-01",
+              "2026-09-02",
+              "2026-09-03",
+              "2026-09-04",
+              "2026-09-05",
+              "2026-09-06",
+              "2026-09-07",
+              "2026-09-08",
+              "2026-09-09",
+              "2026-09-10",
+              "2026-09-11",
+              "2026-09-12",
+              "2026-09-13",
+              "2026-09-14",
+              "2026-09-15",
+              "2026-09-16",
+              "2026-09-17",
+              "2026-09-18",
+              "2026-09-19",
+              "2026-09-20",
+              "2026-09-21",
+              "2026-09-22",
+              "2026-09-23",
+              "2026-09-24",
+              "2026-09-25",
+              "2026-09-26",
+              "2026-09-27",
+              "2026-09-28",
+              "2026-09-29",
+              "2026-09-30"
+            ],
+            "expected_days": [
+              "2026-09-01",
+              "2026-09-02",
+              "2026-09-03",
+              "2026-09-04",
+              "2026-09-05",
+              "2026-09-06",
+              "2026-09-07",
+              "2026-09-08",
+              "2026-09-09",
+              "2026-09-10",
+              "2026-09-11",
+              "2026-09-12",
+              "2026-09-13",
+              "2026-09-14",
+              "2026-09-15",
+              "2026-09-16",
+              "2026-09-17",
+              "2026-09-18",
+              "2026-09-19",
+              "2026-09-20",
+              "2026-09-21",
+              "2026-09-22",
+              "2026-09-23",
+              "2026-09-24",
+              "2026-09-25",
+              "2026-09-26",
+              "2026-09-27",
+              "2026-09-28",
+              "2026-09-29",
+              "2026-09-30"
+            ],
+            "missing_days": [],
+            "state": "complete"
+          },
+          "latest_batch_id": "1bb7cfc8b4b749c5b31d0f910a282c5a",
+          "latest_import_state": "published",
+          "metric_run_id": "ec8389d6a3b045d8bd53393e4a08dbb8",
+          "source": "upright_replica"
+        },
+        {
+          "coverage": {
+            "covered_days": [
+              "2026-09-01",
+              "2026-09-02",
+              "2026-09-03",
+              "2026-09-04",
+              "2026-09-05",
+              "2026-09-06",
+              "2026-09-07",
+              "2026-09-08",
+              "2026-09-09",
+              "2026-09-10",
+              "2026-09-11",
+              "2026-09-12",
+              "2026-09-13",
+              "2026-09-14",
+              "2026-09-15",
+              "2026-09-16",
+              "2026-09-17",
+              "2026-09-18",
+              "2026-09-19",
+              "2026-09-20",
+              "2026-09-21",
+              "2026-09-22",
+              "2026-09-23",
+              "2026-09-24",
+              "2026-09-25",
+              "2026-09-26",
+              "2026-09-27",
+              "2026-09-28",
+              "2026-09-29",
+              "2026-09-30"
+            ],
+            "expected_days": [
+              "2026-09-01",
+              "2026-09-02",
+              "2026-09-03",
+              "2026-09-04",
+              "2026-09-05",
+              "2026-09-06",
+              "2026-09-07",
+              "2026-09-08",
+              "2026-09-09",
+              "2026-09-10",
+              "2026-09-11",
+              "2026-09-12",
+              "2026-09-13",
+              "2026-09-14",
+              "2026-09-15",
+              "2026-09-16",
+              "2026-09-17",
+              "2026-09-18",
+              "2026-09-19",
+              "2026-09-20",
+              "2026-09-21",
+              "2026-09-22",
+              "2026-09-23",
+              "2026-09-24",
+              "2026-09-25",
+              "2026-09-26",
+              "2026-09-27",
+              "2026-09-28",
+              "2026-09-29",
+              "2026-09-30"
+            ],
+            "missing_days": [],
+            "state": "complete"
+          },
+          "latest_batch_id": "cdaeaa384963416eb77b1175122c4a76",
+          "latest_import_state": "published",
+          "metric_run_id": "a7a2e31dd7464fef91493bb41ad711b7",
+          "source": "cash_monkey_replica"
+        }
+      ],
+      "synthetic": true
+    },
+    "metrics": {
+      "auxiliary_url": "/api/showcase/v1/inputs?start_date=2026-09-01&end_date=2026-09-30&source=all&snapshot_id=af6902a4d40023ab704cf653b9c50b2f5dbe3e1fcaf5657bed293b8fad57efbb",
+      "by_platform": [
+        {
+          "net_sales": "15615.90",
+          "platform": "Amazon-MF"
+        },
+        {
+          "net_sales": "13829.40",
+          "platform": "GoodwillBooks"
+        },
+        {
+          "net_sales": "68781.35",
+          "platform": "GoodwillFinds"
+        },
+        {
+          "net_sales": "70232.35",
+          "platform": "ShopGoodwill"
+        },
+        {
+          "net_sales": "85600.40",
+          "platform": "eBay"
+        }
+      ],
+      "by_source": [
+        {
+          "net_sales": "43786.30",
+          "orders": 900,
+          "records": 960,
+          "source": "cash_monkey_replica"
+        },
+        {
+          "net_sales": "210273.10",
+          "orders": 3840,
+          "records": 3840,
+          "source": "upright_replica"
+        }
+      ],
+      "by_store": [
+        {
+          "net_sales": "12531.80",
+          "store": "GW-001"
+        },
+        {
+          "net_sales": "12859.60",
+          "store": "GW-002"
+        },
+        {
+          "net_sales": "12856.00",
+          "store": "GW-003"
+        },
+        {
+          "net_sales": "11586.70",
+          "store": "GW-004"
+        },
+        {
+          "net_sales": "12338.80",
+          "store": "GW-005"
+        },
+        {
+          "net_sales": "12250.20",
+          "store": "GW-006"
+        },
+        {
+          "net_sales": "9654.50",
+          "store": "GW-007"
+        },
+        {
+          "net_sales": "10852.45",
+          "store": "GW-008"
+        },
+        {
+          "net_sales": "9754.90",
+          "store": "GW-009"
+        },
+        {
+          "net_sales": "9879.70",
+          "store": "GW-010"
+        },
+        {
+          "net_sales": "8979.35",
+          "store": "GW-011"
+        },
+        {
+          "net_sales": "9874.30",
+          "store": "GW-012"
+        },
+        {
+          "net_sales": "9744.10",
+          "store": "GW-013"
+        },
+        {
+          "net_sales": "9397.10",
+          "store": "GW-014"
+        },
+        {
+          "net_sales": "9993.70",
+          "store": "GW-015"
+        },
+        {
+          "net_sales": "11686.25",
+          "store": "GW-016"
+        },
+        {
+          "net_sales": "10243.30",
+          "store": "GW-017"
+        },
+        {
+          "net_sales": "8693.90",
+          "store": "GW-018"
+        },
+        {
+          "net_sales": "10322.90",
+          "store": "GW-019"
+        },
+        {
+          "net_sales": "10362.70",
+          "store": "GW-020"
+        },
+        {
+          "net_sales": "9236.25",
+          "store": "GW-021"
+        },
+        {
+          "net_sales": "10442.30",
+          "store": "GW-022"
+        },
+        {
+          "net_sales": "10567.10",
+          "store": "GW-023"
+        },
+        {
+          "net_sales": "9951.50",
+          "store": "GW-024"
+        }
+      ],
+      "contract_version": "showcase-v1",
+      "coverage": {
+        "missing_days": [],
+        "state": "complete"
+      },
+      "customer_counts": [
+        {
+          "availability": "available",
+          "platform": "Amazon-MF",
+          "source": "cash_monkey_replica",
+          "value": "10"
+        },
+        {
+          "availability": "available",
+          "platform": "GoodwillBooks",
+          "source": "cash_monkey_replica",
+          "value": "10"
+        },
+        {
+          "availability": "available",
+          "platform": "eBay",
+          "source": "cash_monkey_replica",
+          "value": "10"
+        },
+        {
+          "availability": "available",
+          "platform": "GoodwillFinds",
+          "source": "upright_replica",
+          "value": "42"
+        },
+        {
+          "availability": "available",
+          "platform": "ShopGoodwill",
+          "source": "upright_replica",
+          "value": "43"
+        },
+        {
+          "availability": "available",
+          "platform": "eBay",
+          "source": "upright_replica",
+          "value": "43"
+        }
+      ],
+      "daily": [
+        {
+          "date": "2026-09-01",
+          "net_sales": "8339.09"
+        },
+        {
+          "date": "2026-09-02",
+          "net_sales": "8210.75"
+        },
+        {
+          "date": "2026-09-03",
+          "net_sales": "8252.42"
+        },
+        {
+          "date": "2026-09-04",
+          "net_sales": "8124.08"
+        },
+        {
+          "date": "2026-09-05",
+          "net_sales": "8080.75"
+        },
+        {
+          "date": "2026-09-06",
+          "net_sales": "8037.41"
+        },
+        {
+          "date": "2026-09-07",
+          "net_sales": "8036.58"
+        },
+        {
+          "date": "2026-09-08",
+          "net_sales": "8078.24"
+        },
+        {
+          "date": "2026-09-09",
+          "net_sales": "8119.91"
+        },
+        {
+          "date": "2026-09-10",
+          "net_sales": "8204.07"
+        },
+        {
+          "date": "2026-09-11",
+          "net_sales": "8245.74"
+        },
+        {
+          "date": "2026-09-12",
+          "net_sales": "8287.40"
+        },
+        {
+          "date": "2026-09-13",
+          "net_sales": "8329.07"
+        },
+        {
+          "date": "2026-09-14",
+          "net_sales": "8370.73"
+        },
+        {
+          "date": "2026-09-15",
+          "net_sales": "8412.40"
+        },
+        {
+          "date": "2026-09-16",
+          "net_sales": "8496.56"
+        },
+        {
+          "date": "2026-09-17",
+          "net_sales": "8538.23"
+        },
+        {
+          "date": "2026-09-18",
+          "net_sales": "8579.89"
+        },
+        {
+          "date": "2026-09-19",
+          "net_sales": "8621.56"
+        },
+        {
+          "date": "2026-09-20",
+          "net_sales": "8663.22"
+        },
+        {
+          "date": "2026-09-21",
+          "net_sales": "8704.89"
+        },
+        {
+          "date": "2026-09-22",
+          "net_sales": "8831.55"
+        },
+        {
+          "date": "2026-09-23",
+          "net_sales": "8788.22"
+        },
+        {
+          "date": "2026-09-24",
+          "net_sales": "8744.88"
+        },
+        {
+          "date": "2026-09-25",
+          "net_sales": "8871.55"
+        },
+        {
+          "date": "2026-09-26",
+          "net_sales": "8785.71"
+        },
+        {
+          "date": "2026-09-27",
+          "net_sales": "8827.38"
+        },
+        {
+          "date": "2026-09-28",
+          "net_sales": "8869.04"
+        },
+        {
+          "date": "2026-09-29",
+          "net_sales": "8825.71"
+        },
+        {
+          "date": "2026-09-30",
+          "net_sales": "8782.37"
+        }
+      ],
+      "evidence_url": "/api/showcase/v1/evidence?start_date=2026-09-01&end_date=2026-09-30&source=all&snapshot_id=af6902a4d40023ab704cf653b9c50b2f5dbe3e1fcaf5657bed293b8fad57efbb",
+      "freshness": {
+        "is_last_good": false,
+        "published_at": "2026-10-04T17:10:20.893111+00:00"
+      },
+      "metrics": [
+        {
+          "availability": "available",
+          "availability_reason": null,
+          "definition": "Item sales minus refunds; excludes shipping collected, tax, and fees",
+          "metric_id": "net_sales",
+          "unit": "USD",
+          "value": "254059.40"
+        },
+        {
+          "availability": "available",
+          "availability_reason": null,
+          "definition": "Invented matched source/store/day minutes divided by 60",
+          "metric_id": "labor_hours",
+          "unit": "hours",
+          "value": "1968.00"
+        },
+        {
+          "availability": "available",
+          "availability_reason": null,
+          "definition": "Verified demo net sales divided by matched invented labor hours",
+          "metric_id": "revenue_per_labor_hour",
+          "unit": "USD/hour",
+          "value": "129.10"
+        },
+        {
+          "availability": "available",
+          "availability_reason": null,
+          "definition": "Fees on the pinned synthetic source records",
+          "metric_id": "fees",
+          "unit": "USD",
+          "value": "26240.14"
+        },
+        {
+          "availability": "available",
+          "availability_reason": null,
+          "definition": "Invented shipping expense: $3.50 per sales record",
+          "metric_id": "shipping_expense",
+          "unit": "USD",
+          "value": "16800.00"
+        },
+        {
+          "availability": "available",
+          "availability_reason": null,
+          "definition": "Invented $20 per hour; excludes payroll burden",
+          "metric_id": "labor_cost",
+          "unit": "USD",
+          "value": "39360.00"
+        },
+        {
+          "availability": "available",
+          "availability_reason": null,
+          "definition": "Net sales less source fees, invented shipping and labor; excludes overhead and tax",
+          "metric_id": "contribution",
+          "unit": "USD",
+          "value": "171659.26"
+        },
+        {
+          "availability": "available",
+          "availability_reason": null,
+          "definition": "Demo contribution divided by net sales; not production net margin",
+          "metric_id": "contribution_margin",
+          "unit": "percent",
+          "value": "67.57"
+        }
+      ],
+      "scope": {
+        "end_date": "2026-09-30",
+        "platform": null,
+        "source": "all",
+        "start_date": "2026-09-01",
+        "store": null
+      },
+      "snapshot_id": "af6902a4d40023ab704cf653b9c50b2f5dbe3e1fcaf5657bed293b8fad57efbb",
+      "synthetic": true
+    },
+    "comparison": {
+      "contract_version": "showcase-v1",
+      "current": {
+        "auxiliary_url": "/api/showcase/v1/inputs?start_date=2026-09-24&end_date=2026-09-30&source=all&snapshot_id=af6902a4d40023ab704cf653b9c50b2f5dbe3e1fcaf5657bed293b8fad57efbb",
+        "by_platform": [
+          {
+            "net_sales": "4457.34",
+            "platform": "Amazon-MF"
+          },
+          {
+            "net_sales": "3628.57",
+            "platform": "GoodwillBooks"
+          },
+          {
+            "net_sales": "16268.36",
+            "platform": "GoodwillFinds"
+          },
+          {
+            "net_sales": "16380.04",
+            "platform": "ShopGoodwill"
+          },
+          {
+            "net_sales": "20972.33",
+            "platform": "eBay"
+          }
+        ],
+        "by_source": [
+          {
+            "net_sales": "12064.66",
+            "orders": 210,
+            "records": 224,
+            "source": "cash_monkey_replica"
+          },
+          {
+            "net_sales": "49641.98",
+            "orders": 896,
+            "records": 896,
+            "source": "upright_replica"
+          }
+        ],
+        "by_store": [
+          {
+            "net_sales": "3057.05",
+            "store": "GW-001"
+          },
+          {
+            "net_sales": "3157.52",
+            "store": "GW-002"
+          },
+          {
+            "net_sales": "3105.68",
+            "store": "GW-003"
+          },
+          {
+            "net_sales": "2652.37",
+            "store": "GW-004"
+          },
+          {
+            "net_sales": "2832.00",
+            "store": "GW-005"
+          },
+          {
+            "net_sales": "2610.16",
+            "store": "GW-006"
+          },
+          {
+            "net_sales": "2334.90",
+            "store": "GW-007"
+          },
+          {
+            "net_sales": "2748.90",
+            "store": "GW-008"
+          },
+          {
+            "net_sales": "2442.02",
+            "store": "GW-009"
+          },
+          {
+            "net_sales": "2530.64",
+            "store": "GW-010"
+          },
+          {
+            "net_sales": "2428.33",
+            "store": "GW-011"
+          },
+          {
+            "net_sales": "2452.88",
+            "store": "GW-012"
+          },
+          {
+            "net_sales": "2371.50",
+            "store": "GW-013"
+          },
+          {
+            "net_sales": "2190.06",
+            "store": "GW-014"
+          },
+          {
+            "net_sales": "2378.74",
+            "store": "GW-015"
+          },
+          {
+            "net_sales": "2923.62",
+            "store": "GW-016"
+          },
+          {
+            "net_sales": "2555.98",
+            "store": "GW-017"
+          },
+          {
+            "net_sales": "2123.84",
+            "store": "GW-018"
+          },
+          {
+            "net_sales": "2563.22",
+            "store": "GW-019"
+          },
+          {
+            "net_sales": "2566.84",
+            "store": "GW-020"
+          },
+          {
+            "net_sales": "2340.94",
+            "store": "GW-021"
+          },
+          {
+            "net_sales": "2404.08",
+            "store": "GW-022"
+          },
+          {
+            "net_sales": "2492.70",
+            "store": "GW-023"
+          },
+          {
+            "net_sales": "2442.67",
+            "store": "GW-024"
+          }
+        ],
+        "contract_version": "showcase-v1",
+        "coverage": {
+          "missing_days": [],
+          "state": "complete"
+        },
+        "customer_counts": [
+          {
+            "availability": "available",
+            "platform": "Amazon-MF",
+            "source": "cash_monkey_replica",
+            "value": "10"
+          },
+          {
+            "availability": "available",
+            "platform": "GoodwillBooks",
+            "source": "cash_monkey_replica",
+            "value": "10"
+          },
+          {
+            "availability": "available",
+            "platform": "eBay",
+            "source": "cash_monkey_replica",
+            "value": "10"
+          },
+          {
+            "availability": "available",
+            "platform": "GoodwillFinds",
+            "source": "upright_replica",
+            "value": "42"
+          },
+          {
+            "availability": "available",
+            "platform": "ShopGoodwill",
+            "source": "upright_replica",
+            "value": "43"
+          },
+          {
+            "availability": "available",
+            "platform": "eBay",
+            "source": "upright_replica",
+            "value": "43"
+          }
+        ],
+        "daily": [
+          {
+            "date": "2026-09-24",
+            "net_sales": "8744.88"
+          },
+          {
+            "date": "2026-09-25",
+            "net_sales": "8871.55"
+          },
+          {
+            "date": "2026-09-26",
+            "net_sales": "8785.71"
+          },
+          {
+            "date": "2026-09-27",
+            "net_sales": "8827.38"
+          },
+          {
+            "date": "2026-09-28",
+            "net_sales": "8869.04"
+          },
+          {
+            "date": "2026-09-29",
+            "net_sales": "8825.71"
+          },
+          {
+            "date": "2026-09-30",
+            "net_sales": "8782.37"
+          }
+        ],
+        "evidence_url": "/api/showcase/v1/evidence?start_date=2026-09-24&end_date=2026-09-30&source=all&snapshot_id=af6902a4d40023ab704cf653b9c50b2f5dbe3e1fcaf5657bed293b8fad57efbb",
+        "freshness": {
+          "is_last_good": false,
+          "published_at": "2026-10-04T17:10:20.893111+00:00"
+        },
+        "metrics": [
+          {
+            "availability": "available",
+            "availability_reason": null,
+            "definition": "Item sales minus refunds; excludes shipping collected, tax, and fees",
+            "metric_id": "net_sales",
+            "unit": "USD",
+            "value": "61706.64"
+          },
+          {
+            "availability": "available",
+            "availability_reason": null,
+            "definition": "Invented matched source/store/day minutes divided by 60",
+            "metric_id": "labor_hours",
+            "unit": "hours",
+            "value": "588.00"
+          },
+          {
+            "availability": "available",
+            "availability_reason": null,
+            "definition": "Verified demo net sales divided by matched invented labor hours",
+            "metric_id": "revenue_per_labor_hour",
+            "unit": "USD/hour",
+            "value": "104.94"
+          },
+          {
+            "availability": "available",
+            "availability_reason": null,
+            "definition": "Fees on the pinned synthetic source records",
+            "metric_id": "fees",
+            "unit": "USD",
+            "value": "6368.02"
+          },
+          {
+            "availability": "available",
+            "availability_reason": null,
+            "definition": "Invented shipping expense: $3.50 per sales record",
+            "metric_id": "shipping_expense",
+            "unit": "USD",
+            "value": "3920.00"
+          },
+          {
+            "availability": "available",
+            "availability_reason": null,
+            "definition": "Invented $20 per hour; excludes payroll burden",
+            "metric_id": "labor_cost",
+            "unit": "USD",
+            "value": "11760.00"
+          },
+          {
+            "availability": "available",
+            "availability_reason": null,
+            "definition": "Net sales less source fees, invented shipping and labor; excludes overhead and tax",
+            "metric_id": "contribution",
+            "unit": "USD",
+            "value": "39658.62"
+          },
+          {
+            "availability": "available",
+            "availability_reason": null,
+            "definition": "Demo contribution divided by net sales; not production net margin",
+            "metric_id": "contribution_margin",
+            "unit": "percent",
+            "value": "64.27"
+          }
+        ],
+        "scope": {
+          "end_date": "2026-09-30",
+          "platform": null,
+          "source": "all",
+          "start_date": "2026-09-24",
+          "store": null
+        },
+        "snapshot_id": "af6902a4d40023ab704cf653b9c50b2f5dbe3e1fcaf5657bed293b8fad57efbb",
+        "synthetic": true
+      },
+      "explanation": "September 17–23: $60727.56 sales / 420.00 invented hours = $144.59/hour. September 24–30: $61706.64 sales / 588.00 invented hours = $104.94/hour. The change follows the sales and modeled hours shown here. This is an arithmetic comparison, not a verified business cause. Sales increased, but invented labor hours increased faster, so revenue per labor hour fell.",
+      "previous": {
+        "auxiliary_url": "/api/showcase/v1/inputs?start_date=2026-09-17&end_date=2026-09-23&source=all&snapshot_id=af6902a4d40023ab704cf653b9c50b2f5dbe3e1fcaf5657bed293b8fad57efbb",
+        "by_platform": [
+          {
+            "net_sales": "4058.92",
+            "platform": "Amazon-MF"
+          },
+          {
+            "net_sales": "3755.83",
+            "platform": "GoodwillBooks"
+          },
+          {
+            "net_sales": "15972.09",
+            "platform": "GoodwillFinds"
+          },
+          {
+            "net_sales": "16399.15",
+            "platform": "ShopGoodwill"
+          },
+          {
+            "net_sales": "20541.57",
+            "platform": "eBay"
+          }
+        ],
+        "by_source": [
+          {
+            "net_sales": "11632.20",
+            "orders": 210,
+            "records": 224,
+            "source": "cash_monkey_replica"
+          },
+          {
+            "net_sales": "49095.36",
+            "orders": 896,
+            "records": 896,
+            "source": "upright_replica"
+          }
+        ],
+        "by_store": [
+          {
+            "net_sales": "2808.59",
+            "store": "GW-001"
+          },
+          {
+            "net_sales": "2875.48",
+            "store": "GW-002"
+          },
+          {
+            "net_sales": "2908.64",
+            "store": "GW-003"
+          },
+          {
+            "net_sales": "2828.89",
+            "store": "GW-004"
+          },
+          {
+            "net_sales": "3144.96",
+            "store": "GW-005"
+          },
+          {
+            "net_sales": "3263.12",
+            "store": "GW-006"
+          },
+          {
+            "net_sales": "2408.56",
+            "store": "GW-007"
+          },
+          {
+            "net_sales": "2618.99",
+            "store": "GW-008"
+          },
+          {
+            "net_sales": "2209.24",
+            "store": "GW-009"
+          },
+          {
+            "net_sales": "2212.86",
+            "store": "GW-010"
+          },
+          {
+            "net_sales": "2144.12",
+            "store": "GW-011"
+          },
+          {
+            "net_sales": "2305.10",
+            "store": "GW-012"
+          },
+          {
+            "net_sales": "2393.72",
+            "store": "GW-013"
+          },
+          {
+            "net_sales": "2330.84",
+            "store": "GW-014"
+          },
+          {
+            "net_sales": "2485.96",
+            "store": "GW-015"
+          },
+          {
+            "net_sales": "2878.71",
+            "store": "GW-016"
+          },
+          {
+            "net_sales": "2408.20",
+            "store": "GW-017"
+          },
+          {
+            "net_sales": "1958.18",
+            "store": "GW-018"
+          },
+          {
+            "net_sales": "2330.44",
+            "store": "GW-019"
+          },
+          {
+            "net_sales": "2419.06",
+            "store": "GW-020"
+          },
+          {
+            "net_sales": "2184.23",
+            "store": "GW-021"
+          },
+          {
+            "net_sales": "2596.30",
+            "store": "GW-022"
+          },
+          {
+            "net_sales": "2599.92",
+            "store": "GW-023"
+          },
+          {
+            "net_sales": "2413.45",
+            "store": "GW-024"
+          }
+        ],
+        "contract_version": "showcase-v1",
+        "coverage": {
+          "missing_days": [],
+          "state": "complete"
+        },
+        "customer_counts": [
+          {
+            "availability": "available",
+            "platform": "Amazon-MF",
+            "source": "cash_monkey_replica",
+            "value": "10"
+          },
+          {
+            "availability": "available",
+            "platform": "GoodwillBooks",
+            "source": "cash_monkey_replica",
+            "value": "10"
+          },
+          {
+            "availability": "available",
+            "platform": "eBay",
+            "source": "cash_monkey_replica",
+            "value": "10"
+          },
+          {
+            "availability": "available",
+            "platform": "GoodwillFinds",
+            "source": "upright_replica",
+            "value": "42"
+          },
+          {
+            "availability": "available",
+            "platform": "ShopGoodwill",
+            "source": "upright_replica",
+            "value": "43"
+          },
+          {
+            "availability": "available",
+            "platform": "eBay",
+            "source": "upright_replica",
+            "value": "43"
+          }
+        ],
+        "daily": [
+          {
+            "date": "2026-09-17",
+            "net_sales": "8538.23"
+          },
+          {
+            "date": "2026-09-18",
+            "net_sales": "8579.89"
+          },
+          {
+            "date": "2026-09-19",
+            "net_sales": "8621.56"
+          },
+          {
+            "date": "2026-09-20",
+            "net_sales": "8663.22"
+          },
+          {
+            "date": "2026-09-21",
+            "net_sales": "8704.89"
+          },
+          {
+            "date": "2026-09-22",
+            "net_sales": "8831.55"
+          },
+          {
+            "date": "2026-09-23",
+            "net_sales": "8788.22"
+          }
+        ],
+        "evidence_url": "/api/showcase/v1/evidence?start_date=2026-09-17&end_date=2026-09-23&source=all&snapshot_id=af6902a4d40023ab704cf653b9c50b2f5dbe3e1fcaf5657bed293b8fad57efbb",
+        "freshness": {
+          "is_last_good": false,
+          "published_at": "2026-10-04T17:10:20.893111+00:00"
+        },
+        "metrics": [
+          {
+            "availability": "available",
+            "availability_reason": null,
+            "definition": "Item sales minus refunds; excludes shipping collected, tax, and fees",
+            "metric_id": "net_sales",
+            "unit": "USD",
+            "value": "60727.56"
+          },
+          {
+            "availability": "available",
+            "availability_reason": null,
+            "definition": "Invented matched source/store/day minutes divided by 60",
+            "metric_id": "labor_hours",
+            "unit": "hours",
+            "value": "420.00"
+          },
+          {
+            "availability": "available",
+            "availability_reason": null,
+            "definition": "Verified demo net sales divided by matched invented labor hours",
+            "metric_id": "revenue_per_labor_hour",
+            "unit": "USD/hour",
+            "value": "144.59"
+          },
+          {
+            "availability": "available",
+            "availability_reason": null,
+            "definition": "Fees on the pinned synthetic source records",
+            "metric_id": "fees",
+            "unit": "USD",
+            "value": "6254.45"
+          },
+          {
+            "availability": "available",
+            "availability_reason": null,
+            "definition": "Invented shipping expense: $3.50 per sales record",
+            "metric_id": "shipping_expense",
+            "unit": "USD",
+            "value": "3920.00"
+          },
+          {
+            "availability": "available",
+            "availability_reason": null,
+            "definition": "Invented $20 per hour; excludes payroll burden",
+            "metric_id": "labor_cost",
+            "unit": "USD",
+            "value": "8400.00"
+          },
+          {
+            "availability": "available",
+            "availability_reason": null,
+            "definition": "Net sales less source fees, invented shipping and labor; excludes overhead and tax",
+            "metric_id": "contribution",
+            "unit": "USD",
+            "value": "42153.11"
+          },
+          {
+            "availability": "available",
+            "availability_reason": null,
+            "definition": "Demo contribution divided by net sales; not production net margin",
+            "metric_id": "contribution_margin",
+            "unit": "percent",
+            "value": "69.41"
+          }
+        ],
+        "scope": {
+          "end_date": "2026-09-23",
+          "platform": null,
+          "source": "all",
+          "start_date": "2026-09-17",
+          "store": null
+        },
+        "snapshot_id": "af6902a4d40023ab704cf653b9c50b2f5dbe3e1fcaf5657bed293b8fad57efbb",
+        "synthetic": true
+      },
+      "snapshot_id": "af6902a4d40023ab704cf653b9c50b2f5dbe3e1fcaf5657bed293b8fad57efbb",
+      "synthetic": true,
+      "verified_cause": false
+    },
+    "answer": {
+      "answer": "September 17–23: $60727.56 sales / 420.00 invented hours = $144.59/hour. September 24–30: $61706.64 sales / 588.00 invented hours = $104.94/hour. The change follows the sales and modeled hours shown here. This is an arithmetic comparison, not a verified business cause. Sales increased, but invented labor hours increased faster, so revenue per labor hour fell.",
+      "citations": [
+        {
+          "label": "Previous period sales",
+          "url": "/api/showcase/v1/evidence?start_date=2026-09-17&end_date=2026-09-23&source=all&snapshot_id=af6902a4d40023ab704cf653b9c50b2f5dbe3e1fcaf5657bed293b8fad57efbb"
+        },
+        {
+          "label": "Previous period labor/cost inputs",
+          "url": "/api/showcase/v1/inputs?start_date=2026-09-17&end_date=2026-09-23&source=all&snapshot_id=af6902a4d40023ab704cf653b9c50b2f5dbe3e1fcaf5657bed293b8fad57efbb"
+        },
+        {
+          "label": "Current period sales",
+          "url": "/api/showcase/v1/evidence?start_date=2026-09-24&end_date=2026-09-30&source=all&snapshot_id=af6902a4d40023ab704cf653b9c50b2f5dbe3e1fcaf5657bed293b8fad57efbb"
+        },
+        {
+          "label": "Current period labor/cost inputs",
+          "url": "/api/showcase/v1/inputs?start_date=2026-09-24&end_date=2026-09-30&source=all&snapshot_id=af6902a4d40023ab704cf653b9c50b2f5dbe3e1fcaf5657bed293b8fad57efbb"
+        }
+      ],
+      "comparison": {
+        "contract_version": "showcase-v1",
+        "current": {
+          "auxiliary_url": "/api/showcase/v1/inputs?start_date=2026-09-24&end_date=2026-09-30&source=all&snapshot_id=af6902a4d40023ab704cf653b9c50b2f5dbe3e1fcaf5657bed293b8fad57efbb",
+          "by_platform": [
+            {
+              "net_sales": "4457.34",
+              "platform": "Amazon-MF"
+            },
+            {
+              "net_sales": "3628.57",
+              "platform": "GoodwillBooks"
+            },
+            {
+              "net_sales": "16268.36",
+              "platform": "GoodwillFinds"
+            },
+            {
+              "net_sales": "16380.04",
+              "platform": "ShopGoodwill"
+            },
+            {
+              "net_sales": "20972.33",
+              "platform": "eBay"
+            }
+          ],
+          "by_source": [
+            {
+              "net_sales": "12064.66",
+              "orders": 210,
+              "records": 224,
+              "source": "cash_monkey_replica"
+            },
+            {
+              "net_sales": "49641.98",
+              "orders": 896,
+              "records": 896,
+              "source": "upright_replica"
+            }
+          ],
+          "by_store": [
+            {
+              "net_sales": "3057.05",
+              "store": "GW-001"
+            },
+            {
+              "net_sales": "3157.52",
+              "store": "GW-002"
+            },
+            {
+              "net_sales": "3105.68",
+              "store": "GW-003"
+            },
+            {
+              "net_sales": "2652.37",
+              "store": "GW-004"
+            },
+            {
+              "net_sales": "2832.00",
+              "store": "GW-005"
+            },
+            {
+              "net_sales": "2610.16",
+              "store": "GW-006"
+            },
+            {
+              "net_sales": "2334.90",
+              "store": "GW-007"
+            },
+            {
+              "net_sales": "2748.90",
+              "store": "GW-008"
+            },
+            {
+              "net_sales": "2442.02",
+              "store": "GW-009"
+            },
+            {
+              "net_sales": "2530.64",
+              "store": "GW-010"
+            },
+            {
+              "net_sales": "2428.33",
+              "store": "GW-011"
+            },
+            {
+              "net_sales": "2452.88",
+              "store": "GW-012"
+            },
+            {
+              "net_sales": "2371.50",
+              "store": "GW-013"
+            },
+            {
+              "net_sales": "2190.06",
+              "store": "GW-014"
+            },
+            {
+              "net_sales": "2378.74",
+              "store": "GW-015"
+            },
+            {
+              "net_sales": "2923.62",
+              "store": "GW-016"
+            },
+            {
+              "net_sales": "2555.98",
+              "store": "GW-017"
+            },
+            {
+              "net_sales": "2123.84",
+              "store": "GW-018"
+            },
+            {
+              "net_sales": "2563.22",
+              "store": "GW-019"
+            },
+            {
+              "net_sales": "2566.84",
+              "store": "GW-020"
+            },
+            {
+              "net_sales": "2340.94",
+              "store": "GW-021"
+            },
+            {
+              "net_sales": "2404.08",
+              "store": "GW-022"
+            },
+            {
+              "net_sales": "2492.70",
+              "store": "GW-023"
+            },
+            {
+              "net_sales": "2442.67",
+              "store": "GW-024"
+            }
+          ],
+          "contract_version": "showcase-v1",
+          "coverage": {
+            "missing_days": [],
+            "state": "complete"
+          },
+          "customer_counts": [
+            {
+              "availability": "available",
+              "platform": "Amazon-MF",
+              "source": "cash_monkey_replica",
+              "value": "10"
+            },
+            {
+              "availability": "available",
+              "platform": "GoodwillBooks",
+              "source": "cash_monkey_replica",
+              "value": "10"
+            },
+            {
+              "availability": "available",
+              "platform": "eBay",
+              "source": "cash_monkey_replica",
+              "value": "10"
+            },
+            {
+              "availability": "available",
+              "platform": "GoodwillFinds",
+              "source": "upright_replica",
+              "value": "42"
+            },
+            {
+              "availability": "available",
+              "platform": "ShopGoodwill",
+              "source": "upright_replica",
+              "value": "43"
+            },
+            {
+              "availability": "available",
+              "platform": "eBay",
+              "source": "upright_replica",
+              "value": "43"
+            }
+          ],
+          "daily": [
+            {
+              "date": "2026-09-24",
+              "net_sales": "8744.88"
+            },
+            {
+              "date": "2026-09-25",
+              "net_sales": "8871.55"
+            },
+            {
+              "date": "2026-09-26",
+              "net_sales": "8785.71"
+            },
+            {
+              "date": "2026-09-27",
+              "net_sales": "8827.38"
+            },
+            {
+              "date": "2026-09-28",
+              "net_sales": "8869.04"
+            },
+            {
+              "date": "2026-09-29",
+              "net_sales": "8825.71"
+            },
+            {
+              "date": "2026-09-30",
+              "net_sales": "8782.37"
+            }
+          ],
+          "evidence_url": "/api/showcase/v1/evidence?start_date=2026-09-24&end_date=2026-09-30&source=all&snapshot_id=af6902a4d40023ab704cf653b9c50b2f5dbe3e1fcaf5657bed293b8fad57efbb",
+          "freshness": {
+            "is_last_good": false,
+            "published_at": "2026-10-04T17:10:20.893111+00:00"
+          },
+          "metrics": [
+            {
+              "availability": "available",
+              "availability_reason": null,
+              "definition": "Item sales minus refunds; excludes shipping collected, tax, and fees",
+              "metric_id": "net_sales",
+              "unit": "USD",
+              "value": "61706.64"
+            },
+            {
+              "availability": "available",
+              "availability_reason": null,
+              "definition": "Invented matched source/store/day minutes divided by 60",
+              "metric_id": "labor_hours",
+              "unit": "hours",
+              "value": "588.00"
+            },
+            {
+              "availability": "available",
+              "availability_reason": null,
+              "definition": "Verified demo net sales divided by matched invented labor hours",
+              "metric_id": "revenue_per_labor_hour",
+              "unit": "USD/hour",
+              "value": "104.94"
+            },
+            {
+              "availability": "available",
+              "availability_reason": null,
+              "definition": "Fees on the pinned synthetic source records",
+              "metric_id": "fees",
+              "unit": "USD",
+              "value": "6368.02"
+            },
+            {
+              "availability": "available",
+              "availability_reason": null,
+              "definition": "Invented shipping expense: $3.50 per sales record",
+              "metric_id": "shipping_expense",
+              "unit": "USD",
+              "value": "3920.00"
+            },
+            {
+              "availability": "available",
+              "availability_reason": null,
+              "definition": "Invented $20 per hour; excludes payroll burden",
+              "metric_id": "labor_cost",
+              "unit": "USD",
+              "value": "11760.00"
+            },
+            {
+              "availability": "available",
+              "availability_reason": null,
+              "definition": "Net sales less source fees, invented shipping and labor; excludes overhead and tax",
+              "metric_id": "contribution",
+              "unit": "USD",
+              "value": "39658.62"
+            },
+            {
+              "availability": "available",
+              "availability_reason": null,
+              "definition": "Demo contribution divided by net sales; not production net margin",
+              "metric_id": "contribution_margin",
+              "unit": "percent",
+              "value": "64.27"
+            }
+          ],
+          "scope": {
+            "end_date": "2026-09-30",
+            "platform": null,
+            "source": "all",
+            "start_date": "2026-09-24",
+            "store": null
+          },
+          "snapshot_id": "af6902a4d40023ab704cf653b9c50b2f5dbe3e1fcaf5657bed293b8fad57efbb",
+          "synthetic": true
+        },
+        "explanation": "September 17–23: $60727.56 sales / 420.00 invented hours = $144.59/hour. September 24–30: $61706.64 sales / 588.00 invented hours = $104.94/hour. The change follows the sales and modeled hours shown here. This is an arithmetic comparison, not a verified business cause. Sales increased, but invented labor hours increased faster, so revenue per labor hour fell.",
+        "previous": {
+          "auxiliary_url": "/api/showcase/v1/inputs?start_date=2026-09-17&end_date=2026-09-23&source=all&snapshot_id=af6902a4d40023ab704cf653b9c50b2f5dbe3e1fcaf5657bed293b8fad57efbb",
+          "by_platform": [
+            {
+              "net_sales": "4058.92",
+              "platform": "Amazon-MF"
+            },
+            {
+              "net_sales": "3755.83",
+              "platform": "GoodwillBooks"
+            },
+            {
+              "net_sales": "15972.09",
+              "platform": "GoodwillFinds"
+            },
+            {
+              "net_sales": "16399.15",
+              "platform": "ShopGoodwill"
+            },
+            {
+              "net_sales": "20541.57",
+              "platform": "eBay"
+            }
+          ],
+          "by_source": [
+            {
+              "net_sales": "11632.20",
+              "orders": 210,
+              "records": 224,
+              "source": "cash_monkey_replica"
+            },
+            {
+              "net_sales": "49095.36",
+              "orders": 896,
+              "records": 896,
+              "source": "upright_replica"
+            }
+          ],
+          "by_store": [
+            {
+              "net_sales": "2808.59",
+              "store": "GW-001"
+            },
+            {
+              "net_sales": "2875.48",
+              "store": "GW-002"
+            },
+            {
+              "net_sales": "2908.64",
+              "store": "GW-003"
+            },
+            {
+              "net_sales": "2828.89",
+              "store": "GW-004"
+            },
+            {
+              "net_sales": "3144.96",
+              "store": "GW-005"
+            },
+            {
+              "net_sales": "3263.12",
+              "store": "GW-006"
+            },
+            {
+              "net_sales": "2408.56",
+              "store": "GW-007"
+            },
+            {
+              "net_sales": "2618.99",
+              "store": "GW-008"
+            },
+            {
+              "net_sales": "2209.24",
+              "store": "GW-009"
+            },
+            {
+              "net_sales": "2212.86",
+              "store": "GW-010"
+            },
+            {
+              "net_sales": "2144.12",
+              "store": "GW-011"
+            },
+            {
+              "net_sales": "2305.10",
+              "store": "GW-012"
+            },
+            {
+              "net_sales": "2393.72",
+              "store": "GW-013"
+            },
+            {
+              "net_sales": "2330.84",
+              "store": "GW-014"
+            },
+            {
+              "net_sales": "2485.96",
+              "store": "GW-015"
+            },
+            {
+              "net_sales": "2878.71",
+              "store": "GW-016"
+            },
+            {
+              "net_sales": "2408.20",
+              "store": "GW-017"
+            },
+            {
+              "net_sales": "1958.18",
+              "store": "GW-018"
+            },
+            {
+              "net_sales": "2330.44",
+              "store": "GW-019"
+            },
+            {
+              "net_sales": "2419.06",
+              "store": "GW-020"
+            },
+            {
+              "net_sales": "2184.23",
+              "store": "GW-021"
+            },
+            {
+              "net_sales": "2596.30",
+              "store": "GW-022"
+            },
+            {
+              "net_sales": "2599.92",
+              "store": "GW-023"
+            },
+            {
+              "net_sales": "2413.45",
+              "store": "GW-024"
+            }
+          ],
+          "contract_version": "showcase-v1",
+          "coverage": {
+            "missing_days": [],
+            "state": "complete"
+          },
+          "customer_counts": [
+            {
+              "availability": "available",
+              "platform": "Amazon-MF",
+              "source": "cash_monkey_replica",
+              "value": "10"
+            },
+            {
+              "availability": "available",
+              "platform": "GoodwillBooks",
+              "source": "cash_monkey_replica",
+              "value": "10"
+            },
+            {
+              "availability": "available",
+              "platform": "eBay",
+              "source": "cash_monkey_replica",
+              "value": "10"
+            },
+            {
+              "availability": "available",
+              "platform": "GoodwillFinds",
+              "source": "upright_replica",
+              "value": "42"
+            },
+            {
+              "availability": "available",
+              "platform": "ShopGoodwill",
+              "source": "upright_replica",
+              "value": "43"
+            },
+            {
+              "availability": "available",
+              "platform": "eBay",
+              "source": "upright_replica",
+              "value": "43"
+            }
+          ],
+          "daily": [
+            {
+              "date": "2026-09-17",
+              "net_sales": "8538.23"
+            },
+            {
+              "date": "2026-09-18",
+              "net_sales": "8579.89"
+            },
+            {
+              "date": "2026-09-19",
+              "net_sales": "8621.56"
+            },
+            {
+              "date": "2026-09-20",
+              "net_sales": "8663.22"
+            },
+            {
+              "date": "2026-09-21",
+              "net_sales": "8704.89"
+            },
+            {
+              "date": "2026-09-22",
+              "net_sales": "8831.55"
+            },
+            {
+              "date": "2026-09-23",
+              "net_sales": "8788.22"
+            }
+          ],
+          "evidence_url": "/api/showcase/v1/evidence?start_date=2026-09-17&end_date=2026-09-23&source=all&snapshot_id=af6902a4d40023ab704cf653b9c50b2f5dbe3e1fcaf5657bed293b8fad57efbb",
+          "freshness": {
+            "is_last_good": false,
+            "published_at": "2026-10-04T17:10:20.893111+00:00"
+          },
+          "metrics": [
+            {
+              "availability": "available",
+              "availability_reason": null,
+              "definition": "Item sales minus refunds; excludes shipping collected, tax, and fees",
+              "metric_id": "net_sales",
+              "unit": "USD",
+              "value": "60727.56"
+            },
+            {
+              "availability": "available",
+              "availability_reason": null,
+              "definition": "Invented matched source/store/day minutes divided by 60",
+              "metric_id": "labor_hours",
+              "unit": "hours",
+              "value": "420.00"
+            },
+            {
+              "availability": "available",
+              "availability_reason": null,
+              "definition": "Verified demo net sales divided by matched invented labor hours",
+              "metric_id": "revenue_per_labor_hour",
+              "unit": "USD/hour",
+              "value": "144.59"
+            },
+            {
+              "availability": "available",
+              "availability_reason": null,
+              "definition": "Fees on the pinned synthetic source records",
+              "metric_id": "fees",
+              "unit": "USD",
+              "value": "6254.45"
+            },
+            {
+              "availability": "available",
+              "availability_reason": null,
+              "definition": "Invented shipping expense: $3.50 per sales record",
+              "metric_id": "shipping_expense",
+              "unit": "USD",
+              "value": "3920.00"
+            },
+            {
+              "availability": "available",
+              "availability_reason": null,
+              "definition": "Invented $20 per hour; excludes payroll burden",
+              "metric_id": "labor_cost",
+              "unit": "USD",
+              "value": "8400.00"
+            },
+            {
+              "availability": "available",
+              "availability_reason": null,
+              "definition": "Net sales less source fees, invented shipping and labor; excludes overhead and tax",
+              "metric_id": "contribution",
+              "unit": "USD",
+              "value": "42153.11"
+            },
+            {
+              "availability": "available",
+              "availability_reason": null,
+              "definition": "Demo contribution divided by net sales; not production net margin",
+              "metric_id": "contribution_margin",
+              "unit": "percent",
+              "value": "69.41"
+            }
+          ],
+          "scope": {
+            "end_date": "2026-09-23",
+            "platform": null,
+            "source": "all",
+            "start_date": "2026-09-17",
+            "store": null
+          },
+          "snapshot_id": "af6902a4d40023ab704cf653b9c50b2f5dbe3e1fcaf5657bed293b8fad57efbb",
+          "synthetic": true
+        },
+        "snapshot_id": "af6902a4d40023ab704cf653b9c50b2f5dbe3e1fcaf5657bed293b8fad57efbb",
+        "synthetic": true,
+        "verified_cause": false
+      },
+      "contract_version": "showcase-v1",
+      "intent": "productivity",
+      "snapshot_id": "af6902a4d40023ab704cf653b9c50b2f5dbe3e1fcaf5657bed293b8fad57efbb",
+      "synthetic": true,
+      "tools": [
+        "comparison",
+        "metrics",
+        "evidence"
+      ]
+    },
+    "unsupported": {
+      "answer": "This local prototype supports read-only sales summaries, supporting records, productivity comparisons, and missing inputs. It cannot approve, post, change records, or predict future results.",
+      "citations": [],
+      "contract_version": "showcase-v1",
+      "intent": "unsupported",
+      "snapshot_id": "af6902a4d40023ab704cf653b9c50b2f5dbe3e1fcaf5657bed293b8fad57efbb",
+      "synthetic": true,
+      "tools": []
+    }
+  },
+  "timeline": [
+    {
+      "index": 0,
+      "title": "The reporting problem",
+      "start": 0.911,
+      "end": 30.913
+    },
+    {
+      "index": 1,
+      "title": "Teach the task once",
+      "start": 30.913,
+      "end": 65.914
+    },
+    {
+      "index": 2,
+      "title": "Replay and verify",
+      "start": 65.914,
+      "end": 100.916
+    },
+    {
+      "index": 3,
+      "title": "Deliver the workbook",
+      "start": 100.916,
+      "end": 130.917
+    },
+    {
+      "index": 4,
+      "title": "Understand the daily picture",
+      "start": 130.917,
+      "end": 162.511
+    },
+    {
+      "index": 5,
+      "title": "Inspect the comparison",
+      "start": 162.511,
+      "end": 197.512
+    },
+    {
+      "index": 6,
+      "title": "Ask beside the dashboard",
+      "start": 197.512,
+      "end": 227.517
+    },
+    {
+      "index": 7,
+      "title": "A controlled next step",
+      "start": 227.517,
+      "end": 249.007
+    }
+  ]
+}

@@ -13,6 +13,9 @@ MAX_BODY = 8 * 1024 * 1024
 
 
 def make_server(pipeline, port=8000, acquisition=None):
+    from services.showcase.service import ShowcaseService
+    from services.showcase.routes import dispatch, proxy
+    showcase = ShowcaseService(pipeline, acquisition)
     class Handler(BaseHTTPRequestHandler):
         def log_message(self, *_):
             pass
@@ -24,7 +27,13 @@ def make_server(pipeline, port=8000, acquisition=None):
             self.send_header("Content-Length", str(len(data)))
             self.send_header("Cache-Control", "no-store")
             self.send_header("X-Content-Type-Options", "nosniff")
-            self.send_header('Content-Security-Policy', "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'")
+            portal = self.path.startswith('/showcase/portal/')
+            showcase_page = self.path.startswith('/showcase')
+            self.send_header('Content-Security-Policy', "default-src 'self'; script-src 'self'; style-src 'self'" + (" 'unsafe-inline'" if portal else "") + "; img-src 'self'" + (" data:" if showcase_page else "") + "; connect-src 'self'; frame-src 'self'; frame-ancestors " + ("'self'" if portal else "'none'") + "; base-uri 'none'; form-action 'self'")
+            if self.path.startswith('/api/showcase/v1/exports/workbook') and code == 200:
+                self.send_header('Content-Disposition', 'attachment; filename="aimsigh-september-2026.xlsx"')
+            if self.path.startswith('/api/showcase/v1/exports/sales.csv') and code == 200:
+                self.send_header('Content-Disposition', 'attachment; filename="aimsigh-september-sales.csv"')
             origin = self.headers.get("Origin")
             if origin in ("http://localhost:5173", "http://127.0.0.1:5173"):
                 self.send_header("Access-Control-Allow-Origin", origin)
@@ -34,7 +43,7 @@ def make_server(pipeline, port=8000, acquisition=None):
 
         def error(self, exc):
             self.send(404 if exc.code == "not_found" else 400,
-                      {"contract_version": CONTRACT_VERSION, "synthetic": True,
+                      {"contract_version": 'showcase-v1' if self.path.startswith('/api/showcase/v1') else CONTRACT_VERSION, "synthetic": True,
                        "error": {"code": exc.code, "detail": exc.detail}})
 
         def local_request(self):
@@ -51,6 +60,18 @@ def make_server(pipeline, port=8000, acquisition=None):
                     raise DataError("duplicate_query", "Query keys must be unique")
                 q = {k: v[0] for k, v in query.items()}
                 path = parsed.path
+                if path.startswith('/showcase/portal/'):
+                    return self.send(*proxy(showcase, 'GET', self.path))
+                if path == '/showcase' or path == '/showcase/' or path.startswith('/showcase/assets/'):
+                    root = Path(__file__).resolve().parents[1] / 'showcase'
+                    relative = 'index.html' if path in ('/showcase', '/showcase/') else path.removeprefix('/showcase/assets/')
+                    file = (root / relative).resolve()
+                    if root.resolve() not in file.parents or file.suffix not in ('.html', '.js', '.css', '.png') or not file.is_file():
+                        raise DataError('not_found', 'Unknown showcase asset')
+                    mime = {'.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.png': 'image/png'}[file.suffix]
+                    return self.send(200, file.read_bytes(), mime)
+                if path.startswith('/api/showcase/v1/'):
+                    return self.send(*dispatch(showcase, 'GET', path, q))
                 if path == '/' or path.startswith('/dashboard/'):
                     root = Path(__file__).resolve().parents[1] / 'dashboard'
                     relative = 'index.html' if path == '/' else path.removeprefix('/dashboard/')
@@ -181,6 +202,13 @@ def make_server(pipeline, port=8000, acquisition=None):
                 if not isinstance(body, dict):
                     raise DataError("request_invalid", "Expected JSON object")
                 path = urlparse(self.path).path
+                if path.startswith('/showcase/portal/'):
+                    return self.send(*proxy(showcase, 'POST', self.path, body))
+                if path.startswith('/api/showcase/v1/'):
+                    query = parse_qs(urlparse(self.path).query, keep_blank_values=True)
+                    if query:
+                        raise DataError('query_invalid', 'Showcase writes take no query parameters')
+                    return self.send(*dispatch(showcase, 'POST', path, {}, body))
                 if path == '/api/v1/acquisition-runs':
                     if not acquisition:
                         raise DataError('collection_unavailable', 'Use manual CSV and manifest upload')
@@ -200,4 +228,6 @@ def make_server(pipeline, port=8000, acquisition=None):
             except (ValueError, TypeError, UnicodeError) as exc:
                 self.error(DataError("request_invalid", str(exc)))
 
-    return ThreadingHTTPServer(("127.0.0.1", port), Handler)
+    server = ThreadingHTTPServer(("127.0.0.1", port), Handler)
+    server.showcase = showcase
+    return server

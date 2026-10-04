@@ -1,0 +1,12 @@
+# Copy to repository root as .replit; do not expose the internal portal/lab ports.
+run = "bash experiments/jev/hosted/start.sh"
+modules = ["nodejs-22", "python-3.11"]
+
+[[ports]]
+localPort = 3000
+externalPort = 80
+
+[deployment]
+run = ["bash", "experiments/jev/hosted/start.sh"]
+build = ["bash", "experiments/jev/hosted/setup.sh"]
+deploymentTarget = "vm"
