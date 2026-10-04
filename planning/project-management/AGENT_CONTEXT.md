@@ -1,63 +1,61 @@
-# Shared Goodwill agent context
+# Shared Goodwill agent context — Drive-led revision
 
-## Start here
-[Delivery hub](https://github.com/joconne8/sprinthack-nd-2026/issues/7) · [Card index](BACKLOG.md) · [Original detailed plan](THREE_PHASE_PLAN.md) · [Machine-readable registry](backlog.json).
+## Mandatory reading and authority
+Read [Drive source register](DRIVE_SOURCE_REGISTER.md), [the actual Drive three-phase solution](https://drive.google.com/file/d/1RffkmafbqbMEs7o_lNaTvIRL3hW9paai/view?usp=drivesdk), its [repo snapshot](THREE_PHASE_PLAN.md), [source traceability](SOURCE_TRACEABILITY.md), your assigned issue/comments and root AGENTS.md.
 
-## Business understanding
-ESTEEM discovery identified connected stakeholder needs: Amanda wants Upright reports retrieved without repeated portal work; Debie wants clear management visibility; downstream summaries/accounting need reliable, traceable inputs. Amanda says Cash Monkey is easier, Upright API access was restricted, and AI must go through Copilot. Her follow-up says the e-commerce manager left and she now has an assistant. Do not claim every stakeholder approved the design.
+Current user decisions govern. Primary evidence is the Google Drive stakeholder/mentor material; the Goodwill Three-Phase Solution and Overnight Agent Plan is the implementation synthesis. This card operationalizes those sources. Older goodwill/PRD.md and planning/agentic-build-plan.md are legacy implementation background, NOT governing requirements or automatic scope limits. Preserve corrections in the three-phase plan where earlier source notes contain unsupported technical claims. Freeze new scope/contracts through GOV-02/GOV-03.
 
-## Three phases
-1. Authorized report acquisition; functional Upright-style HTML replica based on supplied slides for the synthetic demo.
-2. Raw archive, typed validation, idempotent/overlap-safe imports, reconciliation, lineage and deterministic metrics.
-3. Operations/leadership dashboard plus bounded approved metric tools and later agentic interaction.
+[Delivery hub](https://github.com/joconne8/sprinthack-nd-2026/issues/7) · [Backlog](BACKLOG.md) · [Registry](backlog.json) · [Workstream PRDs](https://github.com/joconne8/sprinthack-nd-2026/tree/main/ProjectManagement/subtask-prds).
 
-## Weekend scope
-One acquisition-to-dashboard vertical slice; four-view/two-platform PRD remains the limit unless an approved decision replaces it. ShopGoodwill/eBay are scoped application sources; an Upright-style acquisition export needs explicit authority/mapping to avoid overlap. All records synthetic; replica simulated; other sources visibly not connected. Universal recorder, nine live integrations, production Copilot, autonomous accounting and live deployment are deferred.
+## Organizing solution
+**Acquire reports → make data trustworthy → make it useful to people and approved agents.** Amanda’s report retrieval is upstream of Debie’s leadership visibility and finance handoffs. Do not substitute a dashboard-only feature checklist for the end-to-end operating problem.
 
-## Latest corrections
-- Existing draft PR [#1](https://github.com/joconne8/sprinthack-nd-2026/pull/1) adds expanded synthetic data, generator, manifest and tests; open/unmerged when checked. DAT-01 reviews it, not recreates it. Reported PR checks are not independent application verification.
-- Original plan revenue-conflict note is historical: PR #1 proposes resolving it; until merged and verified, freeze the PRD convention explicitly. Demo net sales excludes shipping/tax/fees.
-- Jev is probabilistic AI with service usage; deterministic replay is separate. External Jev is not implicitly compatible with Copilot-only policy.
-- A normal view stores a query; materialized views store refreshed results. Excel does not universally fail at 10,000 rows and can feed dashboards.
-- Existing Power BI should be assessed before replacing it.
-- Source-row count is not necessarily unique buyers; labor hours are not employee count; sell-through needs a cohort; backlog needs a complete snapshot.
-- Nine source amounts must not be summed as revenue: sources may overlap or be expenses/settlements.
+## Phase 1: report acquisition
+Prioritize Upright because Amanda says it is the difficult repetitive date-only workflow; Cash Monkey is easier. Map nine sources into shared acquisition types and keep per-source parser rules. Demonstrate one screenshot-informed functional HTML replica and real downloadable synthetic CSV. Verify dates/content/checksum before import. Deterministic replay is P0; Jev comparison is optional, correctly described probabilistic AI; recorder is deferred. No provider restriction bypass.
 
-## Readiness and workflow
-All cards are unassigned/unclaimed. Dependency-bearing tasks are initially labeled blocked; dependency-free cards are backlog. Those labels are planning state, not an evaluation that they can safely execute. Human gates and evidence still apply. Suggested lanes are proposals until claimed. Use backlog→in-progress→review→done with blocked where needed; human acceptance closes issues.
+## Phase 2: trusted data
+Grain before joins: distinct sales/refunds/expenses/settlements/listing events/inventory snapshots/labor inputs. Use raw→typed staging→curated→versioned metric outputs with source-row lineage and deterministic SQL/code. Handle same-file and overlapping-file duplicates, malformed rows, corrections and missing/stale sources. Never sum all nine source amounts as revenue. Publish only verified runs; retain last-good with warning.
+
+Use the simplest tool meeting confirmed controls. Excel/Power Query→existing Power BI is a viable production bridge; a managed SQL layer is conditional, not automatic. Demo net sales = item sales minus refunds excluding shipping/tax/fees as explicitly proposed by PLAN §5. Finance approves production definitions. Missing labor/cost/cohort/targets/prior periods produce unavailable KPIs, not zeros or estimates.
+
+## Phase 3: application and agentic interaction
+Operations view: expected files, ready/failed states, coverage, exceptions and ownership. Leadership: verified daily pulse and strategic KPI availability, comparisons, filters, definitions and evidence. Finance: reconciliation and optional source-linked exports; accounting later. Approved read-only tools supply exact metrics and provenance; an optional assistant explains results, not arithmetic or unproved causation. Copilot production approval/identity/tenant integration remains gated; Teams styling is not an integration.
+
+## Weekend priorities — not inherited old scope
+- P0: replica→actual acquisition artifact→validated/reconciled import→same-file dashboard; coverage/freshness/exceptions, source evidence, alternate date and failure.
+- P1: second synthetic source, richer/four-view dashboard, listing/backlog if scoped, export, grounded assistant, Jev comparison if access/time/policy allow.
+- P2/pilot: recorder, nine live feeds, production Copilot, automated accounting close, pricing/staffing/marketplace actions.
+
+Old four-view/two-platform language is not a binding customer constraint. GOV-02 freezes scope from current Drive evidence and PLAN §7; GOV-03 freezes shared contracts. Optional exports or extra views must not prevent a passing P0 slice.
+
+## Current evidence and ownership
+PR #1 remains an open/unmerged draft expanded synthetic-data contribution at the check; DAT-01 validates its relevant artifacts without duplicating it. Its tests are not app verification. Later Amanda2.0 says the former e-commerce manager left; support ownership must be confirmed with Amanda/assistant. No new agents/jobs, live connections, deployments or posting are authorized by this planning revision.
+
+## Overnight engineering — PLAN §8
+Freeze scope/contracts and build a passing vertical slice before handoff. Start with 3–4 bounded workers: replica/acquisition, data, frontend against frozen mocks, independent QA. Assistant is a later wave only after checkpoint. Use isolated branches/worktrees and file lanes; one owner for schemas/migrations/lockfiles/entrypoints. Verify an actual runner, budget/deadline/network/action limits and cancellation. At most two repair attempts before escalation. Do not buy services, change credentials, merge unattended or disable tests. Write reports/<TASK-ID>/; one human orchestrator updates shared state. Human morning review checks financial logic/source authenticity/permissions and the complete integrated demo.
 
 ## Claim template
 ```text
-Task ID / issue:
-Operator or agent session:
-Branch / worktree / base commit:
-Dependencies and accepted artifacts checked:
+Task ID / issue and primary source requirement:
+Operator/session, branch/worktree, base commit:
+Accepted predecessor evidence:
 Allowed files / shared-file conflicts:
-Test commands and expected evidence:
-Deadline / spend cap / max 2 repair attempts:
-Human approvals required:
+Frozen contracts and version:
+Tests, independent expected results and artifact paths:
+Deadline / spend cap / max 2 repairs:
+Human gates / stop conditions:
 ```
 
-## Completion template
+## Return template
 ```text
-Commit / changed files:
-Commands actually run + pass/fail:
-Evidence and expected-result comparisons:
-Unsupported behaviors / tests not run:
-Blockers and next human review step:
+Task and primary requirements covered:
+Branch / commit / changed files:
+Commands actually run + pass/fail/logs:
+Downloaded/imported/source/metric evidence:
+Measured runtime/usage, not assumed:
+Unsupported behavior / tests not run:
+Remaining blockers and next human review:
 ```
 
-## Contract and file ownership
-GOV-03 owns schemas; ENG-01 owns initial scaffold/lockfile/CI; a designated data owner serializes migrations. Frontend can use frozen mocks while backend develops. QA writes independently derived tests. Each agent reports under its own task directory; an orchestrator manages shared state.
-
-## Native Projects access
-The GitHub API connection can read/write the repository, but Projects listing returned 403 Resource not accessible by integration. Reauthorization context reported healthy and did not identify a reconnectable scope fix. No native board is claimed created. bootstrap_github_project.py attaches these exact issues with custom fields using authorized local GitHub CLI access; README documents the command and limitations.
-
-## Source links
-- [Jack explanation](https://drive.google.com/file/d/1jrBRKAFzJlOVUC7mIsyTH3OrCGY-7qD6/view)
-- [Wicks plan](https://drive.google.com/file/d/1gip7aNE1TQdZmqNJQeRlPppVZ5iVuWCT/view)
-- [Amanda interview](https://drive.google.com/file/d/1WM1HJVAu_YF-Q48CQDa7SFwnPKg1FPlF/view)
-- [Amanda follow-up](https://docs.google.com/document/d/1yveSPTDJ4PUVi1MjMvCP6ovVtyVy-M7UGOeDdDngz7g/edit)
-- [Amanda supplied PowerPoint](https://docs.google.com/presentation/d/1vkc_Mr8341bDyKkXOkxcKLMj-Du4rOYt/edit)
-- [TypeSafe Jev description](https://typesafe.ai/blog/introducing-system-one-models-and-jev)
-Agents may need separately authorized access to external source documents. Do not expose source credentials.
+## Workflow and Projects limitation
+Claim before edits. Dependencies require verified accepted artifacts, not only issue state. All cards remain unclaimed; human acceptance closes them. Current connection cannot access native Projects (403); issue refs are explicit dependency links, not native dependency objects. The bootstrap script attaches these existing issues using authorized Projects access, without launching agents.
