@@ -11,8 +11,8 @@ verification; damaged artifacts are rejected again when downloaded.
 
 Use the generated `.runtime/jev-replit-demo.zip` to upload/extract the current
 files into a Replit Node/Python project, or copy these files with their repository
-paths. These changes are local and uncommitted: importing the current GitHub
-branch alone will not include them. The ZIP contains no credentials, runtime
+paths. The hosted source is on the `peyton/aimsigh-showcase` GitHub branch;
+select that branch when importing the repository into Replit. The ZIP contains no credentials, runtime
 artifacts or node_modules and includes root `.replit`/`replit.nix` examples.
 
 When using the full repository, copy `replit.example.toml` to root `.replit` and
