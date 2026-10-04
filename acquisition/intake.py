@@ -4,6 +4,7 @@ Acquisition success means "a verified file is archived", NOT "metrics published"
 Import/publication is a separate state recorded later by the importer (DAT-02).
 The original manifest is retained, so filters/controls survive the handoff.
 Acquisition verification, import and publication have separate recorded states.
+write_import_request() preserves the file-based handoff; submit() imports directly.
 """
 import csv
 import hashlib
@@ -146,13 +147,38 @@ def intake(file_path, manifest, run_id, requested_start, requested_end, expected
     return record
 
 
-def submit(record, pipeline, allow_corrections=False):
-    """Verified run → real batch. Repeated calls on a delivered run reuse its batch."""
+def _verified_bytes(record):
+    """Recheck the archived artifact before either importer handoff."""
     if record.get('acquisition_state') != 'acquired_verified' or 'manifest' not in record:
         raise IntakeRejected('intake_incomplete', 'Use a verified run with original manifest')
     data = Path(record['artifact_ref']).read_bytes()
     if _sha256(data) != record['checksum'] or len(data) != record['byte_size']:
         raise IntakeRejected('archive_corrupt', 'Verified artifact changed before submission')
+    return data
+
+
+def write_import_request(record, outbox):
+    """Archive → goodwill-v1 request file; publication remains the importer's job."""
+    from services.data.contracts import validate
+    data = _verified_bytes(record)
+    request = {'csv_text': data.decode('utf-8'), 'manifest': record['manifest']}
+    validate('import-request.schema.json', request)
+    key = f"{record['checksum']}_{record['requested_start_date']}_{record['requested_end_date']}"
+    destination = Path(outbox) / f'{key}.import-request.json'
+    if destination.exists():
+        if json.loads(destination.read_text()) != request:
+            raise IntakeRejected('handoff_conflict', 'Existing request differs from the verified handoff')
+        return destination, False
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    temporary = destination.with_suffix('.tmp')
+    temporary.write_text(json.dumps(request) + '\n')
+    os.replace(temporary, destination)
+    return destination, True
+
+
+def submit(record, pipeline, allow_corrections=False):
+    """Verified run → real batch. Repeated calls on a delivered run reuse its batch."""
+    data = _verified_bytes(record)
     if record.get('batch_id'):
         return pipeline.batch(record['batch_id']), False
     manifest = dict(record['manifest'], acquisition_run_id=record['run_id'])

@@ -13,8 +13,17 @@ Acquisition-class design is reconciled with the merged goodwill-v1 importer. Ori
 
 Decision order follows PLAN §4: supported export, API, email/folder, authorized browser automation, manual upload.
 
-## Common intake handoff
-Proposed production metadata for each class; the implemented synthetic path uses the original replica-v1 manifest normalized by manifest_metadata() and adds acquisition run identity: `run_id`, `acquisition_class`, `source_name`, `report_type`, `requested_start_date`, `requested_end_date`, `reporting_timezone`, `file_name`, `file_checksum` (SHA-256), `byte_size`, `downloaded_at`, `artifact_ref`, `synthetic` (true/false), `skill_or_adapter_version`, `status` (+ `failure_type` if failed). Matches what `acquisition/intake.py` verifies, plus fields it does not yet require (`acquisition_class`, `byte_size`, `downloaded_at`).
+## Separate source, import and acquisition records
+
+The schemas in `contracts/v1/` define goodwill-v1. This acquisition-class document is a design note and does not change those schemas.
+
+1. **Original source manifest:** replica-v1/fixture-v1 metadata, dates, timezone, filters, checksums and controls are retained with exact CSV bytes. Direct submission adds `acquisition_run_id` to stored original metadata for provenance; this is not a field in the strict normalized manifest.
+2. **Normalized import manifest:** `manifest_metadata()` selects source/report, requested dates, timezone, filename, checksum, row count, currency, synthetic marker, source schema version and filters, then validates `manifest.schema.json`. Extra properties are rejected in this normalized shape. Original source metadata is stored separately, so run metadata and controls are not discarded.
+3. **Acquisition record:** intake records contain run identity, artifact reference, checksum/byte size, row count, recorded time, original manifest and acquisition/import states. The controller exposes versioned skill logs, failure/owner, attempts and publication/batch state. `acquisition_class` is a design field, not currently a required/written intake field.
+
+`intake.write_import_request(record, outbox)` retains Hugh's file-based handoff: exact archived UTF-8 CSV plus original source manifest, validated against `import-request.schema.json`. Creating this request leaves import state `not_submitted`. `intake.submit(record, pipeline)` performs the dashboard's real import and records the importer-returned batch/state; it does not infer publication from a download.
+
+Production metadata such as delivery cadence, adapter class, download time and retention policy still require owner review. No additional live acquisition class is implemented by this design.
 
 ## Stays source-specific (not shared)
 Parsing, column mapping, date/timezone logic, identity keys (never merge buyers across platforms), accounting role, and system-of-record rules.

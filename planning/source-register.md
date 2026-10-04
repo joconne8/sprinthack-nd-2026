@@ -1,6 +1,8 @@
 # Source register — nine reporting sources (ING-05 review handoff)
 
 Status: source-led design retained from Hugh and reconciled with the merged goodwill-v1 implementation under Peyton’s authorized takeover. Partner access/owners remain unconfirmed. Upright synthetic collection and manual CSV+manifest import are implemented; the other acquisition classes are designs.
+Requirements covered: [requirements/register.md](requirements/register.md): REQ-ING-01 (parameterized request, same report with new dates), REQ-ING-02 (Upright first; Cash Monkey is not equal P0), REQ-ING-03 (no assumed Upright API; restricted access remains unresolved), REQ-ING-04 (reports are available on demand; manual retrieval/consolidation is the delay), REQ-ING-05 (manual fallback and visible needs-human states). Human contract/scope acceptance and source-owner review are separate from implementation delivery.
+
 Basis: [THREE_PHASE_PLAN.md §4](project-management/THREE_PHASE_PLAN.md) table "Nine sources are not nine complete integrations", Drive source register ([DRIVE_SOURCE_REGISTER.md](project-management/DRIVE_SOURCE_REGISTER.md)): Amanda meeting, Wicks plan, Jack explanation, Amanda2.0. Requirement refs: PLAN §4, §7; AMANDA, WICKS, JACK, FOLLOWUP (per BACKLOG.md ING-05).
 
 Every channel below is an **acquisition hypothesis from the brief** unless marked *Confirmed*. "Unknown" means nobody has confirmed it with the source owner. Owner, cadence and access state are unknown for all nine; they must be confirmed with Goodwill before any adapter is promised.

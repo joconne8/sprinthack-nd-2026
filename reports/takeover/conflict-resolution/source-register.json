@@ -1,0 +1,13 @@
+{
+ "cited_requirements": [
+  "REQ-ING-01",
+  "REQ-ING-02",
+  "REQ-ING-03",
+  "REQ-ING-04",
+  "REQ-ING-05"
+ ],
+ "unregistered": [],
+ "broken_relative_links": [],
+ "source_rows": 9,
+ "head": "ac59816fe09067f7621b205f3a1143d445ec75be"
+}

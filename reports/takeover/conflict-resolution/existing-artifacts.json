@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "tasks_checked": [
+    "GOV-01",
+    "GOV-02",
+    "GOV-03",
+    "GOV-04",
+    "ENG-01",
+    "ENG-02",
+    "ENG-05",
+    "DAT-01",
+    "DAT-02",
+    "DAT-03",
+    "DAT-04",
+    "DAT-05",
+    "DAT-06",
+    "DAT-07",
+    "DAT-08",
+    "DAT-09"
+  ],
+  "required_artifacts_checked": 62,
+  "errors": [],
+  "limit": "Presence/reference check only; not human or independent acceptance"
+}
