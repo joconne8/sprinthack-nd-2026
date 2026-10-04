@@ -1,6 +1,23 @@
 # Goodwill — five-person VS Code / Codex assignment guide
 
-## Status and source verification
+## Current combined-lane handoff
+
+The shared foundation is merged into main at `610035e` (PR #52), after the
+historical package check below. Peyton's authorized combined completion branch
+is `peyton/jackoc-data-completion`. See
+[current task-by-task status](../../reports/integration/completion-status.md),
+[verification](../../reports/integration/completion-verification.json) and
+[runtime/API guide](../../planning/development.md). This is implementation
+delivery status, not human acceptance or verified GitHub issue closure.
+
+GOV-01–04, ENG-01/02 and DAT-01–09 have review artifacts and regression evidence.
+The old GOV-03/GOV-04 branch proposals are reconciled with the merged API; use
+`goodwill-v1`. Final ENG-05 integration/freeze still needs Landon's APP-01/02/03
+UI and Jack mc's independent ENG-04 evidence. Acquisition source mapping and
+automated submission stay in Hugh's lane. Several older reports mention missing
+contracts/backend or unmerged PRs; those statements describe their original base.
+
+## Historical status and source verification
 
 Reviewed against authorized GitHub `main` on **October 4, 2026**, commit
 `3b5060fe91229a89b6556d9332ddbaff892699c3`. This is a documentation-only ownership

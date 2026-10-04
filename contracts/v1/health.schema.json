@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Goodwill v1 health",
+  "type": "object",
+  "properties": {
+    "contract_version": {
+      "type": "string",
+      "const": "goodwill-v1"
+    },
+    "synthetic": {
+      "type": "boolean",
+      "const": true
+    },
+    "status": {
+      "const": "ok"
+    }
+  },
+  "required": [
+    "contract_version",
+    "synthetic",
+    "status"
+  ],
+  "additionalProperties": false
+}

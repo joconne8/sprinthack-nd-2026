@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Goodwill v1 import-request",
+  "type": "object",
+  "properties": {
+    "csv_text": {
+      "type": "string",
+      "minLength": 1
+    },
+    "manifest": {
+      "type": "object"
+    },
+    "allow_corrections": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "csv_text",
+    "manifest"
+  ],
+  "additionalProperties": false
+}

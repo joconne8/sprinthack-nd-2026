@@ -6,7 +6,7 @@ S = {"type": "string"}
 TEXT = {"type": "string", "minLength": 1}
 N = {"type": "integer", "minimum": 0}
 B = {"type": "boolean"}
-DATE = {"type": "string", "pattern": r"^\d{4}-\d{2}-\d{2}$"}
+DATE = {"type": "string", "pattern": r"^\d{4}-\d{2}-\d{2}$", "format": "date"}
 MONEY = {"type": "string", "pattern": r"^-?\d+\.\d{2}$"}
 
 
@@ -71,7 +71,7 @@ SCHEMAS = {
                     "reconciliation_state": enum("verified", "unpublished"),
                     "evidence": obj({"row_count": N, "gross_item_sales": nullable(MONEY), "refunds": nullable(MONEY), "missing_store_rows": N})}),
     "evidence": obj({"contract_version": VERSION, "synthetic": SYNTHETIC, "metric_run_id": TEXT, "filters_applied": FILTERS,
-                     "offset": N, "limit": N, "total_rows": N, "scope_total": MONEY,
+                     "offset": N, "limit": {"type": "integer", "minimum": 1, "maximum": 200}, "total_rows": N, "scope_total": MONEY,
                      "rows": array(obj({"version_id": TEXT, "record_key": TEXT, "file_id": TEXT, "batch_id": TEXT,
                                         "source_row_number": N, "parser_version": TEXT, "rule_version": TEXT, "reporting_date": DATE,
                                         "source_date": DATE, "source_timestamp": nullable(TEXT), "platform": TEXT,
@@ -85,6 +85,86 @@ SCHEMAS = {
                       "coverage_state": enum("complete", "unavailable", "partial")}),
 }
 
+QUERY = obj({"start_date": DATE, "end_date": DATE, "source": TEXT,
+             "platform": TEXT, "store": TEXT, "run_id": TEXT},
+            optional=("platform", "store", "run_id"))
+EVIDENCE_QUERY = obj({**QUERY["properties"], "offset": N,
+                      "limit": {"type": "integer", "minimum": 1, "maximum": 200}},
+                     optional=("platform", "store", "offset", "limit"))
+NORMALIZED_ROW = obj({"record_key": TEXT, "source": TEXT, "reporting_date": DATE,
+                      "source_date": DATE, "source_timestamp": nullable(TEXT), "platform": TEXT,
+                      "store_id": nullable(TEXT), "buyer_id": nullable(TEXT), "currency": {"const": "USD"},
+                      "item_id": nullable(TEXT), "gross_cents": {"type": "integer"},
+                      "refund_cents": {"type": "integer"}, "warnings": array(TEXT)})
+SCHEMAS.update({
+    "metrics-query": QUERY,
+    "evidence-query": EVIDENCE_QUERY,
+    # Preserve vendor/replica metadata; manifest_metadata validates the normalized
+    # manifest before any raw-file/database write. This is the transport envelope.
+    "import-request": obj({"csv_text": TEXT, "manifest": {"type": "object"},
+                           "allow_corrections": B}, optional=("allow_corrections",)),
+    "resolution-request": obj({"resolution": {"type": "string", "pattern": r"\S", "minLength": 1}}),
+    "imports": obj({"contract_version": VERSION, "synthetic": SYNTHETIC, "imports": array(SCHEMAS["batch"])}),
+    "staging": obj({"contract_version": VERSION, "synthetic": SYNTHETIC, "total_rows": N,
+                    "rows": array(obj({"source_row_number": {"type": "integer", "minimum": 1},
+                                       "status": enum("accepted", "duplicate", "corrected", "rejected"),
+                                       "reason": nullable(TEXT), "file_id": TEXT, "batch_id": TEXT,
+                                       "original_row": {"type": "object"},
+                                       "normalized_row": nullable(NORMALIZED_ROW)}))}),
+    "health": obj({"contract_version": VERSION, "synthetic": SYNTHETIC, "status": {"const": "ok"}}),
+    "resolution": obj({"contract_version": VERSION, "synthetic": SYNTHETIC, "status": {"const": "resolved"}}),
+    # Design-only, read-only tools. These schemas do not activate an assistant,
+    # tenant identity, query execution service, or browser action.
+    "tool-request": {"anyOf": [obj({"tool": {"const": "get_metrics"}, "arguments": QUERY}),
+                               obj({"tool": {"const": "get_evidence"}, "arguments": EVIDENCE_QUERY})]},
+    "tool-response": {"anyOf": [SCHEMAS["metrics"], SCHEMAS["evidence"], SCHEMAS["error"]]},
+})
+
+TYPE_NAMES = {
+    "manifest": "NormalizedManifest", "batch": "BatchResponse", "metrics": "MetricResponse",
+    "evidence": "EvidenceResponse", "error": "ErrorResponse", "inventory": "InventoryResponse",
+    "metrics-query": "MetricQuery", "evidence-query": "EvidenceQuery", "import-request": "ImportRequest",
+    "resolution-request": "ResolutionRequest", "imports": "ImportsResponse", "staging": "StagingResponse",
+    "health": "HealthResponse", "resolution": "ResolutionResponse",
+    "tool-request": "ToolRequest", "tool-response": "ToolResponse",
+}
+
+
+def typescript(rule):
+    """Render our schema subset; client types share the schema's structural source."""
+    if "const" in rule:
+        base = json.dumps(rule["const"])
+    elif "enum" in rule:
+        base = " | ".join(json.dumps(value) for value in rule["enum"])
+    elif rule.get("type") == "object" or "properties" in rule:
+        if not rule.get("properties"):
+            base = "Record<string, unknown>"
+        else:
+            required = set(rule.get("required", ()))
+            fields = [f'{key}{"" if key in required else "?"}: {typescript(child)};'
+                      for key, child in rule["properties"].items()]
+            base = "{ " + " ".join(fields) + " }"
+    elif rule.get("type") == "array":
+        base = "Array<" + typescript(rule["items"]) + ">"
+    else:
+        base = {"integer": "number", "boolean": "boolean", "string": "string", "null": "null"}.get(rule.get("type"))
+    if "anyOf" in rule:
+        union = " | ".join("(" + typescript(child) + ")" for child in rule["anyOf"])
+        return "(" + base + ") & (" + union + ")" if base else union
+    if base is None:
+        raise ValueError("Unsupported TypeScript schema: " + repr(rule))
+    return base
+
+
+def client_types():
+    lines = ["/** Generated by contracts/build_schemas.py. Do not edit. */"]
+    lines += [f"export type {TYPE_NAMES[name]} = {typescript(rule)};" for name, rule in SCHEMAS.items()]
+    lines += ["export type Scope = MetricResponse['filters_applied'];",
+              "export type Metric = MetricResponse['metrics'][number];",
+              "export type Availability = Metric['availability'];",
+              "export type EvidenceRow = EvidenceResponse['rows'][number];"]
+    return "\n".join(lines) + "\n"
+
 
 def main():
     root = Path(__file__).resolve().parent / "v1"
@@ -92,6 +172,7 @@ def main():
     for name, schema in SCHEMAS.items():
         schema = {"$schema": "https://json-schema.org/draft/2020-12/schema", "title": "Goodwill v1 " + name, **schema}
         (root / (name + ".schema.json")).write_text(json.dumps(schema, indent=2) + "\n")
+    (root / "types.ts").write_text(client_types())
 
 
 if __name__ == "__main__":

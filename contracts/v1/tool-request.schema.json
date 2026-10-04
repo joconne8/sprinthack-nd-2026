@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Goodwill v1 tool-request",
+  "anyOf": [
+    {
+      "type": "object",
+      "properties": {
+        "tool": {
+          "const": "get_metrics"
+        },
+        "arguments": {
+          "type": "object",
+          "properties": {
+            "start_date": {
+              "type": "string",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+              "format": "date"
+            },
+            "end_date": {
+              "type": "string",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+              "format": "date"
+            },
+            "source": {
+              "type": "string",
+              "minLength": 1
+            },
+            "platform": {
+              "type": "string",
+              "minLength": 1
+            },
+            "store": {
+              "type": "string",
+              "minLength": 1
+            },
+            "run_id": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "start_date",
+            "end_date",
+            "source"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "tool",
+        "arguments"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "tool": {
+          "const": "get_evidence"
+        },
+        "arguments": {
+          "type": "object",
+          "properties": {
+            "start_date": {
+              "type": "string",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+              "format": "date"
+            },
+            "end_date": {
+              "type": "string",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+              "format": "date"
+            },
+            "source": {
+              "type": "string",
+              "minLength": 1
+            },
+            "platform": {
+              "type": "string",
+              "minLength": 1
+            },
+            "store": {
+              "type": "string",
+              "minLength": 1
+            },
+            "run_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "offset": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "limit": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 200
+            }
+          },
+          "required": [
+            "start_date",
+            "end_date",
+            "source",
+            "run_id"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "tool",
+        "arguments"
+      ],
+      "additionalProperties": false
+    }
+  ]
+}

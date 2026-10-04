@@ -1,5 +1,11 @@
 # Goodwill build board
 
+Current delivery status uses the newer GOV/ING/DAT/APP/ENG/REL assignments in
+`ProjectManagement/agent-assignments/TEAM_ASSIGNMENTS.md`, with combined Jack OC /
+Peyton evidence in `reports/integration/completion-status.md`. The G/A/E cards,
+scope assumptions and dates below are historical planning, not live completion
+state. The acquisition-led scope in `planning/scope.md` governs the current build.
+
 Mock Jira-style board | Prepared Saturday, October 3, 2026 | Five laptops, one small prototype
 
 This is a proposed breakdown, not evidence of work already started. Fill the owner slots, approve the scope card, then move cards as evidence lands. No repo, Replit project or existing file was changed to create this plan.

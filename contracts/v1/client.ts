@@ -1,72 +1,59 @@
-/** Shared UI contracts. Local synthetic prototype; money never uses JS arithmetic. */
-export type Availability = "available" | "partial" | "unavailable";
-export interface Metric {
-  metric_id: string;
-  metric_version: string;
-  value: string | null;
-  unit: string;
-  availability: Availability;
-  availability_reason: string | null;
-  definition: string;
+/** Shared synthetic API client. Values and definitions come from the backend. */
+export * from "./types";
+import type { BatchResponse, EvidenceQuery, EvidenceResponse, ImportsResponse, ImportRequest, InventoryResponse, MetricQuery, MetricResponse, ResolutionResponse, Scope, StagingResponse } from "./types";
+
+export class ApiError extends Error {
+  constructor(public readonly status: number, public readonly body: unknown, detail: string) {
+    super(detail);
+    this.name = "ApiError";
+  }
 }
-export interface Scope {
-  start_date: string;
-  end_date: string;
-  source: string;
-  platform: string | null;
-  store: string | null;
-  reporting_timezone: "America/New_York";
-}
-export interface MetricResponse {
-  contract_version: "goodwill-v1";
-  synthetic: true;
-  filters_applied: Scope;
-  metric_run_id: string | null;
-  metrics: Metric[];
-  coverage: { expected_days: string[]; complete_days: string[]; missing_or_partial_days: string[]; state: "complete" | "partial" | "unavailable" };
-  freshness: { published_at: string | null; latest_import_at: string | null; is_last_good: boolean; publication_state: "published" | "stale_last_good" | "unpublished"; warning: string | null };
-  reconciliation_state: "verified" | "unpublished";
-  evidence: { row_count: number; gross_item_sales: string | null; refunds: string | null; missing_store_rows: number };
-}
-export interface EvidenceRow {
-  version_id: string;
-  record_key: string;
-  file_id: string;
-  batch_id: string;
-  source_row_number: number;
-  parser_version: string;
-  rule_version: string;
-  reporting_date: string;
-  source_date: string;
-  source_timestamp: string | null;
-  platform: string;
-  store_id: string | null;
-  buyer_id: string | null;
-  gross_item_sales: string;
-  refunds: string;
-  demo_net_sales: string;
-  currency: "USD";
-  synthetic: true;
-  original_row: Record<string, unknown>;
-}
-export interface EvidenceResponse {
-  contract_version: "goodwill-v1";
-  synthetic: true;
-  metric_run_id: string;
-  filters_applied: Scope;
-  offset: number;
-  limit: number;
-  total_rows: number;
-  scope_total: string;
-  rows: EvidenceRow[];
-}
-/** Surface HTTP errors. No financial calculations or mock fallback. */
-export async function getMetrics(baseUrl: string, filters: Omit<Scope, "reporting_timezone">, signal?: AbortSignal): Promise<MetricResponse> {
+
+function queryString(filters: object): string {
   const query = new URLSearchParams();
-  for (const [key, value] of Object.entries(filters)) if (value !== null) query.set(key, value);
-  const response = await fetch(`${baseUrl}/api/v1/metrics?${query}`, { signal });
-  const body = await response.json();
-  if (!response.ok) throw new Error(body.error?.detail ?? `HTTP ${response.status}`);
-  if (body.contract_version !== "goodwill-v1" || body.synthetic !== true) throw new Error("Unsupported metric contract");
-  return body as MetricResponse;
+  for (const [key, value] of Object.entries(filters)) {
+    if (value !== null && value !== undefined) query.set(key, String(value));
+  }
+  return query.toString();
+}
+
+async function jsonRequest<T>(baseUrl: string, path: string, signal?: AbortSignal, body?: object): Promise<T> {
+  const response = await fetch(`${baseUrl.replace(/\/$/, "")}${path}`, {
+    signal, method: body === undefined ? "GET" : "POST",
+    ...(body === undefined ? {} : { headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) }),
+  });
+  const result = await response.json();
+  if (!response.ok) {
+    // Preserve HTTP 422 batch controls/exceptions for the operations view.
+    throw new ApiError(response.status, result, result?.error?.detail ?? `HTTP ${response.status}`);
+  }
+  if (result?.contract_version !== "goodwill-v1" || result?.synthetic !== true) {
+    throw new Error("Unsupported synthetic API contract");
+  }
+  return result as T;
+}
+
+export function getMetrics(baseUrl: string, filters: MetricQuery | Omit<Scope, "reporting_timezone">, signal?: AbortSignal): Promise<MetricResponse> {
+  return jsonRequest(baseUrl, `/api/v1/metrics?${queryString(filters)}`, signal);
+}
+export function getEvidence(baseUrl: string, filters: EvidenceQuery, signal?: AbortSignal): Promise<EvidenceResponse> {
+  return jsonRequest(baseUrl, `/api/v1/evidence?${queryString(filters)}`, signal);
+}
+export function getImports(baseUrl: string, signal?: AbortSignal): Promise<ImportsResponse> {
+  return jsonRequest(baseUrl, "/api/v1/imports", signal);
+}
+export function getImport(baseUrl: string, batchId: string, signal?: AbortSignal): Promise<BatchResponse> {
+  return jsonRequest(baseUrl, `/api/v1/imports/${encodeURIComponent(batchId)}`, signal);
+}
+export function getImportRows(baseUrl: string, batchId: string, filters: { offset?: number; limit?: number; status?: "accepted" | "duplicate" | "corrected" | "rejected" } = {}, signal?: AbortSignal): Promise<StagingResponse> {
+  return jsonRequest(baseUrl, `/api/v1/imports/${encodeURIComponent(batchId)}/rows?${queryString(filters)}`, signal);
+}
+export function importCsv(baseUrl: string, body: ImportRequest, signal?: AbortSignal): Promise<BatchResponse> {
+  return jsonRequest(baseUrl, "/api/v1/imports", signal, body);
+}
+export function resolveException(baseUrl: string, exceptionId: string, resolution: string, signal?: AbortSignal): Promise<ResolutionResponse> {
+  return jsonRequest(baseUrl, `/api/v1/exceptions/${encodeURIComponent(exceptionId)}/resolve`, signal, { resolution });
+}
+export function getInventory(baseUrl: string, filters: { start_date: string; end_date: string; snapshot_at?: string; store?: string }, signal?: AbortSignal): Promise<InventoryResponse> {
+  return jsonRequest(baseUrl, `/api/v1/inventory?${queryString(filters)}`, signal);
 }

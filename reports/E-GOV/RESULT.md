@@ -1,5 +1,13 @@
 # E-GOV result
 
+Current completion session: `peyton/jackoc-data-completion`, base `610035e` (PR #52).
+See `../integration/completion-status.md` and `completion-verification.json` for
+reconciled contracts/architecture, strict client/browser runtime verification and
+fresh full regression. Implementation/design artifacts are READY_FOR_REVIEW;
+human acceptance and issue closure are not asserted.
+
+The original foundation report below is historical and predates merge PR #52.
+
 State: READY_FOR_REVIEW (not accepted/DONE).
 Branch: `peyton/jackoc-data-foundation`.
 Base: `b329c0fece37c1694b4d84c0c55e609dc931f854`.

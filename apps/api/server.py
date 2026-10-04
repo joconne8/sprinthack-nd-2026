@@ -4,7 +4,7 @@ import re
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import parse_qs, urlparse
 
-from services.data.contracts import CONTRACT_VERSION, DataError, canonical, digest
+from services.data.contracts import CONTRACT_VERSION, DataError, canonical, digest, validate
 from services.data.inventory.store import inventory_response
 from services.metrics.query import evidence_response, metric_response
 
@@ -50,11 +50,18 @@ def make_server(pipeline, port=8000):
                 q = {k: v[0] for k, v in query.items()}
                 path = parsed.path
                 if path == "/api/v1/health":
-                    return self.send(200, {"contract_version": CONTRACT_VERSION, "synthetic": True, "status": "ok"})
+                    if q:
+                        raise DataError("query_invalid", "Health takes no query parameters")
+                    return self.send(200, validate("health.schema.json", {"contract_version": CONTRACT_VERSION, "synthetic": True, "status": "ok"}))
                 if path in ("/api/v1/metrics", "/api/v1/evidence"):
-                    allowed = {"start_date", "end_date", "source", "platform", "store", "run_id", "offset", "limit"}
-                    if set(q)-allowed or not {"start_date", "end_date", "source"} <= set(q):
-                        raise DataError("query_invalid", "Require start_date, end_date, source and known filters")
+                    schema = "metrics-query" if path.endswith("metrics") else "evidence-query"
+                    typed_query = dict(q)
+                    for key in ("offset", "limit"):
+                        if key in typed_query:
+                            if not re.fullmatch(r"\d+", typed_query[key]):
+                                raise DataError("invalid_pagination", "Pagination requires unsigned integers")
+                            typed_query[key] = int(typed_query[key])
+                    validate(schema + ".schema.json", typed_query)
                     args = (pipeline, q["start_date"], q["end_date"], q["source"], q.get("platform"), q.get("store"))
                     if path.endswith("metrics"):
                         return self.send(200, metric_response(*args, run_id=q.get("run_id")))
@@ -62,12 +69,18 @@ def make_server(pipeline, port=8000):
                         raise DataError("run_required", "Evidence requires the displayed metric_run_id")
                     return self.send(200, evidence_response(pipeline, q["run_id"], *args[1:], offset=int(q.get("offset", 0)), limit=int(q.get("limit", 100))))
                 if path == "/api/v1/imports":
-                    return self.send(200, {"contract_version": CONTRACT_VERSION, "synthetic": True, "imports": pipeline.batches()})
+                    if q:
+                        raise DataError("query_invalid", "Imports list takes no query parameters")
+                    return self.send(200, validate("imports.schema.json", {"contract_version": CONTRACT_VERSION, "synthetic": True, "imports": pipeline.batches()}))
                 match = re.fullmatch(r"/api/v1/imports/([a-f0-9]{32})(/rows)?", path)
                 if match:
                     batch = pipeline.batch(match[1])
                     if not match[2]:
+                        if q:
+                            raise DataError("query_invalid", "Batch detail takes no query parameters")
                         return self.send(200, batch)
+                    if set(q) - {"offset", "limit", "status"}:
+                        raise DataError("query_invalid", "Rows support offset, limit and status only")
                     offset, limit = int(q.get("offset", 0)), int(q.get("limit", 100))
                     if not 0 <= offset or not 1 <= limit <= 200:
                         raise DataError("invalid_pagination", "Limit 1..200; nonnegative offset")
@@ -82,9 +95,11 @@ def make_server(pipeline, port=8000):
                                   "original_row": json.loads(r["original_json"]),
                                   "normalized_row": json.loads(r["normalized_json"]) if r["normalized_json"] else None}
                                  for r in selected[offset:offset+limit]]
-                    return self.send(200, {"contract_version": CONTRACT_VERSION, "synthetic": True, "total_rows": len(selected), "rows": items})
+                    return self.send(200, validate("staging.schema.json", {"contract_version": CONTRACT_VERSION, "synthetic": True, "total_rows": len(selected), "rows": items}))
                 match = re.fullmatch(r"/api/v1/files/([a-f0-9]{64})", path)
                 if match:
+                    if q:
+                        raise DataError("query_invalid", "Raw-file download takes no query parameters")
                     with pipeline.db() as db:
                         row = db.execute("SELECT artifact_ref,checksum FROM source_files WHERE id=?", (match[1],)).fetchone()
                         if not row:
@@ -134,16 +149,14 @@ def make_server(pipeline, port=8000):
                     raise DataError("request_invalid", "Expected JSON object")
                 path = urlparse(self.path).path
                 if path == "/api/v1/imports":
-                    if not {"csv_text", "manifest"} <= set(body) or set(body)-{"csv_text", "manifest", "allow_corrections"}:
-                        raise DataError("request_invalid", "Require csv_text and manifest; optional allow_corrections")
-                    if not isinstance(body["csv_text"], str):
-                        raise DataError("request_invalid", "csv_text must be a UTF-8 string")
+                    validate("import-request.schema.json", body)
                     result = pipeline.import_bytes(body["csv_text"].encode(), body["manifest"], body.get("allow_corrections", False))
                     return self.send(422 if result["status"] == "failed" else 201, result)
                 match = re.fullmatch(r"/api/v1/exceptions/([a-f0-9]{32})/resolve", path)
-                if match and set(body) == {"resolution"}:
+                if match:
+                    validate("resolution-request.schema.json", body)
                     pipeline.resolve_exception(match[1], body["resolution"])
-                    return self.send(200, {"contract_version": CONTRACT_VERSION, "synthetic": True, "status": "resolved"})
+                    return self.send(200, validate("resolution.schema.json", {"contract_version": CONTRACT_VERSION, "synthetic": True, "status": "resolved"}))
                 raise DataError("not_found", "Unknown write route")
             except DataError as exc:
                 self.error(exc)

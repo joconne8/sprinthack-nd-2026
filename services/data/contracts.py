@@ -96,8 +96,15 @@ def validate(schema_name, value):
                 raise DataError("contract_invalid", f"{path}: invalid string pattern")
             if len(item) < rule.get("minLength", 0):
                 raise DataError("contract_invalid", f"{path}: empty required string")
+            if rule.get("format") == "date":
+                try:
+                    day(item)
+                except DataError:
+                    raise DataError("contract_invalid", f"{path}: invalid calendar date")
         if type(item) is int and item < rule.get("minimum", item):
             raise DataError("contract_invalid", f"{path}: too small")
+        if type(item) is int and item > rule.get("maximum", item):
+            raise DataError("contract_invalid", f"{path}: too large")
         if isinstance(item, dict):
             if any(key not in item for key in rule.get("required", [])):
                 raise DataError("contract_invalid", f"{path}: missing required keys")

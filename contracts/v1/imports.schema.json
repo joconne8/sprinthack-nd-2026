@@ -1,0 +1,392 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Goodwill v1 imports",
+  "type": "object",
+  "properties": {
+    "contract_version": {
+      "type": "string",
+      "const": "goodwill-v1"
+    },
+    "synthetic": {
+      "type": "boolean",
+      "const": true
+    },
+    "imports": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "contract_version": {
+            "type": "string",
+            "const": "goodwill-v1"
+          },
+          "batch_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source": {
+            "type": "string",
+            "minLength": 1
+          },
+          "report_type": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "imported",
+              "duplicate_noop",
+              "failed"
+            ]
+          },
+          "synthetic": {
+            "type": "boolean",
+            "const": true
+          },
+          "file": {
+            "type": "object",
+            "properties": {
+              "file_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "checksum": {
+                "type": "string",
+                "minLength": 1
+              },
+              "byte_size": {
+                "type": "integer",
+                "minimum": 0
+              }
+            },
+            "required": [
+              "file_id",
+              "checksum",
+              "byte_size"
+            ],
+            "additionalProperties": false
+          },
+          "period": {
+            "type": "object",
+            "properties": {
+              "start_date": {
+                "type": "string",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                "format": "date"
+              },
+              "end_date": {
+                "type": "string",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                "format": "date"
+              },
+              "source_timezone": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "start_date",
+              "end_date",
+              "source_timezone"
+            ],
+            "additionalProperties": false
+          },
+          "counts": {
+            "type": "object",
+            "properties": {
+              "row_count": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "accepted_rows": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "rejected_rows": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "duplicate_rows": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "corrected_rows": {
+                "type": "integer",
+                "minimum": 0
+              }
+            },
+            "required": [
+              "row_count",
+              "accepted_rows",
+              "rejected_rows",
+              "duplicate_rows",
+              "corrected_rows"
+            ],
+            "additionalProperties": false
+          },
+          "reconciliation": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "source_rows": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "accepted_rows": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "rejected_rows": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "duplicate_rows": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "counts_balanced": {
+                    "type": "boolean"
+                  },
+                  "source_gross": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "pattern": "^-?\\d+\\.\\d{2}$"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "source_refunds": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "pattern": "^-?\\d+\\.\\d{2}$"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "accepted_gross": {
+                    "type": "string",
+                    "pattern": "^-?\\d+\\.\\d{2}$"
+                  },
+                  "accepted_refunds": {
+                    "type": "string",
+                    "pattern": "^-?\\d+\\.\\d{2}$"
+                  },
+                  "rejected_gross": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "pattern": "^-?\\d+\\.\\d{2}$"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "rejected_refunds": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "pattern": "^-?\\d+\\.\\d{2}$"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "duplicate_gross": {
+                    "type": "string",
+                    "pattern": "^-?\\d+\\.\\d{2}$"
+                  },
+                  "duplicate_refunds": {
+                    "type": "string",
+                    "pattern": "^-?\\d+\\.\\d{2}$"
+                  },
+                  "control_differences": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "state": {
+                    "type": "string",
+                    "enum": [
+                      "verified",
+                      "blocked"
+                    ]
+                  }
+                },
+                "required": [
+                  "source_rows",
+                  "accepted_rows",
+                  "rejected_rows",
+                  "duplicate_rows",
+                  "counts_balanced",
+                  "source_gross",
+                  "source_refunds",
+                  "accepted_gross",
+                  "accepted_refunds",
+                  "rejected_gross",
+                  "rejected_refunds",
+                  "duplicate_gross",
+                  "duplicate_refunds",
+                  "control_differences",
+                  "state"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "error": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "code": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "detail": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "code",
+                  "detail"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "exceptions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "batch_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "row_number": {
+                  "anyOf": [
+                    {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "code": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "detail": {
+                  "type": "string"
+                },
+                "owner_role": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "open",
+                    "resolved"
+                  ]
+                },
+                "resolution": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "resolved_at": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "batch_id",
+                "row_number",
+                "code",
+                "detail",
+                "owner_role",
+                "status",
+                "resolution",
+                "resolved_at"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "parser_version": {
+            "type": "string",
+            "minLength": 1
+          },
+          "rule_version": {
+            "type": "string",
+            "minLength": 1
+          },
+          "recorded_at": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "contract_version",
+          "batch_id",
+          "source",
+          "report_type",
+          "status",
+          "synthetic",
+          "file",
+          "period",
+          "counts",
+          "reconciliation",
+          "error",
+          "exceptions",
+          "parser_version",
+          "rule_version",
+          "recorded_at"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "contract_version",
+    "synthetic",
+    "imports"
+  ],
+  "additionalProperties": false
+}

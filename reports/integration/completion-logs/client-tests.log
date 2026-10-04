@@ -1,0 +1,1 @@
+PASS: client preserves API values, filters/run identity, cancellation signal, failed batches and errors.

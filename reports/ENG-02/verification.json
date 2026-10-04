@@ -2,12 +2,18 @@
   "task": "ENG-02",
   "state": "READY_FOR_REVIEW",
   "accepted": false,
-  "branch": "peyton/jackoc-data-foundation",
-  "base_commit": "b329c0fece37c1694b4d84c0c55e609dc931f854",
-  "evidence": "../integration/verification.json",
+  "branch": "peyton/jackoc-data-completion",
+  "base_commit": "610035efd3ffb1157f1b2ce5f3bc500417a1dfe5",
+  "evidence": "../integration/completion-verification.json",
   "artifacts": [
     "planning/file-ownership.md",
     "reports/integration/CLAIM.md"
   ],
-  "limitations": "Local reservations only; GitHub comments/claims not posted. No agents, budgets or unattended jobs are launched."
+  "limitations": "Local reservations only; GitHub comments/claims not posted. No agents, budgets or unattended jobs are launched.",
+  "prior_evidence": "../integration/verification.json",
+  "completion_status": "../integration/completion-status.md",
+  "remaining_acceptance": [
+    "Human/independent review",
+    "GitHub issue claims/comments remain inaccessible via connector"
+  ]
 }
