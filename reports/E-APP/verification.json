@@ -1,0 +1,59 @@
+{
+  "task_id": "E-APP",
+  "state": "READY_FOR_REVIEW",
+  "child_states": {
+    "APP-01": "BLOCKED", "APP-02": "BLOCKED", "APP-03": "BLOCKED", "APP-04": "BLOCKED",
+    "APP-05": "BLOCKED", "APP-06": "BLOCKED", "APP-07": "BLOCKED"
+  },
+  "source_requirement_ids": ["PLAN-6", "PLAN-7", "PLAN-8", "DASH-01..09", "AI-01..07"],
+  "operator": "Landon (Claude Code session)",
+  "branch": "landon/E-APP",
+  "base_commit": "b329c0fece37c1694b4d84c0c55e609dc931f854",
+  "original_base_commit": "15fa25ad31f1720320dbb4b9fe073796436e2dce",
+  "head_commit": "the commit that adds this file on landon/E-APP",
+  "checked_at_utc": "2026-10-04T01:51:35Z",
+  "refreshed_at_utc": "2026-10-04T02:37:06Z",
+  "refresh_inputs": {
+    "origin/main": "b329c0fece37c1694b4d84c0c55e609dc931f854",
+    "origin/jackoc/GOV-01-requirements-map": "0e1fde53fe290f1b1730f0d93e496314e1d1165c"
+  },
+  "commands": [
+    {"command": "git pull --ff-only", "result": "pass", "log": "Already up to date."},
+    {"command": "git fetch --all --prune; git branch -r", "result": "pass", "log": "5 remote branches: add-agent-delegation-doc, codex/reporting-decoy, docs/goodwill-team-assignments-20261004, feat/enterprise-synthetic-data, main"},
+    {"command": "for b in remote branches: git ls-tree -r --name-only $b | grep -Ei 'reports/(GOV-0[1-4]|ENG-0[12])|^apps/|contracts?/|acceptance.*\\.json'", "result": "pass", "log": "Only ProjectManagement/agent-assignments/templates/acceptance.example.json (empty template) found on any branch"},
+    {"command": "curl https://api.github.com/repos/joconne8/sprinthack-nd-2026/issues/{15,33,38,32,34,6}", "result": "fail", "log": "HTTP 404 for all (private repo, unauthenticated); gh CLI not installed"},
+    {"command": "python3 ProjectManagement/agent-assignments/select_assignment.py APP-01", "result": "not_run", "log": "Python was not found (Windows Store alias stub only)"},
+    {"command": "gawk -f reports/E-APP/netcheck.awk goodwill/synthetic-data/02_upright_paid_order_items_aug2026.csv", "result": "pass", "log": "rows=650 net==gross-refund:55 net==gross+ship-refund:650 ambiguous(ship=0):55"},
+    {"command": "gawk -f reports/E-APP/netcheck.awk 'data ingestion/examples/upright_paid_orders_2026-09-30_2026-09-30_synthetic.csv'", "result": "pass", "log": "rows=128 net==gross-refund:128 net==gross+ship-refund:0 ambiguous(ship=0):0"},
+    {"command": "awk -F, 'NR>1{print $5}' goodwill/synthetic-data/10_stores.csv | sort | uniq -c", "result": "pass", "log": "24 America/Indiana/Indianapolis"},
+    {"command": "grep -niE 'labor|labour|hours' goodwill/synthetic-data/README.md", "result": "pass", "log": "line 93: No labor productivity ... is implied by this dataset."},
+    {"command": "git add -N reports/E-APP && git diff --check", "result": "pass", "log": "exit 0; only LF->CRLF autocrlf warnings"},
+    {"command": "git diff --stat", "result": "pass", "log": "5 files changed, 290 insertions(+) before RESULT.md/verification.json were added"},
+    {"command": "git fetch --all --prune", "result": "pass", "log": "new: add-merge-after-push-skill, hugh/ING-acquisition, jackoc/GOV-01-requirements-map, jackoc/GOV-02-scope-metrics; main 15fa25a..b329c0f"},
+    {"command": "git show origin/jackoc/GOV-01-requirements-map:reports/GOV-0{1,2}/RESULT.md | grep State", "result": "pass", "log": "GOV-01 State: READY_FOR_REVIEW; GOV-02 State: READY_FOR_REVIEW"},
+    {"command": "git show origin/jackoc/GOV-01-requirements-map:planning/{metric-dictionary,scope}.md | grep -niE 'net.?sales|timezone|...'", "result": "pass", "log": "M-DEMO-NET-SALES = item sales - refunds; scope.md:67 reporting timezone America/New_York; no mention of fixture net_sales column"},
+    {"command": "git show origin/main:reports/ING-0{2..7}/RESULT.md | grep -m1 State", "result": "pass", "log": "all six ING reports state BLOCKED"},
+    {"command": "git show origin/main:acquisition/run_state.py | grep status", "result": "pass", "log": "pending|running|succeeded|failed_retriable_exhausted|needs_human|failed_permanent"},
+    {"command": "MSYS_NO_PATHCONV=1 git show origin/main:.github/workflows/synthetic-data.yml", "result": "pass", "log": "only CI workflow; triggers on goodwill/synthetic-data/** paths, so a reports-only change runs no checks"},
+    {"command": "git fetch origin main:main && git merge --ff-only origin/main", "result": "pass", "log": "main and landon/E-APP fast-forwarded to b329c0f"}
+  ],
+  "evidence_paths": [
+    "reports/E-APP/workstream-readiness.md",
+    "reports/E-APP/interfaces-and-blockers.md",
+    "reports/E-APP/evidence-review-checklist.md",
+    "reports/E-APP/netcheck.awk"
+  ],
+  "acceptance_checks": [
+    {"check": "every child has explicit readiness/blockers", "result": "pass", "where": "workstream-readiness.md table"},
+    {"check": "every child has owner/reviewer proposal", "result": "pass", "where": "workstream-readiness.md table"},
+    {"check": "every child has evidence checklist", "result": "pass", "where": "evidence-review-checklist.md"},
+    {"check": "no completion or approval invented", "result": "pass", "where": "all children BLOCKED; proposals marked as proposals"}
+  ],
+  "limitations": [
+    "GitHub issue comments not read; claims/acceptance posted only on GitHub were not seen",
+    "Python not installed; selector and fixture unit tests not run",
+    "Document review does not prove app/runtime/provider compatibility",
+    "Drive primary sources not re-fetched; repo snapshots used"
+  ],
+  "human_review_required": true
+}
